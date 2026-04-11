@@ -30,10 +30,10 @@ const findings = [
 ];
 
 const footnotes = [
-  "1. Gartner, "Gartner Predicts Over 40 Percent of Agentic AI Projects Will Be Canceled by End of 2027," June 25, 2025.",
-  "2. Salesforce, "Salesforce Announces 2026 Connectivity Report," February 5, 2026.",
-  "3. DSAG, "Investment Report 2026: Companies Are Investing More Selectively, AI Is Becoming Established, Cloud Computing Is Being Put to the Test," 2026.",
-  "4. McKinsey, "How Agentic AI Can Reshape Real Estate's Operating Model," March 4, 2026.",
+  '1. Gartner, "Gartner Predicts Over 40 Percent of Agentic AI Projects Will Be Canceled by End of 2027," June 25, 2025.',
+  '2. Salesforce, "Salesforce Announces 2026 Connectivity Report," February 5, 2026.',
+  '3. DSAG, "Investment Report 2026: Companies Are Investing More Selectively, AI Is Becoming Established, Cloud Computing Is Being Put to the Test," 2026.',
+  "4. McKinsey, \"How Agentic AI Can Reshape Real Estate's Operating Model,\" March 4, 2026.",
 ];
 
 const ClosingSlide = () => (
