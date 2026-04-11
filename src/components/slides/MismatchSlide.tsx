@@ -19,44 +19,46 @@ const MismatchSlide = () => (
       Systems of record were designed for human operators who could fill gaps with judgment. AI agents cannot. Every row below is a query an agent will issue, and a structural gap in what today's data layer can return.
     </p>
 
-    <table className="cmp-table">
-      <thead>
-        <tr>
-          <th style={{ width: "26%" }}>What agents need to know</th>
-          <th className="arrow" style={{ width: "4%" }}></th>
-          <th style={{ width: "31%" }}>What systems of record provide today</th>
-          <th className="arrow" style={{ width: "4%" }}></th>
-          <th className="col-agent" style={{ width: "35%" }}>What agent-grade infrastructure provides</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, i) => (
-          <tr key={i}>
-            <td>{row.dim}</td>
-            <td className="arrow">→</td>
-            <td className="col-erp">{row.erp}</td>
-            <td className="arrow">→</td>
-            <td className="col-agent">{row.agent}</td>
+    <div className="luna-table-scroll">
+      <table className="cmp-table">
+        <thead>
+          <tr>
+            <th style={{ width: "26%" }}>What agents need to know</th>
+            <th className="arrow" style={{ width: "4%" }}></th>
+            <th style={{ width: "31%" }}>What systems of record provide today</th>
+            <th className="arrow" style={{ width: "4%" }}></th>
+            <th className="col-agent" style={{ width: "35%" }}>What agent-grade infrastructure provides</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={i}>
+              <td>{row.dim}</td>
+              <td className="arrow">→</td>
+              <td className="col-erp">{row.erp}</td>
+              <td className="arrow">→</td>
+              <td className="col-agent">{row.agent}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
 
-    {/* Rules → Reasoning inline callout */}
-    <div style={{ maxWidth: 960, marginTop: "1.5rem", marginBottom: 0, display: "flex", gap: "1.5px" }}>
-      <div style={{ flex: 1, background: "#fff", borderLeft: "4px solid hsl(var(--pink) / 0.3)", padding: "1rem 1.4rem" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Rules-based systems</div>
+    {/* Rules → Reasoning */}
+    <div className="luna-duo-cards">
+      <div className="luna-duo-card" style={{ borderLeftColor: "hsl(var(--pink) / 0.3)" }}>
+        <div className="luna-source" style={{ color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Rules-based systems</div>
         <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>A rules engine enforces policy. A human reads the exception and decides. The system records the outcome.</div>
       </div>
-      <div style={{ flex: 1, background: "#fff", borderLeft: "4px solid hsl(var(--pink))", padding: "1rem 1.4rem" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.35rem" }}>Reasoning-capable agents</div>
+      <div className="luna-duo-card" style={{ borderLeftColor: "hsl(var(--pink))" }}>
+        <div className="luna-source" style={{ color: "hsl(var(--pink))", marginBottom: "0.35rem" }}>Reasoning-capable agents</div>
         <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>Agents do not read exceptions. They inherit infrastructure. When the infrastructure carries incomplete meaning or no reasoning chain, the agent does not pause and ask. It proceeds.</div>
       </div>
     </div>
 
-    {/* Style B: full-bleed pink banner — p.17 Gartner quote */}
-    <div style={{ background: "hsl(var(--pink))", padding: "1.6rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.6rem" }}>
+    {/* Gartner quote */}
+    <div className="luna-pink-banner">
+      <div className="luna-source" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "0.6rem" }}>
         Gartner, G00826629, p. 17, on AI and BI tool semantic layers
       </div>
       <p style={{ fontSize: "1.15rem", fontWeight: 500, color: "#fff", lineHeight: 1.45, margin: "0 0 0.7rem" }}>

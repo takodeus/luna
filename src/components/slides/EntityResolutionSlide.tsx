@@ -38,13 +38,12 @@ const EntityResolutionSlide = () => (
       <span className="luna-accent">Every layer above inherits its errors.</span>
     </h2>
 
-    {/* Option C: Full-width dark banner */}
     <div style={{ maxWidth: 960, marginTop: "2rem" }}>
-      <div style={{ background: "#A8185E", padding: "1.8rem 2rem" }}>
-        <div className="font-mono-luna" style={{ fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
+      <div className="luna-pink-banner">
+        <div className="luna-source" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
           The first hard problem
         </div>
-        <p style={{ fontFamily: "var(--serif)", fontSize: "1.45rem", fontWeight: 600, fontStyle: "italic", color: "#fff", lineHeight: 1.35, marginBottom: "0.9rem", margin: "0 0 0.9rem" }}>
+        <p className="luna-serif-quote" style={{ color: "#fff", margin: "0 0 0.9rem" }}>
           Is the 'tenant' in System A the same entity as the 'tenant' in System B?
         </p>
         <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.78)", lineHeight: 1.7, margin: 0, maxWidth: 700 }}>
@@ -53,35 +52,26 @@ const EntityResolutionSlide = () => (
       </div>
 
       {/* Three problem panels */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)", marginTop: "1.5px" }}>
+      <div className="luna-grid-3col" style={{ marginTop: "1.5px" }}>
         {[
-          {
-            label: "The Scale Problem",
-            text: "Enterprise data environments contain hundreds of millions of records across dozens of systems. Entity resolution at this scale requires probabilistic matching, clustering, and continuous learning. Rigid rule-based joins do not scale.",
-          },
-          {
-            label: "The Ambiguity Problem",
-            text: "The same legal entity may appear under dozens of name variants, address formats, and identifier schemes across sources. No single canonical ID exists. Resolution must be reliably inferred instead of looked up.",
-          },
-          {
-            label: "The Stakes Problem",
-            text: "Every downstream AI inference, metric, and recommendation inherits the entity model. A 2% entity resolution error rate at 1B records produces 20M misattributed facts. These invisible errors silently corrupt every output layer.",
-          },
+          { label: "The Scale Problem", text: "Enterprise data environments contain hundreds of millions of records across dozens of systems. Entity resolution at this scale requires probabilistic matching, clustering, and continuous learning. Rigid rule-based joins do not scale." },
+          { label: "The Ambiguity Problem", text: "The same legal entity may appear under dozens of name variants, address formats, and identifier schemes across sources. No single canonical ID exists. Resolution must be reliably inferred instead of looked up." },
+          { label: "The Stakes Problem", text: "Every downstream AI inference, metric, and recommendation inherits the entity model. A 2% entity resolution error rate at 1B records produces 20M misattributed facts. These invisible errors silently corrupt every output layer." },
         ].map((p, i) => (
-          <div key={i} style={{ background: "#fff", padding: "1.4rem 1.6rem", borderTop: "3px solid #A8185E" }}>
-            <div className="font-mono-luna" style={{ fontSize: "0.70rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E", fontWeight: 700, marginBottom: "0.7rem" }}>{p.label}</div>
-            <div style={{ fontSize: "0.83rem", color: "#000", lineHeight: 1.7, fontWeight: 400 }}>{p.text}</div>
+          <div key={i} className="luna-card-bordered">
+            <div className="luna-source" style={{ color: "#A8185E", marginBottom: "0.7rem" }}>{p.label}</div>
+            <div style={{ fontSize: "0.83rem", color: "#000", lineHeight: 1.7 }}>{p.text}</div>
           </div>
         ))}
       </div>
     </div>
 
-    {/* Scale proof point — five individual tiles */}
+    {/* Scale proof */}
     <div style={{ marginTop: "2rem", maxWidth: 960 }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.66rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#A8185E", marginBottom: "1rem" }}>
+      <div className="luna-source" style={{ color: "#A8185E", marginBottom: "1rem" }}>
         LUNA · Entity Resolution at Scale
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)" }}>
+      <div className="luna-grid-5col">
         {[
           { num: "2B+",   label: "Addresses",     accent: "#A8185E" },
           { num: "130M+", label: "Buildings",     accent: "#DF2467" },
@@ -89,9 +79,9 @@ const EntityResolutionSlide = () => (
           { num: "160M+", label: "Tax Records",   accent: "#A8185E" },
           { num: "12B+",  label: "Relationships", accent: "#DF2467" },
         ].map((s, i) => (
-          <div key={i} style={{ background: "#fff", padding: "1.6rem 1rem", textAlign: "center", borderTop: `4px solid ${s.accent}` }}>
-            <div style={{ fontSize: "2.2rem", fontWeight: 700, color: s.accent, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: "0.64rem" }}>{s.num}</div>
-            <div style={{ fontFamily: "var(--mono)", fontSize: "0.66rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--ink-light))", fontWeight: 600 }}>{s.label}</div>
+          <div key={i} className="luna-stat-tile" style={{ borderTopColor: s.accent }}>
+            <div className="luna-stat-num" style={{ color: s.accent }}>{s.num}</div>
+            <div className="luna-source">{s.label}</div>
           </div>
         ))}
       </div>
@@ -100,23 +90,21 @@ const EntityResolutionSlide = () => (
       </div>
     </div>
 
-    {/* Resolution pipeline diagram */}
-    <div style={{ marginTop: "1.5px", maxWidth: 960, background: "#fff", border: "1px solid hsl(var(--pink) / 0.2)", padding: "1.6rem 2rem" }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "1rem" }}>
-        Resolution Pipeline
-      </div>
-      <img src="/luna/Resolution.png" alt="LUNA resolution pipeline: Input to Standardize to Geocode through Address Store 2B+, Building Data 130M+, Parcel Data 100M+, Tax + APN 160M+ into Matching Engine with Confidence Score and AI Explain" style={{ width: "100%", maxWidth: 860, display: "block" }} />
+    {/* Resolution pipeline */}
+    <div className="luna-img-block">
+      <div className="luna-source" style={{ marginBottom: "1rem" }}>Resolution Pipeline</div>
+      <img src="/luna/Resolution.png" alt="LUNA resolution pipeline" style={{ width: "100%", maxWidth: 860, display: "block" }} />
     </div>
 
     {/* Four RE entity types */}
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", marginTop: "2rem", maxWidth: 960 }}>
+    <div className="luna-grid-4col" style={{ marginTop: "2rem", maxWidth: 960 }}>
       {reTypes.map((t, i) => (
-        <div key={i} style={{ background: "#fff", padding: "1.2rem 1.4rem", borderLeft: `4px solid ${t.color}` }}>
+        <div key={i} className="luna-card-bordered" style={{ borderLeftColor: t.color, borderLeftWidth: 4, borderLeftStyle: "solid" }}>
           <div style={{ fontSize: "0.82rem", fontWeight: 700, color: t.color, marginBottom: "0.15rem" }}>{t.label}</div>
-          <div className="font-mono-luna" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", color: "hsl(var(--ink-light))", marginBottom: "0.7rem", textTransform: "uppercase" }}>{t.sub}</div>
+          <div className="luna-source" style={{ marginBottom: "0.7rem" }}>{t.sub}</div>
           <div style={{ fontSize: "0.78rem", color: "#000", lineHeight: 1.6, marginBottom: "0.8rem" }}>{t.desc}</div>
           <div style={{ borderTop: "1px solid hsl(var(--pink) / 0.15)", paddingTop: "0.6rem" }}>
-            <div className="font-mono-luna" style={{ fontSize: "0.64rem", letterSpacing: "0.12em", textTransform: "uppercase", color: t.color, marginBottom: "0.2rem", opacity: 0.8 }}>Sample use cases</div>
+            <div className="luna-source" style={{ color: t.color, marginBottom: "0.2rem", opacity: 0.8 }}>Sample use cases</div>
             <div style={{ fontSize: "0.74rem", color: "hsl(var(--ink-mid))", lineHeight: 1.5 }}>{t.use}</div>
           </div>
         </div>

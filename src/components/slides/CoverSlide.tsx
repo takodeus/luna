@@ -63,18 +63,18 @@ const CoverSlide = () => (
       Data Debt Is the New Tech Debt.
     </h1>
 
-    <p style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", fontWeight: 500, fontStyle: "italic", color: "#000", lineHeight: 1.5, maxWidth: 560, margin: "0.8rem 0 1.2rem" }}>
+    <p className="luna-serif-quote">
       The dashboard consumed the last era of enterprise data. The agent will consume the next.
     </p>
 
-    <p style={{ fontSize: "0.87rem", color: "#000", lineHeight: 1.8, maxWidth: 620, margin: "0 0 1.8rem" }}>
+    <p className="luna-body-text">
       Systems of record and workflow platforms were built to capture transactions, enforce process, and organize human work. The next buyer requirement is different: those same records must now be usable by agents. The constraint is no longer only code. It is whether enterprise data carries enough <strong style={{ color: "#000" }}>shared meaning, traceable context, and integration</strong> to support action.
     </p>
 
-    {/* 4 tiles — 2×2 grid */}
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", maxWidth: 800 }}>
+    {/* 4 tiles — responsive grid */}
+    <div className="luna-tile-grid-2x2">
       {tiles.map((tile, i) => (
-        <div key={i} style={{ background: "#fff", padding: "1.4rem 1.6rem", borderTop: `3px solid ${tile.color}` }}>
+        <div key={i} className="luna-tile" style={{ borderTop: `3px solid ${tile.color}` }}>
           {tile.kind === "single" ? (
             <div style={{ display: "flex", alignItems: "baseline", gap: "0.35rem", marginBottom: "0.55rem", flexWrap: "wrap" }}>
               <span style={{ fontSize: "1.65rem", fontWeight: 700, color: tile.color, letterSpacing: "-0.02em", lineHeight: 1 }}>{tile.stat}</span>
@@ -86,12 +86,12 @@ const CoverSlide = () => (
               <div style={{ fontSize: "0.92rem", fontWeight: 700, color: "#000", lineHeight: 1.3, marginBottom: "0.8rem" }}>
                 {tile.warning}<sup style={{ fontSize: "0.6em", color: tile.color, fontWeight: 700, marginLeft: "1px" }}>{tile.sup}</sup>
               </div>
-              <div style={{ display: "flex", gap: "0", marginBottom: "0.7rem" }}>
+              <div className="luna-split-stat">
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: "1.65rem", fontWeight: 700, color: tile.color, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: "0.2rem" }}>{tile.left.stat}</div>
                   <div style={{ fontSize: "0.74rem", color: "#000", lineHeight: 1.4 }}>{tile.left.label}</div>
                 </div>
-                <div style={{ width: "1px", background: "hsl(var(--pink) / 0.15)", margin: "0 0.9rem", flexShrink: 0, alignSelf: "stretch" }} />
+                <div className="luna-split-divider" />
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: "1.65rem", fontWeight: 700, color: tile.color, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: "0.2rem" }}>{tile.right.stat}</div>
                   <div style={{ fontSize: "0.74rem", color: "#000", lineHeight: 1.4 }}>{tile.right.label}</div>
@@ -100,15 +100,15 @@ const CoverSlide = () => (
             </>
           )}
           <p style={{ fontSize: "0.79rem", color: "#000", lineHeight: 1.65, margin: "0 0 0.5rem" }}>{tile.body}</p>
-          <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-light))" }}>{tile.source}</div>
+          <div className="luna-source">{tile.source}</div>
         </div>
       ))}
     </div>
 
     {/* Footnotes */}
-    <div style={{ marginTop: "1rem", display: "flex", flexDirection: "column", gap: "0.15rem", maxWidth: 800 }}>
+    <div className="luna-footnotes">
       {footnotes.map((fn, i) => (
-        <div key={i} style={{ fontFamily: "var(--mono)", fontSize: "0.58rem", color: "hsl(var(--ink-light))", letterSpacing: "0.04em", lineHeight: 1.5 }}>{fn}</div>
+        <div key={i} className="luna-footnote">{fn}</div>
       ))}
     </div>
   </section>
