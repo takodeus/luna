@@ -1,6 +1,7 @@
 const products = [
   {
     name: "LUNA",
+    accent: "#23A98E",
     tag: "Entity Resolution Engine",
     headline: "Best-in-class entity resolution engine, operating on MERIDIAN's graph infrastructure.",
     capabilities: [
@@ -12,6 +13,7 @@ const products = [
   },
   {
     name: "MERIDIAN",
+    accent: "#A8185E",
     tag: "Knowledge Graph Database",
     dark: true,
     headline: "A high-performance GraphDB for complex analytical workloads. SQL and GQL native.",
@@ -24,6 +26,7 @@ const products = [
   },
   {
     name: "ATLAS",
+    accent: "#1B70B1",
     tag: "Orchestration Layer",
     headline: "A chat-based orchestration agent that lets users query their private graph in natural language.",
     capabilities: [
@@ -52,7 +55,7 @@ const BuildBuySlide = () => (
         <div key={i} style={{
           background: p.dark ? "#A8185E" : "#fff",
           padding: "2rem",
-          borderTop: `4px solid ${p.dark ? "#DF2467" : "#A8185E"}`,
+          borderTop: `4px solid ${p.accent}`,
           display: "flex",
           flexDirection: "column",
           gap: "1.2rem",

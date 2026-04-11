@@ -3,6 +3,7 @@ import { useState } from "react";
 const breaks = [
   {
     num: "01 / 04",
+    color: "#A8185E",
     category: "Entity Resolution",
     title: "The same asset lives in five systems with five different IDs.",
     desc: "The property management system has one identifier. The investment platform has another. The JV partner's system has a third. External data providers have their own. An AI agent querying across these systems gets four records for the same asset. Without probabilistic entity resolution, it has no way to know they are the same thing.",
@@ -11,6 +12,7 @@ const breaks = [
   },
   {
     num: "02 / 04",
+    color: "#1B70B1",
     category: "Metric Drift",
     title: "Occupancy means something different to every operator.",
     desc: "A system of record stores an occupancy figure. It doesn't store the calculation logic that produced it: whether month-to-month tenants are included, how recently vacated units are treated, what the denominator is. When an AI agent consolidates across properties managed by different operators, it adds numbers that don't mean the same thing.",
@@ -19,6 +21,7 @@ const breaks = [
   },
   {
     num: "03 / 04",
+    color: "#CC5800",
     category: "Missing Context",
     title: "The number exists. The reason it changed doesn't.",
     desc: "Renewal rates dropped 12% at a cluster of assets. The system of record captures the new rate. It doesn't capture that a property manager transitioned eight months ago, that two properties have deferred maintenance complaints, or that a competitor ran an incentive campaign in that submarket. The agent sees the metric. It cannot explain it.",
@@ -27,6 +30,7 @@ const breaks = [
   },
   {
     num: "04 / 04",
+    color: "#611FAD",
     category: "Decision Lineage",
     title: "The agent decided. No one can say why.",
     desc: "Data lineage records what moved. Decision lineage records why the agent concluded what it did: which definition applied, which authority it trusted, and what version of the world it was operating on. Systems of record log outcomes. Almost none log reasoning chains, and that is what agents, auditors, and LPs increasingly require.",
@@ -79,8 +83,8 @@ const BreaksSlide = () => {
                     padding: 0, marginBottom: isOpen ? "0.7rem" : 0,
                   }}
                 >
-                  <span className="luna-source" style={{ color: "#A8185E" }}>{b.egLabel}</span>
-                  <span style={{ color: "#A8185E", fontSize: "0.9rem", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.2s", lineHeight: 1 }}>›</span>
+                  <span className="luna-source" style={{ color: b.color }}>{b.egLabel}</span>
+                  <span style={{ color: b.color, fontSize: "0.9rem", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.2s", lineHeight: 1 }}>›</span>
                 </button>
 
                 {isOpen && (

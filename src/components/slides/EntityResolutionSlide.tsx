@@ -11,21 +11,21 @@ const reTypes = [
     sub: "Across Instruments",
     desc: "Link asset-level data to all related real estate instruments, including debt, equity, insurance, and more.",
     use: "Capital stack transparency, layered risk views, collateral validation",
-    color: "#DF2467",
+    color: "#1B70B1",
   },
   {
     label: "Geospatial Entities",
     sub: "Across Time and Sources",
     desc: "Match entities that changed names, split or merged parcels, were restructured or otherwise evolved over time.",
     use: "Historical benchmarking, lien tracking, reinsurance, capital markets",
-    color: "#A8185E",
+    color: "#23A98E",
   },
   {
     label: "People, Companies",
     sub: "and Legal Entities",
     desc: "Unify entities like owners, borrowers, managers, and tenants across deals, funds, loan tapes, leases, and registries.",
     use: "Ownership chains, portfolio views, KYC, compliance, underwriting",
-    color: "#000",
+    color: "#611FAD",
   },
 ];
 

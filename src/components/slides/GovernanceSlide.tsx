@@ -1,7 +1,7 @@
 const quadrants = [
   {
     label: "Entity Governance",
-    bg: "#A8185E",
+    bg: "#23A98E",
     engine: "Resolved by LUNA",
     items: [
       "Who owns the canonical definition of a business entity?",
@@ -12,7 +12,7 @@ const quadrants = [
   },
   {
     label: "Metric Governance",
-    bg: "#A8185E",
+    bg: "#1B70B1",
     engine: "Governed in MERIDIAN",
     items: [
       "Where is business logic defined, and by whom?",
@@ -23,7 +23,7 @@ const quadrants = [
   },
   {
     label: "Context Governance",
-    bg: "#DF2467",
+    bg: "#CC5800",
     engine: "Stored in MERIDIAN",
     items: [
       "What events are captured, and at what granularity?",

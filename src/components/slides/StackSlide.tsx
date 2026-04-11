@@ -58,7 +58,7 @@ const StackSlide = () => (
       </div>
 
       {/* Pyramid tiers */}
-      <div className="luna-pyramid-tier" style={{ width: "84%", margin: "0 auto 2px", background: "#DF2467" }}>
+      <div className="luna-pyramid-tier" style={{ width: "84%", margin: "0 auto 2px", background: "#23A98E" }}>
         <div>
           <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of innovation</div>
           <div className="luna-pyramid-sub">Intelligence and adaptation: analytics, ML pipelines, copilot interfaces</div>
@@ -66,7 +66,7 @@ const StackSlide = () => (
         <div className="luna-pyramid-mode">Mode 2</div>
       </div>
 
-      <div className="luna-pyramid-tier" style={{ width: "92%", margin: "0 auto 2px", background: "#A8185E" }}>
+      <div className="luna-pyramid-tier" style={{ width: "92%", margin: "0 auto 2px", background: "#611FAD" }}>
         <div>
           <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of differentiation</div>
           <div className="luna-pyramid-sub">Domain models and governed meaning: business rules, differentiating workflows</div>
@@ -74,7 +74,7 @@ const StackSlide = () => (
         <div className="luna-pyramid-mode">Mode 2</div>
       </div>
 
-      <div className="luna-pyramid-tier" style={{ width: "100%", background: "#000" }}>
+      <div className="luna-pyramid-tier" style={{ width: "100%", background: "#1B70B1" }}>
         <div>
           <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of record</div>
           <div className="luna-pyramid-sub" style={{ color: "rgba(255,255,255,0.45)" }}>Provenance and trust: ERP, CRE platforms, operational data</div>

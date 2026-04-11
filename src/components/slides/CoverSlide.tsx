@@ -22,7 +22,7 @@ const tiles: Tile[] = [
     kind: "single",
     stat: "96%",
     warning: "say integration is decisive",
-    color: "#A8185E",
+    color: "#1B70B1",
     sup: 2,
     body: "of IT leaders say AI agent success depends on seamless data integration across all systems.",
     source: "Salesforce · Feb 2026",
@@ -30,7 +30,7 @@ const tiles: Tile[] = [
   {
     kind: "split",
     warning: "Integration is failing as agents proliferate",
-    color: "#DF2467",
+    color: "#CC5800",
     sup: 2,
     left:  { stat: "27%", label: "of enterprise apps are integrated" },
     right: { stat: "50%", label: "of AI agents already operate in silos" },
@@ -40,7 +40,7 @@ const tiles: Tile[] = [
   {
     kind: "split",
     warning: "Productive AI already running outside SAP",
-    color: "#A8185E",
+    color: "#23A98E",
     sup: 3,
     left:  { stat: "77%", label: "using non-SAP solutions" },
     right: { stat: "3%",  label: "using SAP's own AI tools" },

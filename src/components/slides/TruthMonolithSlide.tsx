@@ -1,7 +1,7 @@
 const truths = [
   {
     label: "System of Record Truth",
-    color: "#A8185E",
+    color: "#1B70B1",
     tag: "Transactional · Authoritative · Historical",
     items: [
       "Authoritative for booked transactions: GL trial balance, lease execution, payment post.",
@@ -23,7 +23,7 @@ const truths = [
   },
   {
     label: "Event Stream Truth",
-    color: "#DF2467",
+    color: "#CC5800",
     tag: "Temporal · Causal · Continuous",
     items: [
       "The state of the world at the time of the event: operational events, state changes, milestones, and observed conditions.",

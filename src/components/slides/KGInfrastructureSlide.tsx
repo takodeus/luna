@@ -6,10 +6,10 @@ const pillars = [
 ];
 
 const reasoningModels = [
-  { label: "Causal", q: "Why did renewal rates drop?", desc: "Traverses graph links from the metric through operational events, PM transitions, and market conditions to surface the root factor." },
-  { label: "Comparative", q: "How does Asset A compare to Asset B?", desc: "Normalizes metrics via the semantic layer and aligns entity dimensions before comparing." },
-  { label: "Predictive", q: "Which assets are likely at risk?", desc: "Detects context graph patterns that preceded prior defaults or underperformance and scores current exposure." },
-  { label: "Diagnostic", q: "Why is this metric inconsistent?", desc: "Traces data lineage through semantic definitions and isolates where meaning diverges across sources." },
+  { label: "Causal", color: "#A8185E", q: "Why did renewal rates drop?", desc: "Traverses graph links from the metric through operational events, PM transitions, and market conditions to surface the root factor." },
+  { label: "Comparative", color: "#1B70B1", q: "How does Asset A compare to Asset B?", desc: "Normalizes metrics via the semantic layer and aligns entity dimensions before comparing." },
+  { label: "Predictive", color: "#23A98E", q: "Which assets are likely at risk?", desc: "Detects context graph patterns that preceded prior defaults or underperformance and scores current exposure." },
+  { label: "Diagnostic", color: "#611FAD", q: "Why is this metric inconsistent?", desc: "Traces data lineage through semantic definitions and isolates where meaning diverges across sources." },
 ];
 
 const KGInfrastructureSlide = () => (
@@ -71,7 +71,7 @@ const KGInfrastructureSlide = () => (
       <div className="luna-grid-4col">
         {reasoningModels.map((r, i) => (
           <div key={i} className="luna-card-bordered">
-            <div style={{ fontSize: "1rem", fontWeight: 600, color: "#A8185E", marginBottom: "0.3rem" }}>{r.label}</div>
+            <div style={{ fontSize: "1rem", fontWeight: 600, color: r.color || "#A8185E", marginBottom: "0.3rem" }}>{r.label}</div>
             <div style={{ fontSize: "0.74rem", fontStyle: "italic", color: "#DF2467", marginBottom: "0.7rem" }}>{r.q}</div>
             <div style={{ fontSize: "0.78rem", color: "#000", lineHeight: 1.6 }}>{r.desc}</div>
           </div>
