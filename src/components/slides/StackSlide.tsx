@@ -4,7 +4,7 @@ const layers = [
     modeSub: "Built to Act",
     modeColor: "hsl(var(--pink))",
     rows: [
-      { label: "Systems of action", sub: "Autonomous agents: agentic AI delivering decisions and execution", fill: "hsl(var(--pink))", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 56 },
+      { label: "Systems of action", sub: "Autonomous agents: agentic AI delivering decisions and execution", fill: "hsl(var(--pink))", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 70 },
     ],
   },
   {
@@ -12,24 +12,24 @@ const layers = [
     modeSub: null,
     modeColor: null,
     rows: [
-      { label: "Semantic governance layer", sub: "LUNA · MERIDIAN · ATLAS: entity resolution, knowledge graph, orchestration", fill: "none", dashed: true, text: "hsl(var(--pink))", subText: "hsl(var(--pink-mid))", height: 60 },
+      { label: "Semantic governance layer", sub: "LUNA · MERIDIAN · ATLAS: entity resolution, knowledge graph, orchestration", fill: "none", dashed: true, text: "hsl(var(--pink))", subText: "hsl(var(--pink-mid))", height: 75 },
     ],
   },
   {
     mode: "Mode 2",
     modeSub: "Built to Change",
-    modeColor: "#4A3888",
+    modeColor: "hsl(var(--blue))",
     rows: [
-      { label: "Systems of innovation", sub: "Intelligence & adaptation: analytics, ML pipelines, copilot interfaces", fill: "#4A3888", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
-      { label: "Systems of differentiation", sub: "Orchestration & plural ontologies: domain models, governed definitions", fill: "#2E2460", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
+      { label: "Systems of innovation", sub: "Intelligence & adaptation: analytics, ML pipelines, copilot interfaces", fill: "hsl(var(--blue))", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 63 },
+      { label: "Systems of differentiation", sub: "Orchestration & plural ontologies: domain models, governed definitions", fill: "hsl(var(--amber))", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 63 },
     ],
   },
   {
     mode: "Mode 1",
     modeSub: "Built to Last",
-    modeColor: "hsl(var(--foreground))",
+    modeColor: "hsl(var(--green))",
     rows: [
-      { label: "Systems of record", sub: "Provenance & trust: operational data, transaction ledgers, source systems", fill: "hsl(var(--foreground))", text: "#fff", subText: "rgba(255,255,255,0.45)", height: 50 },
+      { label: "Systems of record", sub: "Provenance & trust: operational data, transaction ledgers, source systems", fill: "hsl(var(--green))", text: "#fff", subText: "rgba(255,255,255,0.55)", height: 63 },
     ],
   },
 ];
@@ -43,13 +43,12 @@ const StackSlide = () => (
       <span className="luna-accent">Tri-modal. Built to act.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
-      "The universal semantic layer has not yet been achieved by any organization or vendor." (Gartner, April 2025, G00826629). The position between systems of record and systems of action remains open.
+      "The universal semantic layer has not yet been achieved by any solution or vendor." (Gartner, April 2025, G00826629). The position between systems of record and systems of action remains open.
     </p>
 
-    <div style={{ display: "flex", gap: 0, marginTop: "2rem", maxWidth: 920, flexDirection: "column" }}>
+    <div style={{ display: "flex", gap: 0, marginTop: "2rem", maxWidth: 960, flexDirection: "column" }}>
       {layers.map((group, gi) => (
-        <div key={gi} style={{ display: "flex", gap: 0, marginBottom: group.rows[0]?.dashed ? 0 : "2px" }}>
-          {/* Mode label column */}
+        <div key={gi} style={{ display: "flex", gap: 0, marginBottom: "2px" }}>
           <div style={{
             width: 88,
             flexShrink: 0,
@@ -58,33 +57,32 @@ const StackSlide = () => (
             justifyContent: "center",
             flexDirection: "column",
             gap: "0.15rem",
-            background: group.modeColor ? `${group.modeColor}12` : "transparent",
-            borderLeft: group.modeColor ? `3px solid ${group.modeColor}40` : "3px solid transparent",
+            background: group.modeColor ? `${group.modeColor}18` : "transparent",
+            borderLeft: group.modeColor ? `3px solid ${group.modeColor}` : "3px solid transparent",
             padding: "0.4rem 0",
           }}>
             {group.mode && (
               <>
                 <span style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", letterSpacing: "0.14em", textTransform: "uppercase", color: group.modeColor!, fontWeight: 600 }}>{group.mode}</span>
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.48rem", letterSpacing: "0.1em", color: group.modeColor!, opacity: 0.65 }}>{group.modeSub}</span>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.48rem", letterSpacing: "0.1em", color: group.modeColor!, opacity: 0.7 }}>{group.modeSub}</span>
               </>
             )}
           </div>
 
-          {/* Row bars */}
           <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2px" }}>
             {group.rows.map((row, ri) => (
               <div key={ri} style={{
                 height: row.height,
-                background: row.dashed ? "hsl(var(--pink-light))" : row.fill,
-                border: row.dashed ? "2px dashed #D4537E" : "none",
+                background: row.dashed ? "#FBF1F2" : row.fill,
+                border: row.dashed ? "2px dashed hsl(var(--pink))" : "none",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                padding: "0 1.4rem",
-                gap: "0.2rem",
+                padding: "0 1.6rem",
+                gap: "0.25rem",
               }}>
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: row.text }}>{row.label}</span>
-                <span style={{ fontSize: "0.75rem", color: row.subText, lineHeight: 1.4 }}>{row.sub}</span>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: row.text }}>{row.label}</span>
+                <span style={{ fontSize: "0.8rem", color: row.subText, lineHeight: 1.4 }}>{row.sub}</span>
               </div>
             ))}
           </div>
@@ -92,7 +90,7 @@ const StackSlide = () => (
       ))}
     </div>
 
-    <p className="font-mono-luna" style={{ fontSize: "0.58rem", letterSpacing: "0.1em", color: "hsl(var(--ink-light))", marginTop: "1.5rem", maxWidth: 920 }}>
+    <p className="font-mono-luna" style={{ fontSize: "0.56rem", letterSpacing: "0.1em", color: "hsl(var(--ink-light))", marginTop: "1.5rem", maxWidth: 960 }}>
       SOURCE: Gartner, Christopher Long, "Rethink Semantic Layers to Support the Future of Analytics and AI," April 2025 (G00826629). Adapted from Gartner's Bi-Modal Pace Layered Strategy, extended to tri-modal with Mode 3 (Built to Act). Gartner does not endorse any vendor, product or service depicted.
     </p>
   </section>

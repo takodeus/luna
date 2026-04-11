@@ -43,7 +43,7 @@ const TruthMonolithSlide = () => (
     <h2 className="luna-h2">
       Truth is no longer monolithic.
       <br />
-      <span className="luna-accent">Three kinds. Different authority. Same organization.</span>
+      <span className="luna-accent">Three kinds. Different authority. Same system.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
       The "single source of truth" mandate worked when data was slow, centralized, and human-operated. AI agents, distributed operations, and real-time data break every one of those assumptions. The question is no longer which system is right. It's which truth applies to this decision.
@@ -72,7 +72,7 @@ const TruthMonolithSlide = () => (
     <div style={{ marginTop: "2rem", maxWidth: 960, borderLeft: "4px solid hsl(var(--pink))", padding: "1.6rem 2rem", background: "hsl(var(--pink-light))" }}>
       <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "hsl(var(--pink))", marginBottom: "0.9rem" }}>Governance Implications</div>
       <div style={{ fontSize: "0.87rem", color: "hsl(var(--foreground))", marginBottom: "0.8rem", lineHeight: 1.6 }}>
-        <strong style={{ color: "hsl(var(--pink))" }}>Truth arbitration</strong> becomes a governance function, not a data quality problem. When three valid truths coexist, the organization needs rules for which one governs each decision.
+        <strong style={{ color: "hsl(var(--pink))" }}>Truth arbitration</strong> becomes a governance function, not a data quality problem. When three valid truths coexist, the system needs rules for which one governs each decision.
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
         {[

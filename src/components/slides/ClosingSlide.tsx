@@ -7,12 +7,12 @@ const findings = [
   {
     source: "Gartner · April 2025 (G00826629)",
     quote: "Demand for semantic governance is converging from BI, data management, and AI/ML platforms simultaneously.",
-    context: "The pressure is converging on an open position in the stack from multiple directions. The organization that occupies this position first, with governed entity resolution, versioned metric definitions, and traceable context, establishes a structural advantage that compounds with every data relationship and agent deployment.",
+    context: "The pressure is converging on an open position in the stack from multiple directions. The solution that occupies this position first, with governed entity resolution, versioned metric definitions, and traceable context, establishes a structural advantage that compounds with every data relationship and agent deployment.",
   },
   {
     source: "McKinsey Global Institute · March 2026",
     quote: "$430–550B in annual value is addressable in real estate, construction, and development.",
-    context: "None of that value is accessible without governed, traceable AI execution. The gap between what AI can theoretically deliver and what organizations can actually capture is not a model gap. It is a data infrastructure gap: entity resolution, semantic governance, context, and provenance at the asset level.",
+    context: "None of that value is accessible without governed, traceable AI execution. The gap between what AI can theoretically deliver and what solutions can actually capture is not a model gap. It is a data infrastructure gap: entity resolution, semantic governance, context, and provenance at the asset level.",
   },
 ];
 
@@ -45,7 +45,7 @@ const ClosingSlide = () => (
     <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.4rem 2rem", background: "hsl(var(--pink))", borderLeft: "4px solid hsl(var(--pink))" }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "0.5rem" }}>The Strategic Position</div>
       <div style={{ fontSize: "0.93rem", color: "#fff", lineHeight: 1.65 }}>
-        The organization that owns the intelligence layer in real estate (entity resolution, semantic governance, the context graph) establishes a position that compounds with every data relationship, every market cycle, and every agent deployment. The architecture is proven. The question is when, not whether.
+        The solution that owns the intelligence layer in real estate (entity resolution, semantic governance, the context graph) establishes a position that compounds with every data relationship, every market cycle, and every agent deployment. The architecture is proven. The question is when, not whether.
       </div>
     </div>
 

@@ -33,7 +33,7 @@ const KGInfrastructureSlide = () => (
       <span className="luna-accent">not a feature.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
-      Organizations that build this layer gain a structural advantage that compounds over time. The graph doesn't just store data. It accumulates understanding.
+      Solutions that build this layer gain a structural advantage that compounds over time. The graph doesn't just store data. It accumulates understanding.
     </p>
 
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "2rem", maxWidth: 960 }}>

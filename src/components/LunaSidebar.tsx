@@ -34,14 +34,20 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
     <>
       <div className={`luna-overlay ${isOpen ? "open" : ""}`} onClick={onClose} />
       <nav className={`luna-sidebar ${isOpen ? "open" : ""}`}>
+
         <div className="luna-sidebar-logo">
-          <div className="luna-logo-mark">L</div>
+          <img
+            src="/luna/cherre-icon.jpg"
+            alt="Cherre"
+            style={{ width: 36, height: 36, objectFit: "contain", borderRadius: 4, flexShrink: 0 }}
+          />
           <div className="luna-logo-text">
-            <strong>Luna</strong>
+            <strong>Cherre</strong>
             <br />
             The Data Infrastructure
           </div>
         </div>
+
         <span className="luna-nav-label">Presentation</span>
         <div className="luna-nav">
           {navItems.map((item) => (
@@ -55,14 +61,14 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
             </button>
           ))}
         </div>
+
         <div className="luna-sidebar-progress">
           <div className="luna-sidebar-progress-fill" style={{ width: `${progress}%` }} />
         </div>
+
         <div className="luna-sidebar-footer">
           <span className="luna-sidebar-tag">
-            Real Estate · Capital Markets
-            <br />
-            <span>Cherre</span> · Luna · 2026
+            Cherre Inc Copyright 2026
           </span>
         </div>
       </nav>
