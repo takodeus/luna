@@ -7,15 +7,18 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { id: "s1", num: "i", label: "The Substrate Gap" },
-  { id: "s2", num: "ii", label: "Three Eras" },
-  { id: "s3", num: "iii", label: "What Agents Require" },
-  { id: "s4", num: "iv", label: "Four Structural Breaks" },
-  { id: "s5", num: "v", label: "Knowledge Architecture" },
-  { id: "s6", num: "vi", label: "Automate vs. Decide" },
-  { id: "s7", num: "vii", label: "The Empty Layer" },
-  { id: "s8", num: "viii", label: "What Fills the Layer" },
-  { id: "s9", num: "ix", label: "What Comes Next" },
+  { id: "s1",  num: "i",    label: "The Intelligence Layer" },
+  { id: "s2",  num: "ii",   label: "Three Eras" },
+  { id: "s3",  num: "iii",  label: "What Agents Require" },
+  { id: "s4",  num: "iv",   label: "Four Structural Gaps" },
+  { id: "s5",  num: "v",    label: "Entity Resolution" },
+  { id: "s6",  num: "vi",   label: "Knowledge Architecture" },
+  { id: "s7",  num: "vii",  label: "Knowledge Graph" },
+  { id: "s8",  num: "viii", label: "Governance Is the Architecture" },
+  { id: "s9",  num: "ix",   label: "Automation vs. Judgment" },
+  { id: "s10", num: "x",    label: "The Empty Layer" },
+  { id: "s11", num: "xi",   label: "What Fills the Layer" },
+  { id: "s12", num: "xii",  label: "What Comes Next" },
 ];
 
 interface LunaSidebarProps {

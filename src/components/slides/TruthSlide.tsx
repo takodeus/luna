@@ -39,8 +39,8 @@ const layers = [
 ];
 
 const KnowledgeGraphSlide = () => (
-  <section className="slide" id="s5">
-    <div className="slide-n">v — The Knowledge Graph</div>
+  <section className="slide" id="s6">
+    <div className="slide-n">vi — The Knowledge Graph</div>
     <h2 className="luna-h2">
       Four layers. One question:
       <br />
@@ -65,6 +65,37 @@ const KnowledgeGraphSlide = () => (
           </div>
         </div>
       ))}
+    </div>
+
+    {/* Four-Question Test */}
+    <div style={{ marginTop: "2.5rem", maxWidth: 960 }}>
+      <div className="font-mono-luna" style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "1rem" }}>The Four-Question Test — A well-designed knowledge architecture answers all four simultaneously</div>
+      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.83rem" }}>
+        <thead>
+          <tr style={{ background: "hsl(var(--foreground))", color: "#f0ebf3" }}>
+            {["Question", "Layer", "What it enables"].map((h) => (
+              <th key={h} style={{ padding: "0.7rem 1rem", textAlign: "left", fontFamily: "var(--mono)", fontSize: "0.58rem", letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 500 }}>{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { q: "What is this thing?", qColor: "hsl(var(--green))", layer: "Ontology", enables: "Stable meaning across systems, teams, agents, and time." },
+            { q: "How is it measured?", qColor: "hsl(var(--blue))", layer: "Semantic Layer", enables: "Governed, consistent business logic every user and agent can trust." },
+            { q: "What is happening around it?", qColor: "hsl(var(--amber))", layer: "Context Graph", enables: "Provenance, explanation trails, and process awareness." },
+            { q: "What should happen next?", qColor: "hsl(var(--pink))", layer: "Reasoning", enables: "Grounded synthesis that supports judgment and action." },
+          ].map((row, i) => (
+            <tr key={i} style={{ borderBottom: "1px solid hsl(var(--rule))", background: i % 2 === 0 ? "#fff" : "hsl(var(--bg-alt))" }}>
+              <td style={{ padding: "0.85rem 1rem", borderLeft: `4px solid ${row.qColor}`, color: row.qColor, fontWeight: 500 }}>{row.q}</td>
+              <td style={{ padding: "0.85rem 1rem", fontWeight: 600 }}>{row.layer}</td>
+              <td style={{ padding: "0.85rem 1rem", color: "hsl(var(--ink-mid))" }}>{row.enables}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div style={{ background: "hsl(var(--pink-light))", border: "1px solid hsl(var(--pink-border))", padding: "0.9rem 1rem", marginTop: "1.5px", fontSize: "0.83rem", fontWeight: 500, color: "hsl(var(--pink))", textAlign: "center" }}>
+        If the system can answer all four with grounded, consistent, and traceable responses, the architecture is working.
+      </div>
     </div>
   </section>
 );

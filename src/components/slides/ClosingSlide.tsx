@@ -17,7 +17,7 @@ const findings = [
 ];
 
 const ClosingSlide = () => (
-  <section className="slide slide-dark" id="s9">
+  <section className="slide slide-dark" id="s12">
     <div className="slide-n" style={{ color: "rgba(240,235,243,0.4)" }}>ix — What Comes Next</div>
 
     <h2 className="luna-h2" style={{ color: "#f0ebf3" }}>

@@ -59,8 +59,8 @@ const products = [
 ];
 
 const BuildBuySlide = () => (
-  <section className="slide" id="s8">
-    <div className="slide-n">viii — What Fills the Layer</div>
+  <section className="slide" id="s11">
+    <div className="slide-n">xi — What Fills the Layer</div>
     <h2 className="luna-h2">
       The architecture of the intelligence layer
       <br />
