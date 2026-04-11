@@ -31,7 +31,7 @@ const layers = [
 ];
 
 const KnowledgeGraphSlide = () => (
-  <section className="slide" id="s9">
+  <section className="slide" id="s8">
     <div className="slide-n">vii / Four Questions, Four Layers</div>
     <h2 className="luna-h2">
       Four layers. One question:

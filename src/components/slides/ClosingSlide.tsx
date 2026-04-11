@@ -37,7 +37,7 @@ const footnotes = [
 ];
 
 const ClosingSlide = () => (
-  <section className="slide" id="s14" style={{ background: "#FBF1F2" }}>
+  <section className="slide" id="s13" style={{ background: "#FBF1F2" }}>
     <div className="slide-n">xiii / What Comes Next</div>
 
     <h2 className="luna-h2">
@@ -71,7 +71,7 @@ const ClosingSlide = () => (
         <sup style={{ fontSize: "0.7em", color: "hsl(var(--pink-mid))", marginLeft: "1px" }}>1234</sup>
       </div>
       <div style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "0.8rem" }}>
-        The record will remain in systems of record. The control point will not. The winner will be the platform that turns fragmented records into agent-ready context through entity resolution, governed meaning, traceable context, and orchestration. In real estate, that is the intelligence layer.
+        The record will remain in systems of record. The control point will not. Every enterprise already has data lineage and data governance. Almost none have decision lineage or semantic governance. The winner will be the platform that closes that gap: entity resolution, governed meaning, traceable context, and orchestration built for agents, not reports.
       </div>
       <div style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#fff", lineHeight: 1.45 }}>
         The record stays where it is. The power moves to the layer that makes it usable by agents.

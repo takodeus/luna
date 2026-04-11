@@ -50,7 +50,7 @@ const quadrants = [
 ];
 
 const GovernanceSlide = () => (
-  <section className="slide" id="s11">
+  <section className="slide" id="s10">
     <div className="slide-n">ix / Governance</div>
     <h2 className="luna-h2">
       Governance is the architecture.
@@ -61,7 +61,19 @@ const GovernanceSlide = () => (
       Traditional data governance checks format, completeness, and access. The harder questions require governance embedded in the architecture itself, answered by the same infrastructure that makes knowledge graphs work.
     </p>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5px", background: "hsl(var(--rule))", border: "1px solid hsl(var(--rule))", marginTop: "2.5rem", maxWidth: 960 }}>
+    {/* Data governance → Semantic governance callout */}
+    <div style={{ maxWidth: 960, marginTop: "1.8rem", marginBottom: "1.5px", display: "flex", gap: "1.5px" }}>
+      <div style={{ flex: 1, background: "hsl(var(--pink-light))", borderLeft: "4px solid hsl(var(--pink-border))", padding: "1rem 1.4rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Data governance</div>
+        <div style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>Manages format, completeness, and access. Assumes a human closes the loop on exceptions.</div>
+      </div>
+      <div style={{ flex: 1, background: "hsl(var(--pink-light))", borderLeft: "4px solid hsl(var(--pink))", padding: "1rem 1.4rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.35rem" }}>Semantic governance</div>
+        <div style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>Manages meaning, context, and the reasoning chain itself. Assumes the agent is the loop. These are not the same problem.</div>
+      </div>
+    </div>
+
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5px", background: "hsl(var(--rule))", border: "1px solid hsl(var(--rule))", marginTop: "0", maxWidth: 960 }}>
       {quadrants.map((q, i) => (
         <div key={i} style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ background: q.bg, padding: "0.7rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>

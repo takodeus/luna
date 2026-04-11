@@ -40,7 +40,7 @@ const truths = [
 ];
 
 const TruthMonolithSlide = () => (
-  <section className="slide slide-alt" id="s7">
+  <section className="slide slide-alt" id="s6">
     <div className="slide-n">v / Plural Truth</div>
     <h2 className="luna-h2">
       Truth is no longer monolithic.

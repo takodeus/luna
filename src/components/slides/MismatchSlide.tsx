@@ -42,6 +42,18 @@ const MismatchSlide = () => (
       </tbody>
     </table>
 
+    {/* Rules → Reasoning inline callout */}
+    <div style={{ maxWidth: 960, marginTop: "1.5rem", marginBottom: 0, display: "flex", gap: "1.5px" }}>
+      <div style={{ flex: 1, background: "hsl(var(--bg-alt))", borderLeft: "4px solid hsl(var(--pink-border))", padding: "1rem 1.4rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Rules-based systems</div>
+        <div style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>A rules engine enforces policy. A human reads the exception and decides. The system records the outcome.</div>
+      </div>
+      <div style={{ flex: 1, background: "hsl(var(--pink-light))", borderLeft: "4px solid hsl(var(--pink))", padding: "1rem 1.4rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.35rem" }}>Reasoning-capable agents</div>
+        <div style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>Agents do not read exceptions. They inherit infrastructure. When the infrastructure carries incomplete meaning or no reasoning chain, the agent does not pause and ask. It proceeds.</div>
+      </div>
+    </div>
+
     {/* Style B: full-bleed pink banner — p.17 Gartner quote */}
     <div style={{ background: "hsl(var(--pink))", padding: "1.6rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.6rem" }}>

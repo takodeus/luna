@@ -4,7 +4,6 @@ import CoverSlide from "@/components/slides/CoverSlide";
 import EraMapSlide from "@/components/slides/EraMapSlide";
 import MismatchSlide from "@/components/slides/MismatchSlide";
 import BreaksSlide from "@/components/slides/BreaksSlide";
-import RulesReasoningSlide from "@/components/slides/RulesReasoningSlide";
 import TruthMonolithSlide from "@/components/slides/TruthMonolithSlide";
 import EntityResolutionSlide from "@/components/slides/EntityResolutionSlide";
 import TruthSlide from "@/components/slides/TruthSlide";
@@ -15,7 +14,7 @@ import StackSlide from "@/components/slides/StackSlide";
 import BuildBuySlide from "@/components/slides/BuildBuySlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
 
-const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s14"];
+const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13"];
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState("s1");
@@ -76,7 +75,6 @@ const Index = () => {
         <EraMapSlide />
         <MismatchSlide />
         <BreaksSlide />
-        <RulesReasoningSlide />
         <StackSlide />
         <TruthMonolithSlide />
         <EntityResolutionSlide />
