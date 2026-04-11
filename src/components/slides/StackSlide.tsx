@@ -39,15 +39,18 @@ const StackSlide = () => (
         <span>↑</span><span>↑</span><span>↑</span>
       </div>
 
-      {/* Semantic layer */}
-      <div className="luna-semantic-layer">
-        <div className="luna-source" style={{ color: "#A8185E", marginBottom: "0.3rem" }}>
-          Knowledge graph-powered semantic layer
+      {/* Semantic layer — Cherre's layer, full Plum */}
+      <div className="luna-semantic-layer" style={{ background: "#A8185E", border: "none", padding: "1.6rem 2rem" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.9rem", marginBottom: "0.7rem" }}>
+          <img src="/luna/cherre-icon.jpg" alt="Cherre" style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 3, flexShrink: 0, opacity: 0.95 }} />
+          <div style={{ fontFamily: "var(--mono)", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#fff" }}>
+            Knowledge graph-powered semantic layer
+          </div>
         </div>
-        <div style={{ fontSize: "0.82rem", color: "#000", marginBottom: "0.3rem" }}>
+        <div style={{ fontSize: "0.92rem", color: "rgba(255,255,255,0.88)", marginBottom: "0.45rem", paddingLeft: "2.9rem" }}>
           Entity resolution · Governed meaning · Orchestration for agents
         </div>
-        <div className="luna-source" style={{ color: "#A8185E", opacity: 0.65 }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", paddingLeft: "2.9rem" }}>
           LUNA · MERIDIAN · ATLAS
         </div>
       </div>
