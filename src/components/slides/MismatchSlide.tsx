@@ -9,7 +9,7 @@ const rows = [
 
 const MismatchSlide = () => (
   <section className="slide" id="s3">
-    <div className="slide-n">iii / What Agents Require</div>
+    <div className="slide-n">iii / What AI Agents Require</div>
     <h2 className="luna-h2">
       What AI agents require.
       <br />

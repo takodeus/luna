@@ -60,7 +60,7 @@ const CoverSlide = () => (
     <div className="slide-n">Cherre · 2026</div>
 
     <h1 className="luna-h1" style={{ maxWidth: 620 }}>
-      The Data Debt<br />Is the New Tech Debt.
+      The<br />Data Debt Is the New Tech Debt.
     </h1>
 
     <p className="luna-serif-quote">

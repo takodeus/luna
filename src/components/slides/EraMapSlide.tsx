@@ -1,6 +1,6 @@
 const EraMapSlide = () => (
   <section className="slide" id="s2">
-    <div className="slide-n">ii / Era Three: Built to Act</div>
+    <div className="slide-n">ii / Three Eras. Built to Act.</div>
     <h2 className="luna-h2">
       Forty years. Three eras.
       <br />
@@ -19,7 +19,7 @@ const EraMapSlide = () => (
             <span className="era-now-pill">Now</span>
           </div>
           <div className="era-row-year" style={{ color: "#fff" }}>2024 →</div>
-          <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#fff", marginTop: "0.5rem" }}>Built to act</div>
+          <div style={{ fontFamily: "var(--serif)", fontSize: "1rem", fontWeight: 700, fontStyle: "italic", color: "#fff", marginTop: "0.6rem", lineHeight: 1.2 }}>Built to act.</div>
         </div>
         <div className="era-row-cells">
           <div className="era-row-cell">
@@ -29,7 +29,6 @@ const EraMapSlide = () => (
           <div className="era-row-cell">
             <div className="era-cell-val" style={{ color: "#fff" }}>Systems of Action</div>
             <div className="era-cell-sub" style={{ color: "rgba(255,255,255,0.6)" }}>Autonomous agents</div>
-            <div className="era-cell-detail" style={{ color: "rgba(255,255,255,0.4)" }}>Reasoning-capable</div>
           </div>
           <div className="era-row-cell">
             <div className="era-cell-val" style={{ color: "#fff" }}>Knowledge Graph</div>
@@ -43,7 +42,7 @@ const EraMapSlide = () => (
         <div className="era-row-label">
           <span className="era-row-tag">Era Two</span>
           <div className="era-row-year">2005–2023</div>
-          <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "hsl(var(--ink-mid))", marginTop: "0.5rem" }}>Built to inform</div>
+          <div style={{ fontFamily: "var(--serif)", fontSize: "1rem", fontWeight: 700, fontStyle: "italic", color: "hsl(var(--ink-mid))", marginTop: "0.6rem", lineHeight: 1.2 }}>Built to inform.</div>
         </div>
         <div className="era-row-cells">
           <div className="era-row-cell">
@@ -66,7 +65,7 @@ const EraMapSlide = () => (
         <div className="era-row-label">
           <span className="era-row-tag">Era One</span>
           <div className="era-row-year">1971–2005</div>
-          <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginTop: "0.5rem" }}>Built to capture</div>
+          <div style={{ fontFamily: "var(--serif)", fontSize: "1rem", fontWeight: 700, fontStyle: "italic", color: "hsl(var(--ink-light))", marginTop: "0.6rem", lineHeight: 1.2 }}>Built to capture.</div>
         </div>
         <div className="era-row-cells">
           <div className="era-row-cell">

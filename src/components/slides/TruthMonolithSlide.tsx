@@ -35,7 +35,7 @@ const truths = [
 
 const TruthMonolithSlide = () => (
   <section className="slide" id="s6">
-    <div className="slide-n">vi / Truth Is No Longer Monolithic</div>
+    <div className="slide-n">v / Three Kinds of Truths</div>
     <h2 className="luna-h2">
       Three kinds of truths.<br />
       <span className="luna-accent">Different authority. One arbitration layer.</span>

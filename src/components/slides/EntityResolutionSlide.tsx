@@ -35,7 +35,7 @@ interface Props {
 
 const EntityResolutionSlide = ({ onImageClick }: Props) => (
   <section className="slide" id="s7">
-    <div className="slide-n">vi / The First Hard Problem Is Meaning</div>
+    <div className="slide-n">vi / The First Hard Problem</div>
     <h2 className="luna-h2">
       Entity resolution: the first hard problem.
       <br />
@@ -83,9 +83,9 @@ const EntityResolutionSlide = ({ onImageClick }: Props) => (
           { num: "160M+", label: "Tax Records",   accent: "#CC5800", bg: "#fdf7f3" },
           { num: "12B+",  label: "Relationships", accent: "#611FAD", bg: "#f8f4fd" },
         ].map((s, i) => (
-          <div key={i} style={{ background: s.bg, borderTop: `4px solid ${s.accent}`, padding: "1.2rem 1rem", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-            <div style={{ fontSize: "2rem", fontWeight: 700, color: s.accent, letterSpacing: "-0.02em", lineHeight: 1 }}>{s.num}</div>
-            <div className="luna-source" style={{ color: s.accent, opacity: 0.8 }}>{s.label}</div>
+          <div key={i} style={{ background: s.bg, borderTop: `4px solid ${s.accent}`, padding: "1.4rem 1.2rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            <div style={{ fontSize: "2.6rem", fontWeight: 700, color: s.accent, letterSpacing: "-0.03em", lineHeight: 1 }}>{s.num}</div>
+            <div className="luna-source" style={{ color: s.accent, opacity: 0.8, fontSize: "0.72rem", letterSpacing: "0.12em" }}>{s.label}</div>
           </div>
         ))}
       </div>
