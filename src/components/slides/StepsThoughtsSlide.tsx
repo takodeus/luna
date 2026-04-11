@@ -17,8 +17,8 @@ const thoughts = [
 ];
 
 const StepsThoughtsSlide = () => (
-  <section className="slide slide-alt" id="s9">
-    <div className="slide-n">ix — Automation vs. Judgment</div>
+  <section className="slide slide-alt" id="s10">
+    <div className="slide-n">x — Automation vs. Judgment</div>
     <h2 className="luna-h2">
       Automate steps aggressively.
       <br />

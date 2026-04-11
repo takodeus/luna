@@ -51,8 +51,8 @@ const reTypes = [
 ];
 
 const EntityResolutionSlide = () => (
-  <section className="slide" id="s5">
-    <div className="slide-n">v — Entity Resolution</div>
+  <section className="slide" id="s6">
+    <div className="slide-n">vi — Entity Resolution</div>
     <h2 className="luna-h2">
       Entity resolution: the first hard problem.
       <br />

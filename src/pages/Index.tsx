@@ -4,6 +4,7 @@ import CoverSlide from "@/components/slides/CoverSlide";
 import EraMapSlide from "@/components/slides/EraMapSlide";
 import MismatchSlide from "@/components/slides/MismatchSlide";
 import BreaksSlide from "@/components/slides/BreaksSlide";
+import TruthMonolithSlide from "@/components/slides/TruthMonolithSlide";
 import EntityResolutionSlide from "@/components/slides/EntityResolutionSlide";
 import TruthSlide from "@/components/slides/TruthSlide";
 import KGInfrastructureSlide from "@/components/slides/KGInfrastructureSlide";
@@ -13,7 +14,7 @@ import StackSlide from "@/components/slides/StackSlide";
 import BuildBuySlide from "@/components/slides/BuildBuySlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
 
-const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12"];
+const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13"];
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState("s1");
@@ -56,14 +57,12 @@ const Index = () => {
       <div className="luna-progress-bar">
         <div className="luna-progress-fill" style={{ width: `${progress}%` }} />
       </div>
-
       <div className="luna-mobile-bar">
         <span className="luna-mobile-brand">Luna</span>
         <button className="luna-menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span /><span /><span />
         </button>
       </div>
-
       <LunaSidebar
         activeSlide={activeSlide}
         progress={progress}
@@ -71,12 +70,12 @@ const Index = () => {
         onClose={() => setMenuOpen(false)}
         onNavigate={handleNavigate}
       />
-
       <main className="luna-main">
         <CoverSlide />
         <EraMapSlide />
         <MismatchSlide />
         <BreaksSlide />
+        <TruthMonolithSlide />
         <EntityResolutionSlide />
         <TruthSlide />
         <KGInfrastructureSlide />

@@ -37,8 +37,8 @@ const reasoningModels = [
 ];
 
 const KGInfrastructureSlide = () => (
-  <section className="slide slide-alt" id="s7">
-    <div className="slide-n">vii — Knowledge Graph</div>
+  <section className="slide slide-alt" id="s8">
+    <div className="slide-n">viii — Knowledge Graph</div>
     <h2 className="luna-h2">
       The knowledge graph is infrastructure,
       <br />

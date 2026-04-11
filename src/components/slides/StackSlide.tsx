@@ -3,8 +3,8 @@ const StackSlide = () => {
   const imgPath = `${base}gartner-fig4.png`.replace("//", "/");
 
   return (
-    <section className="slide" id="s10">
-      <div className="slide-n">x — The Stack &amp; The Empty Layer</div>
+    <section className="slide" id="s11">
+      <div className="slide-n">xi — The Stack &amp; The Empty Layer</div>
       <h2 className="luna-h2">
         The universal semantic layer
         <br />

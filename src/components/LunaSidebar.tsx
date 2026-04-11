@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react";
 
-interface NavItem {
-  id: string;
-  num: string;
-  label: string;
-}
+interface NavItem { id: string; num: string; label: string; }
 
 const navItems: NavItem[] = [
-  { id: "s1",  num: "i",    label: "The Intelligence Layer" },
-  { id: "s2",  num: "ii",   label: "Three Eras" },
-  { id: "s3",  num: "iii",  label: "What Agents Require" },
-  { id: "s4",  num: "iv",   label: "Four Structural Gaps" },
-  { id: "s5",  num: "v",    label: "Entity Resolution" },
-  { id: "s6",  num: "vi",   label: "Knowledge Architecture" },
-  { id: "s7",  num: "vii",  label: "Knowledge Graph" },
-  { id: "s8",  num: "viii", label: "Governance Is the Architecture" },
-  { id: "s9",  num: "ix",   label: "Automation vs. Judgment" },
-  { id: "s10", num: "x",    label: "The Empty Layer" },
-  { id: "s11", num: "xi",   label: "What Fills the Layer" },
-  { id: "s12", num: "xii",  label: "What Comes Next" },
+  { id: "s1",  num: "i",     label: "The Intelligence Layer" },
+  { id: "s2",  num: "ii",    label: "Three Eras" },
+  { id: "s3",  num: "iii",   label: "What Agents Require" },
+  { id: "s4",  num: "iv",    label: "Four Structural Gaps" },
+  { id: "s5",  num: "v",     label: "Truth Is No Longer Monolithic" },
+  { id: "s6",  num: "vi",    label: "Entity Resolution" },
+  { id: "s7",  num: "vii",   label: "Knowledge Architecture" },
+  { id: "s8",  num: "viii",  label: "Knowledge Graph" },
+  { id: "s9",  num: "ix",    label: "Governance Is the Architecture" },
+  { id: "s10", num: "x",     label: "Automation vs. Judgment" },
+  { id: "s11", num: "xi",    label: "The Empty Layer" },
+  { id: "s12", num: "xii",   label: "What Fills the Layer" },
+  { id: "s13", num: "xiii",  label: "What Comes Next" },
 ];
 
 interface LunaSidebarProps {
@@ -47,9 +44,7 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
             The Intelligence Architecture
           </div>
         </div>
-
         <span className="luna-nav-label">Presentation</span>
-
         <div className="luna-nav">
           {navItems.map((item) => (
             <button
@@ -62,11 +57,9 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
             </button>
           ))}
         </div>
-
         <div className="luna-sidebar-progress">
           <div className="luna-sidebar-progress-fill" style={{ width: `${progress}%` }} />
         </div>
-
         <div className="luna-sidebar-footer">
           <span className="luna-sidebar-tag">
             Real Estate · Capital Markets
