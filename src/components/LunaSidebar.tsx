@@ -39,11 +39,11 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
       <div className={`luna-overlay ${isOpen ? "open" : ""}`} onClick={onClose} />
       <nav className={`luna-sidebar ${isOpen ? "open" : ""}`}>
         <div className="luna-sidebar-logo">
-          <div className="luna-logo-mark">L</div>
+          <img src={cherreIcon} alt="Cherre" className="luna-logo-mark" style={{ width: 32, height: 32, objectFit: 'contain' }} />
           <div className="luna-logo-text">
-            <strong>Luna</strong>
+            <strong>Cherre</strong>
             <br />
-            The Intelligence Architecture
+            Data Infrastructure
           </div>
         </div>
         <span className="luna-nav-label">Presentation</span>
