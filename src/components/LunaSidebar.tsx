@@ -1,5 +1,4 @@
 import cherreIcon from "@/assets/cherre_icon.png";
-import cherreLogoWhite from "@/assets/cherre_white.png";
 
 interface NavItem { id: string; num: string; label: string; }
 
