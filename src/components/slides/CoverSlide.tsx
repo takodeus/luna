@@ -42,9 +42,6 @@ const CoverSlide = () => (
       ))}
     </div>
 
-    <div style={{ position: "absolute", right: "6vw", bottom: "8vh", fontSize: "clamp(5rem,14vw,13rem)", fontWeight: 600, color: "hsl(var(--pink-light))", lineHeight: 1, letterSpacing: "-0.04em", userSelect: "none", pointerEvents: "none", fontStyle: "italic" }}>
-      2026
-    </div>
   </section>
 );
 
