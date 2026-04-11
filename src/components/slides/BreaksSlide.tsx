@@ -13,7 +13,7 @@ const breaks = [
     num: "02 / 04",
     category: "Metric Drift",
     title: "Occupancy means something different to every operator.",
-    desc: "A system of record stores an occupancy figure. It doesn't store the calculation logic that produced it: whether month-to-month tenants are included, how recently-vacated units are treated, what the denominator is. When an AI agent consolidates across properties managed by different operators, it adds numbers that don't mean the same thing.",
+    desc: "A system of record stores an occupancy figure. It doesn't store the calculation logic that produced it: whether month-to-month tenants are included, how recently vacated units are treated, what the denominator is. When an AI agent consolidates across properties managed by different operators, it adds numbers that don't mean the same thing.",
     egLabel: "In Practice: Portfolio-Level Reporting",
     egText: "A portfolio-level occupancy report is generated for an institutional client. Three property managers each apply a different occupancy definition. The consolidated figure is 91.4%. No single property actually has that occupancy. Every operator's number was locally correct. The aggregate is meaningless.",
   },
@@ -36,7 +36,7 @@ const breaks = [
 ];
 
 const BreaksSlide = () => {
-  const [open, setOpen] = useState<Set<number>>(new Set([0, 1, 2, 3]));
+  const [open, setOpen] = useState<Set<number>>(new Set());
   const toggle = (i: number) => setOpen(prev => {
     const next = new Set(prev);
     next.has(i) ? next.delete(i) : next.add(i);
@@ -52,7 +52,7 @@ const BreaksSlide = () => {
         <span className="luna-accent">The infrastructure beneath it.</span>
       </h2>
       <p className="luna-sub" style={{ marginBottom: 0 }}>
-        Every agentic AI failure in real estate traces back to one of four structural gaps in the data layer. Click each to expand.
+        Every agentic AI failure in real estate traces back to one of four structural gaps in the data layer. Expand each to see it in practice.
       </p>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2rem", maxWidth: 900 }}>
@@ -62,45 +62,43 @@ const BreaksSlide = () => {
             <div
               key={i}
               style={{
-                background: isOpen ? "#fff" : "hsl(var(--bg-alt))",
-                border: `1px solid ${isOpen ? "hsl(var(--pink-border))" : "hsl(var(--rule))"}`,
-                borderLeft: `4px solid ${isOpen ? "hsl(var(--pink))" : "hsl(var(--rule))"}`,
-                transition: "border-color 0.15s, background 0.15s",
+                background: "#fff",
+                border: "1px solid hsl(var(--pink-border))",
+                borderLeft: "4px solid hsl(var(--pink))",
               }}
             >
               {/* Header: always visible */}
-              <button
-                onClick={() => toggle(i)}
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "1.2rem",
-                  padding: "1.1rem 1.4rem",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  textAlign: "left",
-                }}
-              >
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: isOpen ? "hsl(var(--pink))" : "hsl(var(--ink-light))", flexShrink: 0, minWidth: 56 }}>{b.num}</span>
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: isOpen ? "hsl(var(--pink))" : "hsl(var(--ink-mid))", flexShrink: 0, minWidth: 140 }}>{b.category}</span>
-                <span style={{ fontSize: "0.88rem", fontWeight: 500, color: "hsl(var(--foreground))", flex: 1 }}>{b.title}</span>
-                <span style={{ color: "hsl(var(--ink-light))", fontSize: "1.1rem", flexShrink: 0, transform: isOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s", lineHeight: 1 }}>›</span>
-              </button>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "1.2rem", padding: "1.1rem 1.4rem" }}>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", flexShrink: 0, minWidth: 56, paddingTop: "0.15rem" }}>{b.num}</span>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-mid))", flexShrink: 0, minWidth: 140, paddingTop: "0.15rem" }}>{b.category}</span>
+                <span style={{ fontSize: "0.88rem", fontWeight: 600, color: "hsl(var(--foreground))", flex: 1 }}>{b.title}</span>
+              </div>
 
-              {/* Expanded content */}
-              {isOpen && (
-                <div style={{ padding: "0 1.4rem 1.4rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: 0, paddingTop: "0.25rem", borderTop: "1px solid hsl(var(--rule))" }}>
-                    {b.desc}
-                  </p>
-                  <div style={{ background: "hsl(var(--bg-alt))", border: "1px solid hsl(var(--rule))", padding: "1rem 1.2rem" }}>
-                    <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.64rem" }}>{b.egLabel}</div>
+              {/* Desc: always visible */}
+              <div style={{ padding: "0 1.4rem 1rem", paddingLeft: "calc(1.4rem + 56px + 140px + 1.2rem + 1.2rem)" }}>
+                <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: "0 0 0.9rem", borderTop: "1px solid hsl(var(--rule))", paddingTop: "0.7rem" }}>
+                  {b.desc}
+                </p>
+
+                {/* In Practice: accordion only */}
+                <button
+                  onClick={() => toggle(i)}
+                  style={{
+                    display: "flex", alignItems: "center", gap: "0.5rem",
+                    background: "none", border: "none", cursor: "pointer",
+                    padding: 0, marginBottom: isOpen ? "0.7rem" : 0,
+                  }}
+                >
+                  <span style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "hsl(var(--pink))" }}>{b.egLabel}</span>
+                  <span style={{ color: "hsl(var(--pink))", fontSize: "0.9rem", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.2s", lineHeight: 1 }}>›</span>
+                </button>
+
+                {isOpen && (
+                  <div style={{ background: "hsl(var(--bg-alt))", border: "1px solid hsl(var(--rule))", padding: "1rem 1.2rem", marginBottom: "0.4rem" }}>
                     <div style={{ fontSize: "0.8rem", color: "hsl(var(--ink-mid))", lineHeight: 1.65 }}>{b.egText}</div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           );
         })}

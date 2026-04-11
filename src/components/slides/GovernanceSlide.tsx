@@ -50,7 +50,7 @@ const quadrants = [
 ];
 
 const GovernanceSlide = () => (
-  <section className="slide" id="s9">
+  <section className="slide" id="s10">
     <div className="slide-n">ix / Governance</div>
     <h2 className="luna-h2">
       Governance is the architecture.

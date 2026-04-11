@@ -2,18 +2,18 @@ interface NavItem { id: string; num: string; label: string; }
 
 const navItems: NavItem[] = [
   { id: "s1",  num: "i",     label: "The Data Infrastructure" },
-  { id: "s2",  num: "ii",    label: "Era Three: Knowledge Graph" },
+  { id: "s2",  num: "ii",    label: "Era Three: Built to Act" },
   { id: "s3",  num: "iii",   label: "What Agents Require" },
   { id: "s4",  num: "iv",    label: "Four Structural Gaps" },
-  { id: "s5",  num: "v",     label: "Truth Is No Longer Monolithic" },
-  { id: "s6",  num: "vi",    label: "The First Hard Problem" },
-  { id: "s7",  num: "vii",   label: "Four Questions, Four Layers" },
-  { id: "s8",  num: "viii",  label: "Infrastructure, Not a Feature" },
-  { id: "s9",  num: "ix",    label: "Governance Is the Architecture" },
-  { id: "s10", num: "x",     label: "Automation vs. Judgment" },
-  { id: "s11", num: "xi",    label: "The Empty Layer" },
+  { id: "s5",  num: "v",     label: "The Empty Layer" },
+  { id: "s6",  num: "vi",    label: "Truth Is No Longer Monolithic" },
+  { id: "s7",  num: "vii",   label: "The First Hard Problem Is Meaning" },
+  { id: "s8",  num: "viii",  label: "Four Questions, Four Layers" },
+  { id: "s9",  num: "ix",    label: "Infrastructure, Not a Feature" },
+  { id: "s10", num: "x",     label: "Governance Is the Architecture" },
+  { id: "s11", num: "xi",    label: "Automation Needs Judgment" },
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
-  { id: "s13", num: "xiii",  label: "What Comes Next" },
+  { id: "s13", num: "xiii",  label: "The Record Stays. The Power Moves." },
 ];
 
 interface LunaSidebarProps {

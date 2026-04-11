@@ -75,13 +75,13 @@ const Index = () => {
         <EraMapSlide />
         <MismatchSlide />
         <BreaksSlide />
+        <StackSlide />
         <TruthMonolithSlide />
         <EntityResolutionSlide />
         <TruthSlide />
         <KGInfrastructureSlide />
         <GovernanceSlide />
         <StepsThoughtsSlide />
-        <StackSlide />
         <BuildBuySlide />
         <ClosingSlide />
       </main>
