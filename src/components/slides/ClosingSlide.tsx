@@ -74,11 +74,13 @@ const ClosingSlide = () => (
         The strategic position
         <sup style={{ fontSize: "0.7em", color: "rgba(255,255,255,0.3)", marginLeft: "1px" }}>1234</sup>
       </div>
-      <div style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "0.8rem" }}>
-        The record will remain in systems of record. The control point will not. Every enterprise already has data lineage and data governance. Almost none have decision lineage or semantic governance. The winner will be the platform that closes that gap: entity resolution, governed meaning, traceable context, and orchestration built for agents, not reports.
+      <div style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.78)", lineHeight: 1.8, marginBottom: "1.2rem" }}>
+        Systems of record will remain essential, but they are unlikely to remain sufficient. Most enterprises today have established data lineage and governance disciplines. Few, however, have comparable capabilities for decision lineage, semantic governance, or contextual traceability. As AI shifts from analysis to action, the strategic advantage will accrue to the platform that closes this gap by providing entity resolution, governed meaning, traceable context, and orchestration for agents. The record remains in place.
       </div>
-      <div style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#fff", lineHeight: 1.45 }}>
-        The record stays where it is. The power moves to the layer that makes it usable by agents.
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "1rem" }}>
+        <div style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", fontWeight: 600, fontStyle: "italic", color: "#fff", lineHeight: 1.45 }}>
+          The control point shifts to the layer that makes it actionable.
+        </div>
       </div>
     </div>
 
