@@ -58,8 +58,8 @@ const Index = () => {
         <div className="luna-progress-fill" style={{ width: `${progress}%` }} />
       </div>
       <div className="luna-mobile-bar">
-        <span className="luna-mobile-brand">Luna</span>
-        <button className="luna-menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+        <span className="luna-mobile-brand">Cherre</span>
+        <button className={`luna-menu-btn ${menuOpen ? "is-open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span /><span /><span />
         </button>
       </div>

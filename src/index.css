@@ -832,13 +832,13 @@ h2.luna-h2 {
   top: 0;
   left: 0;
   right: 0;
-  height: 52px;
+  height: 48px;
   background: hsl(var(--pink));
   z-index: 300;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 0 1rem;
+  border-bottom: none;
 }
 .luna-mobile-brand {
   font-family: var(--sans);
@@ -849,30 +849,56 @@ h2.luna-h2 {
   color: #fff;
 }
 .luna-menu-btn {
-  width: 26px;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
   background: none;
   border: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
-  padding: 4px;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 .luna-menu-btn span {
   display: block;
+  width: 20px;
   height: 2px;
   background: #fff;
   border-radius: 2px;
-  transition: all 0.2s;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s ease;
+  transform-origin: center;
 }
+/* Hamburger → X animation */
+.luna-menu-btn.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.luna-menu-btn.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.luna-menu-btn.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Overlay */
 .luna-overlay {
-  display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 190;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 240;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
-.luna-overlay.open { display: block; }
+.luna-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ── TABLET BREAKPOINT ── */
 @media (max-width: 1024px) {
@@ -899,16 +925,20 @@ h2.luna-h2 {
 
 /* ── MOBILE BREAKPOINT ── */
 @media (max-width: 900px) {
-  :root { --sidebar-w: 230px; }
+  :root { --sidebar-w: 260px; }
   .luna-mobile-bar { display: flex; }
   .luna-sidebar {
     transform: translateX(-100%);
-    transition: transform 0.28s var(--ease);
+    transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
     z-index: 250;
+    box-shadow: none;
   }
-  .luna-sidebar.open { transform: translateX(0); }
-  .luna-main { margin-left: 0; padding-top: 52px; }
-  .luna-progress-bar { left: 0; top: 52px; }
+  .luna-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+  }
+  .luna-main { margin-left: 0; padding-top: 48px; }
+  .luna-progress-bar { left: 0; top: 48px; }
 
   .slide {
     padding: 6vh 5vw 4vh;
