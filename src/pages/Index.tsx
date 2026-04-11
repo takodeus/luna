@@ -1,16 +1,87 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useCallback, useEffect, useState } from "react";
+import LunaSidebar from "@/components/LunaSidebar";
+import CoverSlide from "@/components/slides/CoverSlide";
+import EraMapSlide from "@/components/slides/EraMapSlide";
+import MismatchSlide from "@/components/slides/MismatchSlide";
+import BreaksSlide from "@/components/slides/BreaksSlide";
+import TruthSlide from "@/components/slides/TruthSlide";
+import StepsThoughtsSlide from "@/components/slides/StepsThoughtsSlide";
+import StackSlide from "@/components/slides/StackSlide";
+import ClosingSlide from "@/components/slides/ClosingSlide";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const slideIds = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"];
+
+const Index = () => {
+  const [activeSlide, setActiveSlide] = useState("s1");
+  const [progress, setProgress] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleScroll = useCallback(() => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+    setProgress(pct);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActiveSlide(e.target.id);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    slideIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNavigate = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <>
+      {/* Progress bar */}
+      <div className="luna-progress-bar">
+        <div className="luna-progress-fill" style={{ width: `${progress}%` }} />
+      </div>
+
+      {/* Mobile bar */}
+      <div className="luna-mobile-bar">
+        <span className="luna-mobile-brand">Luna</span>
+        <button className="luna-menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+          <span /><span /><span />
+        </button>
+      </div>
+
+      <LunaSidebar
+        activeSlide={activeSlide}
+        progress={progress}
+        isOpen={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        onNavigate={handleNavigate}
+      />
+
+      <main className="luna-main">
+        <CoverSlide />
+        <EraMapSlide />
+        <MismatchSlide />
+        <BreaksSlide />
+        <TruthSlide />
+        <StepsThoughtsSlide />
+        <StackSlide />
+        <ClosingSlide />
+      </main>
+    </>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
