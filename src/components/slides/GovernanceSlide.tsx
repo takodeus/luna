@@ -1,7 +1,6 @@
 const quadrants = [
   {
     label: "Entity Governance",
-    color: "#fff",
     bg: "#A8185E",
     engine: "Resolved by LUNA",
     items: [
@@ -9,11 +8,10 @@ const quadrants = [
       "How are conflicts between source systems resolved?",
       "How are corrections propagated across dependent systems?",
     ],
-    why: "Entity governance is only possible when entity resolution exists at scale. LUNA's probabilistic matching, human override model, and correction corpus are what make canonical definitions achievable rather than aspirational.",
+    why: "Entity governance is only possible when entity resolution exists at scale. LUNA's probabilistic matching, human override model, and correction corpus are what make canonical definitions achievable.",
   },
   {
     label: "Metric Governance",
-    color: "#fff",
     bg: "#A8185E",
     engine: "Governed in MERIDIAN",
     items: [
@@ -21,11 +19,10 @@ const quadrants = [
       "How are changes to metric definitions versioned and communicated?",
       "Which consumers are notified when logic changes?",
     ],
-    why: "MERIDIAN's semantic layer is where metric definitions live as governed, versioned objects. Every query against the knowledge graph inherits the definition that was active when the decision was made.",
+    why: "MERIDIAN's semantic layer is where metric definitions live as governed, versioned objects. Every query inherits the definition that was active when the decision was made.",
   },
   {
     label: "Context Governance",
-    color: "#fff",
     bg: "#DF2467",
     engine: "Stored in MERIDIAN",
     items: [
@@ -33,11 +30,10 @@ const quadrants = [
       "How is provenance attributed across automated and human actions?",
       "How long is context retained, and who can query it?",
     ],
-    why: "MERIDIAN's context graph turns raw events into explainable history. Without it, AI agents can report what happened but cannot explain why. Provenance, dependencies, and decision traces live here, queryable at any point in time.",
+    why: "MERIDIAN's context graph turns raw events into explainable history. Without it, AI agents can report what happened but cannot explain why.",
   },
   {
     label: "Reasoning Governance",
-    color: "#fff",
     bg: "#A8185E",
     engine: "Traced through ATLAS",
     items: [
@@ -45,7 +41,7 @@ const quadrants = [
       "How are AI outputs traced back to source data?",
       "What override mechanisms exist for human correction?",
     ],
-    why: "ATLAS provides full query transparency and lineage back to source data. Every answer an agent produces carries the reasoning chain: which entity was resolved, which metric definition applied, which context was active.",
+    why: "ATLAS provides full query transparency and lineage back to source data. Every answer carries the reasoning chain.",
   },
 ];
 
@@ -58,27 +54,27 @@ const GovernanceSlide = () => (
       <span className="luna-accent">Not a policy layer on top of it.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
-      Traditional data governance checks format, completeness, and access. The harder questions require governance embedded in the architecture itself, answered by the same infrastructure that makes knowledge graphs work.
+      Traditional data governance checks format, completeness, and access. The harder questions require governance embedded in the architecture itself.
     </p>
 
-    {/* Data governance → Semantic governance callout */}
-    <div style={{ maxWidth: 960, marginTop: "1.8rem", marginBottom: "1.5px", display: "flex", gap: "1.5px" }}>
-      <div style={{ flex: 1, background: "#fff", borderLeft: "4px solid hsl(var(--pink) / 0.3)", padding: "1rem 1.4rem" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Data governance</div>
+    {/* Data governance → Semantic governance */}
+    <div className="luna-duo-cards" style={{ marginTop: "1.8rem", maxWidth: 960 }}>
+      <div className="luna-duo-card" style={{ borderLeftColor: "hsl(var(--pink) / 0.3)" }}>
+        <div className="luna-source" style={{ color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Data governance</div>
         <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>Manages format, completeness, and access. Assumes a human closes the loop on exceptions.</div>
       </div>
-      <div style={{ flex: 1, background: "#fff", borderLeft: "4px solid #A8185E", padding: "1rem 1.4rem" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E", marginBottom: "0.35rem" }}>Semantic governance</div>
+      <div className="luna-duo-card" style={{ borderLeftColor: "#A8185E" }}>
+        <div className="luna-source" style={{ color: "#A8185E", marginBottom: "0.35rem" }}>Semantic governance</div>
         <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>Manages meaning, context, and the reasoning chain itself. Assumes the agent is the loop. These are not the same problem.</div>
       </div>
     </div>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", marginTop: "0", maxWidth: 960 }}>
+    <div className="luna-grid-2col" style={{ marginTop: "0", maxWidth: 960 }}>
       {quadrants.map((q, i) => (
         <div key={i} style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ background: q.bg, padding: "0.7rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div className="font-mono-luna" style={{ fontSize: "0.62rem", letterSpacing: "0.14em", textTransform: "uppercase", color: q.color, fontWeight: 600 }}>{q.label}</div>
-            <div className="font-mono-luna" style={{ fontSize: "0.64rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>{q.engine}</div>
+          <div style={{ background: q.bg, padding: "0.7rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
+            <div className="luna-source" style={{ color: "#fff" }}>{q.label}</div>
+            <div className="luna-source" style={{ color: "rgba(255,255,255,0.6)" }}>{q.engine}</div>
           </div>
           <div style={{ background: "#fff", padding: "1.2rem 1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
             <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "0.55rem" }}>

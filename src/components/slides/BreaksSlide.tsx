@@ -55,32 +55,22 @@ const BreaksSlide = () => {
         Every agentic AI failure in real estate traces back to one of four structural gaps in the data layer. Expand each to see it in practice.
       </p>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2rem", maxWidth: 900 }}>
+      <div className="luna-accordion-list">
         {breaks.map((b, i) => {
           const isOpen = open.has(i);
           return (
-            <div
-              key={i}
-              style={{
-                background: "#fff",
-                border: "1px solid hsl(var(--pink) / 0.15)",
-                borderLeft: "4px solid #A8185E",
-              }}
-            >
-              {/* Header: always visible */}
-              <div style={{ display: "flex", alignItems: "flex-start", gap: "1.2rem", padding: "1.1rem 1.4rem" }}>
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E", flexShrink: 0, minWidth: 56, paddingTop: "0.15rem" }}>{b.num}</span>
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-mid))", flexShrink: 0, minWidth: 140, paddingTop: "0.15rem" }}>{b.category}</span>
-                <span style={{ fontSize: "0.88rem", fontWeight: 600, color: "#000", flex: 1 }}>{b.title}</span>
+            <div key={i} className="luna-accordion-item">
+              <div className="luna-accordion-header">
+                <span className="luna-accordion-num">{b.num}</span>
+                <span className="luna-accordion-cat">{b.category}</span>
+                <span className="luna-accordion-title">{b.title}</span>
               </div>
 
-              {/* Desc: always visible */}
-              <div style={{ padding: "0 1.4rem 1rem", paddingLeft: "calc(1.4rem + 56px + 140px + 1.2rem + 1.2rem)" }}>
+              <div className="luna-accordion-body">
                 <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: "0 0 0.9rem", borderTop: "1px solid hsl(var(--pink) / 0.15)", paddingTop: "0.7rem" }}>
                   {b.desc}
                 </p>
 
-                {/* In Practice: accordion only */}
                 <button
                   onClick={() => toggle(i)}
                   style={{
@@ -89,7 +79,7 @@ const BreaksSlide = () => {
                     padding: 0, marginBottom: isOpen ? "0.7rem" : 0,
                   }}
                 >
-                  <span style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#A8185E" }}>{b.egLabel}</span>
+                  <span className="luna-source" style={{ color: "#A8185E" }}>{b.egLabel}</span>
                   <span style={{ color: "#A8185E", fontSize: "0.9rem", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.2s", lineHeight: 1 }}>›</span>
                 </button>
 
