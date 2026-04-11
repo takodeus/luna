@@ -73,21 +73,48 @@ const TruthMonolithSlide = () => (
       ))}
     </div>
 
-    {/* Governance Implications */}
-    <div style={{ marginTop: "1.5px", maxWidth: 960, borderLeft: "4px solid #A8185E", padding: "1.6rem 2rem", background: "#fff" }}>
-      <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#A8185E", marginBottom: "0.9rem" }}>Governance Implications</div>
-      <div style={{ fontSize: "0.87rem", color: "#000", marginBottom: "0.8rem", lineHeight: 1.65 }}>
-        <strong style={{ color: "#A8185E" }}>Truth arbitration</strong> becomes a governance function, not a data quality problem.
-      </div>
-      <div className="luna-grid-3col">
+    {/* Governance section — three answers + closing statement */}
+    <div style={{ marginTop: "1.5px", maxWidth: 960 }}>
+
+      {/* Three answer cards */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)" }}>
         {[
-          "Which truth is authoritative for compliance?",
-          "Which truth is fit for AI agents?",
-          "When does event-driven truth override system truth, for example in real-time monitoring?",
-        ].map((q, i) => (
-          <div key={i} style={{ paddingLeft: "0.9rem", borderLeft: "3px solid hsl(var(--pink) / 0.2)", fontSize: "0.81rem", color: "#000", lineHeight: 1.65 }}>{q}</div>
+          {
+            context: "For compliance",
+            answer: "System of record truth governs. Always.",
+            detail: "MERIDIAN knows which definition is authoritative and which version was active when the decision was made.",
+            color: "#1B70B1",
+          },
+          {
+            context: "For AI agents",
+            answer: "Semantic layer truth governs.",
+            detail: "Versioned definitions, traceable logic. The agent inherits governed meaning, not raw field values.",
+            color: "#A8185E",
+          },
+          {
+            context: "For real-time monitoring",
+            answer: "Event stream truth governs.",
+            detail: "The context graph carries the override rule. MERIDIAN knows when event-driven state supersedes the recorded figure.",
+            color: "#CC5800",
+          },
+        ].map((card, i) => (
+          <div key={i} style={{ background: "#fff", padding: "1.4rem 1.6rem", borderTop: `3px solid ${card.color}` }}>
+            <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: card.color, marginBottom: "0.5rem" }}>{card.context}</div>
+            <div style={{ fontSize: "0.9rem", fontWeight: 700, color: "#000", lineHeight: 1.35, marginBottom: "0.55rem" }}>{card.answer}</div>
+            <div style={{ fontSize: "0.78rem", color: "hsl(var(--ink-mid))", lineHeight: 1.65 }}>{card.detail}</div>
+          </div>
         ))}
       </div>
+
+      {/* Closing statement */}
+      <div style={{ background: "#A8185E", padding: "1.4rem 2rem", marginTop: "1.5px" }}>
+        <div style={{ fontSize: "0.87rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: 820 }}>
+          When a single source of truth was the standard, governance meant access control and data quality. When multiple valid truths coexist, governance becomes something harder:{" "}
+          <strong style={{ color: "#fff" }}>determining which truth applies to which agent, which calculation, which action.</strong>{" "}
+          That is not a data quality problem. It is an operating model problem. It requires a semantic layer that can arbitrate, not just a pipeline that can transport.
+        </div>
+      </div>
+
     </div>
   </section>
 );
