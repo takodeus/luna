@@ -11,18 +11,17 @@ const EraMapSlide = () => (
     <h2 className="luna-h2">
       Forty years. Three eras.
       <br />
-      <span className="luna-accent">Virtuoso arrived at the inflection.</span>
+      <span className="luna-accent">The knowledge graph defines Era Three.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
-      Every generation of enterprise software was built for the users of its era. Yardi mastered Era One and Two. Era Three has a different primary user — and different requirements the existing stack wasn't designed to meet.
+      Every generation of enterprise software was shaped by its defining architecture. Era Three doesn't just change who uses data — it changes what data infrastructure must be able to do. The knowledge graph is that architecture.
     </p>
 
-    {/* Band table */}
     <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "3px", maxWidth: 920 }}>
 
       {/* Column headers */}
       <div style={{ display: "flex", gap: 0, paddingLeft: 172, paddingBottom: "0.5rem" }}>
-        {["User", "Core job", "Data problem"].map((h) => (
+        {["Primary user", "Core job", "Defining architecture"].map((h) => (
           <div key={h} style={{ flex: 1, fontFamily: "var(--mono)", fontSize: "0.54rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "hsl(var(--ink-light))", textAlign: "center" }}>{h}</div>
         ))}
       </div>
@@ -43,13 +42,13 @@ const EraMapSlide = () => (
         </div>
         <div style={sep} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
-          <div style={{ ...col.val, color: "#f0ebf3" }}>Interpret + act</div>
-          <div style={{ fontSize: "0.72rem", color: "rgba(240,235,243,0.4)", marginTop: "0.2rem" }}>Autonomously</div>
+          <div style={{ ...col.val, color: "#f0ebf3" }}>Govern meaning</div>
+          <div style={{ fontSize: "0.72rem", color: "rgba(240,235,243,0.4)", marginTop: "0.2rem" }}>Interpret, act, trace</div>
         </div>
         <div style={sep} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
-          <div style={{ ...col.val, color: "hsl(var(--pink))", fontWeight: 700 }}>Meaning</div>
-          <div style={{ fontSize: "0.72rem", color: "rgba(240,235,243,0.4)", marginTop: "0.2rem" }}>No governed context</div>
+          <div style={{ ...col.val, color: "hsl(var(--pink))", fontWeight: 700 }}>Knowledge Graph</div>
+          <div style={{ fontSize: "0.72rem", color: "rgba(240,235,243,0.4)", marginTop: "0.2rem" }}>Context, provenance, meaning</div>
         </div>
       </div>
 
@@ -71,8 +70,8 @@ const EraMapSlide = () => (
         </div>
         <div style={sep} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
-          <div style={col.val}>Integration</div>
-          <div style={{ fontSize: "0.72rem", color: "hsl(var(--ink-light))", marginTop: "0.2rem" }}>Data was siloed</div>
+          <div style={col.val}>Data Warehouse + SaaS</div>
+          <div style={{ fontSize: "0.72rem", color: "hsl(var(--ink-light))", marginTop: "0.2rem" }}>Cloud integration</div>
         </div>
       </div>
 
@@ -94,17 +93,17 @@ const EraMapSlide = () => (
         </div>
         <div style={sep} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
-          <div style={col.val}>Scarcity</div>
-          <div style={{ fontSize: "0.72rem", color: "hsl(var(--ink-light))", marginTop: "0.2rem" }}>Hard to produce</div>
+          <div style={col.val}>ERP</div>
+          <div style={{ fontSize: "0.72rem", color: "hsl(var(--ink-light))", marginTop: "0.2rem" }}>Systems of record</div>
         </div>
       </div>
 
     </div>
 
     <div className="callout" style={{ marginTop: "2rem", maxWidth: 920 }}>
-      <div className="callout-title">The Yardi Implication</div>
+      <div className="callout-title">The Era Three Implication</div>
       <div className="callout-text">
-        Yardi records what happened — rent paid, lease signed, unit vacated. Virtuoso needs to know what it <em>means</em>: which definition of occupancy applies, which entity owns this asset across every source, what context explains the anomaly. That meaning has never lived in the ERP. It still doesn't.
+        ERPs and data warehouses were built for human operators reading reports. AI agents make API calls requiring semantic context — which definition applies, which entity owns this asset across every source, what chain of events explains the anomaly. That context has never lived in the system of record. The knowledge graph is the architecture that carries it.
       </div>
     </div>
   </section>

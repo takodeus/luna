@@ -1,80 +1,94 @@
-const options = [
+const products = [
   {
-    label: "Build In-House",
-    tag: "Option A",
-    color: "hsl(var(--ink-light))",
-    borderColor: "hsl(var(--rule))",
-    bg: "hsl(var(--bg-alt))",
-    items: [
-      { heading: "Timeline", body: "3–5 years minimum. Cherre has a 10-year head start — every component purpose-built for real estate, not adapted from a general-purpose graph." },
-      { heading: "Scope", body: "Entity resolution, ontology engineering, knowledge graph infrastructure, and semantic governance are each full engineering disciplines. This is not a roadmap item." },
-      { heading: "Data network", body: "150+ real estate-specific connectors, 4B+ legal entities, 2B+ addresses. The network effect compounds: Cherre's graph gets smarter with every client relationship." },
-      { heading: "Opportunity cost", body: "Every quarter spent building what already exists is a quarter Virtuoso goes to market on an unvalidated intelligence substrate." },
-    ],
-    verdict: "Possible — in 2029. The semantic layer gap exists today. Competitors won't wait.",
-    verdictColor: "hsl(var(--ink-mid))",
-  },
-  {
-    label: "Partner with Cherre",
-    tag: "Option B",
+    tag: "Cherre CONNECT",
+    label: "Data In",
     color: "hsl(var(--blue))",
     borderColor: "hsl(var(--blue))",
     bg: "#f0f4fb",
     items: [
-      { heading: "Speed", body: "Fastest path to closing the capability gap. Cherre's Yardi connectors are already built. Virtuoso gets the intelligence layer in weeks, not years." },
-      { heading: "Exclusivity", body: "A partnership is non-exclusive by default. The same deal Yardi signs today, MRI or a well-capitalized new entrant can sign tomorrow." },
-      { heading: "Roadmap control", body: "Cherre's priorities remain independent. Virtuoso's intelligence layer develops on someone else's timeline." },
-      { heading: "Strategic ceiling", body: "You gain capability. You don't own the moat. The knowledge graph powering Virtuoso also powers your competitors' AI — by design." },
+      { heading: "What it does", body: "Unifies complex data flows across industry-specific, multi-system, multi-vendor pipelines — direct integrations, external APIs, document ingestion, and custom logic." },
+      { heading: "Connectors", body: "150+ native connectors across every major real estate application and data provider — operational, financial, market, and document sources." },
+      { heading: "Empty layer problem it solves", body: "Fragmented source data with no canonical entry point. Every downstream intelligence layer requires clean, unified data in before it can govern meaning through." },
     ],
-    verdict: "Closes the gap for now. Leaves the intelligence layer permanently outside Yardi's control.",
+    verdict: "The ingestion and unification layer. Data arrives governed from the start.",
     verdictColor: "hsl(var(--blue))",
   },
   {
-    label: "Acquire Cherre",
-    tag: "Option C · Recommended",
+    tag: "Cherre CORE",
+    label: "Data Through",
+    color: "hsl(var(--green))",
+    borderColor: "hsl(var(--green))",
+    bg: "#f0f7f3",
+    items: [
+      { heading: "What it does", body: "Standardizes through a Universal Data Model; resolves entities probabilistically across 4B+ legal entities and 2B+ addresses; builds and maintains the real estate knowledge graph." },
+      { heading: "Ontology", body: "Purpose-built real estate ontology covering 50+ entity types — property, tenant, fund, lease, operator, market — validated across $3.7T AUM over 10 years." },
+      { heading: "Empty layer problem it solves", body: "No canonical entity layer. Definitions buried in BI logic. The same asset exists in five systems under five IDs with no authoritative resolution." },
+    ],
+    verdict: "The semantic and context layer. Where data acquires meaning, identity, and lineage.",
+    verdictColor: "hsl(var(--green))",
+  },
+  {
+    tag: "Cherre QUALITY",
+    label: "Data Integrity",
+    color: "hsl(var(--amber))",
+    borderColor: "hsl(var(--amber))",
+    bg: "#fef9ef",
+    items: [
+      { heading: "What it does", body: "Monitors data in real time. Validates against business rules. Detects mapping drift, join anomalies, and definition drift as pipelines run — not after the damage is done." },
+      { heading: "Governance", body: "Enterprise-grade observability and validation with lineage, exceptions, and visibility into every event. SOC 1/2, GDPR, ISO 27001 compliant." },
+      { heading: "Empty layer problem it solves", body: "Semantic failures that occur silently in mapping, joins, and reconciliation. Clean pipelines carrying semantically broken data produce faster answers to the wrong questions." },
+    ],
+    verdict: "The observability layer. Meaning governance enforced continuously, not retroactively.",
+    verdictColor: "hsl(var(--amber))",
+  },
+  {
+    tag: "Cherre ALPHA",
+    label: "Data Out",
     color: "hsl(var(--pink))",
     borderColor: "hsl(var(--pink))",
     bg: "hsl(var(--pink-light))",
     highlight: true,
     items: [
-      { heading: "What Yardi owns", body: "The real estate knowledge graph. The ontology. The entity resolution engine. The semantic and context layer. The only purpose-built intelligence infrastructure in the industry — exclusively." },
-      { heading: "What Virtuoso becomes", body: "The only AI real estate copilot running on a fully governed, context-aware, auditable knowledge graph. No competitor can replicate the substrate." },
-      { heading: "What Yardi Matrix gains", body: "A structured entity layer that resolves Matrix assets, comps, and operators against the same graph powering operational decisions — closing the internal data gap." },
-      { heading: "What competitors face", body: "A 3–5 year build gap, a weaker dataset, or an intelligence vendor with no real estate depth. None of those options close quickly." },
+      { heading: "What it does", body: "Exposes governed data to any downstream environment — dashboards, cloud platforms, AI agents, and agentic workflows — with full lineage and provenance intact." },
+      { heading: "Agent readiness", body: "Data products optimized for AI consumption: APIs, embeddings, and semantic queries that let agents work reliably on governed, traceable, context-rich data." },
+      { heading: "Empty layer problem it solves", body: "AI operating on unresolved entities and drifting metrics becomes wrong at scale. ALPHA ensures every output is grounded in governed definitions — explainable and auditable." },
     ],
-    verdict: "Yardi becomes the system of record and the intelligence layer. No other company in real estate can claim both.",
+    verdict: "The delivery layer. Intelligence that agents and humans can act on and stand behind.",
     verdictColor: "hsl(var(--pink))",
   },
 ];
 
 const BuildBuySlide = () => (
   <section className="slide" id="s8">
-    <div className="slide-n">viii — Build, Partner, or Acquire</div>
+    <div className="slide-n">viii — What Fills the Layer</div>
     <h2 className="luna-h2">
-      Three paths to the intelligence layer.
+      The architecture of the intelligence layer
       <br />
-      <span className="luna-accent">Only one closes the gap permanently.</span>
+      <span className="luna-accent">is known. Four components fill it.</span>
     </h2>
+    <p className="luna-sub" style={{ marginBottom: 0 }}>
+      Gartner identifies the unclaimed position. McKinsey quantifies what's at stake. The four capabilities below are what that layer requires — and what Cherre has spent ten years building, purpose-built for real estate.
+    </p>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "2.5rem", maxWidth: 1040 }}>
-      {options.map((opt, i) => (
-        <div key={i} style={{ background: opt.bg, padding: "2.2rem 2rem", borderTop: `4px solid ${opt.borderColor}`, display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "2.5rem", maxWidth: 1100 }}>
+      {products.map((opt, i) => (
+        <div key={i} style={{ background: opt.bg, padding: "1.8rem 1.6rem", borderTop: `4px solid ${opt.borderColor}`, display: "flex", flexDirection: "column", gap: "1rem" }}>
           <div>
-            <div className="font-mono-luna" style={{ fontSize: "0.56rem", letterSpacing: "0.2em", textTransform: "uppercase", color: opt.color, marginBottom: "0.3rem" }}>{opt.tag}</div>
-            <div style={{ fontSize: "1.1rem", fontWeight: 700 }}>{opt.label}</div>
+            <div className="font-mono-luna" style={{ fontSize: "0.54rem", letterSpacing: "0.18em", textTransform: "uppercase", color: opt.color, marginBottom: "0.2rem" }}>{opt.tag}</div>
+            <div style={{ fontSize: "1rem", fontWeight: 700 }}>{opt.label}</div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
             {opt.items.map((item, j) => (
               <div key={j}>
-                <div style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: opt.color, marginBottom: "0.2rem" }}>{item.heading}</div>
-                <div style={{ fontSize: "0.8rem", color: "hsl(var(--ink-mid))", lineHeight: 1.6 }}>{item.body}</div>
+                <div style={{ fontSize: "0.62rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: opt.color, marginBottom: "0.15rem" }}>{item.heading}</div>
+                <div style={{ fontSize: "0.77rem", color: "hsl(var(--ink-mid))", lineHeight: 1.6 }}>{item.body}</div>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: "auto", paddingTop: "1.2rem", borderTop: `1px solid ${opt.highlight ? "hsl(var(--pink-border))" : "hsl(var(--rule))"}` }}>
-            <div style={{ fontSize: "0.82rem", fontWeight: 500, color: opt.verdictColor, lineHeight: 1.55, fontStyle: "italic" }}>
+          <div style={{ marginTop: "auto", paddingTop: "1rem", borderTop: `1px solid hsl(var(--rule))` }}>
+            <div style={{ fontSize: "0.79rem", fontWeight: 500, color: opt.verdictColor, lineHeight: 1.5, fontStyle: "italic" }}>
               {opt.verdict}
             </div>
           </div>
@@ -82,20 +96,10 @@ const BuildBuySlide = () => (
       ))}
     </div>
 
-    <div className="callout" style={{ marginTop: "2rem", maxWidth: 1040 }}>
-      <div className="callout-title">What Cherre Brings to the Table</div>
-      <div className="callout-text" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.5rem" }}>
-        {[
-          { num: "10 yrs", label: "Purpose-built for real estate — not adapted from a general-purpose graph" },
-          { num: "150+", label: "Native connectors — Yardi, Argus, VTS, MRI, and every major data provider" },
-          { num: "$3.7T", label: "AUM on the platform — the graph is already trained on the industry's real data" },
-          { num: "Patented", label: "Entity resolution engine — probabilistic matching across 4B+ legal entities" },
-        ].map((item, i) => (
-          <div key={i}>
-            <div className="font-serif-luna" style={{ fontSize: "1.8rem", fontWeight: 600, color: "hsl(var(--pink))", lineHeight: 1 }}>{item.num}</div>
-            <div style={{ fontSize: "0.78rem", color: "hsl(var(--ink-mid))", lineHeight: 1.5, marginTop: "0.3rem" }}>{item.label}</div>
-          </div>
-        ))}
+    <div className="callout" style={{ marginTop: "2rem", maxWidth: 1100 }}>
+      <div className="callout-title">The Gartner Finding</div>
+      <div className="callout-text">
+        "The universal semantic layer has not yet been achieved by any organization or vendor." — Gartner, April 2025 (G00826629). <strong>The position is open. The architecture above is what fills it.</strong>
       </div>
     </div>
   </section>

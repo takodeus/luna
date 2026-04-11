@@ -1,23 +1,23 @@
 const CoverSlide = () => (
   <section className="slide" id="s1" style={{ paddingTop: "12vh" }}>
-    <div className="slide-n">Cherre · For Yardi · 2026</div>
+    <div className="slide-n">Cherre · 2026</div>
 
     <h1 className="luna-h1">
-      Virtuoso is live.
+      Systems record outcomes.
       <br />
-      The substrate it needs <span className="luna-accent">isn't.</span>
+      The meaning is <span className="luna-accent">lost.</span>
     </h1>
     <p className="luna-sub">
-      Yardi has built the AI interface. What it doesn't yet have is the knowledge infrastructure that makes that interface trustworthy at scale — governed definitions, resolved entities, traceable decisions. That layer is what Cherre has spent ten years building.
+      Metrics survive, but definitions drift. Decisions are logged, but their context disappears. Over time, organizations accumulate activity without memory — and AI agents operating on this substrate inherit every gap.
     </p>
 
     <div style={{ height: 1, background: "hsl(var(--rule))", maxWidth: 560, margin: "2.5rem 0" }} />
 
     <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
       {[
-        { label: "Audience", value: "Yardi Leadership" },
-        { label: "Subject", value: "Acquisition · Partnership" },
-        { label: "Context", value: "Real Estate & Capital Markets" },
+        { label: "Industry", value: "Real Estate & Capital Markets" },
+        { label: "Topic", value: "The Intelligence Layer" },
+        { label: "Published", value: "Cherre · 2026" },
       ].map((item) => (
         <div key={item.label}>
           <div className="font-mono-luna" style={{ fontSize: "0.58rem", color: "hsl(var(--pink))", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "0.3rem" }}>
@@ -31,8 +31,8 @@ const CoverSlide = () => (
     <div className="stat-row" style={{ marginTop: "3.5rem" }}>
       {[
         { num: "40%+", label: "of agentic AI projects will be cancelled by 2027 — due to data quality, not model quality", source: "Gartner, June 2025" },
-        { num: "10 yrs", label: "Cherre's head start building the real estate knowledge graph and entity resolution engine", source: "Cherre, 2026" },
-        { num: "$3.7T", label: "AUM currently powered by Cherre's intelligence layer across funds and operators", source: "Cherre, 2026" },
+        { num: "$430–550B", label: "annual value at stake in real estate, construction, and development — all of it requiring governed, traceable AI", source: "McKinsey Global Institute, March 2026" },
+        { num: "$3.7T", label: "AUM powered by Cherre's intelligence layer across institutional funds and operators globally", source: "Cherre, 2026" },
       ].map((stat, i) => (
         <div className="stat-cell" key={i}>
           <div className="stat-num">{stat.num}</div>

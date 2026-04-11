@@ -73,7 +73,7 @@ const StackSlide = () => {
             <tr>
               <td><span className="pace-mode pace-mode-innov">Mode 2</span></td>
               <td><div className="pace-system">Systems of Innovation</div><div className="pace-system-sub">Intelligence &amp; adaptation</div></td>
-              <td style={{ fontSize: "0.82rem", color: "hsl(var(--ink-mid))" }}>Analytics, ML pipelines, decision support, Virtuoso copilot interface</td>
+              <td style={{ fontSize: "0.82rem", color: "hsl(var(--ink-mid))" }}>Analytics, ML pipelines, decision support, copilot interfaces</td>
               <td></td>
             </tr>
             <tr>
