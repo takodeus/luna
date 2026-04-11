@@ -36,8 +36,9 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
       <nav className={`luna-sidebar ${isOpen ? "open" : ""}`}>
 
         <button
+          className="luna-sidebar-logo"
           onClick={() => handleNav("s1")}
-          style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "none", border: "none", padding: 0, cursor: "pointer", textAlign: "left", width: "100%" }}
+          style={{ background: "none", border: "none", cursor: "pointer", textAlign: "left", width: "100%" }}
           title="Back to top"
         >
           <img
