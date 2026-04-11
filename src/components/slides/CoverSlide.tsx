@@ -1,5 +1,16 @@
-const tiles = [
+type SingleTile = {
+  kind: "single"; stat: string; warning: string; color: string; sup: number; body: string; source: string;
+};
+type SplitTile = {
+  kind: "split"; warning: string; color: string; sup: number;
+  left: { stat: string; label: string }; right: { stat: string; label: string };
+  body: string; source: string;
+};
+type Tile = SingleTile | SplitTile;
+
+const tiles: Tile[] = [
   {
+    kind: "single",
     stat: "40%+",
     warning: "canceled",
     color: "hsl(var(--pink))",
@@ -8,6 +19,7 @@ const tiles = [
     source: "Gartner · June 2025",
   },
   {
+    kind: "single",
     stat: "96%",
     warning: "say integration is decisive",
     color: "hsl(var(--blue))",
@@ -16,19 +28,23 @@ const tiles = [
     source: "Salesforce · Feb 2026",
   },
   {
-    stat: "27% / 50%",
-    warning: "apps unintegrated, agents siloed",
+    kind: "split",
+    warning: "Integration is failing as agents proliferate",
     color: "hsl(var(--amber))",
     sup: 2,
-    body: "Only 27% of enterprise applications are integrated, while 50% of AI agents already operate in silos.",
+    left:  { stat: "27%", label: "of enterprise apps are integrated" },
+    right: { stat: "50%", label: "of AI agents already operate in silos" },
+    body: "Two independent findings from the same report — low integration and high fragmentation — compounding in the same environment.",
     source: "Salesforce · Feb 2026",
   },
   {
-    stat: "77% / 3%",
-    warning: "productive AI already running outside SAP",
+    kind: "split",
+    warning: "Productive AI already running outside SAP",
     color: "hsl(var(--green))",
     sup: 3,
-    body: "Among DSAG respondents already using AI productively, 77% run those use cases on non-SAP solutions, versus 3% on SAP's own AI tools.",
+    left:  { stat: "77%", label: "using non-SAP solutions" },
+    right: { stat: "3%",  label: "using SAP's own AI tools" },
+    body: "Among DSAG respondents already running AI productively in production.",
     source: "DSAG · 2026",
   },
 ];
@@ -59,11 +75,30 @@ const CoverSlide = () => (
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", maxWidth: 800 }}>
       {tiles.map((tile, i) => (
         <div key={i} style={{ background: "#fff", padding: "1.4rem 1.6rem", borderTop: `3px solid ${tile.color}` }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "0.35rem", marginBottom: "0.55rem", flexWrap: "wrap" }}>
-            <span style={{ fontSize: "1.65rem", fontWeight: 700, color: tile.color, letterSpacing: "-0.02em", lineHeight: 1 }}>{tile.stat}</span>
-            <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "hsl(var(--foreground))", lineHeight: 1.3 }}>{tile.warning}</span>
-            <sup style={{ fontSize: "0.6em", color: tile.color, fontWeight: 700, marginLeft: "1px" }}>{tile.sup}</sup>
-          </div>
+          {tile.kind === "single" ? (
+            <div style={{ display: "flex", alignItems: "baseline", gap: "0.35rem", marginBottom: "0.55rem", flexWrap: "wrap" }}>
+              <span style={{ fontSize: "1.65rem", fontWeight: 700, color: tile.color, letterSpacing: "-0.02em", lineHeight: 1 }}>{tile.stat}</span>
+              <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "hsl(var(--foreground))", lineHeight: 1.3 }}>{tile.warning}</span>
+              <sup style={{ fontSize: "0.6em", color: tile.color, fontWeight: 700, marginLeft: "1px" }}>{tile.sup}</sup>
+            </div>
+          ) : (
+            <>
+              <div style={{ fontSize: "0.92rem", fontWeight: 700, color: "hsl(var(--foreground))", lineHeight: 1.3, marginBottom: "0.8rem" }}>
+                {tile.warning}<sup style={{ fontSize: "0.6em", color: tile.color, fontWeight: 700, marginLeft: "1px" }}>{tile.sup}</sup>
+              </div>
+              <div style={{ display: "flex", gap: "0", marginBottom: "0.7rem" }}>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: "1.65rem", fontWeight: 700, color: tile.color, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: "0.2rem" }}>{tile.left.stat}</div>
+                  <div style={{ fontSize: "0.74rem", color: "hsl(var(--ink-mid))", lineHeight: 1.4 }}>{tile.left.label}</div>
+                </div>
+                <div style={{ width: "1px", background: "hsl(var(--pink-border))", margin: "0 0.9rem", flexShrink: 0, alignSelf: "stretch" }} />
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: "1.65rem", fontWeight: 700, color: tile.color, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: "0.2rem" }}>{tile.right.stat}</div>
+                  <div style={{ fontSize: "0.74rem", color: "hsl(var(--ink-mid))", lineHeight: 1.4 }}>{tile.right.label}</div>
+                </div>
+              </div>
+            </>
+          )}
           <p style={{ fontSize: "0.79rem", color: "hsl(var(--ink-mid))", lineHeight: 1.65, margin: "0 0 0.5rem" }}>{tile.body}</p>
           <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-light))" }}>{tile.source}</div>
         </div>
