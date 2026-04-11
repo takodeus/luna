@@ -109,10 +109,10 @@ const EraMapSlide = () => (
         Linear data connections were built for human operators reading reports. They cannot draw inferred relationships, resolve entities across sources, or carry context across a query. That is what every architecture before the knowledge graph was.
       </p>
       <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: "0 0 0.6rem" }}>
-        Gartner is explicit on this point: systems built on relational schemas and text-to-SQL are "drawn from the linear connections defined in the source's relational schemas" and "lack the capability to draw inferred relationships" — the defining capability of knowledge graph sources. Era One and Era Two infrastructure was not wrong for its time. It is structurally insufficient for Era Three.
+        Industry analysis is unambiguous on this: systems built on relational schemas and text-to-SQL are bound to linear connections. They cannot draw inferred relationships across sources. That capability is structurally unavailable without a knowledge graph. Era One and Era Two infrastructure was not wrong for its time. It is insufficient for Era Three.
       </p>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-light))" }}>
-        Gartner, G00826629, p. 10
+        Gartner, April 2025
       </div>
     </div>
   </section>

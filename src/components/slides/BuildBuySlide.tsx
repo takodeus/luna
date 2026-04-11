@@ -109,17 +109,26 @@ const BuildBuySlide = () => (
       ))}
     </div>
 
+    {/* LUNA Building Blocks reference */}
+    <div style={{ marginTop: "2rem", maxWidth: 1040, background: "#fff", border: "1px solid hsl(var(--pink-border))", padding: "1.4rem 2rem" }}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "1rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.54rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))" }}>LUNA · 15 Capabilities</div>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.5rem", letterSpacing: "0.12em", color: "hsl(var(--ink-light))", textTransform: "uppercase" }}>7 Live · 2 Roadmap · 6 Enrichment</div>
+      </div>
+      <img src="/luna/BuildingBlocks.png" alt="LUNA building blocks grid showing 15 capabilities across Live, Roadmap, and Enrichment categories including Address Validation, Geocoding, Entity Resolution Pipeline, Multi-stage Matching, Confidence Scoring, Knowledge Graph, and more" style={{ width: "100%", maxWidth: 1000, display: "block" }} />
+    </div>
+
     {/* Style C: split two-column — Gartner composite definition / Cherre response */}
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", marginTop: "2rem", maxWidth: 1040, border: "1px solid hsl(var(--pink-border))" }}>
       <div style={{ background: "hsl(var(--pink))", padding: "1.8rem 2rem" }}>
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
-          Gartner, G00826629, p. 27
+          Industry finding, April 2025
         </div>
         <p style={{ fontSize: "1rem", fontWeight: 600, color: "#fff", lineHeight: 1.45, margin: "0 0 0.8rem" }}>
-          Gartner defines the destination: a composite semantic layer — a coordinated collection of semantic objects across the data architecture, including knowledge graphs, data products, and semantic models working in concert.
+          The destination is well-defined: a composite semantic layer — a coordinated collection of semantic objects across the data architecture, including knowledge graphs, data products, and semantic models working in concert.
         </p>
         <p style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", margin: 0 }}>
-          The ambitious goal of a universal semantic layer has not yet been achieved by any solution or vendor.
+          No solution has achieved this yet. Cherre is built to be the foundation.
         </p>
       </div>
       <div style={{ background: "#FBF1F2", padding: "1.8rem 2rem" }}>

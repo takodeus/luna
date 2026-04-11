@@ -76,6 +76,38 @@ const EntityResolutionSlide = () => (
       </div>
     </div>
 
+    {/* Scale proof point — five headline numbers */}
+    <div style={{ background: "hsl(var(--foreground))", padding: "1.6rem 2rem", marginTop: "1.5px", maxWidth: 960 }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "1rem" }}>
+        LUNA · Entity Resolution at Scale
+      </div>
+      <div style={{ display: "flex", gap: 0, alignItems: "stretch" }}>
+        {[
+          { num: "2B+", label: "Addresses", color: "rgba(255,255,255,0.9)" },
+          { num: "130M+", label: "Buildings", color: "hsl(var(--pink-mid))" },
+          { num: "100M+", label: "Parcels", color: "hsl(var(--pink))" },
+          { num: "160M+", label: "Tax Records", color: "#9B8BE0" },
+          { num: "12B+", label: "Relationships", color: "#DF2467" },
+        ].map((s, i, arr) => (
+          <div key={i} style={{ flex: 1, textAlign: "center", padding: "0.5rem 0", borderRight: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
+            <div style={{ fontSize: "1.9rem", fontWeight: 700, color: s.color, lineHeight: 1, letterSpacing: "-0.02em" }}>{s.num}</div>
+            <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginTop: "0.35rem" }}>{s.label}</div>
+          </div>
+        ))}
+      </div>
+      <div style={{ marginTop: "1rem", fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", textAlign: "center", fontStyle: "italic" }}>
+        2B addresses × 130M buildings × 100M parcels × 160M tax records = 12 billion+ graph relationships powering every resolution
+      </div>
+    </div>
+
+    {/* Resolution pipeline diagram */}
+    <div style={{ marginTop: "1.5px", maxWidth: 960, background: "#fff", border: "1px solid hsl(var(--rule))", padding: "1.6rem 2rem" }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "1rem" }}>
+        Resolution Pipeline
+      </div>
+      <img src="/luna/Resolution.png" alt="LUNA resolution pipeline: Input to Standardize to Geocode through Address Store 2B+, Building Data 130M+, Parcel Data 100M+, Tax + APN 160M+ into Matching Engine with Confidence Score and AI Explain" style={{ width: "100%", maxWidth: 860, display: "block" }} />
+    </div>
+
     {/* Four RE entity types */}
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--rule))", border: "1px solid hsl(var(--rule))", marginTop: "2rem", maxWidth: 960 }}>
       {reTypes.map((t, i) => (
