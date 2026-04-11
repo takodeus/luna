@@ -1,16 +1,5 @@
 const products = [
   {
-    name: "ATLAS",
-    tag: "Orchestration Layer",
-    headline: "A chat-based orchestration agent that lets users query their private graph in natural language.",
-    capabilities: [
-      { label: "Natural language interface", body: "Users ask questions directly against client data within their private knowledge graph. No SQL, no BI tooling, no data team dependency." },
-      { label: "Persistent memory", body: "Organizational and user memory persists across sessions. ATLAS learns context, preferences, and domain-specific terminology over time." },
-      { label: "Extensible skills framework", body: "Performance improves through training and iteration. Skills are composable and extensible. Each deployment gets smarter with use." },
-      { label: "Full query transparency", body: "Every answer includes complete lineage back to the underlying source data, along with the rules and policies applied throughout the reasoning process." },
-    ],
-  },
-  {
     name: "LUNA",
     tag: "Entity Resolution Engine",
     headline: "Best-in-class entity resolution built on the scale of the Cherre graph.",
@@ -33,6 +22,17 @@ const products = [
       { label: "Governed by design", body: "The intelligence layer isn't layered on top. It's embedded. Every query inherits the entity resolution, semantic governance, and provenance of the underlying graph." },
     ],
   },
+  {
+    name: "ATLAS",
+    tag: "Orchestration Layer",
+    headline: "A chat-based orchestration agent that lets users query their private graph in natural language.",
+    capabilities: [
+      { label: "Natural language interface", body: "Users ask questions directly against client data within their private knowledge graph. No SQL, no BI tooling, no data team dependency." },
+      { label: "Persistent memory", body: "Organizational and user memory persists across sessions. ATLAS learns context, preferences, and domain-specific terminology over time." },
+      { label: "Extensible skills framework", body: "Performance improves through training and iteration. Skills are composable and extensible. Each deployment gets smarter with use." },
+      { label: "Full query transparency", body: "Every answer includes complete lineage back to the underlying source data, along with the rules and policies applied throughout the reasoning process." },
+    ],
+  }
 ];
 
 const BuildBuySlide = () => (
@@ -44,7 +44,7 @@ const BuildBuySlide = () => (
       <span className="luna-accent">Built to fill the empty layer.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
-      Gartner identifies the unclaimed position. The three products below are what occupies it: an orchestration agent, an entity resolution engine, and a knowledge graph database, purpose-built for real estate at institutional scale.
+      Gartner identifies the open position. The three products below are what fills it: an orchestration agent, an entity resolution engine, and a knowledge graph database, purpose-built for real estate at institutional scale.
     </p>
 
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "2.5rem", maxWidth: 1040 }}>
@@ -112,7 +112,7 @@ const BuildBuySlide = () => (
     <div className="callout" style={{ marginTop: "2rem", maxWidth: 1040 }}>
       <div className="callout-title">The Gartner Finding</div>
       <div className="callout-text">
-        "The universal semantic layer has not yet been achieved by any organization or vendor." (Gartner, April 2025, G00826629). <strong>ATLAS, LUNA, and MERIDIAN are the architecture that fills it.</strong>
+        "The universal semantic layer has not yet been achieved by any organization or vendor." (Gartner, April 2025, G00826629). <strong>LUNA, MERIDIAN, and ATLAS are the architecture that fills it.</strong>
       </div>
     </div>
   </section>

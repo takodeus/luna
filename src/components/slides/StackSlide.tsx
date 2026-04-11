@@ -1,98 +1,101 @@
-const StackSlide = () => {
-  const base = import.meta.env.BASE_URL ?? "/";
-  const imgPath = `${base}gartner-fig4.png`.replace("//", "/");
+const layers = [
+  {
+    mode: "Mode 3",
+    modeSub: "Built to Act",
+    modeColor: "#D4537E",
+    rows: [
+      { label: "Systems of action", sub: "Autonomous agents — agentic AI delivering decisions and execution", fill: "#D4537E", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 56 },
+    ],
+  },
+  {
+    mode: null,
+    modeSub: null,
+    modeColor: null,
+    rows: [
+      { label: "Semantic governance layer", sub: "LUNA · MERIDIAN · ATLAS — entity resolution, knowledge graph, orchestration", fill: "none", dashed: true, text: "#993556", subText: "#D4537E", height: 60 },
+    ],
+  },
+  {
+    mode: "Mode 2",
+    modeSub: "Built to Change",
+    modeColor: "#185FA5",
+    rows: [
+      { label: "Systems of innovation", sub: "Intelligence & adaptation — analytics, ML pipelines, copilot interfaces", fill: "#185FA5", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
+      { label: "Systems of differentiation", sub: "Orchestration & plural ontologies — domain models, governed definitions", fill: "#3B6D11", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
+    ],
+  },
+  {
+    mode: "Mode 1",
+    modeSub: "Built to Last",
+    modeColor: "#854F0B",
+    rows: [
+      { label: "Systems of record", sub: "Provenance & trust — Yardi, MRI, Argus, VTS, Chatham", fill: "#854F0B", text: "#fff", subText: "rgba(255,255,255,0.55)", height: 50 },
+    ],
+  },
+];
 
-  return (
-    <section className="slide" id="s11">
-      <div className="slide-n">xi / The Stack and The Empty Layer</div>
-      <h2 className="luna-h2">
-        The universal semantic layer
-        <br />
-        <span className="luna-accent">
-          has not yet been achieved
-          <br />
-          by any organization or vendor.
-        </span>
-      </h2>
-      <p style={{ fontSize: "0.82rem", color: "hsl(var(--ink-light))", marginTop: "0.5rem" }}>
-        Gartner, April 2025 (G00826629)
-      </p>
+const StackSlide = () => (
+  <section className="slide" id="s11">
+    <div className="slide-n">xi — The Empty Layer</div>
+    <h2 className="luna-h2">
+      Rethinking Gartner's bi-modal pace layered strategy.
+      <br />
+      <span className="luna-accent">Tri-modal. Built to act.</span>
+    </h2>
+    <p className="luna-sub" style={{ marginBottom: 0 }}>
+      "The universal semantic layer has not yet been achieved by any organization or vendor." — Gartner, April 2025 (G00826629). The position between systems of record and systems of action remains open.
+    </p>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start", marginTop: "2.5rem", maxWidth: 960 }}>
+    <div style={{ display: "flex", gap: 0, marginTop: "2rem", maxWidth: 920, flexDirection: "column" }}>
+      {layers.map((group, gi) => (
+        <div key={gi} style={{ display: "flex", gap: 0, marginBottom: group.rows[0]?.dashed ? 0 : "2px" }}>
+          {/* Mode label column */}
+          <div style={{
+            width: 88,
+            flexShrink: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            gap: "0.15rem",
+            background: group.modeColor ? `${group.modeColor}12` : "transparent",
+            borderLeft: group.modeColor ? `3px solid ${group.modeColor}40` : "3px solid transparent",
+            padding: "0.4rem 0",
+          }}>
+            {group.mode && (
+              <>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", letterSpacing: "0.14em", textTransform: "uppercase", color: group.modeColor!, fontWeight: 600 }}>{group.mode}</span>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.48rem", letterSpacing: "0.1em", color: group.modeColor!, opacity: 0.65 }}>{group.modeSub}</span>
+              </>
+            )}
+          </div>
 
-        {/* Stack Diagram */}
-        <div>
-          <div className="stack-head">Agentic Stack: 2027+</div>
-          <div className="stack-col">
-            <div className="sl sl-action">Systems of Action<span>Autonomous agents: leasing, underwriting, compliance, portfolio</span></div>
-            <div style={{ textAlign: "center", color: "hsl(var(--pink))", fontSize: "0.7rem", fontWeight: 600, padding: "0.2rem", letterSpacing: "0.1em" }}>↑ governed context ↑</div>
-            <div className="sl sl-luna">Cherre: Intelligence Architecture<span>Semantic governance · entity resolution · context graph · meaning</span></div>
-            <div style={{ textAlign: "center", color: "hsl(var(--ink-light))", fontSize: "0.7rem", fontWeight: 600, padding: "0.2rem", letterSpacing: "0.1em" }}>↑ structured data ↑</div>
-            <div className="sl sl-innov">Systems of Innovation<span>Analytics, ML pipelines, copilot interfaces</span></div>
-            <div className="sl sl-empty">← The Fragmented Layer →<span>No incumbent owns this. The semantic layer is contested, incomplete, and unbuilt at real estate scale.</span></div>
-            <div className="sl sl-record" style={{ opacity: 0.6 }}>Systems of Record<span>Yardi · MRI · Argus · Chatham: Provenance and Trust, not intelligence</span></div>
+          {/* Row bars */}
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "2px" }}>
+            {group.rows.map((row, ri) => (
+              <div key={ri} style={{
+                height: row.height,
+                background: row.dashed ? "hsl(var(--pink-light))" : row.fill,
+                border: row.dashed ? "2px dashed #D4537E" : "none",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                padding: "0 1.4rem",
+                gap: "0.2rem",
+              }}>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: row.text }}>{row.label}</span>
+                <span style={{ fontSize: "0.75rem", color: row.subText, lineHeight: 1.4 }}>{row.sub}</span>
+              </div>
+            ))}
           </div>
         </div>
+      ))}
+    </div>
 
-        {/* Gartner Fig 4 */}
-        <div>
-          <div className="gartner-fig">
-            <div className="gartner-img-wrap" style={{ minHeight: "auto", background: "none", padding: 0 }}>
-              <img
-                src={imgPath}
-                alt="Gartner Figure 4: Semantic Layer Market, showing market pressure converging on traditional semantic layer platforms from BI reporting, data management, and AI/DSML platforms"
-                style={{ width: "100%", display: "block", border: "1px solid hsl(var(--pink-border))" }}
-              />
-            </div>
-            <p className="gartner-footnote" style={{ marginTop: "0.75rem" }}>
-              SOURCE: Gartner, Christopher Long, "Rethink Semantic Layers to Support the Future of Analytics and AI," April 2025 (G00826629). Reproduced with attribution. Gartner does not endorse any vendor, product or service depicted.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Pace table */}
-      <div style={{ marginTop: "2.5rem" }}>
-        <table className="pace-table">
-          <thead>
-            <tr>
-              <th>Mode</th>
-              <th>Layer</th>
-              <th>What it does</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="pace-row-new">
-              <td><span className="pace-mode pace-mode-action">Mode 3 · New</span></td>
-              <td><div className="pace-system">Systems of Action</div><div className="pace-system-sub">Autonomous agents</div></td>
-              <td style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))" }}>Leasing, underwriting, compliance, portfolio agents operating with governed context</td>
-              <td><span className="pace-new-tag">Built to Act</span></td>
-            </tr>
-            <tr>
-              <td><span className="pace-mode pace-mode-innov">Mode 2</span></td>
-              <td><div className="pace-system">Systems of Innovation</div><div className="pace-system-sub">Intelligence and adaptation</div></td>
-              <td style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))" }}>Analytics, ML pipelines, decision support, copilot interfaces</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><span className="pace-mode pace-mode-diff">Mode 1+</span></td>
-              <td><div className="pace-system">Systems of Differentiation</div><div className="pace-system-sub">Semantic governance layer</div></td>
-              <td style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))" }}>Ontology, entity resolution, metric governance, context graph: the currently fragmented, unclaimed layer</td>
-              <td style={{ fontSize: "0.6rem", fontWeight: 600, color: "hsl(var(--pink))" }}>Contested</td>
-            </tr>
-            <tr>
-              <td><span className="pace-mode pace-mode-record">Mode 1</span></td>
-              <td><div className="pace-system">Systems of Record</div><div className="pace-system-sub">Provenance and trust</div></td>
-              <td style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))" }}>Yardi, MRI, Argus, VTS, Chatham: the transaction ledger. Necessary, but no longer the strategic layer.</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-  );
-};
+    <p className="font-mono-luna" style={{ fontSize: "0.58rem", letterSpacing: "0.1em", color: "hsl(var(--ink-light))", marginTop: "1.5rem", maxWidth: 920 }}>
+      SOURCE: Gartner, Christopher Long, "Rethink Semantic Layers to Support the Future of Analytics and AI," April 2025 (G00826629). Adapted from Gartner's Bi-Modal Pace Layered Strategy — extended to tri-modal with Mode 3 (Built to Act). Gartner does not endorse any vendor, product or service depicted.
+    </p>
+  </section>
+);
 
 export default StackSlide;

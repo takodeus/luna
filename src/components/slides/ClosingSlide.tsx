@@ -2,7 +2,7 @@ const findings = [
   {
     source: "Gartner · April 2025",
     quote: "The universal semantic layer has not yet been achieved by any organization or vendor.",
-    context: "The semantic governance layer, what Gartner calls the 'contested' position between systems of record and systems of action, remains structurally unclaimed. The pressure is converging from BI platforms, data management vendors, and AI/ML platforms simultaneously. The organization that occupies this position in real estate establishes a compounding structural advantage.",
+    context: "The semantic governance layer, what Gartner calls the 'contested' position between systems of record and systems of action, remains structurally open. The pressure is converging from BI platforms, data management vendors, and AI/ML platforms simultaneously. The organization that occupies this position in real estate establishes a compounding structural advantage.",
   },
   {
     source: "Gartner · June 2025",
@@ -18,30 +18,30 @@ const findings = [
 
 const ClosingSlide = () => (
   <section className="slide slide-dark" id="s13">
-    <div className="slide-n" style={{ color: "rgba(255,255,255,0.5)" }}>xiii / What Comes Next</div>
+    <div className="slide-n" style={{ color: "rgba(255,255,255,0.35)" }}>xiii / What Comes Next</div>
 
     <h2 className="luna-h2" style={{ color: "#fff" }}>
       The architecture is defined.
       <br />
-      <span style={{ color: "hsl(var(--pink-light))" }}>The window to own it is open.</span>
+      <span style={{ color: "rgba(255,255,255,0.65)" }}>The window to own it is open.</span>
     </h2>
 
     <div style={{ display: "flex", flexDirection: "column", gap: "1px", marginTop: "2.5rem", maxWidth: 900 }}>
       {findings.map((f, i) => (
-        <div key={i} style={{ background: "rgba(255,255,255,0.08)", borderLeft: "4px solid hsl(var(--pink-light))", padding: "1.8rem 2rem" }}>
-          <div style={{ fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink-light))", marginBottom: "0.6rem", opacity: 0.8 }}>{f.source}</div>
-          <div style={{ fontSize: "1.05rem", fontWeight: 600, color: "#fff", lineHeight: 1.4, marginBottom: "0.9rem", fontStyle: "italic" }}>
+        <div key={i} style={{ background: "rgba(255,255,255,0.05)", borderLeft: "3px solid rgba(255,255,255,0.18)", padding: "1.8rem 2rem" }}>
+          <div style={{ fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "0.6rem" }}>{f.source}</div>
+          <div style={{ fontSize: "1.05rem", fontWeight: 600, color: "rgba(255,255,255,0.88)", lineHeight: 1.4, marginBottom: "0.9rem", fontStyle: "italic" }}>
             "{f.quote}"
           </div>
-          <div style={{ fontSize: "0.83rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>{f.context}</div>
+          <div style={{ fontSize: "0.83rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>{f.context}</div>
         </div>
       ))}
     </div>
 
-    <div style={{ marginTop: "2.5rem", maxWidth: 900, padding: "1.6rem 2rem", background: "hsl(var(--pink-light))", borderRadius: 3 }}>
-      <div style={{ fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.6rem" }}>The Strategic Position</div>
-      <div style={{ fontSize: "0.95rem", color: "hsl(var(--foreground))", lineHeight: 1.65, fontWeight: 400 }}>
-        The organization that owns the intelligence layer in real estate (entity resolution, semantic governance, the context graph) establishes a position that compounds with every data relationship, every market cycle, and every agent deployment. The layer is unclaimed. The architecture is proven. The question is when, not whether.
+    <div style={{ marginTop: "2.5rem", maxWidth: 900, padding: "1.6rem 2rem", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 3 }}>
+      <div style={{ fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "0.6rem" }}>The Strategic Position</div>
+      <div style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.72)", lineHeight: 1.65, fontWeight: 400 }}>
+        The organization that owns the intelligence layer in real estate — entity resolution, semantic governance, the context graph — establishes a position that compounds with every data relationship, every market cycle, and every agent deployment. The architecture is proven. The question is when, not whether.
       </div>
     </div>
 

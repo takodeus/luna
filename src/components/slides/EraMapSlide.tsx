@@ -42,8 +42,8 @@ const EraMapSlide = () => (
         </div>
         <div style={{ ...sep as any, background: "rgba(255,255,255,0.2)" }} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
-          <div style={{ ...col.val, color: "#fff" }}>Govern meaning</div>
-          <div style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.6)", marginTop: "0.2rem" }}>Interpret, act, trace</div>
+          <div style={{ ...col.val, color: "#fff" }}>Systems of Action</div>
+          <div style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.6)", marginTop: "0.2rem" }}>Autonomous agents</div>
         </div>
         <div style={{ ...sep as any, background: "rgba(255,255,255,0.2)" }} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
