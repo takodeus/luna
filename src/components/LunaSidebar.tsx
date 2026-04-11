@@ -63,10 +63,9 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
           <div className="luna-sidebar-progress-fill" style={{ width: `${progress}%` }} />
         </div>
         <div className="luna-sidebar-footer">
+          <img src={cherreLogo} alt="Cherre" style={{ height: 24, objectFit: 'contain' }} />
           <span className="luna-sidebar-tag">
-            Real Estate · Capital Markets
-            <br />
-            <span>Cherre</span> · Luna · 2026
+            Cherre Inc. Copyright 2026
           </span>
         </div>
       </nav>
