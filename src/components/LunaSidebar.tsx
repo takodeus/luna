@@ -35,10 +35,14 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
       <div className={`luna-overlay ${isOpen ? "open" : ""}`} onClick={onClose} />
       <nav className={`luna-sidebar ${isOpen ? "open" : ""}`}>
 
-        <div className="luna-sidebar-logo">
+        <button
+          onClick={() => handleNav("s1")}
+          style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "none", border: "none", padding: 0, cursor: "pointer", textAlign: "left", width: "100%" }}
+          title="Back to top"
+        >
           <img
             src="/luna/cherre-icon.jpg"
-            alt="Cherre"
+            alt="Cherre — back to top"
             style={{ width: 36, height: 36, objectFit: "contain", borderRadius: 4, flexShrink: 0 }}
           />
           <div className="luna-logo-text">
@@ -46,7 +50,7 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
             <br />
             The Data Infrastructure
           </div>
-        </div>
+        </button>
 
         <span className="luna-nav-label">Presentation</span>
         <div className="luna-nav">
