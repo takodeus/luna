@@ -59,7 +59,7 @@ const StackSlide = () => (
       </div>
 
       {/* Systems of Innovation — 84% width, centered (pyramid taper) */}
-      <div style={{ width: "84%", margin: "0 auto 2px", background: "#4A3888", padding: "0.85rem 1.6rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ width: "84%", margin: "0 auto 2px", background: "hsl(var(--amber))", padding: "0.85rem 1.6rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of innovation</div>
           <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.55)" }}>Intelligence and adaptation: analytics, ML pipelines, copilot interfaces</div>
@@ -68,7 +68,7 @@ const StackSlide = () => (
       </div>
 
       {/* Systems of Differentiation — 92% width */}
-      <div style={{ width: "92%", margin: "0 auto 2px", background: "#2E2460", padding: "0.85rem 1.6rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ width: "92%", margin: "0 auto 2px", background: "hsl(var(--blue))", padding: "0.85rem 1.6rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of differentiation</div>
           <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.55)" }}>Domain models & governed meaning: business rules, differentiating workflows</div>
@@ -77,7 +77,7 @@ const StackSlide = () => (
       </div>
 
       {/* Systems of Record — 100% width, widest base */}
-      <div style={{ width: "100%", background: "#1a1a2e", padding: "0.85rem 1.6rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ width: "100%", background: "hsl(var(--green))", padding: "0.85rem 1.6rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of record</div>
           <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.45)" }}>Provenance and trust — ERP, CRE platforms, operational data</div>
@@ -88,7 +88,7 @@ const StackSlide = () => (
     </div>
 
     <p className="font-mono-luna" style={{ fontSize: "0.64rem", letterSpacing: "0.08em", color: "hsl(var(--ink-light))", marginTop: "1.5rem", maxWidth: 920 }}>
-      SOURCE: Gartner, Christopher Long, "Rethink Semantic Layers to Support the Future of Analytics and AI," April 2025 (G00826629). Adapted from Gartner's PACE-Layered Strategy, extended to tri-modal with Mode 3 (Built to Act). Gartner does not endorse any vendor, product or service depicted.
+      Source: Gartner's PACE-Layered Architecture
     </p>
   </section>
 );
