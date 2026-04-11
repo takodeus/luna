@@ -3,10 +3,10 @@ const col = {
   val: { fontSize: "0.9rem", fontWeight: 600 as const },
 };
 
-const sep = { width: 1, background: "hsl(var(--pink-border))", alignSelf: "stretch", margin: "0 0.5rem", flexShrink: 0 };
+const sep = { width: 1, background: "hsl(var(--pink) / 0.15)", alignSelf: "stretch", margin: "0 0.5rem", flexShrink: 0 };
 
 const EraMapSlide = () => (
-  <section className="slide slide-alt" id="s2">
+  <section className="slide" id="s2">
     <div className="slide-n">ii / Era Three: Knowledge Graph</div>
     <h2 className="luna-h2">
       Forty years. Three eras.
@@ -17,7 +17,7 @@ const EraMapSlide = () => (
       Every generation of enterprise software was shaped by its defining architecture. Era Three doesn't just change who uses data. It changes what data infrastructure must be able to do. The knowledge graph is that architecture.
     </p>
 
-    <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1px", maxWidth: 920, background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))" }}>
+    <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1px", maxWidth: 920, background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)" }}>
 
       {/* Column headers */}
       <div style={{ display: "flex", gap: 0, paddingLeft: 172, paddingBottom: "0.64rem", paddingTop: "0.64rem", background: "#fff" }}>
@@ -54,10 +54,10 @@ const EraMapSlide = () => (
       </div>
 
       {/* ERA TWO */}
-      <div style={{ display: "flex", alignItems: "center", background: "#fff", borderLeft: "4px solid hsl(var(--pink-border))", padding: "1.2rem 1.6rem", gap: 0 }}>
+      <div style={{ display: "flex", alignItems: "center", background: "#fff", borderLeft: "4px solid hsl(var(--pink) / 0.2)", padding: "1.2rem 1.6rem", gap: 0 }}>
         <div style={{ width: 148, flexShrink: 0, paddingRight: "1.2rem" }}>
           <div style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "hsl(var(--ink-light))", marginBottom: "0.25rem" }}>Era Two</div>
-          <div style={{ fontSize: "1.45rem", fontWeight: 600, color: "hsl(var(--foreground))", letterSpacing: "-0.02em", lineHeight: 1 }}>2005–2023</div>
+          <div style={{ fontSize: "1.45rem", fontWeight: 600, color: "#000", letterSpacing: "-0.02em", lineHeight: 1 }}>2005–2023</div>
         </div>
         <div style={sep as any} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
@@ -78,10 +78,10 @@ const EraMapSlide = () => (
       </div>
 
       {/* ERA ONE */}
-      <div style={{ display: "flex", alignItems: "center", background: "#fff", borderLeft: "4px solid hsl(var(--pink-border))", padding: "1.2rem 1.6rem", gap: 0, opacity: 0.75 }}>
+      <div style={{ display: "flex", alignItems: "center", background: "#fff", borderLeft: "4px solid hsl(var(--pink) / 0.2)", padding: "1.2rem 1.6rem", gap: 0, opacity: 0.75 }}>
         <div style={{ width: 148, flexShrink: 0, paddingRight: "1.2rem" }}>
           <div style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "hsl(var(--ink-light))", marginBottom: "0.25rem" }}>Era One</div>
-          <div style={{ fontSize: "1.45rem", fontWeight: 600, color: "hsl(var(--foreground))", letterSpacing: "-0.02em", lineHeight: 1 }}>1971–2005</div>
+          <div style={{ fontSize: "1.45rem", fontWeight: 600, color: "#000", letterSpacing: "-0.02em", lineHeight: 1 }}>1971–2005</div>
         </div>
         <div style={sep as any} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
@@ -108,10 +108,10 @@ const EraMapSlide = () => (
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.8rem" }}>
         Beyond Data Connections
       </div>
-      <p style={{ fontFamily: "var(--serif)", fontSize: "1.35rem", fontWeight: 600, fontStyle: "italic", color: "hsl(var(--foreground))", lineHeight: 1.4, margin: "0 0 0.9rem" }}>
+      <p style={{ fontFamily: "var(--serif)", fontSize: "1.35rem", fontWeight: 600, fontStyle: "italic", color: "#000", lineHeight: 1.4, margin: "0 0 0.9rem" }}>
         Linear data connections were built for human operators reading reports. They cannot draw inferred relationships, resolve entities across sources, or carry context across a query. That is what every architecture before the knowledge graph was.
       </p>
-      <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: "0 0 0.6rem" }}>
+      <p style={{ fontSize: "0.83rem", color: "#000", lineHeight: 1.7, margin: "0 0 0.6rem" }}>
         Industry analysis is unambiguous on this: systems built on relational schemas and text-to-SQL are bound to linear connections. They cannot draw inferred relationships across sources. That capability is structurally unavailable without a knowledge graph. Era One and Era Two infrastructure was not wrong for its time. It is insufficient for Era Three.
       </p>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-light))" }}>

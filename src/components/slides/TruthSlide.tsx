@@ -42,17 +42,17 @@ const KnowledgeGraphSlide = () => (
       Cherre's knowledge graph is the intelligence infrastructure between the system of record and every AI agent that queries it. Each layer handles a distinct problem. All four are required before agent outputs can be trusted.
     </p>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "2.5rem", maxWidth: 960 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", marginTop: "2.5rem", maxWidth: 960 }}>
       {layers.map((layer, i) => (
-        <div key={i} style={{ background: layer.dark ? "hsl(var(--pink))" : "hsl(var(--pink-light))", padding: "2rem 2.2rem", borderLeft: "4px solid hsl(var(--pink))", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+        <div key={i} style={{ background: layer.dark ? "#A8185E" : "#fff", padding: "2rem 2.2rem", borderLeft: "4px solid #A8185E", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: "0.8rem" }}>
-            <span style={{ fontSize: "0.70rem", fontWeight: 600, color: layer.dark ? "rgba(255,255,255,0.6)" : "hsl(var(--pink))", letterSpacing: "0.2em" }}>{layer.num}</span>
-            <span style={{ fontSize: "1.1rem", fontWeight: 600, color: layer.dark ? "#fff" : "hsl(var(--foreground))" }}>{layer.name}</span>
+            <span style={{ fontSize: "0.70rem", fontWeight: 600, color: layer.dark ? "rgba(255,255,255,0.6)" : "#A8185E", letterSpacing: "0.2em" }}>{layer.num}</span>
+            <span style={{ fontSize: "1.1rem", fontWeight: 600, color: layer.dark ? "#fff" : "#000" }}>{layer.name}</span>
             <span style={{ fontSize: "0.6rem", fontWeight: 600, color: layer.dark ? "rgba(255,255,255,0.5)" : "hsl(var(--ink-light))", letterSpacing: "0.12em", textTransform: "uppercase" }}>{layer.tag}</span>
           </div>
-          <p style={{ fontSize: "0.83rem", color: layer.dark ? "rgba(255,255,255,0.85)" : "hsl(var(--foreground))", lineHeight: 1.65, margin: 0 }}>{layer.desc}</p>
-          <div style={{ paddingTop: "0.8rem", borderTop: `1px solid ${layer.dark ? "rgba(255,255,255,0.15)" : "hsl(var(--pink-border))"}` }}>
-            <div style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: layer.dark ? "rgba(255,255,255,0.5)" : "hsl(var(--pink))", marginBottom: "0.3rem", opacity: 0.8 }}>Cherre</div>
+          <p style={{ fontSize: "0.83rem", color: layer.dark ? "rgba(255,255,255,0.85)" : "#000", lineHeight: 1.65, margin: 0 }}>{layer.desc}</p>
+          <div style={{ paddingTop: "0.8rem", borderTop: `1px solid ${layer.dark ? "rgba(255,255,255,0.15)" : "hsl(var(--pink) / 0.15)"}` }}>
+            <div style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: layer.dark ? "rgba(255,255,255,0.5)" : "#A8185E", marginBottom: "0.3rem", opacity: 0.8 }}>Cherre</div>
             <div style={{ fontSize: "0.78rem", color: layer.dark ? "rgba(255,255,255,0.6)" : "hsl(var(--ink-light))", fontStyle: "italic", lineHeight: 1.5 }}>{layer.cherre}</div>
           </div>
         </div>
@@ -64,7 +64,7 @@ const KnowledgeGraphSlide = () => (
       <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "1rem" }}>The Four-Question Test: A well-designed knowledge architecture answers all four simultaneously</div>
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.83rem" }}>
         <thead>
-          <tr style={{ background: "hsl(var(--pink))", color: "#fff" }}>
+          <tr style={{ background: "#A8185E", color: "#fff" }}>
             {["Question", "Layer", "What it enables"].map((h) => (
               <th key={h} style={{ padding: "0.7rem 1rem", textAlign: "left", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase" }}>{h}</th>
             ))}
@@ -79,16 +79,16 @@ const KnowledgeGraphSlide = () => (
           ].map((row, i) => {
             const isLast = i === 3;
             return (
-            <tr key={i} style={{ borderBottom: "1px solid hsl(var(--pink-border))", background: isLast ? "hsl(var(--pink))" : i % 2 === 0 ? "#fff" : "hsl(var(--pink-light))" }}>
-              <td style={{ padding: "0.85rem 1rem", borderLeft: `4px solid ${isLast ? "rgba(255,255,255,0.4)" : "hsl(var(--pink))"}`, color: isLast ? "#fff" : "hsl(var(--pink))", fontWeight: 600 }}>{row.q}</td>
-              <td style={{ padding: "0.85rem 1rem", fontWeight: 700, color: isLast ? "#fff" : "hsl(var(--foreground))" }}>{row.layer}</td>
-              <td style={{ padding: "0.85rem 1rem", color: isLast ? "rgba(255,255,255,0.85)" : "hsl(var(--foreground))" }}>{row.enables}</td>
+            <tr key={i} style={{ borderBottom: "1px solid hsl(var(--pink) / 0.15)", background: isLast ? "#A8185E" : "#fff" }}>
+              <td style={{ padding: "0.85rem 1rem", borderLeft: `4px solid ${isLast ? "rgba(255,255,255,0.4)" : "#A8185E"}`, color: isLast ? "#fff" : "#A8185E", fontWeight: 600 }}>{row.q}</td>
+              <td style={{ padding: "0.85rem 1rem", fontWeight: 700, color: isLast ? "#fff" : "#000" }}>{row.layer}</td>
+              <td style={{ padding: "0.85rem 1rem", color: isLast ? "rgba(255,255,255,0.85)" : "#000" }}>{row.enables}</td>
             </tr>
             );
           })}
         </tbody>
       </table>
-      <div style={{ background: "hsl(var(--pink-light))", border: "1px solid hsl(var(--pink-border))", padding: "0.9rem 1rem", marginTop: "1px", fontSize: "0.83rem", fontWeight: 600, color: "hsl(var(--pink))", textAlign: "center" }}>
+      <div style={{ background: "#fff", border: "1px solid hsl(var(--pink) / 0.15)", padding: "0.9rem 1rem", marginTop: "1px", fontSize: "0.83rem", fontWeight: 600, color: "#A8185E", textAlign: "center" }}>
         If the system can answer all four with grounded, consistent, and traceable responses, the architecture is working.
       </div>
     </div>

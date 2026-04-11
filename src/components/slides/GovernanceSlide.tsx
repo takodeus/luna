@@ -2,7 +2,7 @@ const quadrants = [
   {
     label: "Entity Governance",
     color: "#fff",
-    bg: "hsl(var(--green))",
+    bg: "#A8185E",
     engine: "Resolved by LUNA",
     items: [
       "Who owns the canonical definition of a business entity?",
@@ -14,7 +14,7 @@ const quadrants = [
   {
     label: "Metric Governance",
     color: "#fff",
-    bg: "hsl(var(--blue))",
+    bg: "#A8185E",
     engine: "Governed in MERIDIAN",
     items: [
       "Where is business logic defined, and by whom?",
@@ -26,7 +26,7 @@ const quadrants = [
   {
     label: "Context Governance",
     color: "#fff",
-    bg: "hsl(var(--amber))",
+    bg: "#DF2467",
     engine: "Stored in MERIDIAN",
     items: [
       "What events are captured, and at what granularity?",
@@ -38,7 +38,7 @@ const quadrants = [
   {
     label: "Reasoning Governance",
     color: "#fff",
-    bg: "hsl(var(--pink))",
+    bg: "#A8185E",
     engine: "Traced through ATLAS",
     items: [
       "What decisions is AI permitted to make autonomously?",
@@ -63,17 +63,17 @@ const GovernanceSlide = () => (
 
     {/* Data governance → Semantic governance callout */}
     <div style={{ maxWidth: 960, marginTop: "1.8rem", marginBottom: "1.5px", display: "flex", gap: "1.5px" }}>
-      <div style={{ flex: 1, background: "hsl(var(--pink-light))", borderLeft: "4px solid hsl(var(--pink-border))", padding: "1rem 1.4rem" }}>
+      <div style={{ flex: 1, background: "#fff", borderLeft: "4px solid hsl(var(--pink) / 0.3)", padding: "1rem 1.4rem" }}>
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Data governance</div>
-        <div style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>Manages format, completeness, and access. Assumes a human closes the loop on exceptions.</div>
+        <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>Manages format, completeness, and access. Assumes a human closes the loop on exceptions.</div>
       </div>
-      <div style={{ flex: 1, background: "hsl(var(--pink-light))", borderLeft: "4px solid hsl(var(--pink))", padding: "1rem 1.4rem" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.35rem" }}>Semantic governance</div>
-        <div style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>Manages meaning, context, and the reasoning chain itself. Assumes the agent is the loop. These are not the same problem.</div>
+      <div style={{ flex: 1, background: "#fff", borderLeft: "4px solid #A8185E", padding: "1rem 1.4rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E", marginBottom: "0.35rem" }}>Semantic governance</div>
+        <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>Manages meaning, context, and the reasoning chain itself. Assumes the agent is the loop. These are not the same problem.</div>
       </div>
     </div>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5px", background: "hsl(var(--rule))", border: "1px solid hsl(var(--rule))", marginTop: "0", maxWidth: 960 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", marginTop: "0", maxWidth: 960 }}>
       {quadrants.map((q, i) => (
         <div key={i} style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ background: q.bg, padding: "0.7rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -83,13 +83,13 @@ const GovernanceSlide = () => (
           <div style={{ background: "#fff", padding: "1.2rem 1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
             <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "0.55rem" }}>
               {q.items.map((item, j) => (
-                <li key={j} style={{ fontSize: "0.82rem", color: "hsl(var(--foreground))", lineHeight: 1.6, paddingLeft: "0.9rem", position: "relative" }}>
+                <li key={j} style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.6, paddingLeft: "0.9rem", position: "relative" }}>
                   <span style={{ position: "absolute", left: 0, color: q.bg, fontWeight: 700 }}>·</span>
                   {item}
                 </li>
               ))}
             </ul>
-            <div style={{ borderTop: "1px solid hsl(var(--rule))", paddingTop: "0.7rem", fontSize: "0.77rem", color: "hsl(var(--ink-mid))", lineHeight: 1.65, fontStyle: "italic" }}>
+            <div style={{ borderTop: "1px solid hsl(var(--pink) / 0.15)", paddingTop: "0.7rem", fontSize: "0.77rem", color: "hsl(var(--ink-mid))", lineHeight: 1.65, fontStyle: "italic" }}>
               {q.why}
             </div>
           </div>

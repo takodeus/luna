@@ -24,7 +24,7 @@ const findings = [
     num: 4,
     source: "McKinsey Global Institute · March 2026",
     isQuote: false,
-    headline: "$430–550B in annual value across real estate, construction, and development",
+    headline: "$430-550B in annual value across real estate, construction, and development",
     body: "That value comes from redesigning domains and embedding agents into core workflows, not from adding isolated copilots.",
   },
 ];
@@ -37,7 +37,7 @@ const footnotes = [
 ];
 
 const ClosingSlide = () => (
-  <section className="slide" id="s13" style={{ background: "#FBF1F2" }}>
+  <section className="slide" id="s13" style={{ background: "#fff" }}>
     <div className="slide-n">xiii / What Comes Next</div>
 
     <h2 className="luna-h2">
@@ -49,26 +49,26 @@ const ClosingSlide = () => (
     {/* Four evidence cards */}
     <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2rem", maxWidth: 900 }}>
       {findings.map((f) => (
-        <div key={f.num} style={{ background: "#E2B0C2", borderLeft: "4px solid hsl(var(--pink))", padding: "1.2rem 1.8rem" }}>
+        <div key={f.num} style={{ background: "#fff", borderLeft: "4px solid #A8185E", padding: "1.2rem 1.8rem" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", marginBottom: "0.4rem" }}>
-            <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))" }}>
+            <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E" }}>
               {f.source}
             </div>
           </div>
-          <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#3B0F1E", lineHeight: 1.4, marginBottom: "0.5rem" }}>
+          <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#000", lineHeight: 1.4, marginBottom: "0.5rem" }}>
             {f.isQuote ? <span>"{f.headline}"</span> : f.headline}
-            <sup style={{ fontSize: "0.6em", color: "hsl(var(--pink))", fontWeight: 700, marginLeft: "1px" }}>{f.num}</sup>
+            <sup style={{ fontSize: "0.6em", color: "#A8185E", fontWeight: 700, marginLeft: "1px" }}>{f.num}</sup>
           </div>
-          <div style={{ fontSize: "0.82rem", color: "#4B1528", lineHeight: 1.7 }}>{f.body}</div>
+          <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.7 }}>{f.body}</div>
         </div>
       ))}
     </div>
 
     {/* Strategic position */}
-    <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.2rem 1.8rem", background: "hsl(var(--pink))" }}>
+    <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.2rem 1.8rem", background: "#A8185E" }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "0.5rem" }}>
         The strategic position
-        <sup style={{ fontSize: "0.7em", color: "hsl(var(--pink-mid))", marginLeft: "1px" }}>1234</sup>
+        <sup style={{ fontSize: "0.7em", color: "rgba(255,255,255,0.3)", marginLeft: "1px" }}>1234</sup>
       </div>
       <div style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "0.8rem" }}>
         The record will remain in systems of record. The control point will not. Every enterprise already has data lineage and data governance. Almost none have decision lineage or semantic governance. The winner will be the platform that closes that gap: entity resolution, governed meaning, traceable context, and orchestration built for agents, not reports.

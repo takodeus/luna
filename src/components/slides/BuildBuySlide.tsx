@@ -47,12 +47,12 @@ const BuildBuySlide = () => (
       Gartner identifies the open position. The three products below are what fills it: an orchestration agent, an entity resolution engine, and a knowledge graph database, purpose-built for real estate at institutional scale.
     </p>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "2.5rem", maxWidth: 1040 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", marginTop: "2.5rem", maxWidth: 1040 }}>
       {products.map((p, i) => (
         <div key={i} style={{
-          background: p.dark ? "hsl(var(--pink))" : "hsl(var(--pink-light))",
+          background: p.dark ? "#A8185E" : "#fff",
           padding: "2rem 2rem",
-          borderTop: `4px solid ${p.dark ? "hsl(var(--accent))" : "hsl(var(--pink))"}`,
+          borderTop: `4px solid ${p.dark ? "#DF2467" : "#A8185E"}`,
           display: "flex",
           flexDirection: "column",
           gap: "1.2rem",
@@ -63,7 +63,7 @@ const BuildBuySlide = () => (
               fontSize: "1.15rem",
               fontWeight: 600,
               letterSpacing: "0.08em",
-              color: p.dark ? "#fff" : "hsl(var(--pink))",
+              color: p.dark ? "#fff" : "#A8185E",
               marginBottom: "0.25rem",
             }}>{p.name}</div>
             <div style={{
@@ -79,10 +79,10 @@ const BuildBuySlide = () => (
           <div style={{
             fontSize: "0.87rem",
             fontWeight: 500,
-            color: p.dark ? "rgba(255,255,255,0.9)" : "hsl(var(--foreground))",
+            color: p.dark ? "rgba(255,255,255,0.9)" : "#000",
             lineHeight: 1.55,
             paddingBottom: "1rem",
-            borderBottom: `1px solid ${p.dark ? "rgba(255,255,255,0.15)" : "hsl(var(--pink-border))"}`,
+            borderBottom: `1px solid ${p.dark ? "rgba(255,255,255,0.15)" : "hsl(var(--pink) / 0.15)"}`,
           }}>{p.headline}</div>
 
           {/* Capabilities */}
@@ -94,12 +94,12 @@ const BuildBuySlide = () => (
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
-                  color: p.dark ? "rgba(255,255,255,0.6)" : "hsl(var(--pink))",
+                  color: p.dark ? "rgba(255,255,255,0.6)" : "#A8185E",
                   marginBottom: "0.2rem",
                 }}>{c.label}</div>
                 <div style={{
                   fontSize: "0.79rem",
-                  color: p.dark ? "rgba(255,255,255,0.75)" : "hsl(var(--foreground))",
+                  color: p.dark ? "rgba(255,255,255,0.75)" : "#000",
                   lineHeight: 1.65,
                 }}>{c.body}</div>
               </div>
@@ -110,17 +110,17 @@ const BuildBuySlide = () => (
     </div>
 
     {/* LUNA Building Blocks reference */}
-    <div style={{ marginTop: "2rem", maxWidth: 1040, background: "#fff", border: "1px solid hsl(var(--pink-border))", padding: "1.4rem 2rem" }}>
+    <div style={{ marginTop: "2rem", maxWidth: 1040, background: "#fff", border: "1px solid hsl(var(--pink) / 0.15)", padding: "1.4rem 2rem" }}>
       <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "1rem" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))" }}>LUNA · 15 Capabilities</div>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#A8185E" }}>LUNA · 15 Capabilities</div>
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.12em", color: "hsl(var(--ink-light))", textTransform: "uppercase" }}>7 Live · 2 Roadmap · 6 Enrichment</div>
       </div>
       <img src="/luna/BuildingBlocks.png" alt="LUNA building blocks grid showing 15 capabilities across Live, Roadmap, and Enrichment categories including Address Validation, Geocoding, Entity Resolution Pipeline, Multi-stage Matching, Confidence Scoring, Knowledge Graph, and more" style={{ width: "100%", maxWidth: 1000, display: "block" }} />
     </div>
 
     {/* Style C: split two-column — Gartner composite definition / Cherre response */}
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", marginTop: "2rem", maxWidth: 1040, border: "1px solid hsl(var(--pink-border))" }}>
-      <div style={{ background: "hsl(var(--pink))", padding: "1.8rem 2rem" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", marginTop: "2rem", maxWidth: 1040, border: "1px solid hsl(var(--pink) / 0.15)" }}>
+      <div style={{ background: "#A8185E", padding: "1.8rem 2rem" }}>
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
           Industry finding, April 2025
         </div>
@@ -131,11 +131,11 @@ const BuildBuySlide = () => (
           No solution has achieved this yet. Cherre is built to be the foundation.
         </p>
       </div>
-      <div style={{ background: "#FBF1F2", padding: "1.8rem 2rem" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.7rem" }}>
+      <div style={{ background: "#fff", padding: "1.8rem 2rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E", marginBottom: "0.7rem" }}>
           The Cherre Position
         </div>
-        <p style={{ fontSize: "1rem", fontWeight: 600, color: "hsl(var(--foreground))", lineHeight: 1.45, margin: "0 0 0.8rem" }}>
+        <p style={{ fontSize: "1rem", fontWeight: 600, color: "#000", lineHeight: 1.45, margin: "0 0 0.8rem" }}>
           The canonical graph is already built. That is the hard part.
         </p>
         <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: 0 }}>

@@ -4,28 +4,28 @@ const reTypes = [
     sub: "Across Fragmented Systems",
     desc: "Match buildings, parcels, and addresses with different formats or identifiers across jurisdictions, sources, and time.",
     use: "Site planning, zoning, valuations, permitting, tax assessments",
-    color: "hsl(var(--pink))",
+    color: "#A8185E",
   },
   {
     label: "Entity Relationships",
     sub: "Across Instruments",
     desc: "Link asset-level data to all related real estate instruments, including debt, equity, insurance, and more.",
     use: "Capital stack transparency, layered risk views, collateral validation",
-    color: "hsl(var(--pink-mid))",
+    color: "#DF2467",
   },
   {
     label: "Geospatial Entities",
     sub: "Across Time and Sources",
     desc: "Match entities that changed names, split or merged parcels, were restructured or otherwise evolved over time.",
     use: "Historical benchmarking, lien tracking, reinsurance, capital markets",
-    color: "#4A3888",
+    color: "#A8185E",
   },
   {
     label: "People, Companies",
     sub: "and Legal Entities",
     desc: "Unify entities like owners, borrowers, managers, and tenants across deals, funds, loan tapes, leases, and registries.",
     use: "Ownership chains, portfolio views, KYC, compliance, underwriting",
-    color: "#2E2460",
+    color: "#000",
   },
 ];
 
@@ -40,7 +40,7 @@ const EntityResolutionSlide = () => (
 
     {/* Option C: Full-width dark banner */}
     <div style={{ maxWidth: 960, marginTop: "2rem" }}>
-      <div style={{ background: "hsl(var(--pink))", padding: "1.8rem 2rem" }}>
+      <div style={{ background: "#A8185E", padding: "1.8rem 2rem" }}>
         <div className="font-mono-luna" style={{ fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
           The first hard problem
         </div>
@@ -52,8 +52,8 @@ const EntityResolutionSlide = () => (
         </p>
       </div>
 
-      {/* Three problem panels — dark text on pale rose */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--rule))", marginTop: "1.5px" }}>
+      {/* Three problem panels */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)", marginTop: "1.5px" }}>
         {[
           {
             label: "The Scale Problem",
@@ -68,9 +68,9 @@ const EntityResolutionSlide = () => (
             text: "Every downstream AI inference, metric, and recommendation inherits the entity model. A 2% entity resolution error rate at 1B records produces 20M misattributed facts. These invisible errors silently corrupt every output layer.",
           },
         ].map((p, i) => (
-          <div key={i} style={{ background: "#FBF1F2", padding: "1.4rem 1.6rem", borderTop: "3px solid hsl(var(--pink))" }}>
-            <div className="font-mono-luna" style={{ fontSize: "0.70rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", fontWeight: 700, marginBottom: "0.7rem" }}>{p.label}</div>
-            <div style={{ fontSize: "0.83rem", color: "hsl(var(--foreground))", lineHeight: 1.7, fontWeight: 400 }}>{p.text}</div>
+          <div key={i} style={{ background: "#fff", padding: "1.4rem 1.6rem", borderTop: "3px solid #A8185E" }}>
+            <div className="font-mono-luna" style={{ fontSize: "0.70rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E", fontWeight: 700, marginBottom: "0.7rem" }}>{p.label}</div>
+            <div style={{ fontSize: "0.83rem", color: "#000", lineHeight: 1.7, fontWeight: 400 }}>{p.text}</div>
           </div>
         ))}
       </div>
@@ -78,15 +78,15 @@ const EntityResolutionSlide = () => (
 
     {/* Scale proof point — five individual tiles */}
     <div style={{ marginTop: "2rem", maxWidth: 960 }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.66rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "1rem" }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.66rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#A8185E", marginBottom: "1rem" }}>
         LUNA · Entity Resolution at Scale
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink-border))" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)" }}>
         {[
-          { num: "2B+",   label: "Addresses",     accent: "hsl(var(--foreground))" },
-          { num: "130M+", label: "Buildings",     accent: "hsl(var(--pink-mid))" },
-          { num: "100M+", label: "Parcels",       accent: "hsl(var(--pink))" },
-          { num: "160M+", label: "Tax Records",   accent: "#7F77DD" },
+          { num: "2B+",   label: "Addresses",     accent: "#A8185E" },
+          { num: "130M+", label: "Buildings",     accent: "#DF2467" },
+          { num: "100M+", label: "Parcels",       accent: "#A8185E" },
+          { num: "160M+", label: "Tax Records",   accent: "#A8185E" },
           { num: "12B+",  label: "Relationships", accent: "#DF2467" },
         ].map((s, i) => (
           <div key={i} style={{ background: "#fff", padding: "1.6rem 1rem", textAlign: "center", borderTop: `4px solid ${s.accent}` }}>
@@ -101,7 +101,7 @@ const EntityResolutionSlide = () => (
     </div>
 
     {/* Resolution pipeline diagram */}
-    <div style={{ marginTop: "1.5px", maxWidth: 960, background: "#fff", border: "1px solid hsl(var(--rule))", padding: "1.6rem 2rem" }}>
+    <div style={{ marginTop: "1.5px", maxWidth: 960, background: "#fff", border: "1px solid hsl(var(--pink) / 0.2)", padding: "1.6rem 2rem" }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "1rem" }}>
         Resolution Pipeline
       </div>
@@ -109,13 +109,13 @@ const EntityResolutionSlide = () => (
     </div>
 
     {/* Four RE entity types */}
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--rule))", border: "1px solid hsl(var(--rule))", marginTop: "2rem", maxWidth: 960 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", marginTop: "2rem", maxWidth: 960 }}>
       {reTypes.map((t, i) => (
         <div key={i} style={{ background: "#fff", padding: "1.2rem 1.4rem", borderLeft: `4px solid ${t.color}` }}>
           <div style={{ fontSize: "0.82rem", fontWeight: 700, color: t.color, marginBottom: "0.15rem" }}>{t.label}</div>
           <div className="font-mono-luna" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", color: "hsl(var(--ink-light))", marginBottom: "0.7rem", textTransform: "uppercase" }}>{t.sub}</div>
-          <div style={{ fontSize: "0.78rem", color: "hsl(var(--foreground))", lineHeight: 1.6, marginBottom: "0.8rem" }}>{t.desc}</div>
-          <div style={{ borderTop: "1px solid hsl(var(--rule))", paddingTop: "0.6rem" }}>
+          <div style={{ fontSize: "0.78rem", color: "#000", lineHeight: 1.6, marginBottom: "0.8rem" }}>{t.desc}</div>
+          <div style={{ borderTop: "1px solid hsl(var(--pink) / 0.15)", paddingTop: "0.6rem" }}>
             <div className="font-mono-luna" style={{ fontSize: "0.64rem", letterSpacing: "0.12em", textTransform: "uppercase", color: t.color, marginBottom: "0.2rem", opacity: 0.8 }}>Sample use cases</div>
             <div style={{ fontSize: "0.74rem", color: "hsl(var(--ink-mid))", lineHeight: 1.5 }}>{t.use}</div>
           </div>
