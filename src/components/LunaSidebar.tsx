@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import cherreIcon from "@/assets/cherre_icon.png";
+import cherreLogo from "@/assets/cherre.png";
 
 interface NavItem { id: string; num: string; label: string; }
 
@@ -37,11 +39,11 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
       <div className={`luna-overlay ${isOpen ? "open" : ""}`} onClick={onClose} />
       <nav className={`luna-sidebar ${isOpen ? "open" : ""}`}>
         <div className="luna-sidebar-logo">
-          <div className="luna-logo-mark">L</div>
+          <img src={cherreIcon} alt="Cherre" className="luna-logo-mark" style={{ width: 32, height: 32, objectFit: 'contain' }} />
           <div className="luna-logo-text">
-            <strong>Luna</strong>
+            <strong>Cherre</strong>
             <br />
-            The Intelligence Architecture
+            Data Infrastructure
           </div>
         </div>
         <span className="luna-nav-label">Presentation</span>
@@ -61,10 +63,9 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
           <div className="luna-sidebar-progress-fill" style={{ width: `${progress}%` }} />
         </div>
         <div className="luna-sidebar-footer">
+          <img src={cherreLogo} alt="Cherre" style={{ height: 24, objectFit: 'contain' }} />
           <span className="luna-sidebar-tag">
-            Real Estate · Capital Markets
-            <br />
-            <span>Cherre</span> · Luna · 2026
+            Cherre Inc. Copyright 2026
           </span>
         </div>
       </nav>
