@@ -11,25 +11,29 @@ const reTypes = [
     sub: "Across Instruments",
     desc: "Link asset-level data to all related real estate instruments, including debt, equity, insurance, and more.",
     use: "Capital stack transparency, layered risk views, collateral validation",
-    color: "#1B70B1",
+    color: "#A8185E",
   },
   {
     label: "Geospatial Entities",
     sub: "Across Time and Sources",
     desc: "Match entities that changed names, split or merged parcels, were restructured or otherwise evolved over time.",
     use: "Historical benchmarking, lien tracking, reinsurance, capital markets",
-    color: "#23A98E",
+    color: "#A8185E",
   },
   {
     label: "People, Companies",
     sub: "and Legal Entities",
     desc: "Unify entities like owners, borrowers, managers, and tenants across deals, funds, loan tapes, leases, and registries.",
     use: "Ownership chains, portfolio views, KYC, compliance, underwriting",
-    color: "#611FAD",
+    color: "#A8185E",
   },
 ];
 
-const EntityResolutionSlide = () => (
+interface Props {
+  onImageClick?: (src: string) => void;
+}
+
+const EntityResolutionSlide = ({ onImageClick }: Props) => (
   <section className="slide" id="s7">
     <div className="slide-n">vi / The First Hard Problem</div>
     <h2 className="luna-h2">
@@ -90,10 +94,17 @@ const EntityResolutionSlide = () => (
       </div>
     </div>
 
-    {/* Resolution pipeline */}
+    {/* Resolution pipeline — click to enlarge */}
     <div className="luna-img-block">
       <div className="luna-source" style={{ marginBottom: "1rem" }}>Resolution Pipeline</div>
-      <img src="/luna/Resolution.png" alt="LUNA resolution pipeline" style={{ width: "100%", maxWidth: 860, display: "block" }} />
+      <img
+        src="/luna/Resolution.png"
+        alt="LUNA resolution pipeline"
+        className="luna-enlargeable-img"
+        style={{ width: "100%", maxWidth: 860, display: "block" }}
+        onClick={() => onImageClick?.("/luna/Resolution.png")}
+      />
+      <div className="luna-tap-hint">Tap image to enlarge</div>
     </div>
 
     {/* Four RE entity types */}
