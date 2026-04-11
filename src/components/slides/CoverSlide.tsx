@@ -34,7 +34,7 @@ const tiles: Tile[] = [
     sup: 2,
     left:  { stat: "27%", label: "of enterprise apps are integrated" },
     right: { stat: "50%", label: "of AI agents already operate in silos" },
-    body: "Two independent findings from the same report — low integration and high fragmentation — compounding in the same environment.",
+    body: "Two independent findings from the same report: low integration and high fragmentation, compounding in the same environment.",
     source: "Salesforce · Feb 2026",
   },
   {

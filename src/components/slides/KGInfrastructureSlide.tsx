@@ -39,7 +39,7 @@ const KGInfrastructureSlide = () => (
     {/* Style B: Gartner section title as full-bleed banner */}
     <div style={{ background: "hsl(var(--pink))", padding: "1.8rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
-        Gartner, April 2025 — section heading
+        Gartner, April 2025 · section heading
       </div>
       <p style={{ fontFamily: "var(--serif)", fontSize: "1.45rem", fontWeight: 600, color: "#fff", lineHeight: 1.35, margin: "0 0 0.9rem" }}>
         "The Future of Semantic Layers: Metrics Layers Powered by Knowledge Graph"
@@ -61,7 +61,7 @@ const KGInfrastructureSlide = () => (
       <div>
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.6rem" }}>The Graph in Practice</div>
         <p style={{ fontSize: "0.85rem", color: "hsl(var(--foreground))", lineHeight: 1.7, margin: "0 0 0.5rem" }}>
-          LUNA resolves across three canonical entity types — Address, Building, Parcel — drawing from 12 data source categories simultaneously. Every resolution carries confidence scores, full source attribution, and bidirectional traversal back to the canonical graph stored in MERIDIAN.
+          LUNA resolves across three canonical entity types — Address, Building, and Parcel, drawing from 12 data source categories simultaneously. Every resolution carries confidence scores, full source attribution, and bidirectional traversal back to the canonical graph stored in MERIDIAN.
         </p>
         <p style={{ fontSize: "0.78rem", color: "hsl(var(--ink-light))", margin: 0, fontStyle: "italic" }}>
           This is not a data connection. It is a graph that accumulates meaning with every resolved entity.

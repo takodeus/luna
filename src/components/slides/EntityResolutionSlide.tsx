@@ -48,7 +48,7 @@ const EntityResolutionSlide = () => (
           Is the 'tenant' in System A the same entity as the 'tenant' in System B?
         </p>
         <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.78)", lineHeight: 1.7, margin: 0, maxWidth: 700 }}>
-          The ontology tells AI systems what a 'tenant,' 'property,' or 'market' means, but before any of that meaning can be applied, the system must answer a harder question: whether these are the same real-world object. Without solving this, every layer above (semantic, contextual, reasoning) operates on a fractured identity model where metrics drift, context fragments, and answers contradict.
+          The ontology tells AI systems what 'tenant,' 'property,' or 'market' means. But before any of that meaning applies, the system must answer a harder question: are these the same real-world object? Without that answer, every layer above operates on a fractured identity model. Metrics drift. Context fragments. Answers contradict.
         </p>
       </div>
 
@@ -57,7 +57,7 @@ const EntityResolutionSlide = () => (
         {[
           {
             label: "The Scale Problem",
-            text: "Enterprise data environments contain hundreds of millions of records across dozens of systems. Entity resolution at this scale requires probabilistic matching, clustering, and continuous learning, and must avoid rigid, rule-based joins.",
+            text: "Enterprise data environments contain hundreds of millions of records across dozens of systems. Entity resolution at this scale requires probabilistic matching, clustering, and continuous learning. Rigid rule-based joins do not scale.",
           },
           {
             label: "The Ambiguity Problem",

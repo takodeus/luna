@@ -33,7 +33,7 @@ const quadrants = [
       "How is provenance attributed across automated and human actions?",
       "How long is context retained, and who can query it?",
     ],
-    why: "MERIDIAN's context graph turns raw events into explainable history. Without it, AI agents can report what happened but cannot explain why. Provenance, dependencies, and decision traces live here — queryable at any point in time.",
+    why: "MERIDIAN's context graph turns raw events into explainable history. Without it, AI agents can report what happened but cannot explain why. Provenance, dependencies, and decision traces live here, queryable at any point in time.",
   },
   {
     label: "Reasoning Governance",

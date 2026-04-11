@@ -32,7 +32,7 @@ const StackSlide = () => (
         </div>
       </div>
       <p style={{ textAlign: "center", fontStyle: "italic", fontSize: "0.78rem", color: "hsl(var(--ink-light))", margin: "0 0 4px" }}>
-        Any agent, any interface — as many as the canonical data schema allows
+        Any agent, any interface. As many as the canonical data schema allows.
       </p>
 
       {/* Upward arrows from semantic layer to agents */}
@@ -80,7 +80,7 @@ const StackSlide = () => (
       <div style={{ width: "100%", background: "hsl(var(--green))", padding: "0.85rem 1.6rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of record</div>
-          <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.45)" }}>Provenance and trust — ERP, CRE platforms, operational data</div>
+          <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.45)" }}>Provenance and trust: ERP, CRE platforms, operational data</div>
         </div>
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.12em", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", flexShrink: 0, marginLeft: "1rem" }}>Mode 1</div>
       </div>

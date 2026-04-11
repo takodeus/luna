@@ -20,7 +20,7 @@ const truths = [
     arbitration: true,
     items: [
       "Represents shared business meaning across assets, funds, leases, investors, and operating entities.",
-      "Preserves definitions across time — not just across tables.",
+      "Preserves definitions across time, not just across tables.",
       "Provides the governed context that analytics, copilots, and agents require to interpret record truth and event truth correctly.",
       "Serves as the arbitration layer between record truth and truth in motion.",
     ],
@@ -33,7 +33,7 @@ const truths = [
     tag: "Temporal · Causal · Continuous",
     items: [
       "The state of the world at the time of the event: operational events, state changes, milestones, and observed conditions.",
-      "Preserves sequence, timing, and causality — the when and the order that record systems discard.",
+      "Preserves sequence, timing, and causality: the when and the order that record systems discard.",
       "Required for AI agents reasoning about what is changing, not only what was recorded.",
     ],
   },
@@ -90,7 +90,7 @@ const TruthMonolithSlide = () => (
         {[
           "Which truth is authoritative for compliance?",
           "Which truth is fit for AI agents?",
-          "When does event-driven truth override system truth — for example, in real-time monitoring?",
+          "When does event-driven truth override system truth, for example in real-time monitoring?",
         ].map((q, i) => (
           <div key={i} style={{ paddingLeft: "0.9rem", borderLeft: "3px solid hsl(var(--pink-border))", fontSize: "0.81rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>{q}</div>
         ))}

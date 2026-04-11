@@ -45,7 +45,7 @@ const MismatchSlide = () => (
     {/* Style B: full-bleed pink banner — p.17 Gartner quote */}
     <div style={{ background: "hsl(var(--pink))", padding: "1.6rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.6rem" }}>
-        Gartner, G00826629, p. 17 — on AI and BI tool semantic layers
+        Gartner, G00826629, p. 17, on AI and BI tool semantic layers
       </div>
       <p style={{ fontSize: "1.15rem", fontWeight: 500, color: "#fff", lineHeight: 1.45, margin: "0 0 0.7rem" }}>
         Systems built on linear data models "lack the inference capabilities to move from 'what happened' to 'why it happened'."

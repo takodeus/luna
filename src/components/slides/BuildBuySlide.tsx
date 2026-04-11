@@ -125,7 +125,7 @@ const BuildBuySlide = () => (
           Industry finding, April 2025
         </div>
         <p style={{ fontSize: "1rem", fontWeight: 600, color: "#fff", lineHeight: 1.45, margin: "0 0 0.8rem" }}>
-          The destination is well-defined: a composite semantic layer — a coordinated collection of semantic objects across the data architecture, including knowledge graphs, data products, and semantic models working in concert.
+          The destination is well-defined: a composite semantic layer: a coordinated collection of semantic objects across the data architecture, including knowledge graphs, data products, and semantic models working in concert.
         </p>
         <p style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", margin: 0 }}>
           No solution has achieved this yet. Cherre is built to be the foundation.

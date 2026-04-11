@@ -30,13 +30,13 @@ const StepsThoughtsSlide = () => (
 
     <div className="svt-grid">
       <div className="svt-col svt-col-steps">
-        <div className="svt-head">Steps — Agents Automate</div>
+        <div className="svt-head">Steps: Agents Automate</div>
         <ul className="svt-items">
           {steps.map((s, i) => <li key={i}>{s}</li>)}
         </ul>
       </div>
       <div className="svt-col svt-col-thoughts">
-        <div className="svt-head">Judgment — Humans Retain</div>
+        <div className="svt-head">Judgment: Humans Retain</div>
         <ul className="svt-items">
           {thoughts.map((t, i) => <li key={i}>{t}</li>)}
         </ul>

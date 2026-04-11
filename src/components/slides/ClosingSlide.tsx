@@ -25,7 +25,7 @@ const findings = [
     source: "McKinsey Global Institute · March 2026",
     isQuote: false,
     headline: "$430–550B in annual value across real estate, construction, and development",
-    body: "That value comes from redesigning domains and embedding agents into core workflows — not from adding isolated copilots.",
+    body: "That value comes from redesigning domains and embedding agents into core workflows, not from adding isolated copilots.",
   },
 ];
 
