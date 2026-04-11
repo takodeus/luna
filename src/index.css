@@ -847,6 +847,11 @@ h2.luna-h2 {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  -webkit-tap-highlight-color: transparent;
 }
 .luna-menu-btn {
   width: 44px;
