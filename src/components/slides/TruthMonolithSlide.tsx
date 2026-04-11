@@ -35,11 +35,10 @@ const truths = [
 
 const TruthMonolithSlide = () => (
   <section className="slide" id="s6">
-    <div className="slide-n">v / Plural Truth</div>
+    <div className="slide-n">vi / Truth Is No Longer Monolithic</div>
     <h2 className="luna-h2">
-      Truth is no longer monolithic.
-      <br />
-      <span className="luna-accent">Three kinds. Different authority. One decision fabric.</span>
+      Three kinds of truths.<br />
+      <span className="luna-accent">Different authority. One arbitration layer.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
       The "single source of truth" mandate worked for a narrower class of enterprise questions. AI agents, distributed operations, and real-time data expand the problem. The question is no longer only which system is authoritative. It is which form of truth governs this decision.
