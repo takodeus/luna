@@ -1,6 +1,7 @@
 const findings = [
   {
     num: 1,
+    color: "#A8185E",
     source: "Gartner · June 2025",
     isQuote: true,
     headline: "Over 40% of agentic AI projects will be cancelled by end of 2027",
@@ -8,6 +9,7 @@ const findings = [
   },
   {
     num: 2,
+    color: "#1B70B1",
     source: "Salesforce · February 2026",
     isQuote: false,
     headline: "The bottleneck is shifting from model access to shared context",
@@ -15,6 +17,7 @@ const findings = [
   },
   {
     num: 3,
+    color: "#23A98E",
     source: "DSAG · 2026",
     isQuote: false,
     headline: "The installed base is not automatically winning the next layer",
@@ -22,6 +25,7 @@ const findings = [
   },
   {
     num: 4,
+    color: "#CC5800",
     source: "McKinsey Global Institute · March 2026",
     isQuote: false,
     headline: "$430-550B in annual value across real estate, construction, and development",
@@ -37,7 +41,7 @@ const footnotes = [
 ];
 
 const ClosingSlide = () => (
-  <section className="slide" id="s13" style={{ background: "#fff" }}>
+  <section className="slide" id="s13" style={{ background: "#FBF8F9" }}>
     <div className="slide-n">xiii / What Comes Next</div>
 
     <h2 className="luna-h2">
@@ -49,15 +53,15 @@ const ClosingSlide = () => (
     {/* Four evidence cards */}
     <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2rem", maxWidth: 900 }}>
       {findings.map((f) => (
-        <div key={f.num} style={{ background: "#fff", borderLeft: "4px solid #A8185E", padding: "1.2rem 1.8rem" }}>
+        <div key={f.num} style={{ background: "#fff", borderLeft: `4px solid ${f.color}`, padding: "1.2rem 1.8rem" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", marginBottom: "0.4rem" }}>
-            <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E" }}>
+            <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: f.color }}>
               {f.source}
             </div>
           </div>
           <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#000", lineHeight: 1.4, marginBottom: "0.5rem" }}>
             {f.isQuote ? <span>"{f.headline}"</span> : f.headline}
-            <sup style={{ fontSize: "0.6em", color: "#A8185E", fontWeight: 700, marginLeft: "1px" }}>{f.num}</sup>
+            <sup style={{ fontSize: "0.6em", color: f.color, fontWeight: 700, marginLeft: "1px" }}>{f.num}</sup>
           </div>
           <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.7 }}>{f.body}</div>
         </div>

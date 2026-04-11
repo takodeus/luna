@@ -57,15 +57,21 @@ const GovernanceSlide = () => (
       Traditional data governance checks format, completeness, and access. The harder questions require governance embedded in the architecture itself.
     </p>
 
-    {/* Data governance → Semantic governance */}
-    <div className="luna-duo-cards" style={{ marginTop: "1.8rem", maxWidth: 960 }}>
-      <div className="luna-duo-card" style={{ borderLeftColor: "hsl(var(--pink) / 0.3)" }}>
-        <div className="luna-source" style={{ color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Data governance</div>
-        <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>Manages format, completeness, and access. Assumes a human closes the loop on exceptions.</div>
+    {/* Data governance → Semantic governance: asymmetric shift */}
+    <div style={{ marginTop: "1.8rem", maxWidth: 960, display: "flex", gap: "0" }}>
+      {/* Left: prior model — muted */}
+      <div style={{ flex: "0 0 42%", background: "#F5F4F1", borderLeft: "4px solid #ccc", padding: "1.4rem 1.8rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#999", marginBottom: "0.4rem" }}>The prior model</div>
+        <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "#888", marginBottom: "0.4rem" }}>Data governance</div>
+        <div style={{ fontSize: "0.80rem", color: "#999", lineHeight: 1.6 }}>Manages format, completeness, and access. Assumes a human closes the loop on exceptions.</div>
       </div>
-      <div className="luna-duo-card" style={{ borderLeftColor: "#A8185E" }}>
-        <div className="luna-source" style={{ color: "#A8185E", marginBottom: "0.35rem" }}>Semantic governance</div>
-        <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>Manages meaning, context, and the reasoning chain itself. Assumes the agent is the loop. These are not the same problem.</div>
+      {/* Arrow */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 1rem", background: "#F5F4F1", fontSize: "1.4rem", color: "#A8185E", fontWeight: 700, flexShrink: 0 }}>→</div>
+      {/* Right: required — strong */}
+      <div style={{ flex: 1, background: "#A8185E", padding: "1.4rem 1.8rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.4rem" }}>Required for agents</div>
+        <div style={{ fontSize: "0.88rem", fontWeight: 700, color: "#fff", marginBottom: "0.4rem" }}>Semantic governance</div>
+        <div style={{ fontSize: "0.80rem", color: "rgba(255,255,255,0.82)", lineHeight: 1.6 }}>Manages meaning, context, and the reasoning chain itself. Assumes the agent is the loop. These are not the same problem.</div>
       </div>
     </div>
 

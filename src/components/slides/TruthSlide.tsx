@@ -73,25 +73,24 @@ const KnowledgeGraphSlide = () => (
           </thead>
           <tbody>
             {[
-              { q: "What is this thing?", layer: "Ontology", enables: "Stable meaning across systems, teams, agents, and time." },
-              { q: "How is it measured?", layer: "Semantic Layer", enables: "Governed, consistent business logic every user and agent can trust." },
-              { q: "What is happening around it?", layer: "Context Graph", enables: "Provenance, explanation trails, and process awareness." },
-              { q: "What should happen next?", layer: "Reasoning", enables: "Grounded synthesis that supports judgment and action." },
-            ].map((row, i) => {
-              const isLast = i === 3;
-              return (
-                <tr key={i} style={{ borderBottom: "1px solid hsl(var(--pink) / 0.15)", background: isLast ? "#A8185E" : "#fff" }}>
-                  <td style={{ padding: "0.85rem 1rem", borderLeft: `4px solid ${isLast ? "rgba(255,255,255,0.4)" : "#A8185E"}`, color: isLast ? "#fff" : "#A8185E", fontWeight: 600 }}>{row.q}</td>
-                  <td style={{ padding: "0.85rem 1rem", fontWeight: 700, color: isLast ? "#fff" : "#000" }}>{row.layer}</td>
-                  <td style={{ padding: "0.85rem 1rem", color: isLast ? "rgba(255,255,255,0.85)" : "#000" }}>{row.enables}</td>
-                </tr>
-              );
-            })}
+              { q: "What is this thing?",        layer: "Ontology",       enables: "Stable meaning across systems, teams, agents, and time.",                           color: "#23A98E" },
+              { q: "How is it measured?",         layer: "Semantic Layer", enables: "Governed, consistent business logic every user and agent can trust.",                color: "#A8185E" },
+              { q: "What is happening around it?",layer: "Context Graph",  enables: "Provenance, explanation trails, and process awareness.",                            color: "#CC5800" },
+              { q: "What should happen next?",    layer: "Reasoning",      enables: "Grounded synthesis that supports judgment and action.",                             color: "#611FAD" },
+            ].map((row, i) => (
+              <tr key={i} style={{ borderBottom: "1px solid #eee", background: "#fff" }}>
+                <td style={{ padding: "0.85rem 1rem", borderLeft: `4px solid ${row.color}`, color: row.color, fontWeight: 600 }}>{row.q}</td>
+                <td style={{ padding: "0.85rem 1rem", fontWeight: 700, color: "#000" }}>{row.layer}</td>
+                <td style={{ padding: "0.85rem 1rem", color: "#000" }}>{row.enables}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
-      <div style={{ background: "#fff", border: "1px solid hsl(var(--pink) / 0.15)", padding: "0.9rem 1rem", marginTop: "1px", fontSize: "0.83rem", fontWeight: 600, color: "#A8185E", textAlign: "center" }}>
-        If the system can answer all four with grounded, consistent, and traceable responses, the architecture is working.
+      <div style={{ background: "#A8185E", padding: "1.2rem 2rem", marginTop: "2px" }}>
+        <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#fff", textAlign: "center", lineHeight: 1.5 }}>
+          If the system can answer all four with grounded, consistent, and traceable responses, the architecture is working.
+        </div>
       </div>
     </div>
   </section>

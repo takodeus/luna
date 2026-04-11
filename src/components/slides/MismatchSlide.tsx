@@ -45,14 +45,15 @@ const MismatchSlide = () => (
     </div>
 
     {/* Rules → Reasoning */}
-    <div className="luna-duo-cards">
-      <div className="luna-duo-card" style={{ borderLeftColor: "hsl(var(--pink) / 0.3)" }}>
-        <div className="luna-source" style={{ color: "hsl(var(--ink-light))", marginBottom: "0.35rem" }}>Rules-based systems</div>
-        <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>A rules engine enforces policy. A human reads the exception and decides. The system records the outcome.</div>
+    <div style={{ maxWidth: 960, display: "flex", gap: "0", marginTop: "1.5rem" }}>
+      <div style={{ flex: "0 0 42%", background: "#F5F4F1", borderLeft: "4px solid #ccc", padding: "1.2rem 1.6rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#999", marginBottom: "0.4rem" }}>Rules-based systems</div>
+        <div style={{ fontSize: "0.82rem", color: "#888", lineHeight: 1.65 }}>A rules engine enforces policy. A human reads the exception and decides. The system records the outcome.</div>
       </div>
-      <div className="luna-duo-card" style={{ borderLeftColor: "hsl(var(--pink))" }}>
-        <div className="luna-source" style={{ color: "hsl(var(--pink))", marginBottom: "0.35rem" }}>Reasoning-capable agents</div>
-        <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.65 }}>Agents do not read exceptions. They inherit infrastructure. When the infrastructure carries incomplete meaning or no reasoning chain, the agent does not pause and ask. It proceeds.</div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 1rem", background: "#F5F4F1", fontSize: "1.4rem", color: "#A8185E", fontWeight: 700, flexShrink: 0 }}>→</div>
+      <div style={{ flex: 1, background: "#A8185E", padding: "1.2rem 1.6rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.4rem" }}>Reasoning-capable agents</div>
+        <div style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.88)", lineHeight: 1.65 }}>Agents do not read exceptions. They inherit infrastructure. When the infrastructure carries incomplete meaning or no reasoning chain, the agent does not pause and ask. It proceeds.</div>
       </div>
     </div>
 
