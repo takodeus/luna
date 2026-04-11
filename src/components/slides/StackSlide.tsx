@@ -56,7 +56,7 @@ const StackSlide = () => (
       </div>
 
       {/* Arrows */}
-      <div className="luna-stack-arrows" style={{ opacity: 0.35 }}>
+      <div className="luna-stack-arrows" style={{ opacity: 0.65 }}>
         <span>↑</span><span>↑</span><span>↑</span>
       </div>
 
