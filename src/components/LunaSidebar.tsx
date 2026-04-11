@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import cherreIcon from "@/assets/cherre_icon.png";
+import cherreLogo from "@/assets/cherre.png";
 
 interface NavItem { id: string; num: string; label: string; }
 
