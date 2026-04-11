@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import cherreIcon from "@/assets/cherre_icon.png";
-import cherreLogo from "@/assets/cherre.png";
+import cherreLogoWhite from "@/assets/cherre_white.png";
 
 interface NavItem { id: string; num: string; label: string; }
 
@@ -63,7 +62,7 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
           <div className="luna-sidebar-progress-fill" style={{ width: `${progress}%` }} />
         </div>
         <div className="luna-sidebar-footer">
-          <img src={cherreLogo} alt="Cherre" style={{ height: 24, objectFit: 'contain' }} />
+          <img src={cherreLogoWhite} alt="Cherre" style={{ height: 24, objectFit: 'contain' }} />
           <span className="luna-sidebar-tag">
             Cherre Inc. Copyright 2026
           </span>
