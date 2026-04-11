@@ -30,6 +30,13 @@ const layers = [
   },
 ];
 
+const fourQuestions = [
+  { q: "What is this thing?",         layer: "Ontology",       enables: "Stable meaning across systems, teams, agents, and time.",                           color: "#A8185E" },
+  { q: "How is it measured?",          layer: "Semantic Layer", enables: "Governed, consistent business logic every user and agent can trust.",                color: "#A8185E" },
+  { q: "What is happening around it?", layer: "Context Graph",  enables: "Provenance, explanation trails, and process awareness.",                            color: "#DF2467" },
+  { q: "What should happen next?",     layer: "Reasoning",      enables: "Grounded synthesis that supports judgment and action.",                             color: "#DF2467" },
+];
+
 const KnowledgeGraphSlide = () => (
   <section className="slide" id="s8">
     <div className="slide-n">vii / Four Questions, Four Layers</div>
@@ -59,10 +66,12 @@ const KnowledgeGraphSlide = () => (
       ))}
     </div>
 
-    {/* Four-Question Test */}
+    {/* Four-Question Test — table for desktop, cards for mobile */}
     <div style={{ marginTop: "2.5rem", maxWidth: 960 }}>
       <div className="luna-source" style={{ marginBottom: "1rem" }}>The Four-Question Test</div>
-      <div className="luna-table-scroll">
+
+      {/* Desktop table */}
+      <div className="luna-table-scroll luna-hide-mobile">
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.83rem", minWidth: 600 }}>
           <thead>
             <tr style={{ background: "#A8185E", color: "#fff" }}>
@@ -72,12 +81,7 @@ const KnowledgeGraphSlide = () => (
             </tr>
           </thead>
           <tbody>
-            {[
-              { q: "What is this thing?",        layer: "Ontology",       enables: "Stable meaning across systems, teams, agents, and time.",                           color: "#23A98E" },
-              { q: "How is it measured?",         layer: "Semantic Layer", enables: "Governed, consistent business logic every user and agent can trust.",                color: "#A8185E" },
-              { q: "What is happening around it?",layer: "Context Graph",  enables: "Provenance, explanation trails, and process awareness.",                            color: "#CC5800" },
-              { q: "What should happen next?",    layer: "Reasoning",      enables: "Grounded synthesis that supports judgment and action.",                             color: "#611FAD" },
-            ].map((row, i) => (
+            {fourQuestions.map((row, i) => (
               <tr key={i} style={{ borderBottom: "1px solid #eee", background: "#fff" }}>
                 <td style={{ padding: "0.85rem 1rem", borderLeft: `4px solid ${row.color}`, color: row.color, fontWeight: 600 }}>{row.q}</td>
                 <td style={{ padding: "0.85rem 1rem", fontWeight: 700, color: "#000" }}>{row.layer}</td>
@@ -87,6 +91,18 @@ const KnowledgeGraphSlide = () => (
           </tbody>
         </table>
       </div>
+
+      {/* Mobile cards */}
+      <div className="luna-show-mobile">
+        {fourQuestions.map((row, i) => (
+          <div key={i} className="luna-card-bordered" style={{ borderLeftColor: row.color, borderLeftWidth: 4, borderLeftStyle: "solid", marginBottom: 2 }}>
+            <div style={{ fontSize: "0.85rem", fontWeight: 600, color: row.color, marginBottom: "0.3rem" }}>{row.q}</div>
+            <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#000", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.5rem" }}>{row.layer}</div>
+            <div style={{ fontSize: "0.78rem", color: "#000", lineHeight: 1.6 }}>{row.enables}</div>
+          </div>
+        ))}
+      </div>
+
       <div style={{ background: "#A8185E", padding: "1.2rem 2rem", marginTop: "2px" }}>
         <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#fff", textAlign: "center", lineHeight: 1.5 }}>
           If the system can answer all four with grounded, consistent, and traceable responses, the architecture is working.

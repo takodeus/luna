@@ -7,12 +7,16 @@ const pillars = [
 
 const reasoningModels = [
   { label: "Causal", color: "#A8185E", q: "Why did renewal rates drop?", desc: "Traverses graph links from the metric through operational events, PM transitions, and market conditions to surface the root factor." },
-  { label: "Comparative", color: "#1B70B1", q: "How does Asset A compare to Asset B?", desc: "Normalizes metrics via the semantic layer and aligns entity dimensions before comparing." },
-  { label: "Predictive", color: "#23A98E", q: "Which assets are likely at risk?", desc: "Detects context graph patterns that preceded prior defaults or underperformance and scores current exposure." },
-  { label: "Diagnostic", color: "#611FAD", q: "Why is this metric inconsistent?", desc: "Traces data lineage through semantic definitions and isolates where meaning diverges across sources." },
+  { label: "Comparative", color: "#A8185E", q: "How does Asset A compare to Asset B?", desc: "Normalizes metrics via the semantic layer and aligns entity dimensions before comparing." },
+  { label: "Predictive", color: "#A8185E", q: "Which assets are likely at risk?", desc: "Detects context graph patterns that preceded prior defaults or underperformance and scores current exposure." },
+  { label: "Diagnostic", color: "#A8185E", q: "Why is this metric inconsistent?", desc: "Traces data lineage through semantic definitions and isolates where meaning diverges across sources." },
 ];
 
-const KGInfrastructureSlide = () => (
+interface Props {
+  onImageClick?: (src: string) => void;
+}
+
+const KGInfrastructureSlide = ({ onImageClick }: Props) => (
   <section className="slide" id="s9">
     <div className="slide-n">viii / Infrastructure, Not a Feature</div>
     <h2 className="luna-h2">
@@ -42,9 +46,14 @@ const KGInfrastructureSlide = () => (
       </div>
     </div>
 
-    {/* Hub-and-spoke */}
+    {/* Hub-and-spoke — click to enlarge */}
     <div className="luna-hub-spoke">
-      <img src="/luna/Unified.png" alt="LUNA entity resolution hub" className="luna-hub-img" />
+      <img
+        src="/luna/Unified.png"
+        alt="LUNA entity resolution hub"
+        className="luna-hub-img luna-enlargeable-img"
+        onClick={() => onImageClick?.("/luna/Unified.png")}
+      />
       <div>
         <div className="luna-source" style={{ color: "#A8185E", marginBottom: "0.6rem" }}>The Graph in Practice</div>
         <p style={{ fontSize: "0.85rem", color: "#000", lineHeight: 1.7, margin: "0 0 0.5rem" }}>
@@ -53,6 +62,7 @@ const KGInfrastructureSlide = () => (
         <p style={{ fontSize: "0.78rem", color: "hsl(var(--ink-light))", margin: 0, fontStyle: "italic" }}>
           This is not a data connection. It is a graph that accumulates meaning with every resolved entity.
         </p>
+        <div className="luna-tap-hint">Tap image to enlarge</div>
       </div>
     </div>
 
