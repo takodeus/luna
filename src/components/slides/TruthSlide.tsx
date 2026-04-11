@@ -18,7 +18,7 @@ const layers = [
     name: "Context Graph",
     tag: "Why things happened",
     desc: "The chain of events and relationships behind every metric. When renewal rates drop 12%, the context graph connects that number to the property manager transition eight months ago, the deferred maintenance backlog, and the competitor incentive campaign in the submarket. The agent stops reporting a number and starts explaining what drove it.",
-    cherre: "This is Cherre's primary moat. The context graph is built from 10 years of entity resolution across 150+ real estate data sources.",
+    cherre: "MERIDIAN's context graph is built from LUNA's ten years of entity resolution across 150+ real estate data sources — the resolved relationships are what give context its depth.",
   },
   {
     num: "04",

@@ -38,9 +38,7 @@ const ClosingSlide = () => (
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "0.6rem" }}>
             <div style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))" }}>{f.source}</div>
-            {f.isQuote && (
-              <div style={{ fontFamily: "var(--mono)", fontSize: "0.48rem", letterSpacing: "0.12em", textTransform: "uppercase", background: "hsl(var(--pink))", color: "#fff", padding: "0.1rem 0.5rem", borderRadius: 2 }}>Verbatim</div>
-            )}
+  
           </div>
           <div style={{ fontSize: "1rem", fontWeight: 600, color: "hsl(var(--foreground))", lineHeight: 1.45, marginBottom: "0.8rem", fontStyle: f.isQuote ? "italic" : "normal" }}>
             {f.isQuote ? `"${f.statement}"` : f.statement}

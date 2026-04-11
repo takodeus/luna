@@ -42,7 +42,7 @@ const StepsThoughtsSlide = () => (
         </ul>
       </div>
       <div className="svt-verdict">
-        <strong>The knowledge graph is what makes automation safe.</strong> Entity resolution (LUNA) tells the agent which property it is acting on across every source system. The semantic layer (MERIDIAN) tells it which metric definition governs the calculation. The context graph tells it what changed and why. Without that infrastructure, agents automate confidently and occasionally wrong, at scale, without a trace.
+        <strong>The knowledge graph is what makes automation safe.</strong> Entity resolution (LUNA) tells the agent which property it is acting on across every source system. The semantic layer (MERIDIAN) tells it which metric definition governs the calculation. MERIDIAN's context graph tells it what changed and why. Without that infrastructure, agents automate confidently and occasionally wrong, at scale, without a trace.
       </div>
     </div>
 

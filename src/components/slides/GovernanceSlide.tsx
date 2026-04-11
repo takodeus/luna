@@ -27,13 +27,13 @@ const quadrants = [
     label: "Context Governance",
     color: "#fff",
     bg: "hsl(var(--amber))",
-    engine: "Stored in the knowledge graph",
+    engine: "Stored in MERIDIAN",
     items: [
       "What events are captured, and at what granularity?",
       "How is provenance attributed across automated and human actions?",
       "How long is context retained, and who can query it?",
     ],
-    why: "The context graph is what turns raw events into explainable history. Without it, AI agents can report what happened but cannot explain why, and recommendations cannot be challenged or audited.",
+    why: "MERIDIAN's context graph turns raw events into explainable history. Without it, AI agents can report what happened but cannot explain why. Provenance, dependencies, and decision traces live here — queryable at any point in time.",
   },
   {
     label: "Reasoning Governance",

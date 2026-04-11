@@ -2,7 +2,7 @@ const products = [
   {
     name: "LUNA",
     tag: "Entity Resolution Engine",
-    headline: "Best-in-class entity resolution built on the scale of the Cherre graph.",
+    headline: "Best-in-class entity resolution engine, operating on MERIDIAN's graph infrastructure.",
     capabilities: [
       { label: "Spatial entity resolution", body: "U.S. market spatial resolution for properties, parcels, addresses, and buildings across jurisdictions, formats, and identifier schemes." },
       { label: "Legal entity resolution", body: "Legal entity resolution capabilities in alpha, resolving owners, borrowers, managers, and tenants across instruments, registries, and funds." },
@@ -19,7 +19,7 @@ const products = [
       { label: "Dual query support", body: "Supports both SQL and GQL querying, enabling complex analytical workloads across the graph without requiring teams to choose a single query paradigm." },
       { label: "Cherre UDM + ontology", body: "Incorporates the Cherre Universal Data Model, ontology, Semantic Data Models, and Knowledge Graph Model, delivering governed meaning at query time." },
       { label: "Scalable performance", body: "Purpose-built for large-scale analytical queries. Highly scalable architecture with efficient cost management for sophisticated, multi-hop workloads." },
-      { label: "Governed by design", body: "The intelligence layer isn't layered on top. It's embedded. Every query inherits the entity resolution, semantic governance, and provenance of the underlying graph." },
+      { label: "Governed by design", body: "Every query inherits LUNA's resolved entities, the ontology's semantic definitions, and the full provenance of the underlying graph. The intelligence is embedded, not bolted on." },
     ],
   },
   {

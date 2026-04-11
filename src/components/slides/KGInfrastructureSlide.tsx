@@ -61,7 +61,7 @@ const KGInfrastructureSlide = () => (
       <div>
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.54rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.6rem" }}>The Graph in Practice</div>
         <p style={{ fontSize: "0.85rem", color: "hsl(var(--foreground))", lineHeight: 1.7, margin: "0 0 0.5rem" }}>
-          LUNA resolves across three canonical entity types — Address, Building, Parcel — drawing from 12 data source categories simultaneously. Every resolution carries confidence scores, full source attribution, and bidirectional traversal back to the canonical graph.
+          LUNA resolves across three canonical entity types — Address, Building, Parcel — drawing from 12 data source categories simultaneously. Every resolution carries confidence scores, full source attribution, and bidirectional traversal back to the canonical graph stored in MERIDIAN.
         </p>
         <p style={{ fontSize: "0.78rem", color: "hsl(var(--ink-light))", margin: 0, fontStyle: "italic" }}>
           This is not a data connection. It is a graph that accumulates meaning with every resolved entity.
