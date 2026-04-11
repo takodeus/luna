@@ -37,7 +37,7 @@ const footnotes = [
 ];
 
 const ClosingSlide = () => (
-  <section className="slide" id="s13" style={{ background: "#FBF1F2" }}>
+  <section className="slide" id="s14" style={{ background: "#FBF1F2" }}>
     <div className="slide-n">xiii / What Comes Next</div>
 
     <h2 className="luna-h2">

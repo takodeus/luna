@@ -36,7 +36,7 @@ const products = [
 ];
 
 const BuildBuySlide = () => (
-  <section className="slide" id="s12">
+  <section className="slide" id="s13">
     <div className="slide-n">xii / What Fills the Layer</div>
     <h2 className="luna-h2">
       Three products. One architecture.

@@ -6,7 +6,7 @@ const agentSystems = [
 ];
 
 const StackSlide = () => (
-  <section className="slide" id="s5">
+  <section className="slide" id="s6">
     <div className="slide-n">xi / The Empty Layer</div>
     <h2 className="luna-h2">
       Built to last. Built to change.

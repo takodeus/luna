@@ -44,6 +44,7 @@ const EraMapSlide = () => (
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
           <div style={{ ...col.val, color: "#fff" }}>Systems of Action</div>
           <div style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.6)", marginTop: "0.2rem" }}>Autonomous agents</div>
+          <div style={{ fontSize: "0.64rem", color: "rgba(255,255,255,0.4)", marginTop: "0.15rem", fontFamily: "var(--mono)", letterSpacing: "0.1em" }}>Reasoning-capable · Built to act</div>
         </div>
         <div style={{ ...sep as any, background: "rgba(255,255,255,0.2)" }} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
@@ -62,6 +63,7 @@ const EraMapSlide = () => (
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
           <div style={col.val}>Analysts via BI</div>
           <div style={{ fontSize: "0.72rem", color: "hsl(var(--ink-light))", marginTop: "0.2rem" }}>Dashboards, reports</div>
+          <div style={{ fontSize: "0.64rem", color: "hsl(var(--ink-light))", opacity: 0.55, marginTop: "0.15rem", fontFamily: "var(--mono)", letterSpacing: "0.1em" }}>Rules-based · Built to inform</div>
         </div>
         <div style={sep as any} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
@@ -90,6 +92,7 @@ const EraMapSlide = () => (
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>
           <div style={col.val}>Capture transactions</div>
           <div style={{ fontSize: "0.72rem", color: "hsl(var(--ink-light))", marginTop: "0.2rem" }}>Record and preserve</div>
+          <div style={{ fontSize: "0.64rem", color: "hsl(var(--ink-light))", opacity: 0.55, marginTop: "0.15rem", fontFamily: "var(--mono)", letterSpacing: "0.1em" }}>Rules-based · Built to capture</div>
         </div>
         <div style={sep as any} />
         <div style={{ flex: 1, textAlign: "center", padding: "0 0.8rem" }}>

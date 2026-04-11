@@ -27,9 +27,9 @@ const breaks = [
   },
   {
     num: "04 / 04",
-    category: "Decision Traceability",
+    category: "Decision Lineage",
     title: "The agent decided. No one can say why.",
-    desc: "An AI copilot that cannot explain its reasoning is a liability, not an asset. When a leasing recommendation is challenged, a renewal offer is disputed, or an LP asks what data drove a revaluation, the answer has to exist in the system, not in someone's memory. Systems of record log outcomes. They don't log reasoning chains.",
+    desc: "Data lineage records what moved. Decision lineage records why the agent concluded what it did: which definition applied, which authority it trusted, and what version of the world it was operating on. Systems of record log outcomes. Almost none log reasoning chains — and that is what agents, auditors, and LPs increasingly require.",
     egLabel: "In Practice: LP Audit and Regulatory Scrutiny",
     egText: "An institutional LP asks what data informed a lease renewal recommendation on a Class A multifamily asset. The agent generated the recommendation. The ERP recorded the outcome. Neither system can reconstruct the reasoning: which data version was active, which metric definition applied, which agent held authority. The audit produces a gap.",
   },
