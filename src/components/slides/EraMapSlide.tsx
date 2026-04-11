@@ -7,7 +7,7 @@ const sep = { width: 1, background: "hsl(var(--pink-border))", alignSelf: "stret
 
 const EraMapSlide = () => (
   <section className="slide slide-alt" id="s2">
-    <div className="slide-n">ii / The Shift</div>
+    <div className="slide-n">ii / Era Three: Knowledge Graph</div>
     <h2 className="luna-h2">
       Forty years. Three eras.
       <br />

@@ -4,7 +4,7 @@ const layers = [
     modeSub: "Built to Act",
     modeColor: "hsl(var(--pink))",
     rows: [
-      { label: "Systems of action", sub: "Autonomous agents — agentic AI delivering decisions and execution", fill: "hsl(var(--pink))", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 56 },
+      { label: "Systems of action", sub: "Autonomous agents: agentic AI delivering decisions and execution", fill: "hsl(var(--pink))", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 56 },
     ],
   },
   {
@@ -12,7 +12,7 @@ const layers = [
     modeSub: null,
     modeColor: null,
     rows: [
-      { label: "Semantic governance layer", sub: "LUNA · MERIDIAN · ATLAS — entity resolution, knowledge graph, orchestration", fill: "none", dashed: true, text: "hsl(var(--pink))", subText: "hsl(var(--pink-mid))", height: 60 },
+      { label: "Semantic governance layer", sub: "LUNA · MERIDIAN · ATLAS: entity resolution, knowledge graph, orchestration", fill: "none", dashed: true, text: "hsl(var(--pink))", subText: "hsl(var(--pink-mid))", height: 60 },
     ],
   },
   {
@@ -20,8 +20,8 @@ const layers = [
     modeSub: "Built to Change",
     modeColor: "#4A3888",
     rows: [
-      { label: "Systems of innovation", sub: "Intelligence & adaptation — analytics, ML pipelines, copilot interfaces", fill: "#4A3888", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
-      { label: "Systems of differentiation", sub: "Orchestration & plural ontologies — domain models, governed definitions", fill: "#2E2460", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
+      { label: "Systems of innovation", sub: "Intelligence & adaptation: analytics, ML pipelines, copilot interfaces", fill: "#4A3888", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
+      { label: "Systems of differentiation", sub: "Orchestration & plural ontologies: domain models, governed definitions", fill: "#2E2460", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
     ],
   },
   {
@@ -29,21 +29,21 @@ const layers = [
     modeSub: "Built to Last",
     modeColor: "hsl(var(--foreground))",
     rows: [
-      { label: "Systems of record", sub: "Provenance & trust — operational data, transaction ledgers, source systems", fill: "hsl(var(--foreground))", text: "#fff", subText: "rgba(255,255,255,0.45)", height: 50 },
+      { label: "Systems of record", sub: "Provenance & trust: operational data, transaction ledgers, source systems", fill: "hsl(var(--foreground))", text: "#fff", subText: "rgba(255,255,255,0.45)", height: 50 },
     ],
   },
 ];
 
 const StackSlide = () => (
   <section className="slide" id="s11">
-    <div className="slide-n">xi — The Empty Layer</div>
+    <div className="slide-n">xi / The Empty Layer</div>
     <h2 className="luna-h2">
       Rethinking Gartner's bi-modal pace layered strategy.
       <br />
       <span className="luna-accent">Tri-modal. Built to act.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
-      "The universal semantic layer has not yet been achieved by any organization or vendor." — Gartner, April 2025 (G00826629). The position between systems of record and systems of action remains open.
+      "The universal semantic layer has not yet been achieved by any organization or vendor." (Gartner, April 2025, G00826629). The position between systems of record and systems of action remains open.
     </p>
 
     <div style={{ display: "flex", gap: 0, marginTop: "2rem", maxWidth: 920, flexDirection: "column" }}>
@@ -93,7 +93,7 @@ const StackSlide = () => (
     </div>
 
     <p className="font-mono-luna" style={{ fontSize: "0.58rem", letterSpacing: "0.1em", color: "hsl(var(--ink-light))", marginTop: "1.5rem", maxWidth: 920 }}>
-      SOURCE: Gartner, Christopher Long, "Rethink Semantic Layers to Support the Future of Analytics and AI," April 2025 (G00826629). Adapted from Gartner's Bi-Modal Pace Layered Strategy — extended to tri-modal with Mode 3 (Built to Act). Gartner does not endorse any vendor, product or service depicted.
+      SOURCE: Gartner, Christopher Long, "Rethink Semantic Layers to Support the Future of Analytics and AI," April 2025 (G00826629). Adapted from Gartner's Bi-Modal Pace Layered Strategy, extended to tri-modal with Mode 3 (Built to Act). Gartner does not endorse any vendor, product or service depicted.
     </p>
   </section>
 );

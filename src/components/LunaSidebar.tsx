@@ -1,17 +1,15 @@
-import cherreIcon from "@/assets/cherre_icon.png";
-
 interface NavItem { id: string; num: string; label: string; }
 
 const navItems: NavItem[] = [
-  { id: "s1",  num: "i",     label: "The Intelligence Layer" },
-  { id: "s2",  num: "ii",    label: "Three Eras" },
+  { id: "s1",  num: "i",     label: "The Data Infrastructure" },
+  { id: "s2",  num: "ii",    label: "Era Three: Knowledge Graph" },
   { id: "s3",  num: "iii",   label: "What Agents Require" },
   { id: "s4",  num: "iv",    label: "Four Structural Gaps" },
-  { id: "s5",  num: "v",     label: "Plural Truth" },
-  { id: "s6",  num: "vi",    label: "Entity Resolution" },
-  { id: "s7",  num: "vii",   label: "Knowledge Architecture" },
-  { id: "s8",  num: "viii",  label: "Knowledge Graph" },
-  { id: "s9",  num: "ix",    label: "Governance" },
+  { id: "s5",  num: "v",     label: "Truth Is No Longer Monolithic" },
+  { id: "s6",  num: "vi",    label: "The First Hard Problem" },
+  { id: "s7",  num: "vii",   label: "Four Questions, Four Layers" },
+  { id: "s8",  num: "viii",  label: "Infrastructure, Not a Feature" },
+  { id: "s9",  num: "ix",    label: "Governance Is the Architecture" },
   { id: "s10", num: "x",     label: "Automation vs. Judgment" },
   { id: "s11", num: "xi",    label: "The Empty Layer" },
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
@@ -37,11 +35,11 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
       <div className={`luna-overlay ${isOpen ? "open" : ""}`} onClick={onClose} />
       <nav className={`luna-sidebar ${isOpen ? "open" : ""}`}>
         <div className="luna-sidebar-logo">
-          <img src={cherreIcon} alt="Cherre" className="luna-logo-mark" style={{ width: 32, height: 32, objectFit: 'contain' }} />
+          <div className="luna-logo-mark">L</div>
           <div className="luna-logo-text">
-            <strong>Cherre</strong>
+            <strong>Luna</strong>
             <br />
-            Data Infrastructure
+            The Data Infrastructure
           </div>
         </div>
         <span className="luna-nav-label">Presentation</span>
@@ -62,7 +60,9 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
         </div>
         <div className="luna-sidebar-footer">
           <span className="luna-sidebar-tag">
-            Cherre Inc. Copyright 2026
+            Real Estate · Capital Markets
+            <br />
+            <span>Cherre</span> · Luna · 2026
           </span>
         </div>
       </nav>
