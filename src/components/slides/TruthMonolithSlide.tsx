@@ -53,8 +53,8 @@ const TruthMonolithSlide = () => (
       {truths.map((t, i) => (
         <div key={i} style={{ background: t.bg, padding: "2rem 2rem", borderTop: `4px solid ${t.border}`, display: "flex", flexDirection: "column", gap: "1rem" }}>
           <div>
-            <div style={{ fontSize: "1rem", fontWeight: 600, color: t.color, marginBottom: "0.5rem" }}>{t.label}</div>
-            <div style={{ fontSize: "0.54rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: t.color, opacity: 0.7 }}>{t.tag}</div>
+            <div style={{ fontSize: "1rem", fontWeight: 600, color: t.color, marginBottom: "0.64rem" }}>{t.label}</div>
+            <div style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: t.color, opacity: 0.7 }}>{t.tag}</div>
           </div>
           <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "0.65rem" }}>
             {t.items.map((item, j) => (

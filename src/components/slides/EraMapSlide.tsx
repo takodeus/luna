@@ -1,5 +1,5 @@
 const col = {
-  label: { fontSize: "0.56rem", fontWeight: 600 as const, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "hsl(var(--ink-light))", marginBottom: "0.35rem" },
+  label: { fontSize: "0.70rem", fontWeight: 600 as const, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "hsl(var(--ink-light))", marginBottom: "0.35rem" },
   val: { fontSize: "0.9rem", fontWeight: 600 as const },
 };
 
@@ -20,18 +20,18 @@ const EraMapSlide = () => (
     <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1px", maxWidth: 920, background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))" }}>
 
       {/* Column headers */}
-      <div style={{ display: "flex", gap: 0, paddingLeft: 172, paddingBottom: "0.5rem", paddingTop: "0.5rem", background: "#fff" }}>
+      <div style={{ display: "flex", gap: 0, paddingLeft: 172, paddingBottom: "0.64rem", paddingTop: "0.64rem", background: "#fff" }}>
         {["Primary user", "Core job", "Defining architecture"].map((h) => (
-          <div key={h} style={{ flex: 1, fontSize: "0.54rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "hsl(var(--ink-light))", textAlign: "center" }}>{h}</div>
+          <div key={h} style={{ flex: 1, fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "hsl(var(--ink-light))", textAlign: "center" }}>{h}</div>
         ))}
       </div>
 
       {/* ERA THREE */}
       <div style={{ display: "flex", alignItems: "center", background: "hsl(var(--pink))", borderLeft: "4px solid hsl(var(--accent))", padding: "1.4rem 1.6rem", gap: 0, position: "relative" }}>
         <div style={{ width: 148, flexShrink: 0, paddingRight: "1.2rem" }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", marginBottom: "0.25rem" }}>
-            <span style={{ fontSize: "0.54rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Era Three</span>
-            <span style={{ fontSize: "0.52rem", fontWeight: 600, background: "#fff", color: "hsl(var(--pink))", padding: "0.05rem 0.4rem", borderRadius: 2, letterSpacing: "0.1em" }}>Now</span>
+          <div style={{ display: "flex", alignItems: "baseline", gap: "0.64rem", marginBottom: "0.25rem" }}>
+            <span style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Era Three</span>
+            <span style={{ fontSize: "0.64rem", fontWeight: 600, background: "#fff", color: "hsl(var(--pink))", padding: "0.05rem 0.4rem", borderRadius: 2, letterSpacing: "0.1em" }}>Now</span>
           </div>
           <div style={{ fontSize: "1.6rem", fontWeight: 600, color: "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>2024 →</div>
         </div>
@@ -55,7 +55,7 @@ const EraMapSlide = () => (
       {/* ERA TWO */}
       <div style={{ display: "flex", alignItems: "center", background: "#fff", borderLeft: "4px solid hsl(var(--pink-border))", padding: "1.2rem 1.6rem", gap: 0 }}>
         <div style={{ width: 148, flexShrink: 0, paddingRight: "1.2rem" }}>
-          <div style={{ fontSize: "0.54rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "hsl(var(--ink-light))", marginBottom: "0.25rem" }}>Era Two</div>
+          <div style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "hsl(var(--ink-light))", marginBottom: "0.25rem" }}>Era Two</div>
           <div style={{ fontSize: "1.45rem", fontWeight: 600, color: "hsl(var(--foreground))", letterSpacing: "-0.02em", lineHeight: 1 }}>2005–2023</div>
         </div>
         <div style={sep as any} />
@@ -78,7 +78,7 @@ const EraMapSlide = () => (
       {/* ERA ONE */}
       <div style={{ display: "flex", alignItems: "center", background: "#fff", borderLeft: "4px solid hsl(var(--pink-border))", padding: "1.2rem 1.6rem", gap: 0, opacity: 0.75 }}>
         <div style={{ width: 148, flexShrink: 0, paddingRight: "1.2rem" }}>
-          <div style={{ fontSize: "0.54rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "hsl(var(--ink-light))", marginBottom: "0.25rem" }}>Era One</div>
+          <div style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "hsl(var(--ink-light))", marginBottom: "0.25rem" }}>Era One</div>
           <div style={{ fontSize: "1.45rem", fontWeight: 600, color: "hsl(var(--foreground))", letterSpacing: "-0.02em", lineHeight: 1 }}>1971–2005</div>
         </div>
         <div style={sep as any} />
@@ -102,7 +102,7 @@ const EraMapSlide = () => (
 
     {/* Style A: serif statement — Beyond Data Connections */}
     <div style={{ borderTop: "3px solid hsl(var(--pink))", paddingTop: "1.6rem", marginTop: "2rem", maxWidth: 920 }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.54rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.8rem" }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.8rem" }}>
         Beyond Data Connections
       </div>
       <p style={{ fontFamily: "var(--serif)", fontSize: "1.35rem", fontWeight: 600, fontStyle: "italic", color: "hsl(var(--foreground))", lineHeight: 1.4, margin: "0 0 0.9rem" }}>
@@ -111,7 +111,7 @@ const EraMapSlide = () => (
       <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: "0 0 0.6rem" }}>
         Industry analysis is unambiguous on this: systems built on relational schemas and text-to-SQL are bound to linear connections. They cannot draw inferred relationships across sources. That capability is structurally unavailable without a knowledge graph. Era One and Era Two infrastructure was not wrong for its time. It is insufficient for Era Three.
       </p>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-light))" }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-light))" }}>
         Gartner, April 2025
       </div>
     </div>

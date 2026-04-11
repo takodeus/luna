@@ -46,13 +46,13 @@ const KnowledgeGraphSlide = () => (
       {layers.map((layer, i) => (
         <div key={i} style={{ background: layer.dark ? "hsl(var(--pink))" : "hsl(var(--pink-light))", padding: "2rem 2.2rem", borderLeft: "4px solid hsl(var(--pink))", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: "0.8rem" }}>
-            <span style={{ fontSize: "0.58rem", fontWeight: 600, color: layer.dark ? "rgba(255,255,255,0.6)" : "hsl(var(--pink))", letterSpacing: "0.2em" }}>{layer.num}</span>
+            <span style={{ fontSize: "0.70rem", fontWeight: 600, color: layer.dark ? "rgba(255,255,255,0.6)" : "hsl(var(--pink))", letterSpacing: "0.2em" }}>{layer.num}</span>
             <span style={{ fontSize: "1.1rem", fontWeight: 600, color: layer.dark ? "#fff" : "hsl(var(--foreground))" }}>{layer.name}</span>
             <span style={{ fontSize: "0.6rem", fontWeight: 600, color: layer.dark ? "rgba(255,255,255,0.5)" : "hsl(var(--ink-light))", letterSpacing: "0.12em", textTransform: "uppercase" }}>{layer.tag}</span>
           </div>
           <p style={{ fontSize: "0.83rem", color: layer.dark ? "rgba(255,255,255,0.85)" : "hsl(var(--foreground))", lineHeight: 1.65, margin: 0 }}>{layer.desc}</p>
           <div style={{ paddingTop: "0.8rem", borderTop: `1px solid ${layer.dark ? "rgba(255,255,255,0.15)" : "hsl(var(--pink-border))"}` }}>
-            <div style={{ fontSize: "0.54rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: layer.dark ? "rgba(255,255,255,0.5)" : "hsl(var(--pink))", marginBottom: "0.3rem", opacity: 0.8 }}>Cherre</div>
+            <div style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: layer.dark ? "rgba(255,255,255,0.5)" : "hsl(var(--pink))", marginBottom: "0.3rem", opacity: 0.8 }}>Cherre</div>
             <div style={{ fontSize: "0.78rem", color: layer.dark ? "rgba(255,255,255,0.6)" : "hsl(var(--ink-light))", fontStyle: "italic", lineHeight: 1.5 }}>{layer.cherre}</div>
           </div>
         </div>
@@ -66,7 +66,7 @@ const KnowledgeGraphSlide = () => (
         <thead>
           <tr style={{ background: "hsl(var(--pink))", color: "#fff" }}>
             {["Question", "Layer", "What it enables"].map((h) => (
-              <th key={h} style={{ padding: "0.7rem 1rem", textAlign: "left", fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase" }}>{h}</th>
+              <th key={h} style={{ padding: "0.7rem 1rem", textAlign: "left", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase" }}>{h}</th>
             ))}
           </tr>
         </thead>

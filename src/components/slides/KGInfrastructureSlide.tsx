@@ -38,7 +38,7 @@ const KGInfrastructureSlide = () => (
 
     {/* Style B: Gartner section title as full-bleed banner */}
     <div style={{ background: "hsl(var(--pink))", padding: "1.8rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
         Gartner, April 2025 — section heading
       </div>
       <p style={{ fontFamily: "var(--serif)", fontSize: "1.45rem", fontWeight: 600, color: "#fff", lineHeight: 1.35, margin: "0 0 0.9rem" }}>
@@ -48,7 +48,7 @@ const KGInfrastructureSlide = () => (
         Knowledge graphs provide four structural advantages over linear architectures: enhanced contextual understanding of data relationships, improved integration across disparate sources, scalability with built-in AI explainability, and relationship inference that is structurally unavailable from linear data connections.
       </p>
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "0.8rem", marginTop: "0.3rem" }}>
-        <span style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>The industry finding: </span>
+        <span style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>The industry finding: </span>
         <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.65)" }}>
           For most vendors, the value proposition of knowledge graphs remains unrealized due to implementation complexity and the investment required to build at scale. Cherre has spent ten years solving exactly that problem, in real estate.
         </span>
@@ -59,7 +59,7 @@ const KGInfrastructureSlide = () => (
     <div style={{ marginTop: "1.5px", maxWidth: 960, background: "#fff", border: "1px solid hsl(var(--pink-border))", padding: "1.4rem 2rem", display: "flex", alignItems: "center", gap: "2rem" }}>
       <img src="/luna/Unified.png" alt="LUNA entity resolution hub showing Address, Building, and Parcel nodes connected to 12 data source types including Tax Assessor, Recorder, USPS CASS, Geocoding, Places API, Sales, Loans, Leasing, Construction, Benchmarking, and 1st Party data" style={{ width: 280, flexShrink: 0, display: "block" }} />
       <div>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.54rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.6rem" }}>The Graph in Practice</div>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.6rem" }}>The Graph in Practice</div>
         <p style={{ fontSize: "0.85rem", color: "hsl(var(--foreground))", lineHeight: 1.7, margin: "0 0 0.5rem" }}>
           LUNA resolves across three canonical entity types — Address, Building, Parcel — drawing from 12 data source categories simultaneously. Every resolution carries confidence scores, full source attribution, and bidirectional traversal back to the canonical graph stored in MERIDIAN.
         </p>

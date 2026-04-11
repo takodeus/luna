@@ -52,7 +52,7 @@ const StepsThoughtsSlide = () => (
         <div style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.9)", fontWeight: 500, marginBottom: "0.3rem" }}>
           Annual value opportunity in real estate, construction, and development globally. None of it is accessible without the governed, traceable AI execution that agent-grade infrastructure enables.
         </div>
-        <div className="font-mono-luna" style={{ fontSize: "0.58rem", color: "rgba(255,255,255,0.45)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+        <div className="font-mono-luna" style={{ fontSize: "0.70rem", color: "rgba(255,255,255,0.45)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
           McKinsey Global Institute · March 2026
         </div>
       </div>

@@ -63,8 +63,8 @@ const StackSlide = () => (
           }}>
             {group.mode && (
               <>
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", letterSpacing: "0.14em", textTransform: "uppercase", color: group.modeColor!, fontWeight: 600 }}>{group.mode}</span>
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.48rem", letterSpacing: "0.1em", color: group.modeColor!, opacity: 0.7 }}>{group.modeSub}</span>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", letterSpacing: "0.14em", textTransform: "uppercase", color: group.modeColor!, fontWeight: 600 }}>{group.mode}</span>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.62rem", letterSpacing: "0.1em", color: group.modeColor!, opacity: 0.7 }}>{group.modeSub}</span>
               </>
             )}
           </div>
@@ -90,7 +90,7 @@ const StackSlide = () => (
       ))}
     </div>
 
-    <p className="font-mono-luna" style={{ fontSize: "0.56rem", letterSpacing: "0.1em", color: "hsl(var(--ink-light))", marginTop: "1.5rem", maxWidth: 960 }}>
+    <p className="font-mono-luna" style={{ fontSize: "0.70rem", letterSpacing: "0.1em", color: "hsl(var(--ink-light))", marginTop: "1.5rem", maxWidth: 960 }}>
       SOURCE: Gartner, Christopher Long, "Rethink Semantic Layers to Support the Future of Analytics and AI," April 2025 (G00826629). Adapted from Gartner's Bi-Modal Pace Layered Strategy, extended to tri-modal with Mode 3 (Built to Act). Gartner does not endorse any vendor, product or service depicted.
     </p>
   </section>

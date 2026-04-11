@@ -37,7 +37,7 @@ const ClosingSlide = () => (
           padding: "1.6rem 2rem",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "0.6rem" }}>
-            <div style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))" }}>{f.source}</div>
+            <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))" }}>{f.source}</div>
   
           </div>
           <div style={{ fontSize: "1rem", fontWeight: 600, color: "hsl(var(--foreground))", lineHeight: 1.45, marginBottom: "0.8rem", fontStyle: f.isQuote ? "italic" : "normal" }}>
@@ -49,7 +49,7 @@ const ClosingSlide = () => (
     </div>
 
     <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.4rem 2rem", background: "hsl(var(--pink))", borderLeft: "4px solid hsl(var(--pink))" }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "0.5rem" }}>The Strategic Position</div>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "0.64rem" }}>The Strategic Position</div>
       <div style={{ fontSize: "0.93rem", color: "#fff", lineHeight: 1.65 }}>
         The solution that owns the intelligence layer in real estate (entity resolution, semantic governance, the context graph) establishes a position that compounds with every data relationship, every market cycle, and every agent deployment. The architecture is proven. The question is when, not whether.
       </div>

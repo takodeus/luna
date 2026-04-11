@@ -66,7 +66,7 @@ const GovernanceSlide = () => (
         <div key={i} style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ background: q.bg, padding: "0.7rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div className="font-mono-luna" style={{ fontSize: "0.62rem", letterSpacing: "0.14em", textTransform: "uppercase", color: q.color, fontWeight: 600 }}>{q.label}</div>
-            <div className="font-mono-luna" style={{ fontSize: "0.5rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>{q.engine}</div>
+            <div className="font-mono-luna" style={{ fontSize: "0.64rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>{q.engine}</div>
           </div>
           <div style={{ background: "#fff", padding: "1.2rem 1.5rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
             <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "0.55rem" }}>

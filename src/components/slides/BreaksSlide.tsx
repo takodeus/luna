@@ -83,7 +83,7 @@ const BreaksSlide = () => {
                   textAlign: "left",
                 }}
               >
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.54rem", letterSpacing: "0.16em", textTransform: "uppercase", color: isOpen ? "hsl(var(--pink))" : "hsl(var(--ink-light))", flexShrink: 0, minWidth: 56 }}>{b.num}</span>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: isOpen ? "hsl(var(--pink))" : "hsl(var(--ink-light))", flexShrink: 0, minWidth: 56 }}>{b.num}</span>
                 <span style={{ fontFamily: "var(--mono)", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: isOpen ? "hsl(var(--pink))" : "hsl(var(--ink-mid))", flexShrink: 0, minWidth: 140 }}>{b.category}</span>
                 <span style={{ fontSize: "0.88rem", fontWeight: 500, color: "hsl(var(--foreground))", flex: 1 }}>{b.title}</span>
                 <span style={{ color: "hsl(var(--ink-light))", fontSize: "1.1rem", flexShrink: 0, transform: isOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s", lineHeight: 1 }}>›</span>
@@ -96,7 +96,7 @@ const BreaksSlide = () => {
                     {b.desc}
                   </p>
                   <div style={{ background: "hsl(var(--bg-alt))", border: "1px solid hsl(var(--rule))", padding: "1rem 1.2rem" }}>
-                    <div style={{ fontFamily: "var(--mono)", fontSize: "0.54rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.5rem" }}>{b.egLabel}</div>
+                    <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.64rem" }}>{b.egLabel}</div>
                     <div style={{ fontSize: "0.8rem", color: "hsl(var(--ink-mid))", lineHeight: 1.65 }}>{b.egText}</div>
                   </div>
                 </div>

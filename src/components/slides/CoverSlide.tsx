@@ -16,7 +16,7 @@ const CoverSlide = () => (
     {/* Theme anchor */}
     <div style={{ display: "flex", alignItems: "center", gap: "1rem", margin: "1.5rem 0" }}>
       <div style={{ height: 1, background: "hsl(var(--pink))", width: 32, flexShrink: 0 }} />
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "hsl(var(--pink))", fontWeight: 600 }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "hsl(var(--pink))", fontWeight: 600 }}>
         Knowledge Graph-Powered Semantic Layer
       </div>
       <div style={{ height: 1, background: "hsl(var(--pink-border))", flex: 1 }} />
