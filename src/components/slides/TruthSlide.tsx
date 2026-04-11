@@ -76,13 +76,16 @@ const KnowledgeGraphSlide = () => (
             { q: "How is it measured?", layer: "Semantic Layer", enables: "Governed, consistent business logic every user and agent can trust." },
             { q: "What is happening around it?", layer: "Context Graph", enables: "Provenance, explanation trails, and process awareness." },
             { q: "What should happen next?", layer: "Reasoning", enables: "Grounded synthesis that supports judgment and action." },
-          ].map((row, i) => (
-            <tr key={i} style={{ borderBottom: "1px solid hsl(var(--pink-border))", background: i % 2 === 0 ? "#fff" : "hsl(var(--pink-light))" }}>
-              <td style={{ padding: "0.85rem 1rem", borderLeft: "4px solid hsl(var(--pink))", color: "hsl(var(--pink))", fontWeight: 600 }}>{row.q}</td>
-              <td style={{ padding: "0.85rem 1rem", fontWeight: 600, color: "hsl(var(--foreground))" }}>{row.layer}</td>
-              <td style={{ padding: "0.85rem 1rem", color: "hsl(var(--foreground))" }}>{row.enables}</td>
+          ].map((row, i) => {
+            const isLast = i === 3;
+            return (
+            <tr key={i} style={{ borderBottom: "1px solid hsl(var(--pink-border))", background: isLast ? "hsl(var(--pink))" : i % 2 === 0 ? "#fff" : "hsl(var(--pink-light))" }}>
+              <td style={{ padding: "0.85rem 1rem", borderLeft: `4px solid ${isLast ? "rgba(255,255,255,0.4)" : "hsl(var(--pink))"}`, color: isLast ? "#fff" : "hsl(var(--pink))", fontWeight: 600 }}>{row.q}</td>
+              <td style={{ padding: "0.85rem 1rem", fontWeight: 700, color: isLast ? "#fff" : "hsl(var(--foreground))" }}>{row.layer}</td>
+              <td style={{ padding: "0.85rem 1rem", color: isLast ? "rgba(255,255,255,0.85)" : "hsl(var(--foreground))" }}>{row.enables}</td>
             </tr>
-          ))}
+            );
+          })}
         </tbody>
       </table>
       <div style={{ background: "hsl(var(--pink-light))", border: "1px solid hsl(var(--pink-border))", padding: "0.9rem 1rem", marginTop: "1px", fontSize: "0.83rem", fontWeight: 600, color: "hsl(var(--pink))", textAlign: "center" }}>

@@ -7,7 +7,7 @@ const findings = [
   {
     source: "Gartner · April 2025 (G00826629)",
     quote: "Demand for semantic governance is converging from BI, data management, and AI/ML platforms simultaneously.",
-    context: "The pressure is converging on an unclaimed position in the stack from multiple directions. The organization that occupies this position first — with governed entity resolution, versioned metric definitions, and traceable context — establishes a structural advantage that compounds with every data relationship and agent deployment.",
+    context: "The pressure is converging on an open position in the stack from multiple directions. The organization that occupies this position first — with governed entity resolution, versioned metric definitions, and traceable context — establishes a structural advantage that compounds with every data relationship and agent deployment.",
   },
   {
     source: "McKinsey Global Institute · March 2026",
@@ -17,19 +17,19 @@ const findings = [
 ];
 
 const ClosingSlide = () => (
-  <section className="slide slide-dark" id="s13">
-    <div className="slide-n" style={{ color: "rgba(255,255,255,0.35)" }}>xiii / What Comes Next</div>
+  <section className="slide" id="s13" style={{ background: "#FBF1F2" }}>
+    <div className="slide-n">xiii / What Comes Next</div>
 
-    <h2 className="luna-h2" style={{ color: "#fff" }}>
+    <h2 className="luna-h2">
       The architecture is defined.
       <br />
-      <span style={{ color: "rgba(255,255,255,0.65)" }}>The window to own it is open.</span>
+      <span className="luna-accent">The window to own it is open.</span>
     </h2>
 
     <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2.5rem", maxWidth: 900 }}>
       {findings.map((f, i) => (
         <div key={i} style={{
-          background: "hsl(340 50% 96%)",
+          background: "#E2B0C2",
           borderLeft: "4px solid hsl(var(--pink))",
           padding: "1.6rem 2rem",
         }}>
@@ -42,9 +42,9 @@ const ClosingSlide = () => (
       ))}
     </div>
 
-    <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.4rem 2rem", background: "hsl(340 50% 96%)", borderLeft: "4px solid hsl(var(--pink))" }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "0.5rem" }}>The Strategic Position</div>
-      <div style={{ fontSize: "0.93rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>
+    <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.4rem 2rem", background: "hsl(var(--pink))", borderLeft: "4px solid hsl(var(--pink))" }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "0.5rem" }}>The Strategic Position</div>
+      <div style={{ fontSize: "0.93rem", color: "#fff", lineHeight: 1.65 }}>
         The organization that owns the intelligence layer in real estate — entity resolution, semantic governance, the context graph — establishes a position that compounds with every data relationship, every market cycle, and every agent deployment. The architecture is proven. The question is when, not whether.
       </div>
     </div>

@@ -36,7 +36,12 @@ const breaks = [
 ];
 
 const BreaksSlide = () => {
-  const [open, setOpen] = useState<number | null>(null);
+  const [open, setOpen] = useState<Set<number>>(new Set([0, 1, 2, 3]));
+  const toggle = (i: number) => setOpen(prev => {
+    const next = new Set(prev);
+    next.has(i) ? next.delete(i) : next.add(i);
+    return next;
+  });
 
   return (
     <section className="slide slide-alt" id="s4">
@@ -52,7 +57,7 @@ const BreaksSlide = () => {
 
       <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2rem", maxWidth: 900 }}>
         {breaks.map((b, i) => {
-          const isOpen = open === i;
+          const isOpen = open.has(i);
           return (
             <div
               key={i}
@@ -65,7 +70,7 @@ const BreaksSlide = () => {
             >
               {/* Header — always visible */}
               <button
-                onClick={() => setOpen(isOpen ? null : i)}
+                onClick={() => toggle(i)}
                 style={{
                   width: "100%",
                   display: "flex",

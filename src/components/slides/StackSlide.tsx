@@ -2,9 +2,9 @@ const layers = [
   {
     mode: "Mode 3",
     modeSub: "Built to Act",
-    modeColor: "#D4537E",
+    modeColor: "hsl(var(--pink))",
     rows: [
-      { label: "Systems of action", sub: "Autonomous agents — agentic AI delivering decisions and execution", fill: "#D4537E", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 56 },
+      { label: "Systems of action", sub: "Autonomous agents — agentic AI delivering decisions and execution", fill: "hsl(var(--pink))", text: "#fff", subText: "rgba(255,255,255,0.65)", height: 56 },
     ],
   },
   {
@@ -12,24 +12,24 @@ const layers = [
     modeSub: null,
     modeColor: null,
     rows: [
-      { label: "Semantic governance layer", sub: "LUNA · MERIDIAN · ATLAS — entity resolution, knowledge graph, orchestration", fill: "none", dashed: true, text: "#993556", subText: "#D4537E", height: 60 },
+      { label: "Semantic governance layer", sub: "LUNA · MERIDIAN · ATLAS — entity resolution, knowledge graph, orchestration", fill: "none", dashed: true, text: "hsl(var(--pink))", subText: "hsl(var(--pink-mid))", height: 60 },
     ],
   },
   {
     mode: "Mode 2",
     modeSub: "Built to Change",
-    modeColor: "#185FA5",
+    modeColor: "#4A3888",
     rows: [
-      { label: "Systems of innovation", sub: "Intelligence & adaptation — analytics, ML pipelines, copilot interfaces", fill: "#185FA5", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
-      { label: "Systems of differentiation", sub: "Orchestration & plural ontologies — domain models, governed definitions", fill: "#3B6D11", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
+      { label: "Systems of innovation", sub: "Intelligence & adaptation — analytics, ML pipelines, copilot interfaces", fill: "#4A3888", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
+      { label: "Systems of differentiation", sub: "Orchestration & plural ontologies — domain models, governed definitions", fill: "#2E2460", text: "#fff", subText: "rgba(255,255,255,0.6)", height: 50 },
     ],
   },
   {
     mode: "Mode 1",
     modeSub: "Built to Last",
-    modeColor: "#854F0B",
+    modeColor: "hsl(var(--foreground))",
     rows: [
-      { label: "Systems of record", sub: "Provenance & trust — Yardi, MRI, Argus, VTS, Chatham", fill: "#854F0B", text: "#fff", subText: "rgba(255,255,255,0.55)", height: 50 },
+      { label: "Systems of record", sub: "Provenance & trust — operational data, transaction ledgers, source systems", fill: "hsl(var(--foreground))", text: "#fff", subText: "rgba(255,255,255,0.45)", height: 50 },
     ],
   },
 ];
