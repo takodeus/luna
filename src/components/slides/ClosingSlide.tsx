@@ -55,7 +55,7 @@ const ClosingSlide = () => (
               {f.source}
             </div>
           </div>
-          <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "hsl(var(--foreground))", lineHeight: 1.4, marginBottom: "0.5rem" }}>
+          <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#3B0F1E", lineHeight: 1.4, marginBottom: "0.5rem" }}>
             {f.isQuote ? <span>"{f.headline}"</span> : f.headline}
             <sup style={{ fontSize: "0.6em", color: "hsl(var(--pink))", fontWeight: 700, marginLeft: "1px" }}>{f.num}</sup>
           </div>
@@ -65,7 +65,7 @@ const ClosingSlide = () => (
     </div>
 
     {/* Strategic position */}
-    <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.2rem 1.8rem", background: "hsl(var(--foreground))" }}>
+    <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.2rem 1.8rem", background: "hsl(var(--pink))" }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "0.5rem" }}>
         The strategic position
         <sup style={{ fontSize: "0.7em", color: "hsl(var(--pink-mid))", marginLeft: "1px" }}>1234</sup>
