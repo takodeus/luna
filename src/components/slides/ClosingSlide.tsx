@@ -1,18 +1,18 @@
 const findings = [
   {
-    source: "Gartner · April 2025",
-    quote: "The universal semantic layer has not yet been achieved by any organization or vendor.",
-    context: "The semantic governance layer, what Gartner calls the 'contested' position between systems of record and systems of action, remains structurally open. The pressure is converging from BI platforms, data management vendors, and AI/ML platforms simultaneously. The organization that occupies this position in real estate establishes a compounding structural advantage.",
-  },
-  {
     source: "Gartner · June 2025",
     quote: "Over 40% of agentic AI projects will be cancelled by end of 2027.",
-    context: "The cause is not model capability. It's data quality and weak operational foundations. AI pilots built on inconsistent entities and drifting metric definitions become wrong at scale, fast. The intelligence layer is not a downstream problem to solve after deployment. It is the precondition for deployment.",
+    context: "The cause is not model capability — it's data quality and weak operational foundations. AI pilots built on inconsistent entities and drifting metric definitions become wrong at scale, fast. The intelligence layer is not a downstream problem to solve after deployment. It is the precondition for deployment.",
+  },
+  {
+    source: "Gartner · April 2025 (G00826629)",
+    quote: "Demand for semantic governance is converging from BI, data management, and AI/ML platforms simultaneously.",
+    context: "The pressure is converging on an unclaimed position in the stack from multiple directions. The organization that occupies this position first — with governed entity resolution, versioned metric definitions, and traceable context — establishes a structural advantage that compounds with every data relationship and agent deployment.",
   },
   {
     source: "McKinsey Global Institute · March 2026",
     quote: "$430–550B in annual value is addressable in real estate, construction, and development.",
-    context: "None of that value is accessible without governed, traceable AI execution. The gap between what AI can theoretically deliver and what organizations can actually capture is not a model gap. It is a data infrastructure gap: entity resolution, semantic governance, context, and provenance at the asset level.",
+    context: "None of that value is accessible without governed, traceable AI execution. The gap between what AI can theoretically deliver and what organizations can actually capture is not a model gap — it is a data infrastructure gap: entity resolution, semantic governance, context, and provenance at the asset level.",
   },
 ];
 
@@ -26,21 +26,25 @@ const ClosingSlide = () => (
       <span style={{ color: "rgba(255,255,255,0.65)" }}>The window to own it is open.</span>
     </h2>
 
-    <div style={{ display: "flex", flexDirection: "column", gap: "1px", marginTop: "2.5rem", maxWidth: 900 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2.5rem", maxWidth: 900 }}>
       {findings.map((f, i) => (
-        <div key={i} style={{ background: "rgba(255,255,255,0.05)", borderLeft: "3px solid rgba(255,255,255,0.18)", padding: "1.8rem 2rem" }}>
-          <div style={{ fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "0.6rem" }}>{f.source}</div>
-          <div style={{ fontSize: "1.05rem", fontWeight: 600, color: "rgba(255,255,255,0.88)", lineHeight: 1.4, marginBottom: "0.9rem", fontStyle: "italic" }}>
+        <div key={i} style={{
+          background: "hsl(340 50% 96%)",
+          borderLeft: "4px solid hsl(var(--pink))",
+          padding: "1.6rem 2rem",
+        }}>
+          <div style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.6rem" }}>{f.source}</div>
+          <div style={{ fontSize: "1rem", fontWeight: 600, color: "hsl(var(--foreground))", lineHeight: 1.45, marginBottom: "0.8rem", fontStyle: "italic" }}>
             "{f.quote}"
           </div>
-          <div style={{ fontSize: "0.83rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>{f.context}</div>
+          <div style={{ fontSize: "0.82rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7 }}>{f.context}</div>
         </div>
       ))}
     </div>
 
-    <div style={{ marginTop: "2.5rem", maxWidth: 900, padding: "1.6rem 2rem", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 3 }}>
-      <div style={{ fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: "0.6rem" }}>The Strategic Position</div>
-      <div style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.72)", lineHeight: 1.65, fontWeight: 400 }}>
+    <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.4rem 2rem", background: "hsl(340 50% 96%)", borderLeft: "4px solid hsl(var(--pink))" }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "0.5rem" }}>The Strategic Position</div>
+      <div style={{ fontSize: "0.93rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>
         The organization that owns the intelligence layer in real estate — entity resolution, semantic governance, the context graph — establishes a position that compounds with every data relationship, every market cycle, and every agent deployment. The architecture is proven. The question is when, not whether.
       </div>
     </div>

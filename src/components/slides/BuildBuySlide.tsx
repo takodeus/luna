@@ -112,7 +112,7 @@ const BuildBuySlide = () => (
     <div className="callout" style={{ marginTop: "2rem", maxWidth: 1040 }}>
       <div className="callout-title">The Gartner Finding</div>
       <div className="callout-text">
-        "The universal semantic layer has not yet been achieved by any organization or vendor." (Gartner, April 2025, G00826629). <strong>LUNA, MERIDIAN, and ATLAS are the architecture that fills it.</strong>
+        Gartner (April 2025, G00826629) identifies the semantic governance layer as the open position in the enterprise stack. <strong>LUNA, MERIDIAN, and ATLAS are the architecture that fills it.</strong>
       </div>
     </div>
   </section>
