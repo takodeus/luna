@@ -36,7 +36,26 @@ const KGInfrastructureSlide = () => (
       Solutions that build this layer gain a structural advantage that compounds over time. The graph doesn't just store data. It accumulates understanding.
     </p>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "2rem", maxWidth: 960 }}>
+    {/* Style B: Gartner section title as full-bleed banner */}
+    <div style={{ background: "hsl(var(--pink))", padding: "1.8rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
+        Gartner, G00826629 — section heading, p. 6 and pp. 21–22
+      </div>
+      <p style={{ fontFamily: "var(--serif)", fontSize: "1.45rem", fontWeight: 600, color: "#fff", lineHeight: 1.35, margin: "0 0 0.9rem" }}>
+        "The Future of Semantic Layers: Metrics Layers Powered by Knowledge Graph"
+      </p>
+      <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.78)", lineHeight: 1.7, margin: "0 0 0.5rem", maxWidth: 760 }}>
+        Gartner identifies knowledge graphs as the foundation for the future of semantic layers, citing four specific advantages over linear architectures: enhanced contextual understanding, improved data integration across disparate sources, scalability and AI explainability, and relationship inference possibilities not available from typical linear data relationships.
+      </p>
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "0.8rem", marginTop: "0.3rem" }}>
+        <span style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>Gartner also notes: </span>
+        <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.65)" }}>
+          "the value proposition of knowledge graphs remains unrealized" for most vendors, due to implementation complexity and investment requirements. Cherre has spent ten years solving exactly that problem — in real estate.
+        </span>
+      </div>
+    </div>
+
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "1.5px", maxWidth: 960 }}>
       {pillars.map((p, i) => (
         <div key={i} style={{ background: "hsl(var(--pink-light))", padding: "1.8rem 2rem", borderTop: "3px solid hsl(var(--pink))" }}>
           <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "hsl(var(--pink))", marginBottom: "0.7rem" }}>{p.label}</div>

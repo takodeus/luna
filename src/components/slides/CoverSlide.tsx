@@ -13,9 +13,16 @@ const CoverSlide = () => (
       Metrics survive, but definitions drift. Decisions are logged, but their context disappears. Over time, systems accumulate activity without memory, and AI agents operating on this substrate inherit every gap.
     </p>
 
-    <div style={{ height: 1, background: "hsl(var(--rule))", maxWidth: 560, margin: "2.5rem 0" }} />
+    {/* Theme anchor */}
+    <div style={{ display: "flex", alignItems: "center", gap: "1rem", margin: "1.5rem 0" }}>
+      <div style={{ height: 1, background: "hsl(var(--pink))", width: 32, flexShrink: 0 }} />
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "hsl(var(--pink))", fontWeight: 600 }}>
+        Knowledge Graph-Powered Semantic Layer
+      </div>
+      <div style={{ height: 1, background: "hsl(var(--pink-border))", flex: 1 }} />
+    </div>
 
-    <div className="stat-row" style={{ marginTop: "2rem" }}>
+    <div className="stat-row" style={{ marginTop: "1.5rem" }}>
       {[
         { num: "40%+", label: "of agentic AI projects will be cancelled by 2027, due to data quality, not model quality", source: "Gartner, June 2025" },
         { num: "$430–550B", label: "annual value at stake in real estate, construction, and development, all of it requiring governed, traceable AI", source: "McKinsey Global Institute, March 2026" },

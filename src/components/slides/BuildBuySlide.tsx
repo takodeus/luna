@@ -109,10 +109,29 @@ const BuildBuySlide = () => (
       ))}
     </div>
 
-    <div className="callout" style={{ marginTop: "2rem", maxWidth: 1040 }}>
-      <div className="callout-title">The Gartner Finding</div>
-      <div className="callout-text">
-        Gartner (April 2025, G00826629) identifies the semantic governance layer as the open position in the enterprise stack. <strong>LUNA, MERIDIAN, and ATLAS are the architecture that fills it.</strong>
+    {/* Style C: split two-column — Gartner composite definition / Cherre response */}
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", marginTop: "2rem", maxWidth: 1040, border: "1px solid hsl(var(--pink-border))" }}>
+      <div style={{ background: "hsl(var(--pink))", padding: "1.8rem 2rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
+          Gartner, G00826629, p. 27
+        </div>
+        <p style={{ fontSize: "1rem", fontWeight: 600, color: "#fff", lineHeight: 1.45, margin: "0 0 0.8rem" }}>
+          Gartner defines the destination: a composite semantic layer — a coordinated collection of semantic objects across the data architecture, including knowledge graphs, data products, and semantic models working in concert.
+        </p>
+        <p style={{ fontFamily: "var(--mono)", fontSize: "0.56rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", margin: 0 }}>
+          The ambitious goal of a universal semantic layer has not yet been achieved by any solution or vendor.
+        </p>
+      </div>
+      <div style={{ background: "#FBF1F2", padding: "1.8rem 2rem" }}>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.7rem" }}>
+          The Cherre Position
+        </div>
+        <p style={{ fontSize: "1rem", fontWeight: 600, color: "hsl(var(--foreground))", lineHeight: 1.45, margin: "0 0 0.8rem" }}>
+          The canonical graph is already built. That is the hard part.
+        </p>
+        <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: 0 }}>
+          Because the canonical real estate knowledge graph exists, any semantic layer can be deployed flexibly on top: an LLM interface, a specific dashboard, a front-end application. Cherre is not one layer. It is the foundation that makes every layer possible. LUNA, MERIDIAN, and ATLAS are the architecture that fills the open position.
+        </p>
       </div>
     </div>
   </section>

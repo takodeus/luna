@@ -41,6 +41,19 @@ const MismatchSlide = () => (
         ))}
       </tbody>
     </table>
+
+    {/* Style B: full-bleed pink banner — p.17 Gartner quote */}
+    <div style={{ background: "hsl(var(--pink))", padding: "1.6rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.6rem" }}>
+        Gartner, G00826629, p. 17 — on AI and BI tool semantic layers
+      </div>
+      <p style={{ fontSize: "1.15rem", fontWeight: 500, color: "#fff", lineHeight: 1.45, margin: "0 0 0.7rem" }}>
+        Systems built on linear data models "lack the inference capabilities to move from 'what happened' to 'why it happened'."
+      </p>
+      <p style={{ fontSize: "0.83rem", color: "rgba(255,255,255,0.72)", lineHeight: 1.65, margin: 0, maxWidth: 760 }}>
+        Every row in the table above is a version of this gap. The agent can retrieve what the system recorded. It cannot explain what the system never stored: the meaning behind the metric, the entity behind the ID, the context behind the event. That requires a knowledge graph, not a data connection.
+      </p>
+    </div>
   </section>
 );
 

@@ -100,10 +100,19 @@ const EraMapSlide = () => (
 
     </div>
 
-    <div className="callout" style={{ marginTop: "2rem", maxWidth: 920 }}>
-      <div className="callout-title">The Era Three Implication</div>
-      <div className="callout-text">
-        ERPs and data warehouses were built for human operators reading reports. AI agents make API calls requiring semantic context: which definition applies, which entity owns this asset across every source, what chain of events explains the anomaly. That context has never lived in the system of record. The knowledge graph is the architecture that carries it.
+    {/* Style A: serif statement — Beyond Data Connections */}
+    <div style={{ borderTop: "3px solid hsl(var(--pink))", paddingTop: "1.6rem", marginTop: "2rem", maxWidth: 920 }}>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.54rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.8rem" }}>
+        Beyond Data Connections
+      </div>
+      <p style={{ fontFamily: "var(--serif)", fontSize: "1.35rem", fontWeight: 600, fontStyle: "italic", color: "hsl(var(--foreground))", lineHeight: 1.4, margin: "0 0 0.9rem" }}>
+        Linear data connections were built for human operators reading reports. They cannot draw inferred relationships, resolve entities across sources, or carry context across a query. That is what every architecture before the knowledge graph was.
+      </p>
+      <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: "0 0 0.6rem" }}>
+        Gartner is explicit on this point: systems built on relational schemas and text-to-SQL are "drawn from the linear connections defined in the source's relational schemas" and "lack the capability to draw inferred relationships" — the defining capability of knowledge graph sources. Era One and Era Two infrastructure was not wrong for its time. It is structurally insufficient for Era Three.
+      </p>
+      <div style={{ fontFamily: "var(--mono)", fontSize: "0.52rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-light))" }}>
+        Gartner, G00826629, p. 10
       </div>
     </div>
   </section>
