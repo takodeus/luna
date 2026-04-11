@@ -25,7 +25,7 @@ const reasoningModels = [
 ];
 
 const KGInfrastructureSlide = () => (
-  <section className="slide slide-alt" id="s9">
+  <section className="slide" id="s9">
     <div className="slide-n">viii / Infrastructure, Not a Feature</div>
     <h2 className="luna-h2">
       The knowledge graph is infrastructure,
@@ -37,7 +37,7 @@ const KGInfrastructureSlide = () => (
     </p>
 
     {/* Style B: Gartner section title as full-bleed banner */}
-    <div style={{ background: "hsl(var(--pink))", padding: "1.8rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
+    <div style={{ background: "#A8185E", padding: "1.8rem 2rem", marginTop: "2rem", maxWidth: 960 }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.7rem" }}>
         Gartner, April 2025 · section heading
       </div>
@@ -56,12 +56,12 @@ const KGInfrastructureSlide = () => (
     </div>
 
     {/* Unified hub-and-spoke diagram */}
-    <div style={{ marginTop: "1.5px", maxWidth: 960, background: "#fff", border: "1px solid hsl(var(--pink-border))", padding: "1.4rem 2rem", display: "flex", alignItems: "center", gap: "2rem" }}>
+    <div style={{ marginTop: "1.5px", maxWidth: 960, background: "#fff", border: "1px solid hsl(var(--pink) / 0.15)", padding: "1.4rem 2rem", display: "flex", alignItems: "center", gap: "2rem" }}>
       <img src="/luna/Unified.png" alt="LUNA entity resolution hub showing Address, Building, and Parcel nodes connected to 12 data source types including Tax Assessor, Recorder, USPS CASS, Geocoding, Places API, Sales, Loans, Leasing, Construction, Benchmarking, and 1st Party data" style={{ width: 280, flexShrink: 0, display: "block" }} />
       <div>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--pink))", marginBottom: "0.6rem" }}>The Graph in Practice</div>
-        <p style={{ fontSize: "0.85rem", color: "hsl(var(--foreground))", lineHeight: 1.7, margin: "0 0 0.5rem" }}>
-          LUNA resolves across three canonical entity types — Address, Building, and Parcel, drawing from 12 data source categories simultaneously. Every resolution carries confidence scores, full source attribution, and bidirectional traversal back to the canonical graph stored in MERIDIAN.
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#A8185E", marginBottom: "0.6rem" }}>The Graph in Practice</div>
+        <p style={{ fontSize: "0.85rem", color: "#000", lineHeight: 1.7, margin: "0 0 0.5rem" }}>
+          LUNA resolves across three canonical entity types, Address, Building, and Parcel, drawing from 12 data source categories simultaneously. Every resolution carries confidence scores, full source attribution, and bidirectional traversal back to the canonical graph stored in MERIDIAN.
         </p>
         <p style={{ fontSize: "0.78rem", color: "hsl(var(--ink-light))", margin: 0, fontStyle: "italic" }}>
           This is not a data connection. It is a graph that accumulates meaning with every resolved entity.
@@ -69,11 +69,11 @@ const KGInfrastructureSlide = () => (
       </div>
     </div>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "1.5px", maxWidth: 960 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", marginTop: "1.5px", maxWidth: 960 }}>
       {pillars.map((p, i) => (
-        <div key={i} style={{ background: "hsl(var(--pink-light))", padding: "1.8rem 2rem", borderTop: "3px solid hsl(var(--pink))" }}>
-          <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "hsl(var(--pink))", marginBottom: "0.7rem" }}>{p.label}</div>
-          <div style={{ fontSize: "0.83rem", color: "hsl(var(--foreground))", lineHeight: 1.7 }}>{p.desc}</div>
+        <div key={i} style={{ background: "#fff", padding: "1.8rem 2rem", borderTop: "3px solid #A8185E" }}>
+          <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "#A8185E", marginBottom: "0.7rem" }}>{p.label}</div>
+          <div style={{ fontSize: "0.83rem", color: "#000", lineHeight: 1.7 }}>{p.desc}</div>
         </div>
       ))}
     </div>
@@ -81,12 +81,12 @@ const KGInfrastructureSlide = () => (
     {/* Reasoning models */}
     <div style={{ marginTop: "2.5rem", maxWidth: 960 }}>
       <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "hsl(var(--ink-light))", marginBottom: "1rem" }}>Reasoning Models: How knowledge becomes action</div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "1px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "1px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)" }}>
         {reasoningModels.map((r, i) => (
-          <div key={i} style={{ background: "#fff", padding: "1.4rem 1.5rem", borderTop: "3px solid hsl(var(--pink))" }}>
-            <div style={{ fontSize: "1rem", fontWeight: 600, color: "hsl(var(--pink))", marginBottom: "0.3rem" }}>{r.label}</div>
-            <div style={{ fontSize: "0.74rem", fontStyle: "italic", color: "hsl(var(--accent))", marginBottom: "0.7rem" }}>{r.q}</div>
-            <div style={{ fontSize: "0.78rem", color: "hsl(var(--foreground))", lineHeight: 1.6 }}>{r.desc}</div>
+          <div key={i} style={{ background: "#fff", padding: "1.4rem 1.5rem", borderTop: "3px solid #A8185E" }}>
+            <div style={{ fontSize: "1rem", fontWeight: 600, color: "#A8185E", marginBottom: "0.3rem" }}>{r.label}</div>
+            <div style={{ fontSize: "0.74rem", fontStyle: "italic", color: "#DF2467", marginBottom: "0.7rem" }}>{r.q}</div>
+            <div style={{ fontSize: "0.78rem", color: "#000", lineHeight: 1.6 }}>{r.desc}</div>
           </div>
         ))}
       </div>

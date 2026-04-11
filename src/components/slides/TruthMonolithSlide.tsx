@@ -1,9 +1,9 @@
 const truths = [
   {
     label: "System of Record Truth",
-    color: "hsl(var(--blue))",
-    bg: "#f0f4fb",
-    border: "hsl(var(--blue))",
+    color: "#A8185E",
+    bg: "#fff",
+    border: "#A8185E",
     tag: "Transactional · Authoritative · Historical",
     items: [
       "Authoritative for booked transactions: GL trial balance, lease execution, payment post.",
@@ -13,9 +13,9 @@ const truths = [
   },
   {
     label: "Semantic Layer Truth",
-    color: "hsl(var(--pink))",
-    bg: "hsl(var(--pink-light))",
-    border: "hsl(var(--pink))",
+    color: "#A8185E",
+    bg: "#fff",
+    border: "#A8185E",
     tag: "Definitional · Governed · Shared",
     arbitration: true,
     items: [
@@ -27,9 +27,9 @@ const truths = [
   },
   {
     label: "Event Stream Truth",
-    color: "hsl(var(--amber))",
-    bg: "#fef9ef",
-    border: "hsl(var(--amber))",
+    color: "#DF2467",
+    bg: "#fff",
+    border: "#DF2467",
     tag: "Temporal · Causal · Continuous",
     items: [
       "The state of the world at the time of the event: operational events, state changes, milestones, and observed conditions.",
@@ -40,7 +40,7 @@ const truths = [
 ];
 
 const TruthMonolithSlide = () => (
-  <section className="slide slide-alt" id="s6">
+  <section className="slide" id="s6">
     <div className="slide-n">v / Plural Truth</div>
     <h2 className="luna-h2">
       Truth is no longer monolithic.
@@ -52,25 +52,25 @@ const TruthMonolithSlide = () => (
     </p>
 
     {/* Market position sentence */}
-    <div style={{ margin: "1.5rem 0 0", padding: "1rem 1.4rem", background: "#fff", borderLeft: "4px solid hsl(var(--pink))", maxWidth: 960, fontSize: "0.92rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>
+    <div style={{ margin: "1.5rem 0 0", padding: "1rem 1.4rem", background: "#fff", borderLeft: "4px solid #A8185E", maxWidth: 960, fontSize: "0.92rem", color: "#000", lineHeight: 1.65 }}>
       In an agentic enterprise, the winning platform is no longer only the one that stores the record. It is the one that can arbitrate meaning across record truth, semantic truth, and event truth well enough for agents to act with trust.
     </div>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1.15fr 1fr", gap: "1.5px", background: "hsl(var(--pink-border))", border: "1px solid hsl(var(--pink-border))", marginTop: "2rem", maxWidth: 960 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1.15fr 1fr", gap: "1.5px", background: "hsl(var(--pink) / 0.15)", border: "1px solid hsl(var(--pink) / 0.15)", marginTop: "2rem", maxWidth: 960 }}>
       {truths.map((t, i) => (
         <div key={i} style={{ background: t.bg, padding: "2rem", borderTop: `4px solid ${t.border}`, display: "flex", flexDirection: "column", gap: "1rem" }}>
           <div>
             <div style={{ fontSize: "1rem", fontWeight: 700, color: t.color, marginBottom: "0.4rem" }}>{t.label}</div>
             <div style={{ fontSize: "0.64rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: t.color, opacity: 0.7 }}>{t.tag}</div>
             {t.arbitration && (
-              <div style={{ marginTop: "0.5rem", display: "inline-block", fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.12em", textTransform: "uppercase", background: "hsl(var(--pink))", color: "#fff", padding: "0.15rem 0.6rem", borderRadius: 2 }}>
+              <div style={{ marginTop: "0.5rem", display: "inline-block", fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.12em", textTransform: "uppercase", background: "#A8185E", color: "#fff", padding: "0.15rem 0.6rem", borderRadius: 2 }}>
                 The arbitration layer
               </div>
             )}
           </div>
           <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
             {t.items.map((item, j) => (
-              <li key={j} style={{ fontSize: "0.83rem", color: "hsl(var(--foreground))", lineHeight: 1.65, paddingLeft: "1rem", position: "relative" }}>
+              <li key={j} style={{ fontSize: "0.83rem", color: "#000", lineHeight: 1.65, paddingLeft: "1rem", position: "relative" }}>
                 <span style={{ position: "absolute", left: 0, color: t.color, fontWeight: 700 }}>·</span>
                 {item}
               </li>
@@ -81,10 +81,10 @@ const TruthMonolithSlide = () => (
     </div>
 
     {/* Governance Implications */}
-    <div style={{ marginTop: "1.5px", maxWidth: 960, borderLeft: "4px solid hsl(var(--pink))", padding: "1.6rem 2rem", background: "hsl(var(--pink-light))" }}>
-      <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "hsl(var(--pink))", marginBottom: "0.9rem" }}>Governance Implications</div>
-      <div style={{ fontSize: "0.87rem", color: "hsl(var(--foreground))", marginBottom: "0.8rem", lineHeight: 1.65 }}>
-        <strong style={{ color: "hsl(var(--pink))" }}>Truth arbitration</strong> becomes a governance function, not a data quality problem. When multiple valid truths coexist, governance determines which one is authoritative for which decision.
+    <div style={{ marginTop: "1.5px", maxWidth: 960, borderLeft: "4px solid #A8185E", padding: "1.6rem 2rem", background: "#fff" }}>
+      <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#A8185E", marginBottom: "0.9rem" }}>Governance Implications</div>
+      <div style={{ fontSize: "0.87rem", color: "#000", marginBottom: "0.8rem", lineHeight: 1.65 }}>
+        <strong style={{ color: "#A8185E" }}>Truth arbitration</strong> becomes a governance function, not a data quality problem. When multiple valid truths coexist, governance determines which one is authoritative for which decision.
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
         {[
@@ -92,7 +92,7 @@ const TruthMonolithSlide = () => (
           "Which truth is fit for AI agents?",
           "When does event-driven truth override system truth, for example in real-time monitoring?",
         ].map((q, i) => (
-          <div key={i} style={{ paddingLeft: "0.9rem", borderLeft: "3px solid hsl(var(--pink-border))", fontSize: "0.81rem", color: "hsl(var(--foreground))", lineHeight: 1.65 }}>{q}</div>
+          <div key={i} style={{ paddingLeft: "0.9rem", borderLeft: "3px solid hsl(var(--pink) / 0.2)", fontSize: "0.81rem", color: "#000", lineHeight: 1.65 }}>{q}</div>
         ))}
       </div>
     </div>

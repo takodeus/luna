@@ -29,7 +29,7 @@ const breaks = [
     num: "04 / 04",
     category: "Decision Lineage",
     title: "The agent decided. No one can say why.",
-    desc: "Data lineage records what moved. Decision lineage records why the agent concluded what it did: which definition applied, which authority it trusted, and what version of the world it was operating on. Systems of record log outcomes. Almost none log reasoning chains — and that is what agents, auditors, and LPs increasingly require.",
+    desc: "Data lineage records what moved. Decision lineage records why the agent concluded what it did: which definition applied, which authority it trusted, and what version of the world it was operating on. Systems of record log outcomes. Almost none log reasoning chains, and that is what agents, auditors, and LPs increasingly require.",
     egLabel: "In Practice: LP Audit and Regulatory Scrutiny",
     egText: "An institutional LP asks what data informed a lease renewal recommendation on a Class A multifamily asset. The agent generated the recommendation. The ERP recorded the outcome. Neither system can reconstruct the reasoning: which data version was active, which metric definition applied, which agent held authority. The audit produces a gap.",
   },
@@ -44,7 +44,7 @@ const BreaksSlide = () => {
   });
 
   return (
-    <section className="slide slide-alt" id="s4">
+    <section className="slide" id="s4">
       <div className="slide-n">iv / Four Structural Gaps</div>
       <h2 className="luna-h2">
         Not the model's fault.
@@ -63,20 +63,20 @@ const BreaksSlide = () => {
               key={i}
               style={{
                 background: "#fff",
-                border: "1px solid hsl(var(--pink-border))",
-                borderLeft: "4px solid hsl(var(--pink))",
+                border: "1px solid hsl(var(--pink) / 0.15)",
+                borderLeft: "4px solid #A8185E",
               }}
             >
               {/* Header: always visible */}
               <div style={{ display: "flex", alignItems: "flex-start", gap: "1.2rem", padding: "1.1rem 1.4rem" }}>
-                <span style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "hsl(var(--pink))", flexShrink: 0, minWidth: 56, paddingTop: "0.15rem" }}>{b.num}</span>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "#A8185E", flexShrink: 0, minWidth: 56, paddingTop: "0.15rem" }}>{b.num}</span>
                 <span style={{ fontFamily: "var(--mono)", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "hsl(var(--ink-mid))", flexShrink: 0, minWidth: 140, paddingTop: "0.15rem" }}>{b.category}</span>
-                <span style={{ fontSize: "0.88rem", fontWeight: 600, color: "hsl(var(--foreground))", flex: 1 }}>{b.title}</span>
+                <span style={{ fontSize: "0.88rem", fontWeight: 600, color: "#000", flex: 1 }}>{b.title}</span>
               </div>
 
               {/* Desc: always visible */}
               <div style={{ padding: "0 1.4rem 1rem", paddingLeft: "calc(1.4rem + 56px + 140px + 1.2rem + 1.2rem)" }}>
-                <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: "0 0 0.9rem", borderTop: "1px solid hsl(var(--rule))", paddingTop: "0.7rem" }}>
+                <p style={{ fontSize: "0.83rem", color: "hsl(var(--ink-mid))", lineHeight: 1.7, margin: "0 0 0.9rem", borderTop: "1px solid hsl(var(--pink) / 0.15)", paddingTop: "0.7rem" }}>
                   {b.desc}
                 </p>
 
@@ -89,12 +89,12 @@ const BreaksSlide = () => {
                     padding: 0, marginBottom: isOpen ? "0.7rem" : 0,
                   }}
                 >
-                  <span style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "hsl(var(--pink))" }}>{b.egLabel}</span>
-                  <span style={{ color: "hsl(var(--pink))", fontSize: "0.9rem", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.2s", lineHeight: 1 }}>›</span>
+                  <span style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#A8185E" }}>{b.egLabel}</span>
+                  <span style={{ color: "#A8185E", fontSize: "0.9rem", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.2s", lineHeight: 1 }}>›</span>
                 </button>
 
                 {isOpen && (
-                  <div style={{ background: "hsl(var(--bg-alt))", border: "1px solid hsl(var(--rule))", padding: "1rem 1.2rem", marginBottom: "0.4rem" }}>
+                  <div style={{ background: "#fff", border: "1px solid hsl(var(--pink) / 0.15)", padding: "1rem 1.2rem", marginBottom: "0.4rem" }}>
                     <div style={{ fontSize: "0.8rem", color: "hsl(var(--ink-mid))", lineHeight: 1.65 }}>{b.egText}</div>
                   </div>
                 )}
