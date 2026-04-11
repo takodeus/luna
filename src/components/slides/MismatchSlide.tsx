@@ -45,10 +45,10 @@ const MismatchSlide = () => (
     </div>
 
     {/* Rules → Reasoning */}
-    <div style={{ maxWidth: 960, display: "flex", gap: "0", marginTop: "1.5rem" }}>
+    <div style={{ maxWidth: 960, display: "flex", gap: "0", marginTop: "1.5rem", marginBottom: "2rem" }}>
       <div style={{ flex: "0 0 42%", background: "#F5F4F1", borderLeft: "4px solid #ccc", padding: "1.2rem 1.6rem" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#999", marginBottom: "0.4rem" }}>Rules-based systems</div>
-        <div style={{ fontSize: "0.82rem", color: "#888", lineHeight: 1.65 }}>A rules engine enforces policy. A human reads the exception and decides. The system records the outcome.</div>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#666", marginBottom: "0.4rem" }}>Rules-based systems</div>
+        <div style={{ fontSize: "0.82rem", color: "#333", lineHeight: 1.65 }}>A rules engine enforces policy. A human reads the exception and decides. The system records the outcome.</div>
       </div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 1rem", background: "#F5F4F1", fontSize: "1.4rem", color: "#A8185E", fontWeight: 700, flexShrink: 0 }}>→</div>
       <div style={{ flex: 1, background: "#A8185E", padding: "1.2rem 1.6rem" }}>

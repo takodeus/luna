@@ -61,9 +61,9 @@ const GovernanceSlide = () => (
     <div style={{ marginTop: "1.8rem", maxWidth: 960, display: "flex", gap: "0" }}>
       {/* Left: prior model — muted */}
       <div style={{ flex: "0 0 42%", background: "#F5F4F1", borderLeft: "4px solid #ccc", padding: "1.4rem 1.8rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-        <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#999", marginBottom: "0.4rem" }}>The prior model</div>
-        <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "#888", marginBottom: "0.4rem" }}>Data governance</div>
-        <div style={{ fontSize: "0.80rem", color: "#999", lineHeight: 1.6 }}>Manages format, completeness, and access. Assumes a human closes the loop on exceptions.</div>
+        <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#777", marginBottom: "0.4rem" }}>The prior model</div>
+        <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "#333", marginBottom: "0.4rem" }}>Data governance</div>
+        <div style={{ fontSize: "0.80rem", color: "#444", lineHeight: 1.6 }}>Manages format, completeness, and access. Assumes a human closes the loop on exceptions.</div>
       </div>
       {/* Arrow */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 1rem", background: "#F5F4F1", fontSize: "1.4rem", color: "#A8185E", fontWeight: 700, flexShrink: 0 }}>→</div>
@@ -75,7 +75,7 @@ const GovernanceSlide = () => (
       </div>
     </div>
 
-    <div className="luna-grid-2col" style={{ marginTop: "0", maxWidth: 960 }}>
+    <div className="luna-grid-2col" style={{ marginTop: "2rem", maxWidth: 960 }}>
       {quadrants.map((q, i) => (
         <div key={i} style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ background: q.bg, padding: "0.7rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
