@@ -7,9 +7,10 @@ import BreaksSlide from "@/components/slides/BreaksSlide";
 import TruthSlide from "@/components/slides/TruthSlide";
 import StepsThoughtsSlide from "@/components/slides/StepsThoughtsSlide";
 import StackSlide from "@/components/slides/StackSlide";
+import BuildBuySlide from "@/components/slides/BuildBuySlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
 
-const slideIds = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"];
+const slideIds = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9"];
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState("s1");
@@ -78,6 +79,7 @@ const Index = () => {
         <TruthSlide />
         <StepsThoughtsSlide />
         <StackSlide />
+        <BuildBuySlide />
         <ClosingSlide />
       </main>
     </>

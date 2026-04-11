@@ -1,22 +1,22 @@
 const CoverSlide = () => (
   <section className="slide" id="s1" style={{ paddingTop: "12vh" }}>
-    <div className="slide-n">Luna · The Intelligence Architecture · 2026</div>
+    <div className="slide-n">Cherre · For Yardi · 2026</div>
 
     <h1 className="luna-h1">
-      The Interaction
+      Virtuoso is live.
       <br />
-      Layer Has <span className="luna-accent">Moved.</span>
+      The substrate it needs <span className="luna-accent">isn't.</span>
     </h1>
     <p className="luna-sub">
-      What happens to systems of record when agents become the primary user of enterprise data — and why the gap between the ERP and the agent is the most important position in real estate technology right now.
+      Yardi has built the AI interface. What it doesn't yet have is the knowledge infrastructure that makes that interface trustworthy at scale — governed definitions, resolved entities, traceable decisions. That layer is what Cherre has spent ten years building.
     </p>
 
     <div style={{ height: 1, background: "hsl(var(--rule))", maxWidth: 560, margin: "2.5rem 0" }} />
 
     <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
       {[
-        { label: "Audience", value: "ERP & PropTech Leadership" },
-        { label: "Horizon", value: "2026 — 2030" },
+        { label: "Audience", value: "Yardi Leadership" },
+        { label: "Subject", value: "Acquisition · Partnership" },
         { label: "Context", value: "Real Estate & Capital Markets" },
       ].map((item) => (
         <div key={item.label}>
@@ -30,9 +30,9 @@ const CoverSlide = () => (
 
     <div className="stat-row" style={{ marginTop: "3.5rem" }}>
       {[
-        { num: "⅔", label: "of enterprises worldwide have experimented with agents", source: "McKinsey, April 2026" },
-        { num: "<10%", label: "have scaled them to deliver tangible value", source: "McKinsey, April 2026" },
-        { num: "8/10", label: "companies cite data limitations as the primary blocker", source: "McKinsey, April 2026" },
+        { num: "40%+", label: "of agentic AI projects will be cancelled by 2027 — due to data quality, not model quality", source: "Gartner, June 2025" },
+        { num: "10 yrs", label: "Cherre's head start building the real estate knowledge graph and entity resolution engine", source: "Cherre, 2026" },
+        { num: "$3.7T", label: "AUM currently powered by Cherre's intelligence layer across funds and operators", source: "Cherre, 2026" },
       ].map((stat, i) => (
         <div className="stat-cell" key={i}>
           <div className="stat-num">{stat.num}</div>

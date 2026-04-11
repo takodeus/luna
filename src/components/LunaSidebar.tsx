@@ -7,14 +7,15 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { id: "s1", num: "i", label: "The Interaction Layer Has Moved" },
-  { id: "s2", num: "ii", label: "Era Map" },
-  { id: "s3", num: "iii", label: "The Mismatch" },
+  { id: "s1", num: "i", label: "The Substrate Gap" },
+  { id: "s2", num: "ii", label: "Three Eras" },
+  { id: "s3", num: "iii", label: "What Virtuoso Needs" },
   { id: "s4", num: "iv", label: "Four Structural Breaks" },
-  { id: "s5", num: "v", label: "Truth Is Not Monolithic" },
-  { id: "s6", num: "vi", label: "Steps vs. Thoughts" },
-  { id: "s7", num: "vii", label: "The Stack & The Empty Layer" },
-  { id: "s8", num: "viii", label: "The Question" },
+  { id: "s5", num: "v", label: "Knowledge Architecture" },
+  { id: "s6", num: "vi", label: "Automate vs. Decide" },
+  { id: "s7", num: "vii", label: "The Empty Layer" },
+  { id: "s8", num: "viii", label: "Build · Partner · Acquire" },
+  { id: "s9", num: "ix", label: "The Proposition" },
 ];
 
 interface LunaSidebarProps {
