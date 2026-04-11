@@ -45,9 +45,6 @@ const ClosingSlide = () => (
       </div>
     </div>
 
-    <div style={{ marginTop: "2.5rem", fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)" }}>
-      Cherre · The Intelligence Layer · 2026
-    </div>
   </section>
 );
 
