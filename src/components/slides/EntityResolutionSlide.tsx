@@ -35,7 +35,7 @@ interface Props {
 
 const EntityResolutionSlide = ({ onImageClick }: Props) => (
   <section className="slide" id="s7">
-    <div className="slide-n">vi / The First Hard Problem</div>
+    <div className="slide-n">vii / The First Hard Problem</div>
     <h2 className="luna-h2">
       Entity resolution: the first hard problem.
       <br />

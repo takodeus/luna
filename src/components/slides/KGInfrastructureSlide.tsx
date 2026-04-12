@@ -18,7 +18,7 @@ interface Props {
 
 const KGInfrastructureSlide = ({ onImageClick }: Props) => (
   <section className="slide" id="s9">
-    <div className="slide-n">viii / Infrastructure, Not a Feature</div>
+    <div className="slide-n">ix / Infrastructure, Not a Feature</div>
     <h2 className="luna-h2">
       The knowledge graph is infrastructure,
       <br />

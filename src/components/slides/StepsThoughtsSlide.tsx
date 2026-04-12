@@ -18,7 +18,7 @@ const thoughts = [
 
 const StepsThoughtsSlide = () => (
   <section className="slide" id="s11">
-    <div className="slide-n">x / Automate Steps. Protect Judgment.</div>
+    <div className="slide-n">xi / Automate Steps. Protect Judgment.</div>
     <h2 className="luna-h2">
       Automate steps aggressively.
       <br />
