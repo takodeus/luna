@@ -16,7 +16,7 @@ const MismatchSlide = () => (
       <span className="luna-accent">What the current stack returns.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
-      Systems of record were designed for human operators who could fill gaps with judgment. AI agents cannot. Every row below is a query an agent will issue, and a structural gap in what today's data layer can return.
+      Systems of record were built for a world where exceptions got escalated to people. AI agents do not escalate. They inherit whatever the infrastructure gives them. Every row below is a gap in what that infrastructure currently returns.
     </p>
 
     <div className="luna-table-scroll">

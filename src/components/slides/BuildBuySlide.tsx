@@ -94,7 +94,7 @@ const BuildBuySlide = () => (
           The destination is well-defined: a composite semantic layer working in concert.
         </p>
         <p className="luna-source" style={{ color: "rgba(255,255,255,0.45)", margin: 0 }}>
-          No solution has achieved this yet. Cherre is built to be the foundation.
+          No solution has achieved this yet. The layer between systems of record and systems of action remains structurally unclaimed.
         </p>
       </div>
       <div style={{ background: "#fff", padding: "1.8rem 2rem", flex: 1 }}>

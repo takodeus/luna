@@ -7,7 +7,7 @@ const EraMapSlide = () => (
       <span className="luna-accent">The knowledge graph defines Era Three.</span>
     </h2>
     <p className="luna-sub" style={{ marginBottom: 0 }}>
-      Every generation of enterprise software was shaped by its defining architecture. Era Three doesn't just change who uses data. It changes what data infrastructure must be able to do. The knowledge graph is that architecture.
+      Every generation of enterprise software was shaped by its defining architecture. Era Three does not just change who uses data. It changes what data infrastructure must be able to do. The knowledge graph is that architecture.
     </p>
 
     <div className="era-timeline">
@@ -84,18 +84,17 @@ const EraMapSlide = () => (
       </div>
     </div>
 
-    {/* Beyond Data Connections */}
+    {/* Beyond Rows and Columns */}
     <div className="luna-statement-block">
       <div className="luna-source" style={{ color: "hsl(var(--pink))", marginBottom: "0.8rem" }}>
-        Beyond Data Connections
+        Beyond Rows and Columns
       </div>
       <p className="luna-serif-quote" style={{ margin: "0 0 0.9rem" }}>
-        Linear data connections were built for human operators reading reports. They cannot draw inferred relationships, resolve entities across sources, or carry context across a query. That is what every architecture before the knowledge graph was.
+        A data warehouse is a dictionary with no sentences. It stores terms but not the grammar that connects them: ownership chains, causal relationships, definitional history. Text-to-SQL can retrieve what was stored. It cannot infer what was never modeled.
       </p>
       <p style={{ fontSize: "0.83rem", color: "#000", lineHeight: 1.7, margin: "0 0 0.6rem" }}>
-        Industry analysis is unambiguous on this: systems built on relational schemas and text-to-SQL are bound to linear connections. They cannot draw inferred relationships across sources. That capability is structurally unavailable without a knowledge graph. Era One and Era Two infrastructure was not wrong for its time. It is insufficient for Era Three.
+        Relational schemas and warehouses were built to store facts in rows and columns. They answer what the value is. They cannot answer what it means, how it relates, or why it changed. That is the structural limit every architecture before the knowledge graph inherits. Era One and Era Two infrastructure was not wrong for its time. It cannot do what Era Three requires.
       </p>
-      <div className="luna-source">Gartner, April 2025</div>
     </div>
   </section>
 );

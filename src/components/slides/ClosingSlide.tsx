@@ -2,65 +2,52 @@ const findings = [
   {
     num: 1,
     color: "#A8185E",
-    source: "Gartner · June 2025",
-    isQuote: true,
-    headline: "Over 40% of agentic AI projects will be cancelled by end of 2027",
-    body: "The problem is not a shortage of models. It is weak business value, inadequate risk controls, and brittle operational foundations. The layer between record and action is not a downstream enhancement. It is a precondition for deployment.",
+    source: "IBM Institute for Business Value · November 2025",
+    headline: "AI ambition and data readiness have separated into two different conversations",
+    body: "A global study of 1,700 CDOs across 27 geographies finds that while 81% report their data strategy is integrated with their technology roadmap, only 26% are confident their data can support new AI-enabled revenue streams. The ambition is nearly universal. The infrastructure to act on it is not.",
   },
   {
     num: 2,
     color: "#1B70B1",
-    source: "Salesforce · February 2026",
-    isQuote: false,
-    headline: "The bottleneck is shifting from model access to shared context",
-    body: "Nearly all IT leaders say agent success depends on seamless integration across systems, yet only 27% of enterprise applications are integrated and 50% of AI agents already operate in silos.",
+    source: "Bain and Company · March 2026",
+    headline: "The architecture that worked for models does not work for agents",
+    body: "Bain finds that 80% of generative AI use cases met or exceeded expectations, yet only 23% of companies can tie those initiatives to measurable revenue gains or cost reductions. The technology performed. The infrastructure beneath it could not convert performance into outcome. Realizing agentic AI at scale requires a shift to shared context, orchestration layers, and embedded governance.",
   },
   {
     num: 3,
     color: "#23A98E",
-    source: "DSAG · 2026",
-    isQuote: false,
-    headline: "The installed base is not automatically winning the next layer",
-    body: "Among respondents already running AI use cases in production, 77% say they are using non-SAP solutions, versus 3% using SAP solutions. The race to own the intelligence layer is already underway.",
-  },
-  {
-    num: 4,
-    color: "#CC5800",
-    source: "McKinsey Global Institute · March 2026",
-    isQuote: false,
-    headline: "$430-550B in annual value across real estate, construction, and development",
-    body: "That value comes from redesigning domains and embedding agents into core workflows, not from adding isolated copilots.",
+    source: "BCG · February 2026",
+    headline: "Early movers are not just ahead. They are pulling away.",
+    body: "BCG finds that enterprises investing in centralized governance, reusable orchestration layers, and platform-level policy enforcement move from concept to production in weeks, not months. The compounding effect is structural: governed data enables better agent performance, which enables more sophisticated automation, which generates more reliable data. The gap widens with every deployment cycle.",
   },
 ];
 
 const footnotes = [
-  '1. Gartner, "Gartner Predicts Over 40 Percent of Agentic AI Projects Will Be Canceled by End of 2027," June 25, 2025.',
-  '2. Salesforce, "Salesforce Announces 2026 Connectivity Report," February 5, 2026.',
-  '3. DSAG, "Investment Report 2026: Companies Are Investing More Selectively, AI Is Becoming Established, Cloud Computing Is Being Put to the Test," 2026.',
-  "4. McKinsey, \"How Agentic AI Can Reshape Real Estate's Operating Model,\" March 4, 2026.",
+  "1. IBM Institute for Business Value, \"Chief Data Officers Redefine Strategies as AI Ambitions Outpace Readiness,\" November 2025.",
+  "2. Bain and Company, \"Why Agentic AI Demands a New Architecture,\" March 2026.",
+  "3. BCG, \"The $200 Billion Agentic AI Opportunity for Tech Service Providers,\" February 2026.",
 ];
 
 const ClosingSlide = () => (
   <section className="slide" id="s13" style={{ background: "#FBF8F9" }}>
-    <div className="slide-n">xiii / What Comes Next</div>
+    <div className="slide-n">xiii / The Next Architectural Imperative</div>
 
     <h2 className="luna-h2">
-      The control point is visible.
-      <br />
-      <span className="luna-accent">The ownership race has started.</span>
+      The Next Architectural Imperative Is the Semantic Layer
     </h2>
+    <p style={{ fontFamily: "var(--serif)", fontSize: "clamp(1rem, 1.6vw, 1.2rem)", fontStyle: "italic", color: "#A8185E", lineHeight: 1.5, maxWidth: 760, margin: "0.5rem 0 0" }}>
+      The reasoning era cannot run on reporting-era infrastructure.
+    </p>
 
-    {/* Four evidence cards */}
+    {/* Three evidence cards */}
     <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2rem", maxWidth: 900 }}>
       {findings.map((f) => (
         <div key={f.num} style={{ background: "#fff", borderLeft: `4px solid ${f.color}`, padding: "1.2rem 1.8rem" }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", marginBottom: "0.4rem" }}>
-            <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: f.color }}>
-              {f.source}
-            </div>
+          <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: f.color, marginBottom: "0.4rem" }}>
+            {f.source}
           </div>
           <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "#000", lineHeight: 1.4, marginBottom: "0.5rem" }}>
-            {f.isQuote ? <span>"{f.headline}"</span> : f.headline}
+            {f.headline}
             <sup style={{ fontSize: "0.6em", color: f.color, fontWeight: 700, marginLeft: "1px" }}>{f.num}</sup>
           </div>
           <div style={{ fontSize: "0.82rem", color: "#000", lineHeight: 1.7 }}>{f.body}</div>
@@ -68,18 +55,22 @@ const ClosingSlide = () => (
       ))}
     </div>
 
-    {/* Strategic position */}
-    <div style={{ marginTop: "2px", maxWidth: 900, padding: "1.2rem 1.8rem", background: "#A8185E" }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "0.70rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "0.5rem" }}>
-        The strategic position
-        <sup style={{ fontSize: "0.7em", color: "rgba(255,255,255,0.3)", marginLeft: "1px" }}>1234</sup>
+    {/* Close */}
+    <div style={{ marginTop: "2px", maxWidth: 900, background: "#A8185E", padding: "1.8rem 2rem" }}>
+      <div style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.82)", lineHeight: 1.85, marginBottom: "1.4rem", maxWidth: 820 }}>
+        Tech debt taught enterprises that architecture sets the ceiling on what the business can do next. When that ceiling is reached, incremental improvement is no longer enough. The layer holding the enterprise back has to be rebuilt.
+        <br /><br />
+        Data debt is the same problem, one layer up.
+        <br /><br />
+        The constraint is not data scarcity. It is data that lacks the meaning agents need to reason from: governed definitions, resolved identities, traceable context, and decision lineage.
+        <br /><br />
+        More data will not solve it. Better pipelines will not solve it. The challenge is architectural. To move from reporting to reasoning, enterprises need a layer that can translate data into meaning and meaning into decisions.
+        <br /><br />
+        Organizations that build that layer are preparing for the next era of enterprise AI. Organizations that do not are trying to run a reasoning economy on reporting infrastructure.
       </div>
-      <div style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.78)", lineHeight: 1.8, marginBottom: "1.2rem" }}>
-        Systems of record will remain essential, but they are unlikely to remain sufficient. Most enterprises today have established data lineage and governance disciplines. Few, however, have comparable capabilities for decision lineage, semantic governance, or contextual traceability. As AI shifts from analysis to action, the strategic advantage will accrue to the platform that closes this gap by providing entity resolution, governed meaning, traceable context, and orchestration for agents. The record remains in place.
-      </div>
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "1rem" }}>
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "1.2rem" }}>
         <div style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", fontWeight: 600, fontStyle: "italic", color: "#fff", lineHeight: 1.45 }}>
-          The control point shifts to the layer that makes it actionable.
+          That is what makes data debt the new tech debt.
         </div>
       </div>
     </div>

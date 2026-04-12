@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
   { id: "s10", num: "x",     label: "Automate Steps. Protect Judgment." },
   { id: "s11", num: "xi",    label: "The Empty Layer" },
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
-  { id: "s13", num: "xiii",  label: "The Ownership Race Has Started" },
+  { id: "s13", num: "xiii",  label: "The Next Architectural Imperative" },
 ];
 
 interface LunaSidebarProps {
@@ -42,7 +42,7 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
         >
           <img src="/luna/cherre-icon.jpg" alt="Cherre" style={{ width: 36, height: 36, objectFit: "contain", borderRadius: 4, flexShrink: 0 }} />
           <div className="luna-logo-text">
-            <strong>Cherre</strong><br />The Data Infrastructure
+            <strong>Cherre</strong><br />Data Debt Is the New Tech Debt
           </div>
         </button>
 
