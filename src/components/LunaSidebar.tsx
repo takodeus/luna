@@ -1,7 +1,7 @@
 interface NavItem { id: string; num: string; label: string; }
 
 const navItems: NavItem[] = [
-  { id: "s1",  num: "i",     label: "Data Debt Is the New Tech Debt" },
+  { id: "s1",  num: "i",     label: "The Semantic Infrastructure" },
   { id: "s2",  num: "ii",    label: "Three Eras. Built to Act." },
   { id: "s3",  num: "iii",   label: "What AI Agents Require" },
   { id: "s4",  num: "iv",    label: "Four Structural Gaps" },
@@ -42,7 +42,7 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
         >
           <img src="/luna/cherre-icon.jpg" alt="Cherre" style={{ width: 36, height: 36, objectFit: "contain", borderRadius: 4, flexShrink: 0 }} />
           <div className="luna-logo-text">
-            <strong>Cherre</strong><br />Data Debt Is the New Tech Debt
+            <strong>Cherre</strong><br />The Semantic Infrastructure
           </div>
         </button>
 

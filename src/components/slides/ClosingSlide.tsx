@@ -55,23 +55,28 @@ const ClosingSlide = () => (
       ))}
     </div>
 
-    {/* Close */}
-    <div style={{ marginTop: "2px", maxWidth: 900, background: "#A8185E", padding: "1.8rem 2rem" }}>
-      <div style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.82)", lineHeight: 1.85, marginBottom: "1.4rem", maxWidth: 820 }}>
+    {/* Close — body as text, closing sentence in pink */}
+    <div style={{ marginTop: "2rem", maxWidth: 900, display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <p style={{ fontSize: "0.90rem", color: "#000", lineHeight: 1.85, margin: 0, maxWidth: 820 }}>
         Tech debt taught enterprises that architecture sets the ceiling on what the business can do next. When that ceiling is reached, incremental improvement is no longer enough. The layer holding the enterprise back has to be rebuilt.
-        <br /><br />
+      </p>
+      <p style={{ fontSize: "0.90rem", color: "#000", lineHeight: 1.85, margin: 0, maxWidth: 820 }}>
         Data debt is the same problem, one layer up.
-        <br /><br />
+      </p>
+      <p style={{ fontSize: "0.90rem", color: "#000", lineHeight: 1.85, margin: 0, maxWidth: 820 }}>
         The constraint is not data scarcity. It is data that lacks the meaning agents need to reason from: governed definitions, resolved identities, traceable context, and decision lineage.
-        <br /><br />
+      </p>
+      <p style={{ fontSize: "0.90rem", color: "#000", lineHeight: 1.85, margin: 0, maxWidth: 820 }}>
         More data will not solve it. Better pipelines will not solve it. The challenge is architectural. To move from reporting to reasoning, enterprises need a layer that can translate data into meaning and meaning into decisions.
-        <br /><br />
+      </p>
+      <p style={{ fontSize: "0.90rem", color: "#000", lineHeight: 1.85, margin: 0, maxWidth: 820 }}>
         Organizations that build that layer are preparing for the next era of enterprise AI. Organizations that do not are trying to run a reasoning economy on reporting infrastructure.
-      </div>
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.2)", paddingTop: "1.2rem" }}>
-        <div style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", fontWeight: 600, fontStyle: "italic", color: "#fff", lineHeight: 1.45 }}>
-          That is what makes data debt the new tech debt.
-        </div>
+      </p>
+    </div>
+
+    <div style={{ marginTop: "2px", maxWidth: 900, background: "#A8185E", padding: "1.4rem 2rem" }}>
+      <div style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", fontWeight: 600, fontStyle: "italic", color: "#fff", lineHeight: 1.45 }}>
+        That is what makes data debt the new tech debt.
       </div>
     </div>
 
