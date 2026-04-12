@@ -60,7 +60,7 @@ const CoverSlide = () => (
     <div className="slide-n">Cherre · 2026</div>
 
     <h1 className="luna-h1" style={{ maxWidth: 620 }}>
-      The<br />Data Debt Is the New Tech Debt.
+      Data Debt<br />Is the New Tech Debt.
     </h1>
 
     <p className="luna-serif-quote">
@@ -68,7 +68,7 @@ const CoverSlide = () => (
     </p>
 
     <p className="luna-body-text">
-      Systems of record and workflow platforms were built to capture transactions, enforce process, and organize human work. The next buyer requirement is different: those same records must now be usable by agents. The constraint is no longer only code. It is whether enterprise data carries enough <strong style={{ color: "#000" }}>shared meaning, traceable context, and integration</strong> to support action.
+      Systems of record were built to capture transactions, enforce process, and preserve the official record. They remain essential for those purposes. Systems of record remain the source of transactional truth. They are no longer, by themselves, the source of usable meaning.
     </p>
 
     {/* 4 tiles — responsive grid */}
