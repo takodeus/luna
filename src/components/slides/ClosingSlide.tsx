@@ -67,17 +67,15 @@ const ClosingSlide = () => (
         The constraint is not data scarcity. It is data that lacks the meaning agents need to reason from: governed definitions, resolved identities, traceable context, and decision lineage.
       </p>
       <p style={{ fontSize: "0.90rem", color: "#000", lineHeight: 1.85, margin: 0, maxWidth: 820 }}>
-        More data will not solve it. Better pipelines will not solve it. The challenge is architectural. To move from reporting to reasoning, enterprises need a layer that can translate data into meaning and meaning into decisions.
+        More data will not solve it. Better data will not solve it. The challenge is architectural. To move from reporting to reasoning, enterprises need a layer that can translate data into meaning and meaning into decisions.
       </p>
       <p style={{ fontSize: "0.90rem", color: "#000", lineHeight: 1.85, margin: 0, maxWidth: 820 }}>
         Organizations that build that layer are preparing for the next era of enterprise AI. Organizations that do not are trying to run a reasoning economy on reporting infrastructure.
       </p>
-    </div>
 
-    <div style={{ marginTop: "2rem", maxWidth: 900, background: "#A8185E", padding: "1.4rem 2rem", textAlign: "center" }}>
-      <div style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", fontWeight: 600, fontStyle: "italic", color: "#fff", lineHeight: 1.45 }}>
+      <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: 0, maxWidth: 820 }}>
         That is what makes data debt the new tech debt.
-      </div>
+      </p>
     </div>
 
     {/* Footnotes */}
