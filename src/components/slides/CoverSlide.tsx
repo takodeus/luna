@@ -60,7 +60,7 @@ const CoverSlide = () => (
     <div className="slide-n">Cherre · 2026</div>
 
     <h1 className="luna-h1" style={{ maxWidth: 620 }}>
-      Data Debt<br />Is the New Tech Debt.
+      Data Debt Is<br />the New Tech Debt.
     </h1>
 
     <p className="luna-serif-quote">
@@ -68,14 +68,14 @@ const CoverSlide = () => (
     </p>
 
     <p className="luna-body-text">
-      Systems of record were built to capture transactions, enforce process, and preserve the official record. They remain essential for those purposes. Systems of record remain the source of transactional truth. They are no longer, by themselves, the source of usable meaning.
+      Systems of record were built to capture transactions, enforce process, and preserve the official record. Their role remains essential. They are the source of transactional truth, but not, by themselves, the source of usable meaning.
     </p>
 
     <p style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.15rem, 2vw, 1.45rem)", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.5, borderLeft: "3px solid #A8185E", paddingLeft: "1.2rem", marginTop: "1.4rem", marginBottom: 0, maxWidth: 660 }}>
       The last era of enterprise data was built for reporting. The next will be built for reasoning.
     </p>
 
-    <p className="luna-body-text">
+    <p className="luna-body-text" style={{ marginTop: "1.4rem" }}>
       The question is no longer only whether data can be stored, reconciled, and surfaced for human review. It is whether that data carries enough shared meaning and traceable context to support action.
     </p>
 
