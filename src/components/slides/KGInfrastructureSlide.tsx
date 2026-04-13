@@ -2,7 +2,7 @@ const pillars = [
   { label: "Entity Density Creates Moat", desc: "Every resolved entity, connected relationship, and corrected ambiguity makes the graph more accurate, and harder to replicate. The graph compounds: more data in means more precision out." },
   { label: "Cross-Source Identity Is Irreplaceable", desc: "Knowing that an entity in System A, System B, and a third-party source are the same real-world object cannot be approximated by AI alone. It requires years of probabilistic matching, human feedback, and domain-specific training data." },
   { label: "Graph-Native Reasoning", desc: "AI systems that traverse relationships in a knowledge graph produce qualitatively different answers than those limited to keyword or vector search. The graph enables multi-hop reasoning." },
-  { label: "The Graph Learns From Corrections", desc: "Each correction to an entity match or human override of a classification teaches the system, and creates a proprietary, compounding learning corpus. The graph gets smarter with every exception." },
+  { label: "The Graph Learns From Corrections", desc: "Accuracy creates trust. Trust creates adoption. Adoption creates feedback. Feedback creates accuracy. Each correction to an entity match or override of a classification teaches the system. The graph compounds at the platform level — and every agent benefits." },
 ];
 
 const reasoningModels = [

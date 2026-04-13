@@ -35,7 +35,7 @@ const breaks = [
     title: "The agent decided. No one can say why.",
     desc: "Data lineage records what moved. Decision lineage records why the agent concluded what it did: which definition applied, which authority it trusted, and what version of the world it was operating on. Systems of record log outcomes. Almost none log reasoning chains, and that is what agents, auditors, and LPs increasingly require.",
     egLabel: "In Practice: LP Audit and Regulatory Scrutiny",
-    egText: "An institutional LP asks what data informed a lease renewal recommendation on a Class A multifamily asset. The agent generated the recommendation. The ERP recorded the outcome. Neither system can reconstruct the reasoning: which data version was active, which metric definition applied, which agent held authority. The audit produces a gap.",
+    egText: "An institutional LP asks what data informed a lease renewal recommendation on a Class A multifamily asset. The agent generated the recommendation. The ERP recorded the outcome. The reasoning exists — in policies, in prior decisions, in the judgment of the team that set the parameters. But it lives in documents and people. Neither the agent nor the audit trail can reach it.",
   },
 ];
 
