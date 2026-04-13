@@ -90,7 +90,7 @@ const Index = () => {
         <KGInfrastructureSlide onImageClick={setLightboxSrc} />
         <GovernanceSlide />
         <StepsThoughtsSlide />
-        <BuildBuySlide />
+        <BuildBuySlide onImageClick={setLightboxSrc} />
         <ClosingSlide />
       </main>
       <ImageLightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
