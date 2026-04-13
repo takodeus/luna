@@ -14,6 +14,7 @@ const navItems: NavItem[] = [
   { id: "s11", num: "xi",    label: "Automate Steps. Protect Judgment." },
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
   { id: "s13",    num: "xiii",  label: "The Next Architectural Imperative" },
+  { id: "s-practitioner", num: "p",  label: "How We Built This" },
   { id: "s-demo", num: "demo",  label: "IC Memo: Live Demo" },
 ];
 

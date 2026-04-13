@@ -469,19 +469,29 @@ const GroundedOutputStep = ({ onFieldFocus }: GroundedOutputStepProps) => {
             fontFamily: 'Montserrat, sans-serif',
             fontWeight: 700,
             color: '#fff',
-            margin: '0 0 6px',
+            margin: '0 0 8px',
             lineHeight: 1.45,
           }}>
-            The memo alone was not enough.
+            We stored what happened. Not why it was decided.
           </p>
           <p style={{
             fontSize: '0.76rem',
             fontFamily: 'Montserrat, sans-serif',
             color: '#999',
-            margin: 0,
+            margin: '0 0 10px',
             lineHeight: 1.6,
           }}>
-            The hard part was entity identity, business definitions, and relationships. Grounding the workflow in entity resolution and a knowledge graph makes the output reliable enough for downstream use.
+            This is the gap between data lineage and decision lineage. Luna and Meridian make the reasoning chain queryable: not just what was extracted, but under which definition, governed by which rules, resolved against which entity record.
+          </p>
+          <p style={{
+            fontSize: '0.76rem',
+            fontFamily: 'Montserrat, sans-serif',
+            color: '#A8185E',
+            fontWeight: 600,
+            margin: 0,
+            lineHeight: 1.5,
+          }}>
+            Not better data. Better institutional memory.
           </p>
         </div>
       </div>

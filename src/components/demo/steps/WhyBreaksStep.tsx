@@ -45,7 +45,7 @@ const failures = [
     ),
     memoProblem: 'The memo says "proposed acquisition." The word is unambiguous in plain English.',
     modelAction: 'The model correctly extracts "Acquisition" as the transaction type. This is linguistically accurate.',
-    actualAnswer: 'The business taxonomy distinguishes a standalone acquisition from a portfolio add-on. This deal expands an existing investment, triggering different approval routing, reporting treatment, and NAV logic. "Acquisition" is the right word. It is the wrong normalized value.',
+    actualAnswer: 'A bridge loan structured solely to fund an acquisition can appear as two records in the system. Economically, it is one transaction. Wrong taxonomy means wrong performance attribution. "Acquisition" is the right word. "Portfolio Add-on" is the right normalized value.',
     fix: 'Meridian enforces the transaction type taxonomy and maps "acquisition of existing portfolio asset" to "Portfolio Add-on."',
   },
 ];
@@ -181,7 +181,7 @@ const WhyBreaksStep = ({ onNext }: WhyBreaksStepProps) => {
           margin: 0,
           lineHeight: 1.6,
         }}>
-          The fix was not a better prompt. The fix was grounding the extraction in entity resolution and a knowledge graph. The memo never had this information. It never could.
+          The fix was definitional, not technical. The decision logic already existed. It just lived in people, not systems.
         </p>
       </div>
 
