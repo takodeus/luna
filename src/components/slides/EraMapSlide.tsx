@@ -2,7 +2,7 @@ const EraMapSlide = () => (
   <section className="slide" id="s2">
     <div className="slide-n">ii / Three Eras. Built to Act.</div>
     <h2 className="luna-h2">
-      Forty years. Three eras.
+      Nearly half a century. Three eras.
       <br />
       <span className="luna-accent">The knowledge graph defines Era Three.</span>
     </h2>
@@ -64,7 +64,7 @@ const EraMapSlide = () => (
       <div className="era-row-block" style={{ opacity: 0.75 }}>
         <div className="era-row-label">
           <span className="era-row-tag">Era One</span>
-          <div className="era-row-year">1971–2005</div>
+          <div className="era-row-year">1984–2005</div>
           <div style={{ fontFamily: "var(--serif)", fontSize: "1rem", fontWeight: 700, fontStyle: "italic", color: "hsl(var(--ink-light))", marginTop: "0.6rem", lineHeight: 1.2 }}>Built to capture.</div>
         </div>
         <div className="era-row-cells">
