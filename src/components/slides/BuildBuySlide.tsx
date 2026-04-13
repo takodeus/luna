@@ -38,7 +38,11 @@ const products = [
   }
 ];
 
-const BuildBuySlide = () => (
+interface Props {
+  onImageClick?: (src: string) => void;
+}
+
+const BuildBuySlide = ({ onImageClick }: Props) => (
   <section className="slide" id="s12">
     <div className="slide-n">xii / What Fills the Layer</div>
     <h2 className="luna-h2">
@@ -83,7 +87,7 @@ const BuildBuySlide = () => (
         <div className="luna-source" style={{ color: "#A8185E" }}>LUNA · 15 Capabilities</div>
         <div className="luna-source">7 Live · 2 Roadmap · 6 Enrichment</div>
       </div>
-      <img src="/luna/BuildingBlocks.png" alt="LUNA building blocks grid" style={{ width: "100%", maxWidth: 1000, display: "block" }} />
+      <img src="/luna/BuildingBlocks.png" alt="LUNA building blocks grid" className="luna-enlargeable-img" style={{ width: "100%", maxWidth: 1000, display: "block", cursor: "pointer" }} onClick={() => onImageClick?.("/luna/BuildingBlocks.png")} />
     </div>
 
     {/* Split: Gartner / Cherre */}
