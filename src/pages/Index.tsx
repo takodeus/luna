@@ -13,9 +13,10 @@ import StepsThoughtsSlide from "@/components/slides/StepsThoughtsSlide";
 import StackSlide from "@/components/slides/StackSlide";
 import BuildBuySlide from "@/components/slides/BuildBuySlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
+import ICMemoSlide from "@/components/slides/ICMemoSlide";
 import ImageLightbox from "@/components/ImageLightbox";
 
-const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13"];
+const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s-demo"];
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState("s1");
@@ -83,6 +84,7 @@ const Index = () => {
         <EraMapSlide />
         <MismatchSlide />
         <BreaksSlide />
+        <ICMemoSlide />
         <StackSlide />
         <TruthMonolithSlide />
         <EntityResolutionSlide onImageClick={setLightboxSrc} />
