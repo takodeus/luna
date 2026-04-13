@@ -5,7 +5,6 @@ const navItems: NavItem[] = [
   { id: "s2",  num: "ii",    label: "Three Eras. Built to Act." },
   { id: "s3",  num: "iii",   label: "What AI Agents Require" },
   { id: "s4",     num: "iv",    label: "Four Structural Gaps" },
-  { id: "s-demo", num: "demo",  label: "IC Memo: Live Demo" },
   { id: "s5",  num: "v",     label: "The Empty Layer" },
   { id: "s6",  num: "vi",    label: "Three Kinds of Truths" },
   { id: "s7",  num: "vii",   label: "The First Hard Problem" },
@@ -14,7 +13,8 @@ const navItems: NavItem[] = [
   { id: "s10", num: "x",     label: "Governance Is the Architecture" },
   { id: "s11", num: "xi",    label: "Automate Steps. Protect Judgment." },
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
-  { id: "s13", num: "xiii",  label: "The Next Architectural Imperative" },
+  { id: "s13",    num: "xiii",  label: "The Next Architectural Imperative" },
+  { id: "s-demo", num: "demo",  label: "IC Memo: Live Demo" },
 ];
 
 interface LunaSidebarProps {

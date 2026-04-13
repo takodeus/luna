@@ -84,7 +84,6 @@ const Index = () => {
         <EraMapSlide />
         <MismatchSlide />
         <BreaksSlide />
-        <ICMemoSlide />
         <StackSlide />
         <TruthMonolithSlide />
         <EntityResolutionSlide onImageClick={setLightboxSrc} />
@@ -94,6 +93,7 @@ const Index = () => {
         <StepsThoughtsSlide />
         <BuildBuySlide onImageClick={setLightboxSrc} />
         <ClosingSlide />
+        <ICMemoSlide />
       </main>
       <ImageLightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
     </>
