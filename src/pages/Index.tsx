@@ -15,6 +15,7 @@ import BuildBuySlide from "@/components/slides/BuildBuySlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
 import PractitionerBriefSlide from "@/components/slides/PractitionerBriefSlide";
 import ICMemoSlide from "@/components/slides/ICMemoSlide";
+import DemoGate from "@/components/demo/DemoGate";
 import ImageLightbox from "@/components/ImageLightbox";
 
 const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s-practitioner","s-demo"];
@@ -94,8 +95,10 @@ const Index = () => {
         <StepsThoughtsSlide />
         <BuildBuySlide onImageClick={setLightboxSrc} />
         <ClosingSlide />
-        <PractitionerBriefSlide />
-        <ICMemoSlide />
+        <DemoGate>
+          <PractitionerBriefSlide />
+          <ICMemoSlide />
+        </DemoGate>
       </main>
       <ImageLightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
     </>
