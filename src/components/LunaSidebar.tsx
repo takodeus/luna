@@ -14,8 +14,6 @@ const navItems: NavItem[] = [
   { id: "s11", num: "xi",    label: "Automate Steps. Protect Judgment." },
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
   { id: "s13",    num: "xiii",  label: "The Next Architectural Imperative" },
-  { id: "s-practitioner", num: "p",  label: "How We Built This" },
-  { id: "s-demo", num: "demo",  label: "IC Memo: Live Demo" },
 ];
 
 interface LunaSidebarProps {
@@ -24,9 +22,10 @@ interface LunaSidebarProps {
   isOpen: boolean;
   onClose: () => void;
   onNavigate: (id: string) => void;
+  onPractitionerOpen: () => void;
 }
 
-const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: LunaSidebarProps) => {
+const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate, onPractitionerOpen }: LunaSidebarProps) => {
   const handleNav = (id: string) => {
     onNavigate(id);
     if (window.innerWidth <= 900) onClose();
@@ -56,6 +55,24 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate }: Lun
               <span>{item.label}</span>
             </button>
           ))}
+        </div>
+
+        {/* Practitioner Brief — locked section */}
+        <div style={{ padding: '12px 16px 0', marginTop: 8 }}>
+          <span className="luna-nav-label" style={{ padding: 0, marginBottom: 8, display: 'block' }}>Restricted</span>
+          <button
+            className="luna-nav-item luna-nav-locked"
+            onClick={onPractitionerOpen}
+            style={{ width: '100%' }}
+          >
+            <span className="luna-nav-num" style={{ opacity: 0.6 }}>
+              <svg width="12" height="13" viewBox="0 0 20 22" fill="none" style={{ display: 'block' }}>
+                <rect x="2" y="10" width="16" height="11" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M6 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </span>
+            <span>How We Built This</span>
+          </button>
         </div>
 
         <div className="luna-sidebar-progress">
