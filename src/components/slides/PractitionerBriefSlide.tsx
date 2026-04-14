@@ -33,7 +33,7 @@ const beats = [
       },
     ],
     callout: {
-      label: 'What we were actually doing',
+      label: 'What We Were Optimizing For',
       text: 'We were not extracting data. We were replicating how someone interprets a deal. Three human attempts had already failed. That is a fundamentally different problem. It requires the system to reason, not read.',
     },
   },
@@ -74,7 +74,7 @@ const beats = [
         label: 'The shift in approach',
         items: [
           'We stopped asking: "Is this output correct?"',
-          'We started asking: "How do you actually decide this?"',
+          'We started asking: "How do you decide this?"',
           'That question changed every session with the client.',
         ],
       },
@@ -104,7 +104,7 @@ const beats = [
   },
   {
     num: '04',
-    tag: 'What actually fixed it',
+    tag: 'What Fixed It',
     anchor: 'Once we stopped treating it as an extraction problem, the outputs started matching how the business operates.',
     isLast: true,
   },
@@ -442,7 +442,7 @@ const PractitionerBriefSlide = () => {
           lineHeight: 1.65,
           maxWidth: 680,
         }}>
-          A firm with roughly 1,000 historical investment committee memos. Nine fields per memo. The goal: train agents to read those memos, master past deals, and resolve them against current MDM definitions. They had tried this three times with humans before. All three failed. Here is what building the agentic workflow actually took.
+          A firm with roughly 1,000 historical investment committee memos. Nine fields per memo. The goal: train agents to read those memos, master past deals, and resolve them against current MDM definitions. They had tried this three times with humans before. All three failed. Here is what building the agentic workflow took.
         </p>
       </div>
 
@@ -480,7 +480,7 @@ const PractitionerBriefSlide = () => {
           We ended up{' '}
           <span style={{ color: '#A8185E' }}>formalizing how the firm thinks about deals.</span>
           <br />
-          That is what a knowledge graph with entity resolution actually enables. Not better data. Better institutional memory.
+          That is what a knowledge graph with entity resolution enables. Not better data. Better institutional memory.
         </p>
       </div>
     </section>
