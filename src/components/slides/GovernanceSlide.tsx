@@ -1,5 +1,3 @@
-import ArchitectureDiagram from "../ArchitectureDiagram";
-
 const quadrants = [
   {
     label: "Entity Governance",
@@ -48,7 +46,7 @@ const quadrants = [
 ];
 
 const GovernanceSlide = () => (
-  <section className="slide" id="s10" style={{ justifyContent: "flex-start", minHeight: "auto" }}>
+  <section className="slide" id="s10">
     <div className="slide-n">x / Governance Is the Architecture</div>
     <h2 className="luna-h2">
       Governance is the architecture.
@@ -101,11 +99,6 @@ const GovernanceSlide = () => (
       ))}
     </div>
 
-    <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: "2.5rem 0 0", maxWidth: 820 }}>
-      This is what the architecture looks like when governance is structural.
-    </p>
-
-    <ArchitectureDiagram />
   </section>
 );
 

@@ -16,30 +16,30 @@ const codeBg = "hsl(336 76% 37% / 0.04)";
 /* ── Reusable pieces ── */
 
 const LayerBar = ({ num, name, product, detail }: { num: string; name: string; product?: string; detail?: string }) => (
-  <div style={{ background: pink, padding: "0.55rem 1.2rem", display: "flex", alignItems: "baseline", gap: "0.7rem", flexWrap: "wrap" }}>
-    <span style={{ fontFamily: mono, fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>{`LAYER ${num}`}</span>
-    <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#fff", letterSpacing: "0.04em", textTransform: "uppercase" }}>{name}</span>
-    {product && <span style={{ fontSize: "0.60rem", fontWeight: 700, color: "rgba(255,255,255,0.7)", letterSpacing: "0.14em", textTransform: "uppercase" }}>{product}</span>}
-    {detail && <span style={{ fontFamily: mono, fontSize: "0.54rem", letterSpacing: "0.10em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", fontWeight: 500 }}>{detail}</span>}
+  <div style={{ background: pink, padding: "0.75rem 1.4rem", display: "flex", alignItems: "baseline", gap: "0.7rem", flexWrap: "wrap" }}>
+    <span style={{ fontFamily: mono, fontSize: "0.66rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>{`LAYER ${num}`}</span>
+    <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#fff", letterSpacing: "0.04em", textTransform: "uppercase" }}>{name}</span>
+    {product && <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "rgba(255,255,255,0.7)", letterSpacing: "0.14em", textTransform: "uppercase" }}>{product}</span>}
+    {detail && <span style={{ fontFamily: mono, fontSize: "0.64rem", letterSpacing: "0.10em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", fontWeight: 500 }}>{detail}</span>}
   </div>
 );
 
 const Code = ({ children, color = pink }: { children: React.ReactNode; color?: string }) => (
-  <span style={{ fontFamily: codeMono, fontSize: "0.62rem", color, background: "hsl(336 76% 37% / 0.06)", padding: "0.1rem 0.35rem", borderRadius: 2, lineHeight: 1.8 }}>{children}</span>
+  <span style={{ fontFamily: codeMono, fontSize: "0.74rem", color, background: "hsl(336 76% 37% / 0.06)", padding: "0.1rem 0.35rem", borderRadius: 2, lineHeight: 1.8 }}>{children}</span>
 );
 
 const Tag = ({ children, color = inkLight }: { children: React.ReactNode; color?: string }) => (
-  <span style={{ fontFamily: mono, fontSize: "0.50rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color, background: "hsl(336 76% 37% / 0.06)", padding: "0.15rem 0.45rem", borderRadius: 2 }}>{children}</span>
+  <span style={{ fontFamily: mono, fontSize: "0.60rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color, background: "hsl(336 76% 37% / 0.06)", padding: "0.15rem 0.45rem", borderRadius: 2 }}>{children}</span>
 );
 
 const ConnectorLabel = ({ label }: { label: string }) => (
-  <div style={{ textAlign: "center", padding: "0.35rem 0" }}>
-    <span style={{ fontFamily: mono, fontSize: "0.50rem", letterSpacing: "0.14em", textTransform: "uppercase", color: inkLight }}>{label}</span>
+  <div style={{ textAlign: "center", padding: "0.6rem 0" }}>
+    <span style={{ fontFamily: mono, fontSize: "0.60rem", letterSpacing: "0.14em", textTransform: "uppercase", color: inkLight }}>{label}</span>
   </div>
 );
 
 const CodeBlock = ({ children }: { children: React.ReactNode }) => (
-  <div style={{ fontFamily: codeMono, fontSize: "0.60rem", color: inkMid, lineHeight: 1.8, background: codeBg, padding: "0.4rem 0.7rem", borderRadius: 2 }}>
+  <div style={{ fontFamily: codeMono, fontSize: "0.72rem", color: inkMid, lineHeight: 1.8, background: codeBg, padding: "0.5rem 0.8rem", borderRadius: 2 }}>
     {children}
   </div>
 );
@@ -57,16 +57,16 @@ const Layer6 = () => (
     <LayerBar num="6" name="Agent Consumers" detail="SSE streaming, typed interfaces" />
     <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: rule }}>
       {agentConsumers.map((a, i) => (
-        <div key={i} style={{ background: "#fff", padding: "0.9rem 1rem" }}>
-          <div style={{ fontSize: "0.72rem", fontWeight: 700, color: a.accent, marginBottom: "0.3rem" }}>{a.name}</div>
-          <div style={{ fontSize: "0.60rem", color: "#000", lineHeight: 1.6, marginBottom: "0.5rem" }}>{a.desc}</div>
+        <div key={i} style={{ background: "#fff", padding: "1.1rem 1.2rem" }}>
+          <div style={{ fontSize: "0.82rem", fontWeight: 700, color: a.accent, marginBottom: "0.3rem" }}>{a.name}</div>
+          <div style={{ fontSize: "0.72rem", color: "#000", lineHeight: 1.6, marginBottom: "0.5rem" }}>{a.desc}</div>
           <div style={{ display: "flex", gap: "0.3rem", flexWrap: "wrap" }}>
             {a.tags.map((t, j) => <Tag key={j} color={a.accent}>{t}</Tag>)}
           </div>
         </div>
       ))}
     </div>
-    <div style={{ background: "#fff", padding: "0.45rem 0.9rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+    <div style={{ background: "#fff", padding: "0.65rem 1.1rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
       <span className="luna-source" style={{ color: inkLight, flexShrink: 0 }}>SSE events</span>
       {["message_start", "content_block_delta", "content_block_stop", "interrupt"].map((e, i) => (
         <Code key={i} color={inkMid}>{e}</Code>
@@ -88,15 +88,15 @@ const atlasPhases = [
 
 const Layer5 = () => (
   <div>
-    <LayerBar num="5" name="Orchestration" product="ATLAS" detail="LangChain + LangGraph" />
-    <div style={{ background: "#fff", padding: "0.9rem 1.2rem" }}>
-      <div className="luna-source" style={{ color: inkLight, marginBottom: "0.5rem" }}>6-phase query pipeline</div>
-      <div style={{ display: "flex", alignItems: "stretch", gap: 0, marginBottom: "0.7rem" }}>
+    <LayerBar num="4" name="Orchestration" product="ATLAS" detail="LangChain + LangGraph" />
+    <div style={{ background: "#fff", padding: "1.1rem 1.4rem" }}>
+      <div style={{ fontSize: "0.82rem", fontWeight: 700, color: inkMid, marginBottom: "0.5rem" }}>6-phase query pipeline</div>
+      <div style={{ display: "flex", alignItems: "stretch", gap: 0, marginBottom: "0.9rem" }}>
         {atlasPhases.map((p, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: 0, flex: 1 }}>
             <div style={{ background: codeBg, border: `1px solid ${rule}`, padding: "0.45rem 0.4rem", flex: 1, textAlign: "center" }}>
-              <div style={{ fontFamily: codeMono, fontSize: "0.60rem", color: p.color, fontWeight: 600, marginBottom: "0.1rem" }}>{p.phase}</div>
-              <div style={{ fontFamily: mono, fontSize: "0.46rem", color: inkLight }}>{p.detail}</div>
+              <div style={{ fontFamily: codeMono, fontSize: "0.72rem", color: p.color, fontWeight: 600, marginBottom: "0.1rem" }}>{p.phase}</div>
+              <div style={{ fontFamily: mono, fontSize: "0.56rem", color: inkLight }}>{p.detail}</div>
             </div>
             {i < atlasPhases.length - 1 && (
               <span style={{ color: pink, fontSize: "0.65rem", padding: "0 0.1rem", flexShrink: 0, fontWeight: 700 }}>→</span>
@@ -117,11 +117,11 @@ const Layer5 = () => (
         </div>
         <div>
           <div className="luna-source" style={{ color: inkLight, marginBottom: "0.3rem" }}>Middleware</div>
-          <span style={{ fontFamily: codeMono, fontSize: "0.56rem", color: inkMid }}>180K ctx limit → model_fallback → retry 3x (2s→8s)</span>
+          <span style={{ fontFamily: codeMono, fontSize: "0.68rem", color: inkMid }}>180K ctx limit → model_fallback → retry 3x (2s→8s)</span>
         </div>
       </div>
     </div>
-    <div style={{ background: "#fff", padding: "0.45rem 0.9rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+    <div style={{ background: "#fff", padding: "0.65rem 1.1rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
       <span className="luna-source" style={{ color: inkLight, flexShrink: 0 }}>Graphs</span>
       <Code color={purple}>cherre_knowledge_graph</Code>
       <Code color={purple}>cherre_foundation_knowledge_graph</Code>
@@ -141,18 +141,18 @@ const servingInterfaces = [
 
 const Layer4 = () => (
   <div>
-    <LayerBar num="4" name="Serving" detail="four interfaces, tenant-isolated" />
+    <LayerBar num="5" name="Serving" detail="four interfaces, tenant-isolated" />
     <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: rule }}>
       {servingInterfaces.map((s, i) => (
-        <div key={i} style={{ background: "#fff", padding: "0.7rem 0.9rem" }}>
-          <div style={{ fontSize: "0.68rem", fontWeight: 700, color: s.accent, marginBottom: "0.35rem" }}>{s.name}</div>
+        <div key={i} style={{ background: "#fff", padding: "1rem 1.1rem" }}>
+          <div style={{ fontSize: "0.78rem", fontWeight: 700, color: s.accent, marginBottom: "0.35rem" }}>{s.name}</div>
           {s.items.map((item, j) => (
-            <div key={j} style={{ fontFamily: mono, fontSize: "0.54rem", color: inkMid, lineHeight: 1.8 }}>{item}</div>
+            <div key={j} style={{ fontFamily: mono, fontSize: "0.66rem", color: inkMid, lineHeight: 1.8 }}>{item}</div>
           ))}
         </div>
       ))}
     </div>
-    <div style={{ background: "#fff", padding: "0.5rem 0.9rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+    <div style={{ background: "#fff", padding: "0.7rem 1.1rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
       <span className="luna-source" style={{ color: inkLight, flexShrink: 0 }}>Tenant isolation</span>
       <Code color={teal}>Hasura JWT row-level</Code>
       <span style={{ color: pink, fontWeight: 700, fontSize: "0.65rem" }}>+</span>
@@ -160,7 +160,7 @@ const Layer4 = () => (
       <span style={{ color: pink, fontWeight: 700, fontSize: "0.65rem" }}>+</span>
       <Code color={teal}>Spanner FGAC role</Code>
     </div>
-    <div style={{ background: "#fff", padding: "0.5rem 0.9rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+    <div style={{ background: "#fff", padding: "0.7rem 1.1rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
       <span className="luna-source" style={{ color: inkLight, flexShrink: 0 }}>Cache</span>
       <Code color={amber}>Redis encrypted sessions</Code>
       <span style={{ fontFamily: codeMono, fontSize: "0.56rem", color: inkLight }}>+ LRU in-memory (100 entries, 30-min TTL) + HTTP Cache-Control 30-day</span>
@@ -179,37 +179,37 @@ const pipelineStages = [
 
 const Layer2 = () => (
   <div>
-    <div style={{ background: pink, padding: "0.55rem 1.2rem", display: "flex", alignItems: "baseline", gap: "0.7rem", flexWrap: "wrap" }}>
-      <span style={{ fontFamily: mono, fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>LAYER 3</span>
-      <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#fff", letterSpacing: "0.04em", textTransform: "uppercase" }}>Entity Resolution</span>
-      <span style={{ fontSize: "0.60rem", fontWeight: 700, color: "rgba(255,255,255,0.7)", letterSpacing: "0.14em", textTransform: "uppercase" }}>Luna</span>
-      <span style={{ fontFamily: mono, fontSize: "0.50rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: pink, background: "#fff", padding: "0.1rem 0.5rem", borderRadius: 2 }}>CORE</span>
-      <span style={{ fontFamily: mono, fontSize: "0.54rem", letterSpacing: "0.10em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", fontWeight: 500 }}>Python 3.11 · FastAPI · Cloud SQL</span>
+    <div style={{ background: pink, padding: "0.75rem 1.4rem", display: "flex", alignItems: "baseline", gap: "0.7rem", flexWrap: "wrap" }}>
+      <span style={{ fontFamily: mono, fontSize: "0.66rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>LAYER 3</span>
+      <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#fff", letterSpacing: "0.04em", textTransform: "uppercase" }}>Entity Resolution</span>
+      <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "rgba(255,255,255,0.7)", letterSpacing: "0.14em", textTransform: "uppercase" }}>Luna</span>
+      <span style={{ fontFamily: mono, fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: pink, background: "#fff", padding: "0.1rem 0.5rem", borderRadius: 2 }}>CORE</span>
+      <span style={{ fontFamily: mono, fontSize: "0.64rem", letterSpacing: "0.10em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", fontWeight: 500 }}>Python 3.11 · FastAPI · Cloud SQL</span>
     </div>
-    <div style={{ background: "#fff", padding: "0.9rem 1.2rem" }}>
+    <div style={{ background: "#fff", padding: "1.1rem 1.4rem" }}>
       {/* Entity types + weights */}
-      <div style={{ display: "flex", gap: "1.5rem", marginBottom: "0.7rem", flexWrap: "wrap", alignItems: "baseline" }}>
+      <div style={{ display: "flex", gap: "1.5rem", marginBottom: "0.9rem", flexWrap: "wrap", alignItems: "baseline" }}>
         <div>
-          <span className="luna-source" style={{ color: inkLight }}>Entity types</span>
+          <span style={{ fontSize: "0.82rem", fontWeight: 700, color: inkMid }}>Entity types</span>
           <div style={{ display: "flex", gap: "0.3rem", marginTop: "0.25rem" }}>
             <Tag color={pink}>ADDRESS</Tag><Tag color={pink}>BUILDING</Tag><Tag color={pink}>PARCEL</Tag>
           </div>
         </div>
         <div>
-          <span className="luna-source" style={{ color: inkLight }}>Scoring weights</span>
-          <div style={{ fontFamily: codeMono, fontSize: "0.58rem", color: inkMid, marginTop: "0.25rem" }}>
+          <span style={{ fontSize: "0.82rem", fontWeight: 700, color: inkMid }}>Scoring weights</span>
+          <div style={{ fontFamily: codeMono, fontSize: "0.70rem", color: inkMid, marginTop: "0.25rem" }}>
             parcel: <strong style={{ color: pink }}>0.5</strong> &nbsp; building: <strong style={{ color: pink }}>0.3</strong> &nbsp; address: <strong style={{ color: pink }}>0.2</strong>
           </div>
         </div>
       </div>
       {/* Pipeline */}
-      <div className="luna-source" style={{ color: inkLight, marginBottom: "0.5rem" }}>Resolution pipeline · exact → hybrid → single-source → semantic/vector</div>
-      <div style={{ display: "flex", alignItems: "stretch", gap: 0, marginBottom: "0.7rem" }}>
+      <div style={{ fontSize: "0.82rem", fontWeight: 700, color: inkMid, marginBottom: "0.5rem" }}>Resolution pipeline · exact → hybrid → single-source → semantic/vector</div>
+      <div style={{ display: "flex", alignItems: "stretch", gap: 0, marginBottom: "0.9rem" }}>
         {pipelineStages.map((s, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: 0, flex: 1 }}>
             <div style={{ background: codeBg, border: `1px solid ${rule}`, padding: "0.45rem 0.4rem", flex: 1, textAlign: "center" }}>
-              <div style={{ fontFamily: codeMono, fontSize: "0.60rem", color: s.color, fontWeight: 600, marginBottom: "0.1rem" }}>{s.stage}</div>
-              <div style={{ fontFamily: mono, fontSize: "0.46rem", color: inkLight }}>{s.detail}</div>
+              <div style={{ fontFamily: codeMono, fontSize: "0.72rem", color: s.color, fontWeight: 600, marginBottom: "0.1rem" }}>{s.stage}</div>
+              <div style={{ fontFamily: mono, fontSize: "0.56rem", color: inkLight }}>{s.detail}</div>
             </div>
             {i < pipelineStages.length - 1 && (
               <span style={{ color: pink, fontSize: "0.65rem", padding: "0 0.1rem", flexShrink: 0, fontWeight: 700 }}>→</span>
@@ -218,8 +218,8 @@ const Layer2 = () => (
         ))}
       </div>
       {/* Calibration details */}
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "0.7rem" }}>
-        <div style={{ fontFamily: codeMono, fontSize: "0.56rem", color: inkMid }}>
+      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "0.9rem" }}>
+        <div style={{ fontFamily: codeMono, fontSize: "0.68rem", color: inkMid }}>
           <span style={{ color: inkLight }}>threshold:</span> 0.9 &nbsp;
           <span style={{ color: inkLight }}>high_margin_boost:</span> 0.30 &nbsp;
           <span style={{ color: inkLight }}>conflict_penalty:</span> 0.15 &nbsp;
@@ -251,8 +251,8 @@ const Layer2 = () => (
 const Layer3 = () => (
   <div>
     <LayerBar num="2" name="Knowledge Graph" product="MERIDIAN" detail="Spanner Graph + BigQuery Graph · SQL + GQL" />
-    <div style={{ background: "#fff", padding: "0.8rem 1.1rem" }}>
-      <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.7rem", flexWrap: "wrap" }}>
+    <div style={{ background: "#fff", padding: "1.1rem 1.3rem" }}>
+      <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.9rem", flexWrap: "wrap" }}>
         <Tag color={pink}>Dynamic DDL introspection</Tag>
         <Tag color={pink}>INFORMATION_SCHEMA.PROPERTY_GRAPHS</Tag>
         <Tag color={pink}>NORMAL | PLAN | PROFILE</Tag>
@@ -260,7 +260,7 @@ const Layer3 = () => (
       {/* Graph schema */}
       <div style={{ padding: "0.7rem 0", borderTop: `1px solid ${rule}` }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: "0.6rem", marginBottom: "0.4rem" }}>
-          <span className="luna-source" style={{ color: teal }}>Graph Schema — 35+ node models, 100+ edge models</span>
+          <span style={{ fontSize: "0.82rem", fontWeight: 700, color: teal }}>Graph Schema — 35+ node models, 100+ edge models</span>
         </div>
         <CodeBlock>
           <span style={{ color: pink }}>Nodes:</span> cherre_address, building_footprint, parcel, county, cbsa, zip, master_event, party, asset_class, sales_event, tax_event, loan_event ...
@@ -271,8 +271,8 @@ const Layer3 = () => (
       {/* Spanner graph query */}
       <div style={{ padding: "0.7rem 0", borderTop: `1px solid ${rule}` }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: "0.6rem", marginBottom: "0.4rem" }}>
-          <span className="luna-source" style={{ color: blue }}>Spanner GQL</span>
-          <span style={{ fontSize: "0.60rem", fontStyle: "italic", color: inkLight }}>CherreCanonicalGraph — 20+ node DDLs, 17+ edge DDLs</span>
+          <span style={{ fontSize: "0.82rem", fontWeight: 700, color: blue }}>Spanner GQL</span>
+          <span style={{ fontSize: "0.72rem", fontStyle: "italic", color: inkLight }}>CherreCanonicalGraph — 20+ node DDLs, 17+ edge DDLs</span>
         </div>
         <CodeBlock>
           GRAPH CherreCanonicalGraph MATCH (a:cherre_address)-[e:address_on_building]-&gt;(b:building_footprint) WHERE a.state = @state RETURN a.display_address, b.building_id
@@ -281,17 +281,17 @@ const Layer3 = () => (
       {/* BigQuery graph query */}
       <div style={{ paddingTop: "0.7rem", borderTop: `1px solid ${rule}` }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: "0.6rem", marginBottom: "0.4rem" }}>
-          <span className="luna-source" style={{ color: amber }}>BigQuery Property Graph</span>
-          <span style={{ fontSize: "0.60rem", fontStyle: "italic", color: inkLight }}>cherre-graph, bpg — per-owner datasets</span>
+          <span style={{ fontSize: "0.82rem", fontWeight: 700, color: amber }}>BigQuery Property Graph</span>
+          <span style={{ fontSize: "0.72rem", fontStyle: "italic", color: inkLight }}>cherre-graph, bpg — per-owner datasets</span>
         </div>
         <CodeBlock>
           POST /v1/owners/&#123;owner&#125;/bigquery-graph/queries &nbsp;→&nbsp; &#123;sql, useLegacySql, dryRun, labels: &#123;app: "meridian-api", owner, user-id&#125;&#125;
         </CodeBlock>
       </div>
     </div>
-    <div style={{ background: "#fff", padding: "0.45rem 0.9rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+    <div style={{ background: "#fff", padding: "0.65rem 1.1rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
       <span className="luna-source" style={{ color: inkLight, flexShrink: 0 }}>Auth</span>
-      <span style={{ fontFamily: codeMono, fontSize: "0.56rem", color: inkMid }}>ADC → SA impersonation (pod SA → graph-reader SA) → Bearer token</span>
+      <span style={{ fontFamily: codeMono, fontSize: "0.68rem", color: inkMid }}>ADC → SA impersonation (pod SA → graph-reader SA) → Bearer token</span>
       <span style={{ fontFamily: codeMono, fontSize: "0.56rem", color: inkLight }}>· IAP JWT validation · deny-list regex</span>
     </div>
     <ConnectorLabel label="ingests from" />
@@ -302,10 +302,10 @@ const Layer3 = () => (
 const Layer1 = () => (
   <div>
     <LayerBar num="1" name="Ingestion & Storage" detail="dbt · BigQuery · 250+ Singer taps · Dataproc" />
-    <div style={{ background: "#fff", padding: "0.8rem 1.1rem" }}>
+    <div style={{ background: "#fff", padding: "1.1rem 1.3rem" }}>
       {/* dbt execution model */}
-      <div className="luna-source" style={{ color: inkLight, marginBottom: "0.5rem" }}>dbt project: cherre-graph · 164 projects · 5-layer execution model</div>
-      <div style={{ display: "flex", alignItems: "stretch", gap: 0, marginBottom: "0.7rem" }}>
+      <div style={{ fontSize: "0.82rem", fontWeight: 700, color: inkMid, marginBottom: "0.5rem" }}>dbt project: cherre-graph · 164 projects · 5-layer execution model</div>
+      <div style={{ display: "flex", alignItems: "stretch", gap: 0, marginBottom: "0.9rem" }}>
         {[
           { name: "core_sources", detail: "extract + ID gen", color: inkMid },
           { name: "core_dimension", detail: "SHA256 hashed", color: blue },
@@ -315,8 +315,8 @@ const Layer1 = () => (
         ].map((s, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: 0, flex: 1 }}>
             <div style={{ background: codeBg, border: `1px solid ${rule}`, padding: "0.45rem 0.35rem", flex: 1, textAlign: "center" }}>
-              <div style={{ fontFamily: codeMono, fontSize: "0.56rem", color: s.color, fontWeight: 600, marginBottom: "0.1rem" }}>{s.name}</div>
-              <div style={{ fontFamily: mono, fontSize: "0.44rem", color: inkLight }}>{s.detail}</div>
+              <div style={{ fontFamily: codeMono, fontSize: "0.72rem", color: s.color, fontWeight: 600, marginBottom: "0.1rem" }}>{s.name}</div>
+              <div style={{ fontFamily: mono, fontSize: "0.54rem", color: inkLight }}>{s.detail}</div>
             </div>
             {i < 4 && <span style={{ color: pink, fontSize: "0.65rem", padding: "0 0.1rem", flexShrink: 0, fontWeight: 700 }}>→</span>}
           </div>
@@ -334,17 +334,17 @@ const Layer1 = () => (
         { name: "Transactions", accent: pink, items: ["rca_connect_transactions", "unifiedloanuniverse_all (Trepp)", "buildcentral_constructionwire", "foundation_recorder_cherre"] },
         { name: "Geography + Market", accent: teal, items: ["usa_county / cbsa / zip boundary", "cherre_address (prd-5-address)", "green_street sector/submarket", "ncreif_npi_odce_msa"] },
       ].map((c, i) => (
-        <div key={i} style={{ background: "#fff", padding: "0.7rem 0.9rem" }}>
-          <div style={{ fontSize: "0.64rem", fontWeight: 700, color: c.accent, marginBottom: "0.3rem" }}>{c.name}</div>
+        <div key={i} style={{ background: "#fff", padding: "1rem 1.1rem" }}>
+          <div style={{ fontSize: "0.76rem", fontWeight: 700, color: c.accent, marginBottom: "0.3rem" }}>{c.name}</div>
           {c.items.map((item, j) => (
-            <div key={j} style={{ fontFamily: codeMono, fontSize: "0.54rem", color: inkMid, lineHeight: 1.8 }}>{item}</div>
+            <div key={j} style={{ fontFamily: codeMono, fontSize: "0.66rem", color: inkMid, lineHeight: 1.8 }}>{item}</div>
           ))}
         </div>
       ))}
     </div>
-    <div style={{ background: "#fff", padding: "0.45rem 0.9rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+    <div style={{ background: "#fff", padding: "0.65rem 1.1rem", borderTop: `1px solid ${rule}`, display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
       <span className="luna-source" style={{ color: inkLight, flexShrink: 0 }}>Ingestion</span>
-      <span style={{ fontFamily: codeMono, fontSize: "0.56rem", color: inkMid }}>250+ Singer taps (cherre-singer-ingest v5.2.3+) → SFTP/S3/API → GCS staging → BQ ephemeral → final dataset</span>
+      <span style={{ fontFamily: codeMono, fontSize: "0.68rem", color: inkMid }}>250+ Singer taps (cherre-singer-ingest v5.2.3+) → SFTP/S3/API → GCS staging → BQ ephemeral → final dataset</span>
     </div>
   </div>
 );
@@ -358,11 +358,11 @@ const ArchitectureDiagram = () => (
     overflow: "hidden",
     display: "flex",
     flexDirection: "column",
-    gap: 0,
+    gap: 4,
   }}>
     <Layer6 />
-    <Layer5 />
     <Layer4 />
+    <Layer5 />
     <Layer2 />
     <Layer3 />
     <Layer1 />
