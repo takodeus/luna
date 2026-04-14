@@ -13,18 +13,17 @@ import StepsThoughtsSlide from "@/components/slides/StepsThoughtsSlide";
 import StackSlide from "@/components/slides/StackSlide";
 import BuildBuySlide from "@/components/slides/BuildBuySlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
-import PractitionerBriefSlide from "@/components/slides/PractitionerBriefSlide";
-import ICMemoSlide from "@/components/slides/ICMemoSlide";
-import DemoGate from "@/components/demo/DemoGate";
+import PractitionerOverlay from "@/components/PractitionerOverlay";
 import ImageLightbox from "@/components/ImageLightbox";
 
-const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s-practitioner","s-demo"];
+const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13"];
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState("s1");
   const [progress, setProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [practitionerOpen, setPractitionerOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
     const total = document.documentElement.scrollHeight - window.innerHeight;
@@ -61,6 +60,11 @@ const Index = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handlePractitionerOpen = () => {
+    setMenuOpen(false);
+    setPractitionerOpen(true);
+  };
+
   return (
     <>
       <div className="luna-progress-bar">
@@ -80,6 +84,7 @@ const Index = () => {
         isOpen={menuOpen}
         onClose={() => setMenuOpen(false)}
         onNavigate={handleNavigate}
+        onPractitionerOpen={handlePractitionerOpen}
       />
       <main className="luna-main">
         <CoverSlide />
@@ -95,11 +100,11 @@ const Index = () => {
         <StepsThoughtsSlide />
         <BuildBuySlide onImageClick={setLightboxSrc} />
         <ClosingSlide />
-        <DemoGate>
-          <PractitionerBriefSlide />
-          <ICMemoSlide />
-        </DemoGate>
       </main>
+      <PractitionerOverlay
+        isOpen={practitionerOpen}
+        onClose={() => setPractitionerOpen(false)}
+      />
       <ImageLightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
     </>
   );

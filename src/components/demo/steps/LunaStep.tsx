@@ -75,9 +75,8 @@ const EntityCard = ({
             </span>
             <span style={{
               fontSize: '0.62rem',
-              fontFamily: 'Montserrat, sans-serif',
-              color: '#aaa',
               fontFamily: 'ui-monospace, monospace',
+              color: '#aaa',
             }}>
               {entity.rawName}
             </span>
