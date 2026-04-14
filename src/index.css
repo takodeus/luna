@@ -1292,4 +1292,25 @@ body { overflow-x: hidden; max-width: 100vw; }
     padding: 60px 24px;
     max-width: 340px;
   }
+
+  .pb-cols {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pb-closing {
+    margin: 0 16px !important;
+  }
+
+  /* IC Memo demo: stack panels vertically */
+  #s-demo > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+
+  #s-demo > div:last-child > div:first-child {
+    position: relative !important;
+    min-height: 300px !important;
+    height: auto !important;
+    border-right: none !important;
+    border-bottom: 1px solid #eee;
+  }
 }
