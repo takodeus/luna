@@ -468,7 +468,8 @@ const MeridianStep = ({ onNext, onBack }: MeridianStepProps) => {
 
       <div style={{
         display: 'flex',
-        justifyContent: 'flex-end',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
         paddingTop: 8,
         borderTop: '1px solid #f0f0f0',
       }}>
@@ -489,20 +490,19 @@ const MeridianStep = ({ onNext, onBack }: MeridianStepProps) => {
         >
           See grounded output
         </button>
-          <div style={{ textAlign: 'right', marginTop: 8 }}>
-            <button
-              onClick={onBack}
-              style={{
-                background: 'none', border: 'none', cursor: 'pointer',
-                fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
-                color: '#bbb', padding: 0,
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
-            >
-              ← Back
-            </button>
-          </div>
+          <button
+            onClick={onBack}
+            style={{
+              background: 'none', border: 'none', cursor: 'pointer',
+              fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
+              color: '#bbb', padding: '4px 0 0',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
+          >
+            ← Back
+          </button>
+
       </div>
     </div>
   );

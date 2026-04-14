@@ -33,7 +33,8 @@ const ClosingSlide = () => (
     <div className="slide-n">xiii / The Next Architectural Imperative</div>
 
     <h2 className="luna-h2">
-      The Next Architectural Imperative Is the Semantic Layer
+      The Next Architectural Imperative
+      <br />Is the Semantic Layer
     </h2>
     <p style={{ fontFamily: "var(--serif)", fontSize: "clamp(1rem, 1.6vw, 1.2rem)", fontStyle: "italic", color: "#A8185E", lineHeight: 1.5, maxWidth: 760, margin: "0.5rem 0 0" }}>
       The reasoning era cannot run on reporting-era infrastructure.

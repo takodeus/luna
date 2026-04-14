@@ -71,11 +71,11 @@ const CoverSlide = () => (
       Systems of record were built to capture transactions, enforce process, and preserve the official record. Their role remains essential. They are the source of transactional truth, but not, by themselves, the source of usable meaning.
     </p>
 
-    <p style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.15rem, 2vw, 1.45rem)", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.5, borderLeft: "3px solid #A8185E", paddingLeft: "1.2rem", marginTop: "1.4rem", marginBottom: 0, maxWidth: 660 }}>
+    <p style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.15rem, 2vw, 1.45rem)", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.5, borderLeft: "3px solid #A8185E", paddingLeft: "1.2rem", marginTop: "1rem", marginBottom: "1rem", maxWidth: 660 }}>
       The last era of enterprise data was built for reporting. The next will be built for reasoning.
     </p>
 
-    <p className="luna-body-text" style={{ marginTop: "1.4rem" }}>
+    <p className="luna-body-text">
       The question is no longer only whether data can be stored, reconciled, and surfaced for human review. It is whether that data carries enough shared meaning and traceable context to support action.
     </p>
 

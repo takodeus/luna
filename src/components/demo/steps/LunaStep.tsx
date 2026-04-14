@@ -646,20 +646,19 @@ const LunaStep = ({ onFieldFocus, onNext, onBack }: LunaStepProps) => {
         >
           Ground with Meridian
         </button>
-          <div style={{ textAlign: 'right', marginTop: 8 }}>
-            <button
-              onClick={onBack}
-              style={{
-                background: 'none', border: 'none', cursor: 'pointer',
-                fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
-                color: '#bbb', padding: 0,
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
-            >
-              ← Back
-            </button>
-          </div>
+          <button
+            onClick={onBack}
+            style={{
+              background: 'none', border: 'none', cursor: 'pointer',
+              fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
+              color: '#bbb', padding: '4px 0 0',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
+          >
+            ← Back
+          </button>
+
       </div>
     </div>
   );

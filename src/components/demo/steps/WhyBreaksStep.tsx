@@ -188,7 +188,8 @@ const WhyBreaksStep = ({ onNext, onBack }: WhyBreaksStepProps) => {
 
       <div style={{
         display: 'flex',
-        justifyContent: 'flex-end',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
         marginTop: 20,
         paddingTop: 8,
         borderTop: '1px solid #f0f0f0',
@@ -210,20 +211,19 @@ const WhyBreaksStep = ({ onNext, onBack }: WhyBreaksStepProps) => {
         >
           Resolve with Luna
         </button>
-          <div style={{ textAlign: 'right', marginTop: 8 }}>
-            <button
-              onClick={onBack}
-              style={{
-                background: 'none', border: 'none', cursor: 'pointer',
-                fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
-                color: '#bbb', padding: 0,
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
-            >
-              ← Back
-            </button>
-          </div>
+          <button
+            onClick={onBack}
+            style={{
+              background: 'none', border: 'none', cursor: 'pointer',
+              fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
+              color: '#bbb', padding: '4px 0 0',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
+          >
+            ← Back
+          </button>
+
       </div>
     </div>
   );

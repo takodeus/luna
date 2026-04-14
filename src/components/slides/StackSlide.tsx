@@ -1,8 +1,8 @@
 const agentSystems = [
-  { name: "Portfolio agent",     sub: "Analytics + alerts" },
-  { name: "Leasing agent",       sub: "NL + workflows" },
-  { name: "Risk agent",          sub: "Scoring + lineage" },
-  { name: "Acquisitions agent",  sub: "Comp + signals" },
+  { name: "Portfolio Agent",     sub: "Analytics + alerts" },
+  { name: "Leasing Agent",       sub: "NL + workflows" },
+  { name: "Risk Agent",          sub: "Scoring + lineage" },
+  { name: "Acquisitions Agent",  sub: "Comp + signals" },
 ];
 
 const StackSlide = () => (
@@ -66,7 +66,7 @@ const StackSlide = () => (
       {/* Pyramid tiers */}
       <div className="luna-pyramid-tier" style={{ width: "84%", margin: "0 auto 2px", background: "#23A98E" }}>
         <div>
-          <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of innovation</div>
+          <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of Innovation</div>
           <div className="luna-pyramid-sub">Intelligence and adaptation: analytics, ML pipelines, copilot interfaces</div>
         </div>
         <div className="luna-pyramid-mode">Mode 2</div>
@@ -74,7 +74,7 @@ const StackSlide = () => (
 
       <div className="luna-pyramid-tier" style={{ width: "92%", margin: "0 auto 2px", background: "#611FAD" }}>
         <div>
-          <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of differentiation</div>
+          <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of Differentiation</div>
           <div className="luna-pyramid-sub">Domain models and governed meaning: business rules, differentiating workflows</div>
         </div>
         <div className="luna-pyramid-mode">Mode 2</div>
@@ -82,7 +82,7 @@ const StackSlide = () => (
 
       <div className="luna-pyramid-tier" style={{ width: "100%", background: "#1B70B1" }}>
         <div>
-          <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of record</div>
+          <div style={{ fontSize: "0.83rem", fontWeight: 700, color: "#fff", marginBottom: "0.15rem" }}>Systems of Record</div>
           <div className="luna-pyramid-sub" style={{ color: "rgba(255,255,255,0.45)" }}>Provenance and trust: ERP, CRE platforms, operational data</div>
         </div>
         <div className="luna-pyramid-mode" style={{ color: "rgba(255,255,255,0.25)" }}>Mode 1</div>
