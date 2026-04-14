@@ -3,6 +3,7 @@ import { DEMO_FIELDS, DemoField } from '@/data/demoData';
 
 interface GroundedOutputStepProps {
   onFieldFocus: (phrase: string | null) => void;
+  onBack?: () => void;
 }
 
 const resolvedByLabel: Record<string, { label: string; color: string; bg: string }> = {
@@ -194,7 +195,7 @@ const ComparisonRow = ({
   );
 };
 
-const GroundedOutputStep = ({ onFieldFocus }: GroundedOutputStepProps) => {
+const GroundedOutputStep = ({ onFieldFocus, onBack }: GroundedOutputStepProps) => {
   const [activeField, setActiveField] = useState<string | null>(null);
   const changedCount = DEMO_FIELDS.filter(f => f.status !== 'correct').length;
 

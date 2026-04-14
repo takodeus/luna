@@ -4,6 +4,7 @@ import { DEMO_FIELDS, DemoField } from '@/data/demoData';
 interface TextOnlyStepProps {
   onFieldFocus: (phrase: string | null) => void;
   onNext: () => void;
+  onBack?: () => void;
 }
 
 const StatusBadge = ({ status, confidence }: { status: DemoField['status']; confidence: number }) => {
@@ -112,7 +113,7 @@ const FieldRow = ({
   );
 };
 
-const TextOnlyStep = ({ onFieldFocus, onNext }: TextOnlyStepProps) => {
+const TextOnlyStep = ({ onFieldFocus, onNext, onBack }: TextOnlyStepProps) => {
   const [activeField, setActiveField] = useState<string | null>(null);
 
   const handleFieldClick = (field: DemoField) => {

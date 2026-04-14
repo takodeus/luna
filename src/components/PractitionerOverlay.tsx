@@ -1,17 +1,4 @@
-import { useState, useEffect, useRef, Component } from 'react';
-
-class ErrorBoundary extends Component<{children: React.ReactNode}, {error: string|null}> {
-  constructor(props: any) { super(props); this.state = { error: null }; }
-  componentDidCatch(e: Error) { this.setState({ error: e.message + '\n' + e.stack }); }
-  render() {
-    if (this.state.error) return (
-      <div style={{ padding: 40, fontFamily: 'monospace', fontSize: '0.75rem', whiteSpace: 'pre-wrap', color: '#A8185E', background: '#fff' }}>
-        <strong>Render error:</strong>\n{this.state.error}
-      </div>
-    );
-    return this.props.children;
-  }
-}
+import { useState, useEffect, useRef } from 'react';
 import PractitionerBriefSlide from '@/components/slides/PractitionerBriefSlide';
 import ICMemoSlide from '@/components/slides/ICMemoSlide';
 
@@ -157,12 +144,8 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
         </div>
       ) : (
         <div className="practitioner-content">
-          <ErrorBoundary>
-            <PractitionerBriefSlide />
-          </ErrorBoundary>
-          <ErrorBoundary>
-            <ICMemoSlide />
-          </ErrorBoundary>
+          <PractitionerBriefSlide />
+          <ICMemoSlide />
         </div>
       )}
     </div>
