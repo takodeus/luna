@@ -1,5 +1,6 @@
 interface WhyBreaksStepProps {
   onNext: () => void;
+  onBack: () => void;
 }
 
 const failures = [
@@ -50,7 +51,7 @@ const failures = [
   },
 ];
 
-const WhyBreaksStep = ({ onNext }: WhyBreaksStepProps) => {
+const WhyBreaksStep = ({ onNext, onBack }: WhyBreaksStepProps) => {
   return (
     <div style={{ padding: '24px 28px', maxWidth: 760 }}>
       <div style={{ marginBottom: 22 }}>
@@ -209,6 +210,20 @@ const WhyBreaksStep = ({ onNext }: WhyBreaksStepProps) => {
         >
           Resolve with Luna
         </button>
+          <div style={{ textAlign: 'right', marginTop: 8 }}>
+            <button
+              onClick={onBack}
+              style={{
+                background: 'none', border: 'none', cursor: 'pointer',
+                fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
+                color: '#bbb', padding: 0,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
+            >
+              ← Back
+            </button>
+          </div>
       </div>
     </div>
   );

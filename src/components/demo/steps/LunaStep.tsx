@@ -4,6 +4,7 @@ import { LUNA_ENTITIES, LunaEntity } from '@/data/demoData';
 interface LunaStepProps {
   onFieldFocus: (phrase: string | null) => void;
   onNext: () => void;
+  onBack: () => void;
 }
 
 type ConflictAction = null | 'flagged' | 'registered';
@@ -477,7 +478,7 @@ const SectorConflictAlert = ({
   </div>
 );
 
-const LunaStep = ({ onFieldFocus, onNext }: LunaStepProps) => {
+const LunaStep = ({ onFieldFocus, onNext, onBack }: LunaStepProps) => {
   const [resolvedIds, setResolvedIds] = useState<Set<string>>(new Set());
   const [conflictAction, setConflictAction] = useState<ConflictAction>(null);
 
@@ -645,6 +646,20 @@ const LunaStep = ({ onFieldFocus, onNext }: LunaStepProps) => {
         >
           Ground with Meridian
         </button>
+          <div style={{ textAlign: 'right', marginTop: 8 }}>
+            <button
+              onClick={onBack}
+              style={{
+                background: 'none', border: 'none', cursor: 'pointer',
+                fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
+                color: '#bbb', padding: 0,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
+            >
+              ← Back
+            </button>
+          </div>
       </div>
     </div>
   );

@@ -53,18 +53,6 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
       className={`practitioner-overlay ${isOpen ? 'is-open' : ''}`}
       aria-hidden={!isOpen}
     >
-      {/* Persistent close button — always visible, fixed position */}
-      <button
-        className="practitioner-overlay-close"
-        onClick={onClose}
-        aria-label="Close"
-        style={{ position: 'fixed', top: 20, right: 24, zIndex: 10010 }}
-      >
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      </button>
-
       {!unlocked ? (
         <div className="practitioner-gate">
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 28 }}>

@@ -96,7 +96,7 @@ const ICMemoSlide = () => {
       {/* Two-panel body */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '300px 1fr',
+        gridTemplateColumns: '420px 1fr',
         minHeight: '70vh',
       }}>
         {/* Left: Memo panel — compact, scrollable within its column */}
@@ -114,67 +114,12 @@ const ICMemoSlide = () => {
         {/* Right: Step content */}
         <div style={{ background: '#fff', padding: '0' }}>
           {activeStep === 1 && <TextOnlyStep onFieldFocus={setHighlightPhrase} onNext={handleNext} />}
-          {activeStep === 2 && <WhyBreaksStep onNext={handleNext} />}
-          {activeStep === 3 && <LunaStep onFieldFocus={setHighlightPhrase} onNext={handleNext} />}
-          {activeStep === 4 && <MeridianStep onNext={handleNext} />}
-          {activeStep === 5 && <GroundedOutputStep onFieldFocus={setHighlightPhrase} />}
+          {activeStep === 2 && <WhyBreaksStep onNext={handleNext} onBack={handleBack} />}
+          {activeStep === 3 && <LunaStep onFieldFocus={setHighlightPhrase} onNext={handleNext} onBack={handleBack} />}
+          {activeStep === 4 && <MeridianStep onNext={handleNext} onBack={handleBack} />}
+          {activeStep === 5 && <GroundedOutputStep onFieldFocus={setHighlightPhrase} onBack={handleBack} />}
 
-          {/* Back / Next nav bar */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '1.2rem 2rem',
-            borderTop: '1px solid #f0f0f0',
-            marginTop: '1rem',
-          }}>
-            <button
-              onClick={handleBack}
-              disabled={activeStep === 1}
-              style={{
-                display: 'flex', alignItems: 'center', gap: 6,
-                background: 'none', border: '1px solid #e0e0e0',
-                borderRadius: 4, padding: '8px 16px', cursor: activeStep === 1 ? 'not-allowed' : 'pointer',
-                fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', fontWeight: 600,
-                color: activeStep === 1 ? '#ccc' : '#000',
-                transition: 'all 0.15s',
-              }}
-            >
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Back
-            </button>
 
-            <span style={{
-              fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem',
-              color: '#aaa', letterSpacing: '0.08em', textTransform: 'uppercase',
-            }}>
-              {activeStep} of {TOTAL_STEPS}
-            </span>
-
-            {activeStep < TOTAL_STEPS ? (
-              <button
-                onClick={handleNext}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: 6,
-                  background: '#A8185E', border: 'none',
-                  borderRadius: 4, padding: '8px 16px', cursor: 'pointer',
-                  fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', fontWeight: 600,
-                  color: '#fff', transition: 'opacity 0.15s',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.88')}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-              >
-                Next
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            ) : (
-              <div style={{ width: 80 }} />
-            )}
-          </div>
         </div>
       </div>
     </section>

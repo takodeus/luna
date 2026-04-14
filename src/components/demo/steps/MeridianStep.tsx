@@ -3,6 +3,7 @@ import { MERIDIAN_NODES, MERIDIAN_EDGES, MeridianNode } from '@/data/demoData';
 
 interface MeridianStepProps {
   onNext: () => void;
+  onBack: () => void;
 }
 
 const NODE_RADIUS = 32;
@@ -341,7 +342,7 @@ const NodeDetailPanel = ({ node }: { node: MeridianNode }) => {
   );
 };
 
-const MeridianStep = ({ onNext }: MeridianStepProps) => {
+const MeridianStep = ({ onNext, onBack }: MeridianStepProps) => {
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
   const selectedNodeData = MERIDIAN_NODES.find(n => n.id === selectedNode);
 
@@ -488,6 +489,20 @@ const MeridianStep = ({ onNext }: MeridianStepProps) => {
         >
           See grounded output
         </button>
+          <div style={{ textAlign: 'right', marginTop: 8 }}>
+            <button
+              onClick={onBack}
+              style={{
+                background: 'none', border: 'none', cursor: 'pointer',
+                fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
+                color: '#bbb', padding: 0,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
+            >
+              ← Back
+            </button>
+          </div>
       </div>
     </div>
   );

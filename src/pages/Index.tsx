@@ -105,6 +105,24 @@ const Index = () => {
         isOpen={practitionerOpen}
         onClose={() => setPractitionerOpen(false)}
       />
+      {practitionerOpen && (
+        <button
+          onClick={() => setPractitionerOpen(false)}
+          aria-label="Close practitioner overlay"
+          style={{
+            position: 'fixed', top: 16, right: 20, zIndex: 10010,
+            width: 40, height: 40, borderRadius: '50%',
+            border: '1px solid #e0e0e0', background: '#fff',
+            color: '#000', cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        </button>
+      )}
       <ImageLightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
     </>
   );
