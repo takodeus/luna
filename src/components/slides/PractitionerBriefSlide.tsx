@@ -179,7 +179,7 @@ const BeatCard = ({ beat, index }: { beat: typeof beats[0]; index: number }) => 
 
       {/* Columns */}
       {beat.cols && (
-        <div style={{
+        <div className="pb-cols" style={{
           display: 'grid',
           gridTemplateColumns: `repeat(${beat.cols.length}, 1fr)`,
           gap: 16,
@@ -229,7 +229,7 @@ const BeatCard = ({ beat, index }: { beat: typeof beats[0]; index: number }) => 
 
       {/* Last beat: Luna + Meridian fix cards */}
       {beat.isLast && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 18 }}>
+        <div className="pb-cols" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 18 }}>
           {[
             {
               name: 'Luna',
@@ -392,6 +392,14 @@ const PractitionerBriefSlide = () => {
           opacity: 1;
           transform: none;
         }
+        @media (max-width: 900px) {
+          .pb-beat {
+            padding: 24px 16px;
+          }
+          .pb-header {
+            padding: 28px 16px 20px !important;
+          }
+        }
       `}</style>
 
       {/* Section header */}
@@ -444,7 +452,7 @@ const PractitionerBriefSlide = () => {
       ))}
 
       {/* Closing line */}
-      <div style={{
+      <div className="pb-closing" style={{
         margin: '0 48px',
         paddingTop: 40,
         borderTop: '1px solid #eee',
