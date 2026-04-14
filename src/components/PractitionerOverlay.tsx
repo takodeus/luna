@@ -22,7 +22,6 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
     }
   }, []);
 
-  // Lock body scroll when overlay is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -54,11 +53,12 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
       className={`practitioner-overlay ${isOpen ? 'is-open' : ''}`}
       aria-hidden={!isOpen}
     >
-      {/* Close button */}
+      {/* Persistent close button — always visible, fixed position */}
       <button
         className="practitioner-overlay-close"
         onClick={onClose}
         aria-label="Close"
+        style={{ position: 'fixed', top: 20, right: 24, zIndex: 10010 }}
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -66,9 +66,7 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
       </button>
 
       {!unlocked ? (
-        /* Password gate */
         <div className="practitioner-gate">
-          {/* Lock icon */}
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 28 }}>
             <div style={{
               width: 52, height: 52, borderRadius: '50%',
@@ -157,7 +155,6 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
           </p>
         </div>
       ) : (
-        /* Unlocked content */
         <div className="practitioner-content">
           <PractitionerBriefSlide />
           <ICMemoSlide />

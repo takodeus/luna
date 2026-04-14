@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import DemoStepper from '@/components/demo/DemoStepper';
 import MemoPanel from '@/components/demo/MemoPanel';
 import TextOnlyStep from '@/components/demo/steps/TextOnlyStep';
@@ -7,137 +7,174 @@ import LunaStep from '@/components/demo/steps/LunaStep';
 import MeridianStep from '@/components/demo/steps/MeridianStep';
 import GroundedOutputStep from '@/components/demo/steps/GroundedOutputStep';
 
+const TOTAL_STEPS = 5;
+
 const ICMemoSlide = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [highlightPhrase, setHighlightPhrase] = useState<string | null>(null);
+  const topRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTop = () => {
+    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const handleStepClick = (step: number) => {
     setActiveStep(step);
     setHighlightPhrase(null);
+    scrollToTop();
   };
 
   const handleNext = () => {
-    setActiveStep(s => Math.min(s + 1, 5));
+    const next = Math.min(activeStep + 1, TOTAL_STEPS);
+    setActiveStep(next);
     setHighlightPhrase(null);
+    scrollToTop();
+  };
+
+  const handleBack = () => {
+    const prev = Math.max(activeStep - 1, 1);
+    setActiveStep(prev);
+    setHighlightPhrase(null);
+    scrollToTop();
   };
 
   return (
     <section
       id="s-demo"
-      style={{
-        minHeight: '100vh',
-        background: '#fff',
-        display: 'flex',
-        flexDirection: 'column',
-        borderTop: '3px solid #A8185E',
-      }}
+      style={{ background: '#fff', borderTop: '3px solid #A8185E' }}
     >
-      {/* Section header */}
+      {/* Anchor for scroll-to-top */}
+      <div ref={topRef} />
+
+      {/* Sticky header + stepper */}
       <div style={{
-        padding: '28px 36px 20px',
-        borderBottom: '1px solid #f0f0f0',
+        position: 'sticky',
+        top: 0,
+        zIndex: 100,
         background: '#fff',
+        borderBottom: '2px solid #f0f0f0',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
       }}>
-        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
+        {/* Header row */}
+        <div style={{
+          padding: '20px 36px 14px',
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: 12,
+        }}>
           <div>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              marginBottom: 6,
-            }}>
-              <div style={{
-                width: 5,
-                height: 5,
-                borderRadius: '50%',
-                background: '#A8185E',
-                flexShrink: 0,
-              }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+              <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#A8185E', flexShrink: 0 }} />
               <span style={{
-                fontSize: '0.62rem',
-                fontWeight: 700,
-                fontFamily: 'Montserrat, sans-serif',
-                color: '#A8185E',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
+                fontSize: '0.62rem', fontWeight: 700, fontFamily: 'Montserrat, sans-serif',
+                color: '#A8185E', letterSpacing: '0.1em', textTransform: 'uppercase',
               }}>
                 Live Demo
               </span>
             </div>
             <h2 style={{
-              fontSize: '1.6rem',
-              fontWeight: 700,
-              fontFamily: 'Montserrat, sans-serif',
-              color: '#000',
-              margin: 0,
-              lineHeight: 1.2,
+              fontSize: '1.4rem', fontWeight: 700, fontFamily: 'Montserrat, sans-serif',
+              color: '#000', margin: 0, lineHeight: 1.2,
             }}>
               IC Memo Extraction Workflow
             </h2>
           </div>
           <p style={{
-            fontSize: '0.8rem',
-            fontFamily: 'Montserrat, sans-serif',
-            color: '#888',
-            margin: 0,
-            lineHeight: 1.5,
-            maxWidth: 400,
-            textAlign: 'right',
+            fontSize: '0.78rem', fontFamily: 'Montserrat, sans-serif',
+            color: '#888', margin: 0, lineHeight: 1.5, maxWidth: 380, textAlign: 'right',
           }}>
             Walk through a real extraction failure and see exactly why grounding in entity resolution and a knowledge graph changes the result.
           </p>
         </div>
-      </div>
 
-      {/* Stepper */}
-      <DemoStepper activeStep={activeStep} onStepClick={handleStepClick} />
+        {/* Stepper */}
+        <DemoStepper activeStep={activeStep} onStepClick={handleStepClick} />
+      </div>
 
       {/* Two-panel body */}
       <div style={{
-        flex: 1,
         display: 'grid',
-        gridTemplateColumns: '320px 1fr',
-        minHeight: 0,
-        overflow: 'hidden',
+        gridTemplateColumns: '300px 1fr',
+        minHeight: '70vh',
       }}>
-        {/* Left: Memo panel — fixed */}
+        {/* Left: Memo panel — compact, scrollable within its column */}
         <div style={{
-          height: '100%',
-          minHeight: 600,
-          position: 'sticky',
-          top: 0,
-          overflowY: 'auto',
           borderRight: '1px solid #eee',
+          overflowY: 'auto',
+          maxHeight: '80vh',
+          position: 'sticky',
+          top: 120,
+          alignSelf: 'start',
         }}>
           <MemoPanel highlightPhrase={highlightPhrase} />
         </div>
 
-        {/* Right: Active step content */}
-        <div style={{
-          overflowY: 'auto',
-          background: '#fff',
-        }}>
-          {activeStep === 1 && (
-            <TextOnlyStep
-              onFieldFocus={setHighlightPhrase}
-              onNext={handleNext}
-            />
-          )}
-          {activeStep === 2 && (
-            <WhyBreaksStep onNext={handleNext} />
-          )}
-          {activeStep === 3 && (
-            <LunaStep
-              onFieldFocus={setHighlightPhrase}
-              onNext={handleNext}
-            />
-          )}
-          {activeStep === 4 && (
-            <MeridianStep onNext={handleNext} />
-          )}
-          {activeStep === 5 && (
-            <GroundedOutputStep onFieldFocus={setHighlightPhrase} />
-          )}
+        {/* Right: Step content */}
+        <div style={{ background: '#fff', padding: '0' }}>
+          {activeStep === 1 && <TextOnlyStep onFieldFocus={setHighlightPhrase} onNext={handleNext} />}
+          {activeStep === 2 && <WhyBreaksStep onNext={handleNext} />}
+          {activeStep === 3 && <LunaStep onFieldFocus={setHighlightPhrase} onNext={handleNext} />}
+          {activeStep === 4 && <MeridianStep onNext={handleNext} />}
+          {activeStep === 5 && <GroundedOutputStep onFieldFocus={setHighlightPhrase} />}
+
+          {/* Back / Next nav bar */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '1.2rem 2rem',
+            borderTop: '1px solid #f0f0f0',
+            marginTop: '1rem',
+          }}>
+            <button
+              onClick={handleBack}
+              disabled={activeStep === 1}
+              style={{
+                display: 'flex', alignItems: 'center', gap: 6,
+                background: 'none', border: '1px solid #e0e0e0',
+                borderRadius: 4, padding: '8px 16px', cursor: activeStep === 1 ? 'not-allowed' : 'pointer',
+                fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', fontWeight: 600,
+                color: activeStep === 1 ? '#ccc' : '#000',
+                transition: 'all 0.15s',
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Back
+            </button>
+
+            <span style={{
+              fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem',
+              color: '#aaa', letterSpacing: '0.08em', textTransform: 'uppercase',
+            }}>
+              {activeStep} of {TOTAL_STEPS}
+            </span>
+
+            {activeStep < TOTAL_STEPS ? (
+              <button
+                onClick={handleNext}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: 6,
+                  background: '#A8185E', border: 'none',
+                  borderRadius: 4, padding: '8px 16px', cursor: 'pointer',
+                  fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', fontWeight: 600,
+                  color: '#fff', transition: 'opacity 0.15s',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.88')}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+              >
+                Next
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            ) : (
+              <div style={{ width: 80 }} />
+            )}
+          </div>
         </div>
       </div>
     </section>

@@ -47,7 +47,7 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate, onPra
           </div>
         </button>
 
-        <span className="luna-nav-label">Presentation</span>
+        <span className="luna-nav-label">Contents</span>
         <div className="luna-nav">
           {navItems.map((item) => (
             <button key={item.id} className={`luna-nav-item ${activeSlide === item.id ? "active" : ""}`} onClick={() => handleNav(item.id)}>
