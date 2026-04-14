@@ -221,7 +221,7 @@ const WhyBreaksStep = ({ onNext, onBack }: WhyBreaksStepProps) => {
             onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
             onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
           >
-            ← Back
+            Back
           </button>
 
       </div>

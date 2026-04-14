@@ -367,7 +367,7 @@ const MeridianStep = ({ onNext, onBack }: MeridianStepProps) => {
             borderRadius: 3,
             background: '#F3F0FF',
             color: '#611FAD',
-            border: '1px solid #61..1FAD33',
+            border: '1px solid #611FAD33',
           }}>
             Cherre Meridian
           </span>
@@ -472,6 +472,7 @@ const MeridianStep = ({ onNext, onBack }: MeridianStepProps) => {
         alignItems: 'flex-end',
         paddingTop: 8,
         borderTop: '1px solid #f0f0f0',
+        gap: 4,
       }}>
         <button
           onClick={onNext}
@@ -490,19 +491,18 @@ const MeridianStep = ({ onNext, onBack }: MeridianStepProps) => {
         >
           See grounded output
         </button>
-          <button
-            onClick={onBack}
-            style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
-              color: '#bbb', padding: '4px 0 0',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
-          >
-            ← Back
-          </button>
-
+        <button
+          onClick={onBack}
+          style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
+            color: '#bbb', padding: 0,
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
+        >
+          Back
+        </button>
       </div>
     </div>
   );

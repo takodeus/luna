@@ -611,17 +611,19 @@ const LunaStep = ({ onFieldFocus, onNext, onBack }: LunaStepProps) => {
 
       <div style={{
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
         marginTop: 20,
         paddingTop: 12,
         borderTop: '1px solid #f0f0f0',
+        gap: 4,
       }}>
         <p style={{
           fontSize: '0.76rem',
           fontFamily: 'Montserrat, sans-serif',
           color: '#888',
-          margin: 0,
+          margin: '0 0 6px',
+          alignSelf: 'flex-start',
         }}>
           {allResolved
             ? 'Entities resolved. Ground the schema relationships in Meridian.'
@@ -646,19 +648,18 @@ const LunaStep = ({ onFieldFocus, onNext, onBack }: LunaStepProps) => {
         >
           Ground with Meridian
         </button>
-          <button
-            onClick={onBack}
-            style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
-              color: '#bbb', padding: '4px 0 0',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
-          >
-            ← Back
-          </button>
-
+        <button
+          onClick={onBack}
+          style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem',
+            color: '#bbb', padding: 0,
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#A8185E')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#bbb')}
+        >
+          Back
+        </button>
       </div>
     </div>
   );
