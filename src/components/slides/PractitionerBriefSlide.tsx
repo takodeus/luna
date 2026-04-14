@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 const beats = [
   {
@@ -113,16 +113,7 @@ const beats = [
 const BeatCard = ({ beat, index }: { beat: typeof beats[0]; index: number }) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) el.classList.add('pb-visible'); },
-      { threshold: 0.08 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+
 
   return (
     <div
@@ -351,16 +342,7 @@ const BeatCard = ({ beat, index }: { beat: typeof beats[0]; index: number }) => 
 const PractitionerBriefSlide = () => {
   const headerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = headerRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) el.classList.add('pb-visible'); },
-      { threshold: 0.1 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+
 
   return (
     <section
@@ -373,24 +355,12 @@ const PractitionerBriefSlide = () => {
     >
       <style>{`
         .pb-beat {
-          opacity: 0;
-          transform: translateY(18px);
-          transition: opacity 0.5s ease, transform 0.5s ease;
+          opacity: 1;
           padding: 36px 48px;
           border-bottom: 1px solid #f0f0f0;
         }
-        .pb-beat.pb-visible {
-          opacity: 1;
-          transform: none;
-        }
         .pb-header {
-          opacity: 0;
-          transform: translateY(14px);
-          transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .pb-header.pb-visible {
           opacity: 1;
-          transform: none;
         }
         @media (max-width: 900px) {
           .pb-beat {
