@@ -1,3 +1,5 @@
+import ArchitectureDiagram from "../ArchitectureDiagram";
+
 const quadrants = [
   {
     label: "Entity Governance",
@@ -98,6 +100,8 @@ const GovernanceSlide = () => (
         </div>
       ))}
     </div>
+
+    <ArchitectureDiagram />
   </section>
 );
 
