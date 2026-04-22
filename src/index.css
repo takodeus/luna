@@ -740,10 +740,10 @@ h2.luna-h2 {
 .luna-nav-item {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  padding: 0.7rem 1.5rem;
+  gap: 0.65rem;
+  padding: 0.42rem 1.5rem;
   color: rgba(255,255,255,0.6);
-  font-size: 0.82rem;
+  font-size: 0.62rem;
   font-weight: 400;
   text-decoration: none;
   cursor: pointer;
@@ -771,7 +771,7 @@ h2.luna-h2 {
 .luna-nav-num {
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 0.56rem;
+  font-size: 0.48rem;
   color: rgba(255,255,255,0.4);
   flex-shrink: 0;
   width: 20px;

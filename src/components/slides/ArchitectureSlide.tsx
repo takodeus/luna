@@ -19,7 +19,7 @@ const ArchitectureSlide = () => (
         marginBottom: 14,
       }}
     >
-      The full stack
+      The Full Stack
     </div>
     <h2 className="luna-h2" style={{ marginTop: 0 }}>
       Six layers.

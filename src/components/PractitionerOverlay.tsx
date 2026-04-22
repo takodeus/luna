@@ -17,9 +17,9 @@ interface PractitionerOverlayProps {
 }
 
 const TABS: { id: PractitionerSection; label: string }[] = [
-  { id: 'brief', label: 'Practitioner brief' },
-  { id: 'demo',  label: 'The demo' },
-  { id: 'stack', label: 'The full stack' },
+  { id: 'brief', label: 'The Brief' },
+  { id: 'demo',  label: 'The Demo' },
+  { id: 'stack', label: 'The Stack' },
 ];
 
 const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: PractitionerOverlayProps) => {
