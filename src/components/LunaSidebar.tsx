@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import type { PractitionerSection } from "@/pages/Index";
 
 interface NavItem { id: string; num: string; label: string; }
@@ -45,6 +46,13 @@ const LunaSidebar = ({
   practitionerOpen,
   practitionerSection,
 }: LunaSidebarProps) => {
+  const [accordionOpen, setAccordionOpen] = useState(false);
+
+  // Keep accordion open while the overlay is active.
+  useEffect(() => {
+    if (practitionerOpen) setAccordionOpen(true);
+  }, [practitionerOpen]);
+
   const handleNav = (id: string) => {
     onNavigate(id);
     if (window.innerWidth <= 900) onClose();
@@ -76,24 +84,30 @@ const LunaSidebar = ({
           ))}
         </div>
 
-        {/* Case study — locked section with sub-navigation */}
-        <div style={{ padding: '12px 16px 0', marginTop: 8 }}>
-          <span className="luna-nav-label" style={{ padding: 0, marginBottom: 8, display: 'block' }}>Restricted</span>
+        {/* Restricted — accordion */}
+        <div style={{ marginTop: 8 }}>
+          <span className="luna-nav-label">Restricted</span>
           <button
-            className="luna-nav-item luna-nav-locked"
-            onClick={() => { onPractitionerOpen('brief'); if (window.innerWidth <= 900) onClose(); }}
-            style={{ width: '100%' }}
+            className="luna-restricted-trigger"
+            onClick={() => setAccordionOpen((o) => !o)}
+            aria-expanded={accordionOpen}
           >
-            <span className="luna-nav-num" style={{ opacity: 0.6 }}>
-              <svg width="12" height="13" viewBox="0 0 20 22" fill="none" style={{ display: 'block' }}>
+            <span className="luna-restricted-trigger-inner">
+              <svg width="11" height="12" viewBox="0 0 20 22" fill="none" style={{ flexShrink: 0, opacity: 0.5 }}>
                 <rect x="2" y="10" width="16" height="11" rx="2" stroke="currentColor" strokeWidth="1.5" />
                 <path d="M6 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
+              <span>Access Required</span>
             </span>
-            <span>Case study</span>
+            <svg
+              className={`luna-restricted-chevron ${accordionOpen ? 'is-open' : ''}`}
+              width="10" height="10" viewBox="0 0 10 10" fill="none"
+            >
+              <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </button>
 
-          <div className="luna-subnav">
+          <div className={`luna-subnav ${accordionOpen ? 'is-open' : ''}`} style={{ marginLeft: 24, marginRight: 0 }}>
             {caseItems.map((item, i) => {
               const active = practitionerOpen && practitionerSection === item.id;
               return (
