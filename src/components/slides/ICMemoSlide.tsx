@@ -49,7 +49,7 @@ const ICMemoSlide = () => {
       {/* Sticky header + stepper */}
       <div style={{
         position: 'sticky',
-        top: 0,
+        top: 56,
         zIndex: 100,
         background: '#fff',
         borderBottom: '2px solid #f0f0f0',
@@ -105,7 +105,7 @@ const ICMemoSlide = () => {
           overflowY: 'auto',
           maxHeight: '80vh',
           position: 'sticky',
-          top: 120,
+          top: 176,
           alignSelf: 'start',
         }}>
           <MemoPanel highlightPhrase={highlightPhrase} />

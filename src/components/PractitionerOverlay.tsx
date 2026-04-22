@@ -3,6 +3,7 @@ import PractitionerBriefSlide from '@/components/slides/PractitionerBriefSlide';
 import ICMemoSlide from '@/components/slides/ICMemoSlide';
 import ArchitectureSlide from '@/components/slides/ArchitectureSlide';
 import { sha256Hex } from '@/lib/hash';
+import type { PractitionerSection } from '@/pages/Index';
 
 // SHA-256 of the access code. Plaintext no longer ships in the bundle.
 const PASSWORD_HASH = '19dec44a826a23bb1363344cb397098775eee677350d1f4e638ca11e9a699a90';
@@ -10,14 +11,23 @@ const SESSION_KEY = 'cherre_demo_unlocked';
 
 interface PractitionerOverlayProps {
   isOpen: boolean;
+  section: PractitionerSection;
+  onSectionChange: (section: PractitionerSection) => void;
   onClose: () => void;
 }
 
-const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
+const TABS: { id: PractitionerSection; label: string }[] = [
+  { id: 'brief', label: 'Practitioner brief' },
+  { id: 'demo',  label: 'The demo' },
+  { id: 'stack', label: 'The full stack' },
+];
+
+const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: PractitionerOverlayProps) => {
   const [unlocked, setUnlocked] = useState(false);
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY) === '1') {
@@ -34,6 +44,13 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
     }
     return () => { document.body.style.overflow = ''; };
   }, [isOpen, unlocked]);
+
+  // Reset scroll to top when switching sections or opening the overlay.
+  useEffect(() => {
+    if (isOpen && unlocked && overlayRef.current) {
+      overlayRef.current.scrollTop = 0;
+    }
+  }, [isOpen, unlocked, section]);
 
   const handleSubmit = async () => {
     const digest = await sha256Hex(value.trim().toLowerCase());
@@ -54,6 +71,7 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
 
   return (
     <div
+      ref={overlayRef}
       className={`practitioner-overlay ${isOpen ? 'is-open' : ''}`}
       aria-hidden={!isOpen}
     >
@@ -148,9 +166,31 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
         </div>
       ) : (
         <div className="practitioner-content">
-          <PractitionerBriefSlide />
-          <ArchitectureSlide />
-          <ICMemoSlide />
+          <nav className="case-tabs" aria-label="Case study sections">
+            {TABS.map((t) => {
+              const active = t.id === section;
+              return (
+                <button
+                  key={t.id}
+                  className={`case-tab ${active ? 'is-active' : ''}`}
+                  onClick={() => onSectionChange(t.id)}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  {t.label}
+                </button>
+              );
+            })}
+          </nav>
+
+          <div style={{ display: section === 'brief' ? 'block' : 'none' }}>
+            <PractitionerBriefSlide />
+          </div>
+          <div style={{ display: section === 'demo' ? 'block' : 'none' }}>
+            <ICMemoSlide />
+          </div>
+          <div style={{ display: section === 'stack' ? 'block' : 'none' }}>
+            <ArchitectureSlide />
+          </div>
         </div>
       )}
     </div>

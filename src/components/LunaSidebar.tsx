@@ -1,3 +1,5 @@
+import type { PractitionerSection } from "@/pages/Index";
+
 interface NavItem { id: string; num: string; label: string; }
 
 const navItems: NavItem[] = [
@@ -16,16 +18,33 @@ const navItems: NavItem[] = [
   { id: "s13",    num: "xiii",  label: "The Next Architectural Imperative" },
 ];
 
+const caseItems: { id: PractitionerSection; label: string }[] = [
+  { id: 'brief', label: 'Practitioner brief' },
+  { id: 'demo',  label: 'The demo' },
+  { id: 'stack', label: 'The full stack' },
+];
+
 interface LunaSidebarProps {
   activeSlide: string;
   progress: number;
   isOpen: boolean;
   onClose: () => void;
   onNavigate: (id: string) => void;
-  onPractitionerOpen: () => void;
+  onPractitionerOpen: (section?: PractitionerSection) => void;
+  practitionerOpen: boolean;
+  practitionerSection: PractitionerSection;
 }
 
-const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate, onPractitionerOpen }: LunaSidebarProps) => {
+const LunaSidebar = ({
+  activeSlide,
+  progress,
+  isOpen,
+  onClose,
+  onNavigate,
+  onPractitionerOpen,
+  practitionerOpen,
+  practitionerSection,
+}: LunaSidebarProps) => {
   const handleNav = (id: string) => {
     onNavigate(id);
     if (window.innerWidth <= 900) onClose();
@@ -57,12 +76,12 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate, onPra
           ))}
         </div>
 
-        {/* Practitioner Brief — locked section */}
+        {/* Case study — locked section with sub-navigation */}
         <div style={{ padding: '12px 16px 0', marginTop: 8 }}>
           <span className="luna-nav-label" style={{ padding: 0, marginBottom: 8, display: 'block' }}>Restricted</span>
           <button
             className="luna-nav-item luna-nav-locked"
-            onClick={onPractitionerOpen}
+            onClick={() => { onPractitionerOpen('brief'); if (window.innerWidth <= 900) onClose(); }}
             style={{ width: '100%' }}
           >
             <span className="luna-nav-num" style={{ opacity: 0.6 }}>
@@ -73,6 +92,22 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate, onPra
             </span>
             <span>Case study</span>
           </button>
+
+          <div className="luna-subnav">
+            {caseItems.map((item, i) => {
+              const active = practitionerOpen && practitionerSection === item.id;
+              return (
+                <button
+                  key={item.id}
+                  className={`luna-nav-item luna-subnav-item ${active ? 'active' : ''}`}
+                  onClick={() => { onPractitionerOpen(item.id); if (window.innerWidth <= 900) onClose(); }}
+                >
+                  <span className="luna-nav-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className="luna-sidebar-progress">

@@ -18,12 +18,15 @@ import ImageLightbox from "@/components/ImageLightbox";
 
 const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13"];
 
+export type PractitionerSection = 'brief' | 'demo' | 'stack';
+
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState("s1");
   const [progress, setProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [practitionerOpen, setPractitionerOpen] = useState(false);
+  const [practitionerSection, setPractitionerSection] = useState<PractitionerSection>('brief');
 
   const handleScroll = useCallback(() => {
     const total = document.documentElement.scrollHeight - window.innerHeight;
@@ -60,8 +63,9 @@ const Index = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handlePractitionerOpen = () => {
+  const handlePractitionerOpen = (section: PractitionerSection = 'brief') => {
     setMenuOpen(false);
+    setPractitionerSection(section);
     setPractitionerOpen(true);
   };
 
@@ -85,6 +89,8 @@ const Index = () => {
         onClose={() => setMenuOpen(false)}
         onNavigate={handleNavigate}
         onPractitionerOpen={handlePractitionerOpen}
+        practitionerOpen={practitionerOpen}
+        practitionerSection={practitionerSection}
       />
       <main className="luna-main">
         <CoverSlide />
@@ -103,6 +109,8 @@ const Index = () => {
       </main>
       <PractitionerOverlay
         isOpen={practitionerOpen}
+        section={practitionerSection}
+        onSectionChange={setPractitionerSection}
         onClose={() => setPractitionerOpen(false)}
       />
       {practitionerOpen && (
