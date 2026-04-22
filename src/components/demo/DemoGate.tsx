@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { sha256Hex } from '@/lib/hash';
 
-const PASSWORD = 'groundedtruth';
+// SHA-256 of the access code. Plaintext no longer ships in the bundle.
+const PASSWORD_HASH = '19dec44a826a23bb1363344cb397098775eee677350d1f4e638ca11e9a699a90';
 const SESSION_KEY = 'cherre_demo_unlocked';
 
 interface DemoGateProps {
@@ -26,8 +28,9 @@ const DemoGate = ({ children }: DemoGateProps) => {
     }
   }, [unlocked]);
 
-  const handleSubmit = () => {
-    if (value.trim().toLowerCase() === PASSWORD) {
+  const handleSubmit = async () => {
+    const digest = await sha256Hex(value.trim().toLowerCase());
+    if (digest === PASSWORD_HASH) {
       sessionStorage.setItem(SESSION_KEY, '1');
       setRevealing(true);
       setTimeout(() => setUnlocked(true), 600);
@@ -39,7 +42,7 @@ const DemoGate = ({ children }: DemoGateProps) => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') handleSubmit();
+    if (e.key === 'Enter') void handleSubmit();
   };
 
   if (unlocked) {
@@ -114,7 +117,7 @@ const DemoGate = ({ children }: DemoGateProps) => {
             margin: '0 0 10px',
             lineHeight: 1.25,
           }}>
-            How we built this.
+            Case study.
           </h2>
           <p style={{
             fontSize: '0.78rem',
@@ -171,7 +174,7 @@ const DemoGate = ({ children }: DemoGateProps) => {
 
           {/* Button */}
           <button
-            onClick={handleSubmit}
+            onClick={() => void handleSubmit()}
             style={{
               width: '100%',
               padding: '12px',

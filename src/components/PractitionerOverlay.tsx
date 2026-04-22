@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import PractitionerBriefSlide from '@/components/slides/PractitionerBriefSlide';
 import ICMemoSlide from '@/components/slides/ICMemoSlide';
+import ArchitectureSlide from '@/components/slides/ArchitectureSlide';
+import { sha256Hex } from '@/lib/hash';
 
-const PASSWORD = 'groundedtruth';
+// SHA-256 of the access code. Plaintext no longer ships in the bundle.
+const PASSWORD_HASH = '19dec44a826a23bb1363344cb397098775eee677350d1f4e638ca11e9a699a90';
 const SESSION_KEY = 'cherre_demo_unlocked';
 
 interface PractitionerOverlayProps {
@@ -32,8 +35,9 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
     return () => { document.body.style.overflow = ''; };
   }, [isOpen, unlocked]);
 
-  const handleSubmit = () => {
-    if (value.trim().toLowerCase() === PASSWORD) {
+  const handleSubmit = async () => {
+    const digest = await sha256Hex(value.trim().toLowerCase());
+    if (digest === PASSWORD_HASH) {
       sessionStorage.setItem(SESSION_KEY, '1');
       setUnlocked(true);
     } else {
@@ -44,7 +48,7 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') handleSubmit();
+    if (e.key === 'Enter') void handleSubmit();
     if (e.key === 'Escape') onClose();
   };
 
@@ -81,7 +85,7 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
             fontSize: '1.4rem', fontWeight: 700, fontFamily: 'Montserrat, sans-serif',
             color: '#000', margin: '0 0 10px', lineHeight: 1.25,
           }}>
-            How we built this.
+            Case study.
           </h2>
           <p style={{
             fontSize: '0.78rem', fontFamily: 'Montserrat, sans-serif',
@@ -122,7 +126,7 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
           </div>
 
           <button
-            onClick={handleSubmit}
+            onClick={() => void handleSubmit()}
             style={{
               width: '100%', padding: '12px', background: '#A8185E', color: '#fff',
               border: 'none', borderRadius: 6, fontSize: '0.76rem', fontWeight: 700,
@@ -145,6 +149,7 @@ const PractitionerOverlay = ({ isOpen, onClose }: PractitionerOverlayProps) => {
       ) : (
         <div className="practitioner-content">
           <PractitionerBriefSlide />
+          <ArchitectureSlide />
           <ICMemoSlide />
         </div>
       )}

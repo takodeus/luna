@@ -14,7 +14,6 @@ const navItems: NavItem[] = [
   { id: "s11", num: "xi",    label: "Automate Steps. Protect Judgment." },
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
   { id: "s13",    num: "xiii",  label: "The Next Architectural Imperative" },
-  { id: "s14", num: "xiv",   label: "The Full Stack" },
 ];
 
 interface LunaSidebarProps {
@@ -72,7 +71,7 @@ const LunaSidebar = ({ activeSlide, progress, isOpen, onClose, onNavigate, onPra
                 <path d="M6 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </span>
-            <span>How We Built This</span>
+            <span>Case study</span>
           </button>
         </div>
 

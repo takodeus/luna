@@ -1,9 +1,27 @@
 import ArchitectureDiagram from "../ArchitectureDiagram";
 
 const ArchitectureSlide = () => (
-  <section className="slide" id="s14" style={{ justifyContent: "flex-start", minHeight: "auto" }}>
-    <div className="slide-n">xiv / The Full Stack</div>
-    <h2 className="luna-h2">
+  <section
+    style={{
+      background: "#fff",
+      borderTop: "3px solid #A8185E",
+      padding: "64px 48px 80px",
+    }}
+  >
+    <div
+      style={{
+        fontSize: "0.62rem",
+        fontWeight: 700,
+        fontFamily: "Montserrat, sans-serif",
+        color: "#A8185E",
+        letterSpacing: "0.12em",
+        textTransform: "uppercase",
+        marginBottom: 14,
+      }}
+    >
+      The full stack
+    </div>
+    <h2 className="luna-h2" style={{ marginTop: 0 }}>
       Six layers.
       <br />
       <span className="luna-accent">One governed architecture.</span>
@@ -17,3 +35,4 @@ const ArchitectureSlide = () => (
 );
 
 export default ArchitectureSlide;
+
