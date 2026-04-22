@@ -3,7 +3,7 @@ import PractitionerBriefSlide from '@/components/slides/PractitionerBriefSlide';
 import ICMemoSlide from '@/components/slides/ICMemoSlide';
 import ArchitectureSlide from '@/components/slides/ArchitectureSlide';
 import { sha256Hex } from '@/lib/hash';
-import type { PractitionerSection } from '@/pages/Index';
+import type { PractitionerSection } from '@/types/practitioner';
 
 // SHA-256 of the access code. Plaintext no longer ships in the bundle.
 const PASSWORD_HASH = '19dec44a826a23bb1363344cb397098775eee677350d1f4e638ca11e9a699a90';

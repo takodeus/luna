@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import LunaSidebar from "@/components/LunaSidebar";
-import type { PractitionerSection } from "@/types/practitioner";
+import BridgeSidebar from "@/components/BridgeSidebar";
+import CherreFoundationSlide from "@/components/slides/CherreFoundationSlide";
+import BridgeSlide from "@/components/slides/BridgeSlide";
 import CoverSlide from "@/components/slides/CoverSlide";
 import EraMapSlide from "@/components/slides/EraMapSlide";
 import MismatchSlide from "@/components/slides/MismatchSlide";
@@ -17,15 +18,15 @@ import ClosingSlide from "@/components/slides/ClosingSlide";
 import PractitionerOverlay from "@/components/PractitionerOverlay";
 import ImageLightbox from "@/components/ImageLightbox";
 
-const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13"];
+const slideIds = ["sb1", "sb2", "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "s10", "s11", "s12", "s13"];
 
-const Index = () => {
-  const [activeSlide, setActiveSlide] = useState("s1");
+const BridgeIndex = () => {
+  const [activeSlide, setActiveSlide] = useState("sb1");
   const [progress, setProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [practitionerOpen, setPractitionerOpen] = useState(false);
-  const [practitionerSection, setPractitionerSection] = useState<PractitionerSection>('brief');
+  const [practitionerSection, setPractitionerSection] = useState<PractitionerSection>("brief");
 
   const handleScroll = useCallback(() => {
     const total = document.documentElement.scrollHeight - window.innerHeight;
@@ -62,7 +63,7 @@ const Index = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handlePractitionerOpen = (section: PractitionerSection = 'brief') => {
+  const handlePractitionerOpen = (section: PractitionerSection = "brief") => {
     setMenuOpen(false);
     setPractitionerSection(section);
     setPractitionerOpen(true);
@@ -77,11 +78,15 @@ const Index = () => {
         <button className="luna-mobile-brand" onClick={scrollToTop} aria-label="Back to top">
           Cherre
         </button>
-        <button className={`luna-menu-btn ${menuOpen ? "is-open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+        <button
+          className={`luna-menu-btn ${menuOpen ? "is-open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menu"
+        >
           <span /><span /><span />
         </button>
       </div>
-      <LunaSidebar
+      <BridgeSidebar
         activeSlide={activeSlide}
         progress={progress}
         isOpen={menuOpen}
@@ -92,6 +97,8 @@ const Index = () => {
         practitionerSection={practitionerSection}
       />
       <main className="luna-main">
+        <CherreFoundationSlide />
+        <BridgeSlide />
         <CoverSlide />
         <EraMapSlide />
         <MismatchSlide />
@@ -117,12 +124,12 @@ const Index = () => {
           onClick={() => setPractitionerOpen(false)}
           aria-label="Close practitioner overlay"
           style={{
-            position: 'fixed', top: 16, right: 20, zIndex: 10010,
-            width: 40, height: 40, borderRadius: '50%',
-            border: '1px solid #e0e0e0', background: '#fff',
-            color: '#000', cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+            position: "fixed", top: 16, right: 20, zIndex: 10010,
+            width: 40, height: 40, borderRadius: "50%",
+            border: "1px solid #e0e0e0", background: "#fff",
+            color: "#000", cursor: "pointer",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
           }}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -135,4 +142,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default BridgeIndex;
