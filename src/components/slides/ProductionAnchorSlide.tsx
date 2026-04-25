@@ -238,7 +238,7 @@ const ProductionAnchorSlide = () => {
           })}
         </div>
 
-        {/* RIGHT — scene pane (swaps on click) */}
+        {/* RIGHT: scene pane (swaps on click) */}
         <div
           style={{
             position: "relative",
@@ -255,98 +255,60 @@ const ProductionAnchorSlide = () => {
           {active === "core" && <CoreScene />}
           {active === "connect" && <ConnectScene />}
         </div>
-
-        {/* QUALITY RAIL — orthogonal to the data-flow stack */}
-        <button
-          onClick={() => setQualityOpen((o) => !o)}
-          style={{
-            appearance: "none",
-            cursor: "pointer",
-            background: qualityOpen ? "#611FAD" : "#FAFAFA",
-            border: "1px solid #611FAD",
-            padding: "1.4rem 0",
-            height: 420,
-            width: 56,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-between",
-            transition: "background 0.2s ease",
-            position: "relative",
-          }}
-        >
-          {/* Top: vertical eyebrow + title + tag */}
-          <div
-            style={{
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.6rem",
-              fontFamily: "var(--mono)",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "0.62rem",
-                fontWeight: 700,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: qualityOpen ? "rgba(255,255,255,0.7)" : "#611FAD",
-              }}
-            >
-              Cherre
-            </span>
-            <span
-              style={{
-                fontSize: "1.05rem",
-                fontWeight: 800,
-                letterSpacing: "0.04em",
-                color: qualityOpen ? "#fff" : "#000",
-              }}
-            >
-              QUALITY
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: "0.78rem",
-                fontStyle: "italic",
-                fontWeight: 600,
-                color: qualityOpen ? "rgba(255,255,255,0.85)" : "#611FAD",
-              }}
-            >
-              Data Integrity
-            </span>
-          </div>
-
-          {/* Bottom: state hint */}
-          <div
-            style={{
-              fontFamily: "var(--mono)",
-              fontSize: "0.58rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: qualityOpen ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.35)",
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-            }}
-          >
-            {qualityOpen ? "Selected" : "Click +"}
-          </div>
-        </button>
       </div>
       )}
 
-      {/* QUALITY BODY PANEL — appears when rail is clicked (desktop) */}
-      {!isMobile && qualityOpen && (
+      {/* QUALITY FOUNDATION BAR (desktop): full-width horizontal bar beneath the data-flow stack */}
+      {!isMobile && (
+        <div style={{ maxWidth: 1200, marginTop: "1.2rem" }}>
+          <button
+            onClick={() => setQualityOpen((o) => !o)}
+            style={{
+              appearance: "none",
+              width: "100%",
+              cursor: "pointer",
+              background: qualityOpen ? "#23A98E" : "#FAFAFA",
+              borderTop: "4px solid #23A98E",
+              borderLeft: "none",
+              borderRight: "none",
+              borderBottom: "none",
+              padding: "1rem 1.4rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "1.2rem",
+              transition: "background 0.2s ease",
+              textAlign: "left",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", flexWrap: "wrap" }}>
+              <span style={{
+                fontFamily: "var(--mono)", fontSize: "0.62rem", fontWeight: 700,
+                letterSpacing: "0.2em", textTransform: "uppercase",
+                color: qualityOpen ? "rgba(255,255,255,0.75)" : "#23A98E",
+              }}>Cherre</span>
+              <span style={{
+                fontSize: "1.15rem", fontWeight: 800, letterSpacing: "0.02em",
+                color: qualityOpen ? "#fff" : "#000",
+              }}>QUALITY</span>
+              <span style={{
+                fontFamily: "var(--serif)", fontSize: "0.85rem",
+                fontStyle: "italic", fontWeight: 600,
+                color: qualityOpen ? "rgba(255,255,255,0.9)" : "#23A98E",
+              }}>Data Integrity. The foundation beneath Connect, Core, and Alpha.</span>
+            </div>
+            <span style={{
+              fontFamily: "var(--mono)", fontSize: "0.6rem", fontWeight: 700,
+              letterSpacing: "0.18em", textTransform: "uppercase",
+              color: qualityOpen ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.4)",
+              transform: qualityOpen ? "rotate(45deg)" : "rotate(0deg)",
+              transition: "transform 0.2s ease", fontSize: "1.3rem", lineHeight: 1,
+            } as React.CSSProperties}>+</span>
+          </button>
+          {qualityOpen && (
         <div
           style={{
-            marginTop: "2rem",
-            maxWidth: 1200,
             background: "#FAFAFA",
-            borderTop: "3px solid #611FAD",
             padding: "1.6rem 2rem",
             display: "flex",
             gap: "2rem",
@@ -362,7 +324,7 @@ const ProductionAnchorSlide = () => {
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#611FAD",
+                color: "#23A98E",
                 marginBottom: "0.3rem",
               }}
             >
@@ -374,7 +336,7 @@ const ProductionAnchorSlide = () => {
                 fontSize: "0.95rem",
                 fontStyle: "italic",
                 fontWeight: 600,
-                color: "#611FAD",
+                color: "#23A98E",
               }}
               >
               Data Integrity
@@ -392,6 +354,8 @@ const ProductionAnchorSlide = () => {
           >
             Always-on validation and observability. Every transformation traced from source to system. Full audit trail before data is used.
           </p>
+        </div>
+          )}
         </div>
       )}
 
