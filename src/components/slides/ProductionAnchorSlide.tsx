@@ -24,28 +24,25 @@ const alphaProducts = [
     title: "ATLAS",
     titleColor: "#611FAD",
     body: "Chat-based orchestration agent. Ask a question, get a governed answer with full lineage. No SQL, no BI tooling.",
-    coming: false,
   },
   {
     eyebrow: "Reporting Layer",
     title: "BI Delivery",
     titleColor: "#611FAD",
     body: "Governed semantic models exposed to Looker, Tableau, Power BI, and the rest of your reporting stack. Every dashboard reads from Core.",
-    coming: false,
   },
   {
     eyebrow: "Agent Platform",
     title: "Agent STUDIO",
     titleColor: "#611FAD",
     body: "Build, deploy, and operate agents on the governed graph. Not prompts wrapped around spreadsheets. Reasoning agents on production infrastructure.",
-    coming: false,
   },
   {
-    eyebrow: "Context Layer",
+    eyebrow: "MCP",
     title: "Any AI, Any Model",
     titleColor: "#611FAD",
-    body: "Governed context delivered straight into the AI tools your team already uses.",
-    coming: true,
+    body: "Cherre's MCP server delivers governed context to Claude, ChatGPT, and any MCP-aware agent. In beta today with a focused surface. Expanding rapidly as the protocol matures.",
+    status: "beta" as const,
   },
 ];
 
@@ -466,7 +463,7 @@ const ProductionAnchorSlide = () => {
                           title={p.title}
                           titleColor={p.titleColor}
                           body={p.body}
-                          coming={(p as any).coming}
+                          status={(p as any).status}
                         />
                       ))}
                     </div>
@@ -551,7 +548,7 @@ const ProductionAnchorSlide = () => {
               title={p.title}
               titleColor={p.titleColor}
               body={p.body}
-              coming={p.coming}
+              status={(p as any).status}
             />
           ))}
         </SubTileRow>
@@ -640,14 +637,19 @@ const ProductCard = ({
   title,
   titleColor,
   body,
-  coming = false,
+  status,
 }: {
   eyebrow: string;
   title: string;
   titleColor: string;
   body: string;
-  coming?: boolean;
-}) => (
+  status?: "beta" | "coming";
+}) => {
+  const isBeta = status === "beta";
+  const isComing = status === "coming";
+  const hasBadge = isBeta || isComing;
+  const accentColor = isBeta ? "#23A98E" : "#A8185E";
+  return (
   <div
     style={{
       background: "#FAFAFA",
@@ -655,18 +657,18 @@ const ProductCard = ({
       display: "flex",
       flexDirection: "column",
       gap: "0.6rem",
-      borderTop: coming ? `2px dashed #A8185E` : "2px solid transparent",
+      borderTop: isComing ? `2px dashed #A8185E` : isBeta ? `2px solid #23A98E` : "2px solid transparent",
       position: "relative",
       minHeight: 140,
     }}
   >
-    {coming && (
+    {hasBadge && (
       <div
         style={{
           position: "absolute",
           top: -1,
           right: 8,
-          background: "#A8185E",
+          background: accentColor,
           color: "#fff",
           fontFamily: "var(--mono)",
           fontSize: "0.55rem",
@@ -676,7 +678,7 @@ const ProductCard = ({
           padding: "0.2rem 0.5rem",
         }}
       >
-        Coming
+        {isBeta ? "Beta" : "Coming"}
       </div>
     )}
     <div
@@ -713,7 +715,8 @@ const ProductCard = ({
       {body}
     </p>
   </div>
-);
+  );
+};
 
 /* ── DEFAULT STATE ─────────────────────────────────── */
 const DefaultStackScene = () => (
