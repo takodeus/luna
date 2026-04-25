@@ -94,13 +94,13 @@ const ProductionAnchorSlide = () => {
       <h2 className="luna-h2">
         This is not a roadmap.
         <br />
-        <span className="luna-accent">It is already running.</span>
+        <span className="luna-accent">The platform has always been running.</span>
       </h2>
 
-      <p className="luna-body-text" style={{ maxWidth: 820 }}>
+      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1rem" }}>
         For Cherre, this is not a future architecture. It is the natural evolution of the platform we have been building for years.
       </p>
-      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "0.6rem" }}>
+      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1rem" }}>
         The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
       </p>
 
@@ -108,7 +108,7 @@ const ProductionAnchorSlide = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "33% 66%",
+          gridTemplateColumns: "22% 66%",
           gap: "2rem",
           marginTop: "2.2rem",
           maxWidth: 1200,
@@ -123,7 +123,7 @@ const ProductionAnchorSlide = () => {
             gap: "2px",
             background: "#EEE",
             border: "1px solid #EEE",
-            maxWidth: 280,
+            maxWidth: 188,
             justifySelf: "start",
           }}
         >
@@ -284,6 +284,12 @@ const ProductionAnchorSlide = () => {
           85%  { opacity: 0.85; }
           100% { transform: translateY(-100%); opacity: 0; }
         }
+        @keyframes luna-connect-rise {
+          0%   { transform: translate(-50%, 100%); opacity: 0; }
+          25%  { opacity: 1; }
+          80%  { transform: translate(-50%, 5%); opacity: 1; }
+          100% { transform: translate(-50%, 0%); opacity: 1; }
+        }
       `}</style>
     </section>
   );
@@ -404,7 +410,7 @@ const DefaultStackScene = () => (
     alt="The Cherre stack"
     style={{
       width: "100%",
-      maxWidth: 720,
+      maxWidth: 482,
       height: "auto",
       objectFit: "contain",
       display: "block",
@@ -419,7 +425,7 @@ const AlphaScene = () => (
     alt="Alpha — Data Out"
     style={{
       width: "100%",
-      maxWidth: 720,
+      maxWidth: 360,
       height: "auto",
       objectFit: "contain",
       display: "block",
@@ -435,7 +441,7 @@ const CoreScene = () => (
     alt="Core — Data Through"
     style={{
       width: "100%",
-      maxWidth: 720,
+      maxWidth: 360,
       height: "auto",
       objectFit: "contain",
       display: "block",
@@ -450,8 +456,8 @@ const ConnectScene = () => (
     style={{
       position: "relative",
       width: "100%",
-      maxWidth: 720,
-      height: 520,
+      maxWidth: 360,
+      height: 420,
       overflow: "hidden",
       animation: "luna-fade-up 0.4s ease",
     }}
@@ -463,12 +469,13 @@ const ConnectScene = () => (
       style={{
         position: "absolute",
         left: "50%",
-        bottom: 0,
+        top: 0,
         transform: "translateX(-50%)",
-        width: "65%",
+        width: "55%",
         height: "auto",
-        opacity: 0.85,
-        animation: "luna-rise-loop 6s ease-in-out infinite",
+        opacity: 0,
+        zIndex: 0,
+        animation: "luna-connect-rise 4s ease-out forwards",
       }}
     />
     <img
@@ -481,7 +488,7 @@ const ConnectScene = () => (
         maxWidth: "100%",
         maxHeight: "100%",
         objectFit: "contain",
-        zIndex: 1,
+        zIndex: 2,
       }}
     />
   </div>
