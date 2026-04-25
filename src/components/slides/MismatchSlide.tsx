@@ -53,7 +53,7 @@ const MismatchSlide = () => (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "0 1rem", background: "#F5F4F1", fontSize: "1.4rem", color: "#A8185E", fontWeight: 700, flexShrink: 0 }}>→</div>
       <div style={{ flex: 1, background: "#A8185E", padding: "1.2rem 1.6rem" }}>
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "0.4rem" }}>Reasoning era</div>
-        <div style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.88)", lineHeight: 1.65 }}>Agents do not read exceptions. They inherit infrastructure. When the infrastructure carries incomplete meaning or no reasoning chain, the agent does not pause and ask. It proceeds.</div>
+        <div style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.88)", lineHeight: 1.65 }}>Data moves through infrastructure to agents. The agent inherits whatever the infrastructure carries, executes against it, and proceeds. The system records what was done.</div>
       </div>
     </div>
 
