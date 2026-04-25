@@ -20,28 +20,28 @@ const tiles: Tile[] = [
 /* ── ALPHA SUB-TILES (productized cards, no tag pills) ──────── */
 const alphaProducts = [
   {
-    eyebrow: "Reasoning Interface",
+    eyebrow: "Reasoning Agent",
     title: "ATLAS",
     titleColor: "#611FAD",
     body: "Chat-based orchestration agent. Ask a question, get a governed answer with full lineage. No SQL, no BI tooling.",
     coming: false,
   },
   {
-    eyebrow: "Reporting Interface",
+    eyebrow: "Reporting Layer",
     title: "BI Delivery",
     titleColor: "#611FAD",
     body: "Governed semantic models exposed to Looker, Tableau, Power BI, and the rest of your reporting stack. Every dashboard reads from Core.",
     coming: false,
   },
   {
-    eyebrow: "Build & Deploy",
+    eyebrow: "Agent Platform",
     title: "Agent STUDIO",
     titleColor: "#611FAD",
-    body: "Where your team builds, tests, and deploys intelligent workflows on top of the governed graph.",
+    body: "Build, deploy, and operate agents on the governed graph. Every agent runs on resolved entities, governed definitions, and full lineage. Not prompts wrapped around spreadsheets. Reasoning agents on production infrastructure.",
     coming: false,
   },
   {
-    eyebrow: "MCP Connectors",
+    eyebrow: "Context Layer",
     title: "Any AI, Any Model",
     titleColor: "#611FAD",
     body: "Governed context delivered straight into the AI tools your team already uses.",
