@@ -532,10 +532,10 @@ const DefaultStackScene = () => (
     src="/luna/stack.png"
     alt="The Cherre stack"
     style={{
-      width: "100%",
+      width: "auto",
       maxWidth: 420,
       maxHeight: 420,
-      height: "100%",
+      height: "auto",
       objectFit: "contain",
       display: "block",
     }}
@@ -548,10 +548,10 @@ const AlphaScene = () => (
     src="/luna/alpha.png"
     alt="Alpha — Data Out"
     style={{
-      width: "100%",
+      width: "auto",
       maxWidth: 320,
       maxHeight: 420,
-      height: "100%",
+      height: "auto",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
@@ -565,10 +565,10 @@ const CoreScene = () => (
     src="/luna/core.png"
     alt="Core — Data Through"
     style={{
-      width: "100%",
+      width: "auto",
       maxWidth: 320,
       maxHeight: 420,
-      height: "100%",
+      height: "auto",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
@@ -582,10 +582,10 @@ const ConnectScene = () => (
     src="/luna/connect.png"
     alt="Connect — Data In"
     style={{
-      width: "100%",
+      width: "auto",
       maxWidth: 320,
       maxHeight: 420,
-      height: "100%",
+      height: "auto",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
