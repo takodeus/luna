@@ -111,7 +111,7 @@ const LunaSidebar = ({
           <div className="luna-sidebar-progress-fill" style={{ width: `${progress}%` }} />
         </div>
         <div className="luna-sidebar-footer">
-          <span className="luna-sidebar-tag">© Cherre · Analytics cookies in use</span>
+          <span className="luna-sidebar-tag">© Cherre · Analytics in use</span>
         </div>
       </nav>
     </>

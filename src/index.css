@@ -798,7 +798,7 @@ h2.luna-h2 {
   font-family: var(--sans);
   font-weight: 600;
   font-size: 0.5rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.3);
   display: block;
