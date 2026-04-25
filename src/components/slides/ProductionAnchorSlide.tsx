@@ -132,7 +132,7 @@ const ProductionAnchorSlide = () => {
         <span className="luna-accent">Already running.</span>
       </h2>
 
-      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1.2rem", fontWeight: 600, fontSize: "1.05rem" }}>
+      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1.2rem", fontSize: "1.05rem" }}>
         Built over a decade of work in real assets. Already governing identity, meaning, and lineage in production environments. The reasoning era doesn't need to be built. It needs to be deployed on what's already there.
       </p>
 
