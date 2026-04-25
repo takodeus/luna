@@ -302,7 +302,7 @@ const ProductionAnchorSlide = () => {
               letterSpacing: "0.18em", textTransform: "uppercase",
               color: qualityOpen ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.4)",
               transform: qualityOpen ? "rotate(45deg)" : "rotate(0deg)",
-              transition: "transform 0.2s ease", fontSize: "1.3rem", lineHeight: 1,
+              transition: "transform 0.2s ease", lineHeight: 1,
             } as React.CSSProperties}>+</span>
           </button>
           {qualityOpen && (
