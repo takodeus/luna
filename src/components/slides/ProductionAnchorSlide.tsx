@@ -404,7 +404,7 @@ const DefaultStackScene = () => (
     alt="The Cherre stack"
     style={{
       width: "100%",
-      maxWidth: 720,
+      maxWidth: 482,
       height: "auto",
       objectFit: "contain",
       display: "block",
@@ -419,7 +419,7 @@ const AlphaScene = () => (
     alt="Alpha — Data Out"
     style={{
       width: "100%",
-      maxWidth: 720,
+      maxWidth: 360,
       height: "auto",
       objectFit: "contain",
       display: "block",
@@ -435,7 +435,7 @@ const CoreScene = () => (
     alt="Core — Data Through"
     style={{
       width: "100%",
-      maxWidth: 720,
+      maxWidth: 360,
       height: "auto",
       objectFit: "contain",
       display: "block",
@@ -450,8 +450,8 @@ const ConnectScene = () => (
     style={{
       position: "relative",
       width: "100%",
-      maxWidth: 720,
-      height: 520,
+      maxWidth: 360,
+      height: 420,
       overflow: "hidden",
       animation: "luna-fade-up 0.4s ease",
     }}
@@ -463,12 +463,13 @@ const ConnectScene = () => (
       style={{
         position: "absolute",
         left: "50%",
-        bottom: 0,
+        top: 0,
         transform: "translateX(-50%)",
-        width: "65%",
+        width: "55%",
         height: "auto",
-        opacity: 0.85,
-        animation: "luna-rise-loop 6s ease-in-out infinite",
+        opacity: 0,
+        zIndex: 0,
+        animation: "luna-connect-rise 4s ease-out forwards",
       }}
     />
     <img
@@ -481,7 +482,7 @@ const ConnectScene = () => (
         maxWidth: "100%",
         maxHeight: "100%",
         objectFit: "contain",
-        zIndex: 1,
+        zIndex: 2,
       }}
     />
   </div>
