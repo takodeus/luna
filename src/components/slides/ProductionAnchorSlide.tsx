@@ -98,7 +98,7 @@ const ProductionAnchorSlide = () => {
 
   return (
     <section className="slide" id="s14" style={{ background: "#fff" }}>
-      <div className="slide-n">xiv / The Foundation Is Already Built</div>
+      <div className="slide-n">xiv / The Cherre Platform</div>
 
       <h2 className="luna-h2">
         This is not a roadmap.
@@ -134,9 +134,11 @@ const ProductionAnchorSlide = () => {
             background: "#EEE",
             border: "1px solid #EEE",
             maxWidth: 188,
+            minWidth: 168,
             width: "100%",
             height: 420,
             justifySelf: "start",
+            overflow: "hidden",
           }}
         >
           {tiles.map((t) => {
@@ -155,12 +157,13 @@ const ProductionAnchorSlide = () => {
                   borderLeft: "none",
                   borderRight: "none",
                   borderBottom: "none",
-                  padding: "1.4rem 1.3rem",
+                  padding: "1.2rem 1rem",
                   display: "flex",
                   flexDirection: "column",
                   gap: "0.5rem",
                   flex: "1 1 0",
                   minHeight: 0,
+                  minWidth: 0,
                   opacity: isDimmed ? 0.55 : 1,
                   transition: "opacity 0.2s ease, background 0.2s ease",
                   outline: isActive ? `1px solid ${t.color}` : "none",
@@ -178,6 +181,7 @@ const ProductionAnchorSlide = () => {
                       textTransform: "uppercase",
                       color: t.color,
                       marginBottom: "0.15rem",
+                      overflowWrap: "anywhere",
                     }}
                   >
                     Cherre
@@ -190,6 +194,7 @@ const ProductionAnchorSlide = () => {
                       letterSpacing: "-0.01em",
                       lineHeight: 1,
                       marginBottom: "0.2rem",
+                      overflowWrap: "anywhere",
                     }}
                   >
                     {t.name}
@@ -201,6 +206,7 @@ const ProductionAnchorSlide = () => {
                       fontStyle: "italic",
                       color: t.color,
                       fontWeight: 600,
+                      overflowWrap: "anywhere",
                     }}
                   >
                     {t.tag}
@@ -215,9 +221,10 @@ const ProductionAnchorSlide = () => {
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",
                     color: isActive ? t.color : "rgba(0,0,0,0.35)",
+                    overflowWrap: "anywhere",
                   }}
                 >
-                  {isActive ? "Selected" : "Click to expand"}
+                  {isActive ? "Selected" : "Click +"}
                 </div>
               </button>
             );
