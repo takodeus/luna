@@ -60,7 +60,7 @@ const coreProducts = [
     eyebrow: "Knowledge Graph",
     title: "MERIDIAN",
     titleColor: "#23A98E",
-    body: "The governed semantic graph. Connects resolved entities to their attributes, relationships, and history — the substrate every reasoning surface queries.",
+    body: "The governed semantic graph. Connects resolved entities to their attributes, relationships, and history. The substrate every reasoning surface queries.",
   },
 ];
 
@@ -82,7 +82,7 @@ const connectProducts = [
     eyebrow: "Market Intelligence",
     title: "Market Data",
     titleColor: "#A8185E",
-    body: "Curated public and licensed feeds — comps, demographics, property records, market signals — pre-resolved against your portfolio entities and ready to query alongside your operational data.",
+    body: "Curated public and licensed feeds: comps, demographics, property records, market signals, pre-resolved against your portfolio entities and ready to query alongside your operational data.",
   },
 ];
 
@@ -120,19 +120,19 @@ const ProductionAnchorSlide = () => {
         The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
       </p>
 
-      {/* MAIN ROW — desktop: side-by-side + Quality rail; mobile: accordion */}
+      {/* MAIN ROW: desktop side-by-side; mobile accordion. Quality sits as a full-width foundation bar below. */}
       {!isMobile && (
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "20% 1fr 56px",
+          gridTemplateColumns: "20% 1fr",
           gap: "2rem",
           marginTop: "2.2rem",
           maxWidth: 1200,
           alignItems: "start",
         }}
       >
-        {/* LEFT — vertical 1x3 stack of skinny tiles */}
+        {/* LEFT: vertical 1x3 stack of skinny tiles */}
         <div
           style={{
             display: "flex",
@@ -238,7 +238,7 @@ const ProductionAnchorSlide = () => {
           })}
         </div>
 
-        {/* RIGHT — scene pane (swaps on click) */}
+        {/* RIGHT: scene pane (swaps on click) */}
         <div
           style={{
             position: "relative",
@@ -255,98 +255,60 @@ const ProductionAnchorSlide = () => {
           {active === "core" && <CoreScene />}
           {active === "connect" && <ConnectScene />}
         </div>
-
-        {/* QUALITY RAIL — orthogonal to the data-flow stack */}
-        <button
-          onClick={() => setQualityOpen((o) => !o)}
-          style={{
-            appearance: "none",
-            cursor: "pointer",
-            background: qualityOpen ? "#611FAD" : "#FAFAFA",
-            border: "1px solid #611FAD",
-            padding: "1.4rem 0",
-            height: 420,
-            width: 56,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-between",
-            transition: "background 0.2s ease",
-            position: "relative",
-          }}
-        >
-          {/* Top: vertical eyebrow + title + tag */}
-          <div
-            style={{
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.6rem",
-              fontFamily: "var(--mono)",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "0.62rem",
-                fontWeight: 700,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: qualityOpen ? "rgba(255,255,255,0.7)" : "#611FAD",
-              }}
-            >
-              Cherre
-            </span>
-            <span
-              style={{
-                fontSize: "1.05rem",
-                fontWeight: 800,
-                letterSpacing: "0.04em",
-                color: qualityOpen ? "#fff" : "#000",
-              }}
-            >
-              QUALITY
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: "0.78rem",
-                fontStyle: "italic",
-                fontWeight: 600,
-                color: qualityOpen ? "rgba(255,255,255,0.85)" : "#611FAD",
-              }}
-            >
-              Data Integrity
-            </span>
-          </div>
-
-          {/* Bottom: state hint */}
-          <div
-            style={{
-              fontFamily: "var(--mono)",
-              fontSize: "0.58rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: qualityOpen ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.35)",
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-            }}
-          >
-            {qualityOpen ? "Selected" : "Click +"}
-          </div>
-        </button>
       </div>
       )}
 
-      {/* QUALITY BODY PANEL — appears when rail is clicked (desktop) */}
-      {!isMobile && qualityOpen && (
+      {/* QUALITY FOUNDATION BAR (desktop): full-width horizontal bar beneath the data-flow stack */}
+      {!isMobile && (
+        <div style={{ maxWidth: 1200, marginTop: "1.2rem" }}>
+          <button
+            onClick={() => setQualityOpen((o) => !o)}
+            style={{
+              appearance: "none",
+              width: "100%",
+              cursor: "pointer",
+              background: qualityOpen ? "#23A98E" : "#FAFAFA",
+              borderTop: "4px solid #23A98E",
+              borderLeft: "none",
+              borderRight: "none",
+              borderBottom: "none",
+              padding: "1rem 1.4rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "1.2rem",
+              transition: "background 0.2s ease",
+              textAlign: "left",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", flexWrap: "wrap" }}>
+              <span style={{
+                fontFamily: "var(--mono)", fontSize: "0.62rem", fontWeight: 700,
+                letterSpacing: "0.2em", textTransform: "uppercase",
+                color: qualityOpen ? "rgba(255,255,255,0.75)" : "#23A98E",
+              }}>Cherre</span>
+              <span style={{
+                fontSize: "1.15rem", fontWeight: 800, letterSpacing: "0.02em",
+                color: qualityOpen ? "#fff" : "#000",
+              }}>QUALITY</span>
+              <span style={{
+                fontFamily: "var(--serif)", fontSize: "0.85rem",
+                fontStyle: "italic", fontWeight: 600,
+                color: qualityOpen ? "rgba(255,255,255,0.9)" : "#23A98E",
+              }}>Data Integrity. The foundation beneath Connect, Core, and Alpha.</span>
+            </div>
+            <span style={{
+              fontFamily: "var(--mono)", fontSize: "0.6rem", fontWeight: 700,
+              letterSpacing: "0.18em", textTransform: "uppercase",
+              color: qualityOpen ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.4)",
+              transform: qualityOpen ? "rotate(45deg)" : "rotate(0deg)",
+              transition: "transform 0.2s ease", lineHeight: 1,
+            } as React.CSSProperties}>+</span>
+          </button>
+          {qualityOpen && (
         <div
           style={{
-            marginTop: "2rem",
-            maxWidth: 1200,
             background: "#FAFAFA",
-            borderTop: "3px solid #611FAD",
             padding: "1.6rem 2rem",
             display: "flex",
             gap: "2rem",
@@ -362,7 +324,7 @@ const ProductionAnchorSlide = () => {
                 fontWeight: 700,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#611FAD",
+                color: "#23A98E",
                 marginBottom: "0.3rem",
               }}
             >
@@ -374,7 +336,7 @@ const ProductionAnchorSlide = () => {
                 fontSize: "0.95rem",
                 fontStyle: "italic",
                 fontWeight: 600,
-                color: "#611FAD",
+                color: "#23A98E",
               }}
               >
               Data Integrity
@@ -392,6 +354,8 @@ const ProductionAnchorSlide = () => {
           >
             Always-on validation and observability. Every transformation traced from source to system. Full audit trail before data is used.
           </p>
+        </div>
+          )}
         </div>
       )}
 
@@ -496,7 +460,7 @@ const ProductionAnchorSlide = () => {
             );
           })}
 
-          {/* QUALITY mobile accordion item — orthogonal, independent state */}
+          {/* QUALITY mobile accordion item: orthogonal, independent state */}
           <div style={{ background: "#FAFAFA" }}>
             <button
               onClick={() => setQualityOpen((o) => !o)}
@@ -506,7 +470,7 @@ const ProductionAnchorSlide = () => {
                 textAlign: "left",
                 cursor: "pointer",
                 background: qualityOpen ? "#fff" : "#FAFAFA",
-                borderTop: "4px solid #611FAD",
+                borderTop: "4px solid #23A98E",
                 borderLeft: "none",
                 borderRight: "none",
                 borderBottom: "none",
@@ -520,7 +484,7 @@ const ProductionAnchorSlide = () => {
               <div>
                 <div style={{
                   fontFamily: "var(--mono)", fontSize: "0.6rem", fontWeight: 700,
-                  letterSpacing: "0.2em", textTransform: "uppercase", color: "#611FAD",
+                  letterSpacing: "0.2em", textTransform: "uppercase", color: "#23A98E",
                   marginBottom: "0.2rem",
                 }}>Cherre</div>
                 <div style={{
@@ -529,11 +493,11 @@ const ProductionAnchorSlide = () => {
                 }}>QUALITY</div>
                 <div style={{
                   fontFamily: "var(--serif)", fontSize: "0.78rem",
-                  fontStyle: "italic", color: "#611FAD", fontWeight: 600,
+                  fontStyle: "italic", color: "#23A98E", fontWeight: 600,
                 }}>Data Integrity</div>
               </div>
               <span style={{
-                fontSize: "1.4rem", color: "#611FAD", lineHeight: 1,
+                fontSize: "1.4rem", color: "#23A98E", lineHeight: 1,
                 transform: qualityOpen ? "rotate(45deg)" : "rotate(0deg)",
                 transition: "transform 0.2s ease",
               }}>+</span>
@@ -561,7 +525,7 @@ const ProductionAnchorSlide = () => {
         </div>
       )}
 
-      {/* SUB-TILES BELOW — only when a main tile is active */}
+      {/* SUB-TILES BELOW: only when a main tile is active */}
       {!isMobile && active === "alpha" && (
         <SubTileRow color="#611FAD">
           {alphaProducts.map((p) => (
@@ -755,7 +719,7 @@ const DefaultStackScene = () => (
 const AlphaScene = () => (
   <img
     src="/luna/alpha.png"
-    alt="Alpha — Data Out"
+    alt="Alpha, Data Out"
     style={{
       width: "auto",
       maxWidth: 320,
@@ -772,7 +736,7 @@ const AlphaScene = () => (
 const CoreScene = () => (
   <img
     src="/luna/core.png"
-    alt="Core — Data Through"
+    alt="Core, Data Through"
     style={{
       width: "auto",
       maxWidth: 320,
@@ -789,7 +753,7 @@ const CoreScene = () => (
 const ConnectScene = () => (
   <img
     src="/luna/connect.png"
-    alt="Connect — Data In"
+    alt="Connect, Data In"
     style={{
       width: "auto",
       maxWidth: 320,
