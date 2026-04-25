@@ -21,28 +21,28 @@ const alphaProducts = [
   {
     eyebrow: "Reasoning Interface",
     title: "ATLAS",
-    titleColor: "#A8185E",
+    titleColor: "#611FAD",
     body: "Chat-based orchestration agent. Ask a question, get a governed answer with full lineage. No SQL, no BI tooling.",
     coming: false,
   },
   {
     eyebrow: "Reporting Interface",
-    title: "Semantic Layer + BI",
-    titleColor: "#000",
-    body: "Governed semantic models exposed to your reporting stack. Metrics, dimensions, and lineage that match every dashboard.",
+    title: "BI Delivery",
+    titleColor: "#611FAD",
+    body: "Governed semantic models exposed to Looker, Tableau, Power BI, and the rest of your reporting stack. Every dashboard reads from Core.",
     coming: false,
   },
   {
     eyebrow: "Build & Deploy",
     title: "Agent STUDIO",
-    titleColor: "#000",
+    titleColor: "#611FAD",
     body: "Where your team builds, tests, and deploys intelligent workflows on top of the governed graph.",
     coming: false,
   },
   {
     eyebrow: "MCP Connectors",
     title: "Any AI, Any Model",
-    titleColor: "#000",
+    titleColor: "#611FAD",
     body: "Governed context delivered straight into the AI tools your team already uses.",
     coming: true,
   },
@@ -53,14 +53,20 @@ const coreProducts = [
   {
     eyebrow: "Entity Resolution",
     title: "LUNA",
-    titleColor: "#A8185E",
+    titleColor: "#1B70B1",
     body: "Resolves identity across fragmented records. Every property, every entity, every transaction reconciled to a single canonical reference with full lineage.",
   },
   {
     eyebrow: "Knowledge Graph",
     title: "MERIDIAN",
-    titleColor: "#23A98E",
-    body: "The governed semantic graph. Connects resolved entities to their attributes, relationships, and history. The substrate every reasoning surface queries.",
+    titleColor: "#1B70B1",
+    body: "The governed knowledge graph. Resolved entities, traceable relationships, full history. The substrate every reasoning surface queries.",
+  },
+  {
+    eyebrow: "Governed Meaning",
+    title: "Semantic Layer",
+    titleColor: "#1B70B1",
+    body: "Governed metric definitions, dimensions, and business logic. Versioned, traceable, and consistent across every dashboard, query, and agent. The single source of truth for what your numbers mean.",
   },
 ];
 
