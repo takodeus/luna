@@ -11,7 +11,7 @@ interface Tile {
 
 // Vertical stack, top → bottom: Alpha · Core · Connect
 const tiles: Tile[] = [
-  { key: "alpha",   name: "ALPHA",   tag: "Data Out",     color: "#23A98E" },
+  { key: "alpha",   name: "ALPHA",   tag: "Data Out",     color: "#611FAD" },
   { key: "core",    name: "CORE",    tag: "Data Through", color: "#1B70B1" },
   { key: "connect", name: "CONNECT", tag: "Data In",      color: "#A8185E" },
 ];
@@ -527,7 +527,7 @@ const ProductionAnchorSlide = () => {
 
       {/* SUB-TILES BELOW: only when a main tile is active */}
       {!isMobile && active === "alpha" && (
-        <SubTileRow color="#23A98E">
+        <SubTileRow color="#611FAD">
           {alphaProducts.map((p) => (
             <ProductCard
               key={p.title}
