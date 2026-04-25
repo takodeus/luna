@@ -412,8 +412,9 @@ const DefaultStackScene = () => (
     alt="The Cherre stack"
     style={{
       width: "100%",
-      maxWidth: 482,
-      height: "auto",
+      maxWidth: 420,
+      maxHeight: 420,
+      height: "100%",
       objectFit: "contain",
       display: "block",
     }}
@@ -427,8 +428,9 @@ const AlphaScene = () => (
     alt="Alpha — Data Out"
     style={{
       width: "100%",
-      maxWidth: 360,
-      height: "auto",
+      maxWidth: 320,
+      maxHeight: 420,
+      height: "100%",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
@@ -443,8 +445,9 @@ const CoreScene = () => (
     alt="Core — Data Through"
     style={{
       width: "100%",
-      maxWidth: 360,
-      height: "auto",
+      maxWidth: 320,
+      maxHeight: 420,
+      height: "100%",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
@@ -454,46 +457,19 @@ const CoreScene = () => (
 
 /* ── CONNECT ─────────────────────────────────── */
 const ConnectScene = () => (
-  <div
+  <img
+    src="/luna/connect.png"
+    alt="Connect — Data In"
     style={{
-      position: "relative",
       width: "100%",
-      maxWidth: 360,
-      height: 420,
-      overflow: "hidden",
+      maxWidth: 320,
+      maxHeight: 420,
+      height: "100%",
+      objectFit: "contain",
+      display: "block",
       animation: "luna-fade-up 0.4s ease",
     }}
-  >
-    <img
-      src="/luna/connect-top.png"
-      alt=""
-      aria-hidden
-      style={{
-        position: "absolute",
-        left: "50%",
-        top: 0,
-        transform: "translateX(-50%)",
-        width: "55%",
-        height: "auto",
-        opacity: 0,
-        zIndex: 0,
-        animation: "luna-connect-rise 4s ease-out forwards",
-      }}
-    />
-    <img
-      src="/luna/connect-base.png"
-      alt="Connect — Data In"
-      style={{
-        position: "absolute",
-        inset: 0,
-        margin: "auto",
-        maxWidth: "100%",
-        maxHeight: "100%",
-        objectFit: "contain",
-        zIndex: 2,
-      }}
-    />
-  </div>
+  />
 );
 
 export default ProductionAnchorSlide;
