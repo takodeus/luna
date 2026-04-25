@@ -37,7 +37,7 @@ const alphaProducts = [
     eyebrow: "Agent Platform",
     title: "Agent STUDIO",
     titleColor: "#611FAD",
-    body: "Build, deploy, and operate agents on the governed graph. Every agent runs on resolved entities, governed definitions, and full lineage. Not prompts wrapped around spreadsheets. Reasoning agents on production infrastructure.",
+    body: "Build, deploy, and operate agents on the governed graph. Not prompts wrapped around spreadsheets. Reasoning agents on production infrastructure.",
     coming: false,
   },
   {
