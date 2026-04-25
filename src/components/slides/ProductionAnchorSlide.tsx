@@ -446,19 +446,6 @@ const ProductionAnchorSlide = () => {
                     animation: "luna-fade-up 0.3s ease",
                   }}>
                     <div style={{
-                      display: "flex", justifyContent: "center",
-                      marginBottom: "1rem",
-                    }}>
-                      <img
-                        src={`/luna/${t.key}.png`}
-                        alt={t.name}
-                        style={{
-                          width: "100%", maxWidth: 280, height: "auto",
-                          objectFit: "contain", display: "block",
-                        }}
-                      />
-                    </div>
-                    <div style={{
                       display: "grid", gridTemplateColumns: "1fr",
                       gap: "2px", background: "#EEE",
                     }}>
@@ -472,6 +459,19 @@ const ProductionAnchorSlide = () => {
                           status={(p as any).status}
                         />
                       ))}
+                    </div>
+                    <div style={{
+                      display: "flex", justifyContent: "center",
+                      marginTop: "1rem",
+                    }}>
+                      <img
+                        src={`/luna/${t.key}.png`}
+                        alt={t.name}
+                        style={{
+                          width: "100%", maxWidth: 280, height: "auto",
+                          objectFit: "contain", display: "block",
+                        }}
+                      />
                     </div>
                   </div>
                 )}
