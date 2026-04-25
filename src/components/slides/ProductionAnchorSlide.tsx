@@ -67,21 +67,28 @@ const coreProducts = [
 /* ── CONNECT SUB-TILES ──────── */
 const connectProducts = [
   {
-    eyebrow: "Data Ingestion",
+    eyebrow: "Direct Ingestion",
     title: "Pipelines",
     titleColor: "#A8185E",
     body: "Connectors and ingest workflows for ERP, deal management, leasing platforms, and warehouses. Pre-built integrations across the leading systems of record in real assets.",
   },
   {
-    eyebrow: "Third-Party Collection",
+    eyebrow: "Partner Submissions",
     title: "Submissions",
     titleColor: "#A8185E",
     body: "Streamlines and standardizes data collection from third-party vendors and investment managers. Map your data and set rules to automate ingestion, standardization, and validation.",
+  },
+  {
+    eyebrow: "Market Intelligence",
+    title: "Market Data",
+    titleColor: "#A8185E",
+    body: "Curated public and licensed feeds — comps, demographics, property records, market signals — pre-resolved against your portfolio entities and ready to query alongside your operational data.",
   },
 ];
 
 const ProductionAnchorSlide = () => {
   const [active, setActive] = useState<TileKey>(null);
+  const [qualityOpen, setQualityOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -113,12 +120,12 @@ const ProductionAnchorSlide = () => {
         The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
       </p>
 
-      {/* MAIN ROW — desktop: side-by-side; mobile: accordion */}
+      {/* MAIN ROW — desktop: side-by-side + Quality rail; mobile: accordion */}
       {!isMobile && (
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "22% 66%",
+          gridTemplateColumns: "20% 1fr 56px",
           gap: "2rem",
           marginTop: "2.2rem",
           maxWidth: 1200,
@@ -248,7 +255,144 @@ const ProductionAnchorSlide = () => {
           {active === "core" && <CoreScene />}
           {active === "connect" && <ConnectScene />}
         </div>
+
+        {/* QUALITY RAIL — orthogonal to the data-flow stack */}
+        <button
+          onClick={() => setQualityOpen((o) => !o)}
+          style={{
+            appearance: "none",
+            cursor: "pointer",
+            background: qualityOpen ? "#611FAD" : "#FAFAFA",
+            border: "1px solid #611FAD",
+            padding: "1.4rem 0",
+            height: 420,
+            width: 56,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-between",
+            transition: "background 0.2s ease",
+            position: "relative",
+          }}
+        >
+          {/* Top: vertical eyebrow + title + tag */}
+          <div
+            style={{
+              writingMode: "vertical-rl",
+              transform: "rotate(180deg)",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.6rem",
+              fontFamily: "var(--mono)",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "0.62rem",
+                fontWeight: 700,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: qualityOpen ? "rgba(255,255,255,0.7)" : "#611FAD",
+              }}
+            >
+              Cherre
+            </span>
+            <span
+              style={{
+                fontSize: "1.05rem",
+                fontWeight: 800,
+                letterSpacing: "0.04em",
+                color: qualityOpen ? "#fff" : "#000",
+              }}
+            >
+              QUALITY
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--serif)",
+                fontSize: "0.78rem",
+                fontStyle: "italic",
+                fontWeight: 600,
+                color: qualityOpen ? "rgba(255,255,255,0.85)" : "#611FAD",
+              }}
+            >
+              Data Integrity
+            </span>
+          </div>
+
+          {/* Bottom: state hint */}
+          <div
+            style={{
+              fontFamily: "var(--mono)",
+              fontSize: "0.58rem",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: qualityOpen ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.35)",
+              writingMode: "vertical-rl",
+              transform: "rotate(180deg)",
+            }}
+          >
+            {qualityOpen ? "Selected" : "Click +"}
+          </div>
+        </button>
       </div>
+      )}
+
+      {/* QUALITY BODY PANEL — appears when rail is clicked (desktop) */}
+      {!isMobile && qualityOpen && (
+        <div
+          style={{
+            marginTop: "2rem",
+            maxWidth: 1200,
+            background: "#FAFAFA",
+            borderTop: "3px solid #611FAD",
+            padding: "1.6rem 2rem",
+            display: "flex",
+            gap: "2rem",
+            alignItems: "flex-start",
+            animation: "luna-fade-up 0.3s ease",
+          }}
+        >
+          <div style={{ flex: "0 0 200px" }}>
+            <div
+              style={{
+                fontFamily: "var(--mono)",
+                fontSize: "0.62rem",
+                fontWeight: 700,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#611FAD",
+                marginBottom: "0.3rem",
+              }}
+            >
+              Cherre Quality
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--serif)",
+                fontSize: "0.95rem",
+                fontStyle: "italic",
+                fontWeight: 600,
+                color: "#611FAD",
+              }}
+              >
+              Data Integrity
+            </div>
+          </div>
+          <p
+            style={{
+              flex: 1,
+              fontSize: "0.92rem",
+              color: "#000",
+              lineHeight: 1.7,
+              margin: 0,
+              maxWidth: 720,
+            }}
+          >
+            Always-on validation and observability. Every transformation traced from source to system. Full audit trail before data is used.
+          </p>
+        </div>
       )}
 
       {/* MOBILE ACCORDION */}
@@ -351,6 +495,64 @@ const ProductionAnchorSlide = () => {
               </div>
             );
           })}
+
+          {/* QUALITY mobile accordion item — orthogonal, independent state */}
+          <div style={{ background: "#FAFAFA" }}>
+            <button
+              onClick={() => setQualityOpen((o) => !o)}
+              style={{
+                appearance: "none",
+                width: "100%",
+                textAlign: "left",
+                cursor: "pointer",
+                background: qualityOpen ? "#fff" : "#FAFAFA",
+                borderTop: "4px solid #611FAD",
+                borderLeft: "none",
+                borderRight: "none",
+                borderBottom: "none",
+                padding: "1.1rem 1.2rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "1rem",
+              }}
+            >
+              <div>
+                <div style={{
+                  fontFamily: "var(--mono)", fontSize: "0.6rem", fontWeight: 700,
+                  letterSpacing: "0.2em", textTransform: "uppercase", color: "#611FAD",
+                  marginBottom: "0.2rem",
+                }}>Cherre</div>
+                <div style={{
+                  fontSize: "1.25rem", fontWeight: 800, color: "#000",
+                  letterSpacing: "-0.01em", lineHeight: 1, marginBottom: "0.25rem",
+                }}>QUALITY</div>
+                <div style={{
+                  fontFamily: "var(--serif)", fontSize: "0.78rem",
+                  fontStyle: "italic", color: "#611FAD", fontWeight: 600,
+                }}>Data Integrity</div>
+              </div>
+              <span style={{
+                fontSize: "1.4rem", color: "#611FAD", lineHeight: 1,
+                transform: qualityOpen ? "rotate(45deg)" : "rotate(0deg)",
+                transition: "transform 0.2s ease",
+              }}>+</span>
+            </button>
+            {qualityOpen && (
+              <div style={{
+                padding: "1rem 1.2rem 1.4rem",
+                background: "#fff",
+                animation: "luna-fade-up 0.3s ease",
+              }}>
+                <p style={{
+                  fontSize: "0.85rem", color: "#000", lineHeight: 1.7, margin: 0,
+                }}>
+                  Always-on validation and observability. Every transformation traced from source to system. Full audit trail before data is used.
+                </p>
+              </div>
+            )}
+          </div>
+
           {active === null && (
             <div style={{ background: "#fff", padding: "1rem", display: "flex", justifyContent: "center" }}>
               <img src="/luna/stack.png" alt="The Cherre stack" style={{ width: "100%", maxWidth: 320, height: "auto" }} />
