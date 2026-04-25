@@ -222,6 +222,8 @@ const ProductionAnchorSlide = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            height: 420,
+            width: "100%",
           }}
         >
           {active === null && <DefaultStackScene />}
