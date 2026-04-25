@@ -133,7 +133,7 @@ const ProductionAnchorSlide = () => {
         Built over a decade of work in real assets. Already governing identity, meaning, and lineage in production environments. The reasoning era doesn't need to be built. It needs to be deployed on what's already there.
       </p>
 
-      <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: "0.6rem 0 0", maxWidth: 820 }}>
+      <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: "0.2rem 0 0", maxWidth: 820 }}>
         From pilot to production.
       </p>
 
@@ -277,7 +277,7 @@ const ProductionAnchorSlide = () => {
 
       {/* QUALITY FOUNDATION BAR (desktop): full-width horizontal bar beneath the data-flow stack */}
       {!isMobile && (
-        <div style={{ maxWidth: 1200, marginTop: "1.2rem" }}>
+        <div style={{ maxWidth: 720, marginTop: "1.2rem" }}>
           <button
             onClick={toggleQuality}
             style={{

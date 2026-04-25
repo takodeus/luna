@@ -89,13 +89,13 @@ const StackSlide = () => (
       </div>
     </div>
 
-    <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: "1rem 0 0", maxWidth: 820 }}>
-      From agents to operations.
-    </p>
-
     <div className="luna-source" style={{ marginTop: "1.5rem", maxWidth: 920 }}>
       Source: Gartner's PACE-Layered Architecture
     </div>
+
+    <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: "1rem 0 0", maxWidth: 820 }}>
+      From agents to operations.
+    </p>
   </section>
 );
 
