@@ -284,6 +284,12 @@ const ProductionAnchorSlide = () => {
           85%  { opacity: 0.85; }
           100% { transform: translateY(-100%); opacity: 0; }
         }
+        @keyframes luna-connect-rise {
+          0%   { transform: translate(-50%, 100%); opacity: 0; }
+          25%  { opacity: 1; }
+          80%  { transform: translate(-50%, 5%); opacity: 1; }
+          100% { transform: translate(-50%, 0%); opacity: 1; }
+        }
       `}</style>
     </section>
   );
