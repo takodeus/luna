@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type TileKey = "alpha" | "core" | "connect" | null;
 
@@ -106,7 +107,19 @@ const ProductionAnchorSlide = () => {
   }, []);
 
   const handleTileClick = (key: Exclude<TileKey, null>) => {
-    setActive((prev) => (prev === key ? null : key));
+    setActive((prev) => {
+      const next = prev === key ? null : key;
+      if (next) trackEvent("luna_tile_opened", { tile: key });
+      return next;
+    });
+  };
+
+  const toggleQuality = () => {
+    setQualityOpen((o) => {
+      const next = !o;
+      if (next) trackEvent("luna_quality_opened", {});
+      return next;
+    });
   };
 
   return (
@@ -268,7 +281,7 @@ const ProductionAnchorSlide = () => {
       {!isMobile && (
         <div style={{ maxWidth: 1200, marginTop: "1.2rem" }}>
           <button
-            onClick={() => setQualityOpen((o) => !o)}
+            onClick={toggleQuality}
             style={{
               appearance: "none",
               width: "100%",
@@ -469,7 +482,7 @@ const ProductionAnchorSlide = () => {
           {/* QUALITY mobile accordion item: orthogonal, independent state */}
           <div style={{ background: "#FAFAFA" }}>
             <button
-              onClick={() => setQualityOpen((o) => !o)}
+              onClick={toggleQuality}
               style={{
                 appearance: "none",
                 width: "100%",

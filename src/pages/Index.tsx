@@ -16,8 +16,8 @@ import ClosingSlide from "@/components/slides/ClosingSlide";
 import ProductionAnchorSlide from "@/components/slides/ProductionAnchorSlide";
 import PractitionerOverlay from "@/components/PractitionerOverlay";
 import ImageLightbox from "@/components/ImageLightbox";
-
-const slideIds = ["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s14"];
+import { slideIds, slideLabel } from "@/lib/slides";
+import { trackEvent } from "@/lib/analytics";
 
 export type PractitionerSection = 'brief' | 'demo' | 'stack';
 
@@ -40,11 +40,39 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
+  // Track which slides a visitor actually sees, once per session per slide.
+  // Threshold is 0.4 visible AND must remain visible for 1.5s before firing.
   useEffect(() => {
+    const seen = new Set<string>();
+    const dwellTimers = new Map<string, number>();
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) setActiveSlide(e.target.id);
+          const id = e.target.id;
+          if (e.isIntersecting) {
+            setActiveSlide(id);
+
+            if (!seen.has(id)) {
+              const timer = window.setTimeout(() => {
+                if (!seen.has(id)) {
+                  seen.add(id);
+                  trackEvent("luna_slide_viewed", {
+                    slide_id: id,
+                    slide_label: slideLabel(id),
+                  });
+                }
+                dwellTimers.delete(id);
+              }, 1500);
+              dwellTimers.set(id, timer);
+            }
+          } else {
+            const t = dwellTimers.get(id);
+            if (t !== undefined) {
+              clearTimeout(t);
+              dwellTimers.delete(id);
+            }
+          }
         });
       },
       { threshold: 0.4 }
@@ -53,10 +81,14 @@ const Index = () => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      dwellTimers.forEach((t) => clearTimeout(t));
+    };
   }, []);
 
   const handleNavigate = (id: string) => {
+    trackEvent("luna_nav_clicked", { slide_id: id, slide_label: slideLabel(id) });
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -65,9 +97,15 @@ const Index = () => {
   };
 
   const handlePractitionerOpen = (section: PractitionerSection = 'brief') => {
+    trackEvent("luna_practitioner_opened", { section });
     setMenuOpen(false);
     setPractitionerSection(section);
     setPractitionerOpen(true);
+  };
+
+  const handleLightbox = (src: string | null) => {
+    if (src) trackEvent("luna_lightbox_opened", { image: src });
+    setLightboxSrc(src);
   };
 
   return (
@@ -100,12 +138,12 @@ const Index = () => {
         <BreaksSlide />
         <StackSlide />
         <TruthMonolithSlide />
-        <EntityResolutionSlide onImageClick={setLightboxSrc} />
+        <EntityResolutionSlide onImageClick={handleLightbox} />
         <TruthSlide />
-        <KGInfrastructureSlide onImageClick={setLightboxSrc} />
+        <KGInfrastructureSlide onImageClick={handleLightbox} />
         <GovernanceSlide />
         <StepsThoughtsSlide />
-        <BuildBuySlide onImageClick={setLightboxSrc} />
+        <BuildBuySlide onImageClick={handleLightbox} />
         <ClosingSlide />
         <ProductionAnchorSlide />
       </main>
