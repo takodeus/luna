@@ -53,6 +53,9 @@ const StackSlide = () => (
         <div style={{ fontFamily: "var(--mono)", fontSize: "0.64rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", paddingLeft: "2.9rem" }}>
           LUNA · MERIDIAN · ATLAS
         </div>
+        <div style={{ fontFamily: "var(--serif)", fontSize: "1.05rem", fontStyle: "italic", fontWeight: 600, color: "#fff", lineHeight: 1.5, marginTop: "1rem", paddingLeft: "2.9rem" }}>
+          From agents to operations.
+        </div>
         <div style={{ fontSize: "0.76rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.65, marginTop: "0.8rem", paddingLeft: "2.9rem", fontStyle: "italic" }}>
           Every agent deployed without a shared semantic layer creates a new context silo. The problem does not shrink as adoption grows. It compounds.
         </div>

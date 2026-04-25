@@ -41,7 +41,7 @@ const alphaProducts = [
     eyebrow: "MCP",
     title: "Any AI, Any Model",
     titleColor: "#611FAD",
-    body: "Cherre's MCP server delivers governed context to Claude for Enterprise, ChatGPT Enterprise, and any MCP-aware agent. Already in production with select Cherre clients. The infrastructure that takes agents from pilot to production.",
+    body: "Cherre's MCP server delivers governed context to Claude for Enterprise, ChatGPT Enterprise, and any MCP-aware agent. Already in production with select Cherre clients.",
     status: "limited" as const,
   },
 ];
@@ -131,6 +131,10 @@ const ProductionAnchorSlide = () => {
 
       <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1.2rem", fontSize: "1.05rem" }}>
         Built over a decade of work in real assets. Already governing identity, meaning, and lineage in production environments. The reasoning era doesn't need to be built. It needs to be deployed on what's already there.
+      </p>
+
+      <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: "1.4rem 0 0", maxWidth: 820 }}>
+        From pilot to production.
       </p>
 
       {/* MAIN ROW: desktop side-by-side; mobile accordion. Quality sits as a full-width foundation bar below. */}

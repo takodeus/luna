@@ -40,6 +40,10 @@ const ClosingSlide = () => (
       The reasoning era cannot run on reporting-era infrastructure.
     </p>
 
+    <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: "1.4rem 0 0", maxWidth: 820 }}>
+      From talk to trust.
+    </p>
+
     {/* Three evidence cards */}
     <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2rem", maxWidth: 900 }}>
       {findings.map((f) => (
