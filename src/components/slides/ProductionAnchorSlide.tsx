@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type TileKey = "alpha" | "core" | "connect" | null;
 
@@ -82,6 +82,15 @@ const connectProducts = [
 
 const ProductionAnchorSlide = () => {
   const [active, setActive] = useState<TileKey>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const handler = () => setIsMobile(mq.matches);
+    handler();
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   const handleTileClick = (key: Exclude<TileKey, null>) => {
     setActive((prev) => (prev === key ? null : key));
@@ -104,7 +113,8 @@ const ProductionAnchorSlide = () => {
         The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
       </p>
 
-      {/* MAIN ROW — 33% tiles left / 66% scene right */}
+      {/* MAIN ROW — desktop: side-by-side; mobile: accordion */}
+      {!isMobile && (
       <div
         style={{
           display: "grid",
@@ -232,9 +242,118 @@ const ProductionAnchorSlide = () => {
           {active === "connect" && <ConnectScene />}
         </div>
       </div>
+      )}
+
+      {/* MOBILE ACCORDION */}
+      {isMobile && (
+        <div
+          style={{
+            marginTop: "1.8rem",
+            maxWidth: 560,
+            display: "flex",
+            flexDirection: "column",
+            gap: "2px",
+            background: "#EEE",
+            border: "1px solid #EEE",
+          }}
+        >
+          {tiles.map((t) => {
+            const isActive = active === t.key;
+            const subProducts =
+              t.key === "alpha" ? alphaProducts :
+              t.key === "core" ? coreProducts :
+              connectProducts;
+            return (
+              <div key={t.key} style={{ background: "#FAFAFA" }}>
+                <button
+                  onClick={() => handleTileClick(t.key)}
+                  style={{
+                    appearance: "none",
+                    width: "100%",
+                    textAlign: "left",
+                    cursor: "pointer",
+                    background: isActive ? "#fff" : "#FAFAFA",
+                    borderTop: `4px solid ${t.color}`,
+                    borderLeft: "none",
+                    borderRight: "none",
+                    borderBottom: "none",
+                    padding: "1.1rem 1.2rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "1rem",
+                  }}
+                >
+                  <div>
+                    <div style={{
+                      fontFamily: "var(--mono)", fontSize: "0.6rem", fontWeight: 700,
+                      letterSpacing: "0.2em", textTransform: "uppercase", color: t.color,
+                      marginBottom: "0.2rem",
+                    }}>Cherre</div>
+                    <div style={{
+                      fontSize: "1.25rem", fontWeight: 800, color: "#000",
+                      letterSpacing: "-0.01em", lineHeight: 1, marginBottom: "0.25rem",
+                    }}>{t.name}</div>
+                    <div style={{
+                      fontFamily: "var(--serif)", fontSize: "0.78rem",
+                      fontStyle: "italic", color: t.color, fontWeight: 600,
+                    }}>{t.tag}</div>
+                  </div>
+                  <span style={{
+                    fontSize: "1.4rem", color: t.color, lineHeight: 1,
+                    transform: isActive ? "rotate(45deg)" : "rotate(0deg)",
+                    transition: "transform 0.2s ease",
+                  }}>+</span>
+                </button>
+                {isActive && (
+                  <div style={{
+                    padding: "1rem 1rem 1.4rem",
+                    background: "#fff",
+                    animation: "luna-fade-up 0.3s ease",
+                  }}>
+                    <div style={{
+                      display: "flex", justifyContent: "center",
+                      marginBottom: "1rem",
+                    }}>
+                      <img
+                        src={`/luna/${t.key}.png`}
+                        alt={t.name}
+                        style={{
+                          width: "100%", maxWidth: 280, height: "auto",
+                          objectFit: "contain", display: "block",
+                        }}
+                      />
+                    </div>
+                    <div style={{
+                      display: "grid", gridTemplateColumns: "1fr",
+                      gap: "2px", background: "#EEE",
+                    }}>
+                      {subProducts.map((p) => (
+                        <ProductCard
+                          key={p.title}
+                          eyebrow={p.eyebrow}
+                          title={p.title}
+                          titleColor={p.titleColor}
+                          body={p.body}
+                          coming={(p as any).coming}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+          {active === null && (
+            <div style={{ background: "#fff", padding: "1rem", display: "flex", justifyContent: "center" }}>
+              <img src="/luna/stack.png" alt="The Cherre stack" style={{ width: "100%", maxWidth: 320, height: "auto" }} />
+            </div>
+          )}
+        </div>
+      )}
 
       {/* SUB-TILES BELOW — only when a main tile is active */}
-      {active === "alpha" && (
+      {!isMobile && active === "alpha" && (
         <SubTileRow color="#611FAD">
           {alphaProducts.map((p) => (
             <ProductCard
@@ -249,7 +368,7 @@ const ProductionAnchorSlide = () => {
         </SubTileRow>
       )}
 
-      {active === "core" && (
+      {!isMobile && active === "core" && (
         <SubTileRow color="#1B70B1">
           {coreProducts.map((p) => (
             <ProductCard
@@ -263,7 +382,7 @@ const ProductionAnchorSlide = () => {
         </SubTileRow>
       )}
 
-      {active === "connect" && (
+      {!isMobile && active === "connect" && (
         <SubTileRow color="#A8185E">
           {connectProducts.map((p) => (
             <ProductCard
@@ -413,10 +532,10 @@ const DefaultStackScene = () => (
     src="/luna/stack.png"
     alt="The Cherre stack"
     style={{
-      width: "100%",
+      width: "auto",
       maxWidth: 420,
       maxHeight: 420,
-      height: "100%",
+      height: "auto",
       objectFit: "contain",
       display: "block",
     }}
@@ -429,10 +548,10 @@ const AlphaScene = () => (
     src="/luna/alpha.png"
     alt="Alpha — Data Out"
     style={{
-      width: "100%",
+      width: "auto",
       maxWidth: 320,
       maxHeight: 420,
-      height: "100%",
+      height: "auto",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
@@ -446,10 +565,10 @@ const CoreScene = () => (
     src="/luna/core.png"
     alt="Core — Data Through"
     style={{
-      width: "100%",
+      width: "auto",
       maxWidth: 320,
       maxHeight: 420,
-      height: "100%",
+      height: "auto",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
@@ -463,10 +582,10 @@ const ConnectScene = () => (
     src="/luna/connect.png"
     alt="Connect — Data In"
     style={{
-      width: "100%",
+      width: "auto",
       maxWidth: 320,
       maxHeight: 420,
-      height: "100%",
+      height: "auto",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
