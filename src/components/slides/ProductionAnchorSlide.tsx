@@ -104,6 +104,7 @@ const ProductionAnchorSlide = () => {
   }, []);
 
   const handleTileClick = (key: Exclude<TileKey, null>) => {
+    setQualityOpen(false);
     setActive((prev) => {
       const next = prev === key ? null : key;
       if (next) trackEvent("luna_tile_opened", { tile: key });
@@ -112,6 +113,7 @@ const ProductionAnchorSlide = () => {
   };
 
   const toggleQuality = () => {
+    setActive(null);
     setQualityOpen((o) => {
       const next = !o;
       if (next) trackEvent("luna_quality_opened", {});
