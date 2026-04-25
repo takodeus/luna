@@ -9,76 +9,76 @@ interface Tile {
   color: string;
 }
 
-// Vertical stack order: Alpha (top) → Core (mid) → Connect (bottom)
-// Mirrors the stack image's tier order: Data Out → Data Through → Data In
+// Vertical stack, top → bottom: Alpha · Core · Connect
 const tiles: Tile[] = [
   { key: "alpha",   name: "ALPHA",   tag: "Data Out",     color: "#611FAD" },
   { key: "core",    name: "CORE",    tag: "Data Through", color: "#1B70B1" },
   { key: "connect", name: "CONNECT", tag: "Data In",      color: "#A8185E" },
 ];
 
-interface SubTile {
-  eyebrow: string;
-  title: string;
-  titleColor?: string;
-  body: string;
-  coming?: boolean;
-}
-
-const connectSubTiles: SubTile[] = [
-  {
-    eyebrow: "Direct Ingress",
-    title: "Pipelines",
-    body: "Pre-built connectors to 100+ third-party data providers and the systems your organization already runs — ERP, deal management, leasing, valuation. Automatic ingestion, routing, and validation without disrupting existing workflows.",
-  },
-  {
-    eyebrow: "Partner Ingress",
-    title: "Submissions",
-    body: "The Data Submissions Portal. Standardizes data collection from third-party service providers, property managers, fund administrators, and JV partners. Mapping, validation, and approval workflows on a single dashboard.",
-  },
-];
-
-const coreSubTiles: SubTile[] = [
-  {
-    eyebrow: "Identity",
-    title: "LUNA",
-    titleColor: "#A8185E",
-    body: "Entity resolution. Collapses fragmented records across systems and providers into single canonical entities — properties, parties, instruments — with full lineage of every match.",
-  },
-  {
-    eyebrow: "Structure",
-    title: "MERIDIAN",
-    titleColor: "#23A98E",
-    body: "The knowledge graph. Governed relationships between resolved entities and their attributes. The substrate that makes data joinable, queryable, and reasonable across the enterprise.",
-  },
-];
-
-const alphaSubTiles: SubTile[] = [
+/* ── ALPHA SUB-TILES (productized cards, no tag pills) ──────── */
+const alphaProducts = [
   {
     eyebrow: "Reasoning Interface",
     title: "ATLAS",
     titleColor: "#A8185E",
     body: "Chat-based orchestration agent. Ask a question, get a governed answer with full lineage. No SQL, no BI tooling.",
+    coming: false,
   },
   {
     eyebrow: "Reporting Interface",
     title: "Semantic Layer + BI",
+    titleColor: "#000",
     body: "Governed semantic models exposed to your reporting stack. Metrics, dimensions, and lineage that match every dashboard.",
+    coming: false,
   },
   {
     eyebrow: "Build & Deploy",
     title: "Agent STUDIO",
+    titleColor: "#000",
     body: "Where your team builds, tests, and deploys intelligent workflows on top of the governed graph.",
+    coming: false,
   },
   {
     eyebrow: "MCP Connectors",
     title: "Any AI, Any Model",
+    titleColor: "#000",
     body: "Governed context delivered straight into the AI tools your team already uses.",
     coming: true,
   },
 ];
 
-const STACK_HEIGHT = 480; // px — the maxHeight of the stack image, drives tile column height
+/* ── CORE SUB-TILES ──────── */
+const coreProducts = [
+  {
+    eyebrow: "Entity Resolution",
+    title: "LUNA",
+    titleColor: "#A8185E",
+    body: "Resolves identity across fragmented records. Every property, every entity, every transaction reconciled to a single canonical reference with full lineage.",
+  },
+  {
+    eyebrow: "Knowledge Graph",
+    title: "MERIDIAN",
+    titleColor: "#23A98E",
+    body: "The governed semantic graph. Connects resolved entities to their attributes, relationships, and history — the substrate every reasoning surface queries.",
+  },
+];
+
+/* ── CONNECT SUB-TILES ──────── */
+const connectProducts = [
+  {
+    eyebrow: "Data Ingestion",
+    title: "Pipelines",
+    titleColor: "#A8185E",
+    body: "Connectors and ingest workflows for ERP, deal management, leasing platforms, and warehouses. Pre-built integrations across the leading systems of record in real assets.",
+  },
+  {
+    eyebrow: "Third-Party Collection",
+    title: "Submissions",
+    titleColor: "#A8185E",
+    body: "Streamlines and standardizes data collection from third-party vendors and investment managers. Map your data and set rules to automate ingestion, standardization, and validation.",
+  },
+];
 
 const ProductionAnchorSlide = () => {
   const [active, setActive] = useState<TileKey>(null);
@@ -104,26 +104,27 @@ const ProductionAnchorSlide = () => {
         The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
       </p>
 
-      {/* MAIN ROW — 33% tiles left, 66% scene right */}
+      {/* MAIN ROW — 33% tiles left / 66% scene right */}
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "33% 66%",
-          gap: "2.5rem",
+          gap: "2rem",
           marginTop: "2.2rem",
-          maxWidth: 1280,
-          alignItems: "start",
+          maxWidth: 1200,
+          alignItems: "stretch",
         }}
       >
-        {/* LEFT — vertical stack of 3 skinny tiles, total height = stack image height */}
+        {/* LEFT — vertical 1x3 stack of skinny tiles */}
         <div
           style={{
-            display: "grid",
-            gridTemplateRows: "1fr 1fr 1fr",
+            display: "flex",
+            flexDirection: "column",
             gap: "2px",
             background: "#EEE",
             border: "1px solid #EEE",
-            height: STACK_HEIGHT,
+            maxWidth: 280,
+            justifySelf: "start",
           }}
         >
           {tiles.map((t) => {
@@ -142,40 +143,41 @@ const ProductionAnchorSlide = () => {
                   borderLeft: "none",
                   borderRight: "none",
                   borderBottom: "none",
-                  padding: "1.2rem 1.4rem",
+                  padding: "1.4rem 1.3rem",
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "space-between",
+                  gap: "0.5rem",
+                  flex: "1 1 0",
+                  minHeight: 0,
                   opacity: isDimmed ? 0.55 : 1,
                   transition: "opacity 0.2s ease, background 0.2s ease",
                   outline: isActive ? `1px solid ${t.color}` : "none",
                   outlineOffset: isActive ? "-1px" : 0,
                   position: "relative",
-                  overflow: "hidden",
                 }}
               >
                 <div>
                   <div
                     style={{
                       fontFamily: "var(--mono)",
-                      fontSize: "0.6rem",
+                      fontSize: "0.62rem",
                       fontWeight: 700,
                       letterSpacing: "0.2em",
                       textTransform: "uppercase",
                       color: t.color,
-                      marginBottom: "0.2rem",
+                      marginBottom: "0.15rem",
                     }}
                   >
                     Cherre
                   </div>
                   <div
                     style={{
-                      fontSize: "1.4rem",
+                      fontSize: "1.35rem",
                       fontWeight: 800,
                       color: "#000",
                       letterSpacing: "-0.01em",
                       lineHeight: 1,
-                      marginBottom: "0.3rem",
+                      marginBottom: "0.2rem",
                     }}
                   >
                     {t.name}
@@ -183,7 +185,7 @@ const ProductionAnchorSlide = () => {
                   <div
                     style={{
                       fontFamily: "var(--serif)",
-                      fontSize: "0.85rem",
+                      fontSize: "0.82rem",
                       fontStyle: "italic",
                       color: t.color,
                       fontWeight: 600,
@@ -192,9 +194,9 @@ const ProductionAnchorSlide = () => {
                     {t.tag}
                   </div>
                 </div>
-
                 <div
                   style={{
+                    marginTop: "auto",
                     fontFamily: "var(--mono)",
                     fontSize: "0.58rem",
                     fontWeight: 700,
@@ -210,38 +212,66 @@ const ProductionAnchorSlide = () => {
           })}
         </div>
 
-        {/* RIGHT — scene pane (image on top, sub-tiles below when active) */}
+        {/* RIGHT — scene pane (swaps on click) */}
         <div
           style={{
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            alignItems: "stretch",
-            gap: "1.5rem",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          {/* TOP — image area, fixed height matching stack */}
-          <div
-            style={{
-              height: STACK_HEIGHT,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "relative",
-            }}
-          >
-            {active === null && <DefaultStackScene />}
-            {active === "connect" && <ConnectSceneImage />}
-            {active === "core" && <CoreSceneImage />}
-            {active === "alpha" && <AlphaSceneImage />}
-          </div>
-
-          {/* BELOW — sub-tiles for the active layer */}
-          {active === "connect" && <SubTileRow tiles={connectSubTiles} accent="#A8185E" cols={2} />}
-          {active === "core"    && <SubTileRow tiles={coreSubTiles}    accent="#1B70B1" cols={2} />}
-          {active === "alpha"   && <SubTileRow tiles={alphaSubTiles}   accent="#611FAD" cols={4} />}
+          {active === null && <DefaultStackScene />}
+          {active === "alpha" && <AlphaScene />}
+          {active === "core" && <CoreScene />}
+          {active === "connect" && <ConnectScene />}
         </div>
       </div>
+
+      {/* SUB-TILES BELOW — only when a main tile is active */}
+      {active === "alpha" && (
+        <SubTileRow color="#611FAD">
+          {alphaProducts.map((p) => (
+            <ProductCard
+              key={p.title}
+              eyebrow={p.eyebrow}
+              title={p.title}
+              titleColor={p.titleColor}
+              body={p.body}
+              coming={p.coming}
+            />
+          ))}
+        </SubTileRow>
+      )}
+
+      {active === "core" && (
+        <SubTileRow color="#1B70B1">
+          {coreProducts.map((p) => (
+            <ProductCard
+              key={p.title}
+              eyebrow={p.eyebrow}
+              title={p.title}
+              titleColor={p.titleColor}
+              body={p.body}
+            />
+          ))}
+        </SubTileRow>
+      )}
+
+      {active === "connect" && (
+        <SubTileRow color="#A8185E">
+          {connectProducts.map((p) => (
+            <ProductCard
+              key={p.title}
+              eyebrow={p.eyebrow}
+              title={p.title}
+              titleColor={p.titleColor}
+              body={p.body}
+            />
+          ))}
+        </SubTileRow>
+      )}
 
       <style>{`
         @keyframes luna-fade-up {
@@ -259,28 +289,169 @@ const ProductionAnchorSlide = () => {
   );
 };
 
-/* ── DEFAULT STATE — stack image ─────────────────────────────────── */
+/* ── SHARED SUB-TILE ROW ──────── */
+const SubTileRow = ({
+  color,
+  children,
+}: {
+  color: string;
+  children: React.ReactNode;
+}) => {
+  const count = Array.isArray(children) ? children.length : 1;
+  return (
+    <div
+      style={{
+        marginTop: "2rem",
+        maxWidth: 1200,
+        display: "grid",
+        gridTemplateColumns: `repeat(${count}, 1fr)`,
+        gap: "2px",
+        background: "#EEE",
+        animation: "luna-fade-up 0.4s ease",
+      }}
+      data-accent={color}
+    >
+      {children}
+    </div>
+  );
+};
+
+/* ── PRODUCT CARD (used inside SubTileRow) ──────── */
+const ProductCard = ({
+  eyebrow,
+  title,
+  titleColor,
+  body,
+  coming = false,
+}: {
+  eyebrow: string;
+  title: string;
+  titleColor: string;
+  body: string;
+  coming?: boolean;
+}) => (
+  <div
+    style={{
+      background: "#FAFAFA",
+      padding: "1.4rem 1.3rem",
+      display: "flex",
+      flexDirection: "column",
+      gap: "0.6rem",
+      borderTop: coming ? `2px dashed #A8185E` : "2px solid transparent",
+      position: "relative",
+      minHeight: 140,
+    }}
+  >
+    {coming && (
+      <div
+        style={{
+          position: "absolute",
+          top: -1,
+          right: 8,
+          background: "#A8185E",
+          color: "#fff",
+          fontFamily: "var(--mono)",
+          fontSize: "0.55rem",
+          fontWeight: 700,
+          letterSpacing: "0.16em",
+          textTransform: "uppercase",
+          padding: "0.2rem 0.5rem",
+        }}
+      >
+        Coming
+      </div>
+    )}
+    <div
+      style={{
+        fontFamily: "var(--mono)",
+        fontSize: "0.6rem",
+        fontWeight: 700,
+        letterSpacing: "0.2em",
+        textTransform: "uppercase",
+        color: "rgba(0,0,0,0.5)",
+      }}
+    >
+      {eyebrow}
+    </div>
+    <div
+      style={{
+        fontSize: "1.05rem",
+        fontWeight: 700,
+        color: titleColor,
+        letterSpacing: "-0.01em",
+        lineHeight: 1.15,
+      }}
+    >
+      {title}
+    </div>
+    <p
+      style={{
+        fontSize: "0.78rem",
+        color: "#000",
+        lineHeight: 1.65,
+        margin: 0,
+      }}
+    >
+      {body}
+    </p>
+  </div>
+);
+
+/* ── DEFAULT STATE ─────────────────────────────────── */
 const DefaultStackScene = () => (
   <img
     src="/luna/stack.png"
     alt="The Cherre stack"
     style={{
-      maxWidth: "100%",
-      maxHeight: STACK_HEIGHT,
+      width: "100%",
+      maxWidth: 720,
       height: "auto",
-      width: "auto",
       objectFit: "contain",
+      display: "block",
     }}
   />
 );
 
-/* ── CONNECT scene image ─────────────────────────────────── */
-const ConnectSceneImage = () => (
+/* ── ALPHA ─────────────────────────────────── */
+const AlphaScene = () => (
+  <img
+    src="/luna/alpha.png"
+    alt="Alpha — Data Out"
+    style={{
+      width: "100%",
+      maxWidth: 720,
+      height: "auto",
+      objectFit: "contain",
+      display: "block",
+      animation: "luna-fade-up 0.4s ease",
+    }}
+  />
+);
+
+/* ── CORE ─────────────────────────────────── */
+const CoreScene = () => (
+  <img
+    src="/luna/core.png"
+    alt="Core — Data Through"
+    style={{
+      width: "100%",
+      maxWidth: 720,
+      height: "auto",
+      objectFit: "contain",
+      display: "block",
+      animation: "luna-fade-up 0.4s ease",
+    }}
+  />
+);
+
+/* ── CONNECT ─────────────────────────────────── */
+const ConnectScene = () => (
   <div
     style={{
       position: "relative",
       width: "100%",
-      height: "100%",
+      maxWidth: 720,
+      height: 520,
       overflow: "hidden",
       animation: "luna-fade-up 0.4s ease",
     }}
@@ -294,7 +465,7 @@ const ConnectSceneImage = () => (
         left: "50%",
         bottom: 0,
         transform: "translateX(-50%)",
-        width: "60%",
+        width: "65%",
         height: "auto",
         opacity: 0.85,
         animation: "luna-rise-loop 6s ease-in-out infinite",
@@ -313,120 +484,6 @@ const ConnectSceneImage = () => (
         zIndex: 1,
       }}
     />
-  </div>
-);
-
-/* ── CORE scene image ─────────────────────────────────── */
-const CoreSceneImage = () => (
-  <img
-    src="/luna/core.png"
-    alt="Core — Data Through"
-    style={{
-      maxHeight: "100%",
-      maxWidth: "100%",
-      height: "auto",
-      width: "auto",
-      objectFit: "contain",
-      animation: "luna-fade-up 0.4s ease",
-    }}
-  />
-);
-
-/* ── ALPHA scene image ─────────────────────────────────── */
-const AlphaSceneImage = () => (
-  <img
-    src="/luna/alpha.png"
-    alt="Alpha — Data Out"
-    style={{
-      maxHeight: "100%",
-      maxWidth: "100%",
-      height: "auto",
-      width: "auto",
-      objectFit: "contain",
-      animation: "luna-fade-up 0.4s ease",
-    }}
-  />
-);
-
-/* ── SUB-TILE ROW (shared) ─────────────────────────────────── */
-const SubTileRow = ({ tiles, accent, cols }: { tiles: SubTile[]; accent: string; cols: number }) => (
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: `repeat(${cols}, 1fr)`,
-      gap: "2px",
-      background: "#EEE",
-      animation: "luna-fade-up 0.4s ease",
-    }}
-  >
-    {tiles.map((t) => (
-      <div
-        key={t.title}
-        style={{
-          background: "#FAFAFA",
-          padding: "1.2rem 1.2rem",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.55rem",
-          borderTop: t.coming ? `2px dashed ${accent}` : `2px solid transparent`,
-          position: "relative",
-          minHeight: 150,
-        }}
-      >
-        {t.coming && (
-          <div
-            style={{
-              position: "absolute",
-              top: -1,
-              right: 8,
-              background: accent,
-              color: "#fff",
-              fontFamily: "var(--mono)",
-              fontSize: "0.55rem",
-              fontWeight: 700,
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              padding: "0.2rem 0.5rem",
-            }}
-          >
-            Coming
-          </div>
-        )}
-        <div
-          style={{
-            fontFamily: "var(--mono)",
-            fontSize: "0.58rem",
-            fontWeight: 700,
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            color: "rgba(0,0,0,0.5)",
-          }}
-        >
-          {t.eyebrow}
-        </div>
-        <div
-          style={{
-            fontSize: "1rem",
-            fontWeight: 700,
-            color: t.titleColor ?? "#000",
-            letterSpacing: "-0.01em",
-            lineHeight: 1.15,
-          }}
-        >
-          {t.title}
-        </div>
-        <p
-          style={{
-            fontSize: "0.78rem",
-            color: "#000",
-            lineHeight: 1.65,
-            margin: 0,
-          }}
-        >
-          {t.body}
-        </p>
-      </div>
-    ))}
   </div>
 );
 
