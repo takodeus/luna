@@ -11,7 +11,7 @@ interface Tile {
 
 // Vertical stack, top → bottom: Alpha · Core · Connect
 const tiles: Tile[] = [
-  { key: "alpha",   name: "ALPHA",   tag: "Data Out",     color: "#611FAD" },
+  { key: "alpha",   name: "ALPHA",   tag: "Data Out",     color: "#23A98E" },
   { key: "core",    name: "CORE",    tag: "Data Through", color: "#1B70B1" },
   { key: "connect", name: "CONNECT", tag: "Data In",      color: "#A8185E" },
 ];
@@ -460,7 +460,7 @@ const ProductionAnchorSlide = () => {
             );
           })}
 
-          {/* QUALITY mobile accordion item — orthogonal, independent state */}
+          {/* QUALITY mobile accordion item: orthogonal, independent state */}
           <div style={{ background: "#FAFAFA" }}>
             <button
               onClick={() => setQualityOpen((o) => !o)}
@@ -470,7 +470,7 @@ const ProductionAnchorSlide = () => {
                 textAlign: "left",
                 cursor: "pointer",
                 background: qualityOpen ? "#fff" : "#FAFAFA",
-                borderTop: "4px solid #611FAD",
+                borderTop: "4px solid #23A98E",
                 borderLeft: "none",
                 borderRight: "none",
                 borderBottom: "none",
@@ -484,7 +484,7 @@ const ProductionAnchorSlide = () => {
               <div>
                 <div style={{
                   fontFamily: "var(--mono)", fontSize: "0.6rem", fontWeight: 700,
-                  letterSpacing: "0.2em", textTransform: "uppercase", color: "#611FAD",
+                  letterSpacing: "0.2em", textTransform: "uppercase", color: "#23A98E",
                   marginBottom: "0.2rem",
                 }}>Cherre</div>
                 <div style={{
@@ -493,11 +493,11 @@ const ProductionAnchorSlide = () => {
                 }}>QUALITY</div>
                 <div style={{
                   fontFamily: "var(--serif)", fontSize: "0.78rem",
-                  fontStyle: "italic", color: "#611FAD", fontWeight: 600,
+                  fontStyle: "italic", color: "#23A98E", fontWeight: 600,
                 }}>Data Integrity</div>
               </div>
               <span style={{
-                fontSize: "1.4rem", color: "#611FAD", lineHeight: 1,
+                fontSize: "1.4rem", color: "#23A98E", lineHeight: 1,
                 transform: qualityOpen ? "rotate(45deg)" : "rotate(0deg)",
                 transition: "transform 0.2s ease",
               }}>+</span>
@@ -525,9 +525,9 @@ const ProductionAnchorSlide = () => {
         </div>
       )}
 
-      {/* SUB-TILES BELOW — only when a main tile is active */}
+      {/* SUB-TILES BELOW: only when a main tile is active */}
       {!isMobile && active === "alpha" && (
-        <SubTileRow color="#611FAD">
+        <SubTileRow color="#23A98E">
           {alphaProducts.map((p) => (
             <ProductCard
               key={p.title}
@@ -719,7 +719,7 @@ const DefaultStackScene = () => (
 const AlphaScene = () => (
   <img
     src="/luna/alpha.png"
-    alt="Alpha — Data Out"
+    alt="Alpha, Data Out"
     style={{
       width: "auto",
       maxWidth: 320,
@@ -736,7 +736,7 @@ const AlphaScene = () => (
 const CoreScene = () => (
   <img
     src="/luna/core.png"
-    alt="Core — Data Through"
+    alt="Core, Data Through"
     style={{
       width: "auto",
       maxWidth: 320,
@@ -753,7 +753,7 @@ const CoreScene = () => (
 const ConnectScene = () => (
   <img
     src="/luna/connect.png"
-    alt="Connect — Data In"
+    alt="Connect, Data In"
     style={{
       width: "auto",
       maxWidth: 320,
