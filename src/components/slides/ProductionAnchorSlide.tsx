@@ -41,8 +41,8 @@ const alphaProducts = [
     eyebrow: "MCP",
     title: "Any AI, Any Model",
     titleColor: "#611FAD",
-    body: "Cherre's MCP server delivers governed context to Claude, ChatGPT, and any MCP-aware agent. In beta today with a focused surface. Expanding rapidly as the protocol matures.",
-    status: "beta" as const,
+    body: "Cherre's MCP server delivers governed context to Claude for Enterprise, ChatGPT Enterprise, and any MCP-aware agent. Already in production with select Cherre clients. The infrastructure that takes agents from pilot to production.",
+    status: "limited" as const,
   },
 ];
 
@@ -643,12 +643,19 @@ const ProductCard = ({
   title: string;
   titleColor: string;
   body: string;
-  status?: "beta" | "coming";
+  status?: "beta" | "coming" | "limited";
 }) => {
   const isBeta = status === "beta";
   const isComing = status === "coming";
-  const hasBadge = isBeta || isComing;
-  const accentColor = isBeta ? "#23A98E" : "#A8185E";
+  const isLimited = status === "limited";
+  const hasBadge = isBeta || isComing || isLimited;
+  const accentColor = isLimited || isBeta ? "#23A98E" : "#A8185E";
+  const borderStyle = isComing
+    ? `2px dashed #A8185E`
+    : isBeta || isLimited
+    ? `2px solid #23A98E`
+    : "2px solid transparent";
+  const badgeText = isLimited ? "Early Access" : isBeta ? "Beta" : "Coming";
   return (
   <div
     style={{
@@ -657,7 +664,7 @@ const ProductCard = ({
       display: "flex",
       flexDirection: "column",
       gap: "0.6rem",
-      borderTop: isComing ? `2px dashed #A8185E` : isBeta ? `2px solid #23A98E` : "2px solid transparent",
+      borderTop: borderStyle,
       position: "relative",
       minHeight: 140,
     }}
@@ -678,7 +685,7 @@ const ProductCard = ({
           padding: "0.2rem 0.5rem",
         }}
       >
-        {isBeta ? "Beta" : "Coming"}
+        {badgeText}
       </div>
     )}
     <div
