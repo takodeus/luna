@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
   { id: "s11", num: "xi",    label: "Automate Steps. Protect Judgment." },
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
   { id: "s13", num: "xiii",  label: "The Next Architectural Imperative" },
-  { id: "s14", num: "xiv",   label: "The Foundation Is Already Built" },
+  { id: "s14", num: "xiv",   label: "The Cherre Platform" },
 ];
 
 const caseItems: { id: PractitionerSection; label: string }[] = [
