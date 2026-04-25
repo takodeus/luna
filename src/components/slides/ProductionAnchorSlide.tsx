@@ -127,16 +127,13 @@ const ProductionAnchorSlide = () => {
       <div className="slide-n">xiv / The Cherre Platform</div>
 
       <h2 className="luna-h2">
-        This is not a roadmap.
+        The platform is Cherre.
         <br />
-        <span className="luna-accent">The platform has always been running.</span>
+        <span className="luna-accent">Already running.</span>
       </h2>
 
       <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1.2rem", fontWeight: 600, fontSize: "1.05rem" }}>
-        For Cherre, this is not a future architecture. It is the natural evolution of the platform we have been building for years.
-      </p>
-      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "0.5rem" }}>
-        The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
+        Built over a decade of work in real assets. Already governing identity, meaning, and lineage in production environments. The reasoning era doesn't need to be built. It needs to be deployed on what's already there.
       </p>
 
       {/* MAIN ROW: desktop side-by-side; mobile accordion. Quality sits as a full-width foundation bar below. */}
