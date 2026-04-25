@@ -60,7 +60,7 @@ const coreProducts = [
     eyebrow: "Knowledge Graph",
     title: "MERIDIAN",
     titleColor: "#23A98E",
-    body: "The governed semantic graph. Connects resolved entities to their attributes, relationships, and history — the substrate every reasoning surface queries.",
+    body: "The governed semantic graph. Connects resolved entities to their attributes, relationships, and history. The substrate every reasoning surface queries.",
   },
 ];
 
@@ -82,7 +82,7 @@ const connectProducts = [
     eyebrow: "Market Intelligence",
     title: "Market Data",
     titleColor: "#A8185E",
-    body: "Curated public and licensed feeds — comps, demographics, property records, market signals — pre-resolved against your portfolio entities and ready to query alongside your operational data.",
+    body: "Curated public and licensed feeds: comps, demographics, property records, market signals, pre-resolved against your portfolio entities and ready to query alongside your operational data.",
   },
 ];
 
