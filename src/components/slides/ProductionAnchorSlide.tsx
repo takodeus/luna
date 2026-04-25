@@ -97,10 +97,10 @@ const ProductionAnchorSlide = () => {
         <span className="luna-accent">The platform has always been running.</span>
       </h2>
 
-      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1rem" }}>
+      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1.2rem", fontWeight: 600, fontSize: "1.05rem" }}>
         For Cherre, this is not a future architecture. It is the natural evolution of the platform we have been building for years.
       </p>
-      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1rem" }}>
+      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "0.5rem" }}>
         The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
       </p>
 
@@ -112,7 +112,7 @@ const ProductionAnchorSlide = () => {
           gap: "2rem",
           marginTop: "2.2rem",
           maxWidth: 1200,
-          alignItems: "stretch",
+          alignItems: "start",
         }}
       >
         {/* LEFT — vertical 1x3 stack of skinny tiles */}
@@ -124,6 +124,8 @@ const ProductionAnchorSlide = () => {
             background: "#EEE",
             border: "1px solid #EEE",
             maxWidth: 188,
+            width: "100%",
+            height: 420,
             justifySelf: "start",
           }}
         >
@@ -220,6 +222,8 @@ const ProductionAnchorSlide = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            height: 420,
+            width: "100%",
           }}
         >
           {active === null && <DefaultStackScene />}
@@ -410,8 +414,9 @@ const DefaultStackScene = () => (
     alt="The Cherre stack"
     style={{
       width: "100%",
-      maxWidth: 482,
-      height: "auto",
+      maxWidth: 420,
+      maxHeight: 420,
+      height: "100%",
       objectFit: "contain",
       display: "block",
     }}
@@ -425,8 +430,9 @@ const AlphaScene = () => (
     alt="Alpha — Data Out"
     style={{
       width: "100%",
-      maxWidth: 360,
-      height: "auto",
+      maxWidth: 320,
+      maxHeight: 420,
+      height: "100%",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
@@ -441,8 +447,9 @@ const CoreScene = () => (
     alt="Core — Data Through"
     style={{
       width: "100%",
-      maxWidth: 360,
-      height: "auto",
+      maxWidth: 320,
+      maxHeight: 420,
+      height: "100%",
       objectFit: "contain",
       display: "block",
       animation: "luna-fade-up 0.4s ease",
@@ -452,46 +459,19 @@ const CoreScene = () => (
 
 /* ── CONNECT ─────────────────────────────────── */
 const ConnectScene = () => (
-  <div
+  <img
+    src="/luna/connect.png"
+    alt="Connect — Data In"
     style={{
-      position: "relative",
       width: "100%",
-      maxWidth: 360,
-      height: 420,
-      overflow: "hidden",
+      maxWidth: 320,
+      maxHeight: 420,
+      height: "100%",
+      objectFit: "contain",
+      display: "block",
       animation: "luna-fade-up 0.4s ease",
     }}
-  >
-    <img
-      src="/luna/connect-top.png"
-      alt=""
-      aria-hidden
-      style={{
-        position: "absolute",
-        left: "50%",
-        top: 0,
-        transform: "translateX(-50%)",
-        width: "55%",
-        height: "auto",
-        opacity: 0,
-        zIndex: 0,
-        animation: "luna-connect-rise 4s ease-out forwards",
-      }}
-    />
-    <img
-      src="/luna/connect-base.png"
-      alt="Connect — Data In"
-      style={{
-        position: "absolute",
-        inset: 0,
-        margin: "auto",
-        maxWidth: "100%",
-        maxHeight: "100%",
-        objectFit: "contain",
-        zIndex: 2,
-      }}
-    />
-  </div>
+  />
 );
 
 export default ProductionAnchorSlide;
