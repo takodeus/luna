@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type TileKey = "alpha" | "core" | "connect" | null;
 
@@ -82,6 +82,15 @@ const connectProducts = [
 
 const ProductionAnchorSlide = () => {
   const [active, setActive] = useState<TileKey>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const handler = () => setIsMobile(mq.matches);
+    handler();
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   const handleTileClick = (key: Exclude<TileKey, null>) => {
     setActive((prev) => (prev === key ? null : key));
