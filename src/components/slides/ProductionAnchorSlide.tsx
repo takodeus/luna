@@ -120,19 +120,19 @@ const ProductionAnchorSlide = () => {
         The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
       </p>
 
-      {/* MAIN ROW — desktop: side-by-side + Quality rail; mobile: accordion */}
+      {/* MAIN ROW: desktop side-by-side; mobile accordion. Quality sits as a full-width foundation bar below. */}
       {!isMobile && (
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "20% 1fr 56px",
+          gridTemplateColumns: "20% 1fr",
           gap: "2rem",
           marginTop: "2.2rem",
           maxWidth: 1200,
           alignItems: "start",
         }}
       >
-        {/* LEFT — vertical 1x3 stack of skinny tiles */}
+        {/* LEFT: vertical 1x3 stack of skinny tiles */}
         <div
           style={{
             display: "flex",
