@@ -97,10 +97,10 @@ const ProductionAnchorSlide = () => {
         <span className="luna-accent">The platform has always been running.</span>
       </h2>
 
-      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1rem" }}>
+      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1.2rem", fontWeight: 600, fontSize: "1.05rem" }}>
         For Cherre, this is not a future architecture. It is the natural evolution of the platform we have been building for years.
       </p>
-      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1rem" }}>
+      <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "0.5rem" }}>
         The capabilities required for the reasoning era have always been part of that architecture: the ability to connect data across systems, govern meaning across contexts, resolve identity across fragmented records, preserve lineage, and make information usable for decisions.
       </p>
 
@@ -112,7 +112,7 @@ const ProductionAnchorSlide = () => {
           gap: "2rem",
           marginTop: "2.2rem",
           maxWidth: 1200,
-          alignItems: "stretch",
+          alignItems: "start",
         }}
       >
         {/* LEFT — vertical 1x3 stack of skinny tiles */}
@@ -124,6 +124,8 @@ const ProductionAnchorSlide = () => {
             background: "#EEE",
             border: "1px solid #EEE",
             maxWidth: 188,
+            width: "100%",
+            height: 420,
             justifySelf: "start",
           }}
         >
