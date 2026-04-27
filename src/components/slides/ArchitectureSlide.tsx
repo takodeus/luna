@@ -2,6 +2,8 @@ import ArchitectureDiagram from "../ArchitectureDiagram";
 
 const ArchitectureSlide = () => (
   <section
+    id="s15"
+    className="slide"
     style={{
       background: "#fff",
       borderTop: "3px solid #A8185E",

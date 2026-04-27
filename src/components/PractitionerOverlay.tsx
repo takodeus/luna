@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import PractitionerBriefSlide from '@/components/slides/PractitionerBriefSlide';
 import ICMemoSlide from '@/components/slides/ICMemoSlide';
-import ArchitectureSlide from '@/components/slides/ArchitectureSlide';
 import { sha256Hex } from '@/lib/hash';
 import type { PractitionerSection } from '@/pages/Index';
 
@@ -17,9 +16,8 @@ interface PractitionerOverlayProps {
 }
 
 const TABS: { id: PractitionerSection; label: string }[] = [
-  { id: 'brief', label: 'The Brief' },
-  { id: 'demo',  label: 'The Demo' },
-  { id: 'stack', label: 'The Stack' },
+  { id: 'brief', label: 'Use Cases' },
+  { id: 'demo',  label: 'Demos' },
 ];
 
 const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: PractitionerOverlayProps) => {
@@ -187,9 +185,6 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
           </div>
           <div style={{ display: section === 'demo' ? 'block' : 'none' }}>
             <ICMemoSlide />
-          </div>
-          <div style={{ display: section === 'stack' ? 'block' : 'none' }}>
-            <ArchitectureSlide />
           </div>
         </div>
       )}

@@ -3,9 +3,8 @@ import type { PractitionerSection } from "@/pages/Index";
 import { slides as navItems } from "@/lib/slides";
 
 const caseItems: { id: PractitionerSection; label: string }[] = [
-  { id: 'brief', label: 'The Brief' },
-  { id: 'demo',  label: 'The Demo' },
-  { id: 'stack', label: 'The Stack' },
+  { id: 'brief', label: 'Use Cases' },
+  { id: 'demo',  label: 'Demos' },
 ];
 
 interface LunaSidebarProps {
@@ -80,7 +79,7 @@ const LunaSidebar = ({
                 <rect x="2" y="10" width="16" height="11" rx="2" stroke="currentColor" strokeWidth="1.5" />
                 <path d="M6 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
-              <span>Access Required</span>
+              <span>Cherre Only</span>
             </span>
             <svg
               className={`luna-restricted-chevron ${accordionOpen ? 'is-open' : ''}`}

@@ -14,12 +14,13 @@ import StackSlide from "@/components/slides/StackSlide";
 import BuildBuySlide from "@/components/slides/BuildBuySlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
 import ProductionAnchorSlide from "@/components/slides/ProductionAnchorSlide";
+import ArchitectureSlide from "@/components/slides/ArchitectureSlide";
 import PractitionerOverlay from "@/components/PractitionerOverlay";
 import ImageLightbox from "@/components/ImageLightbox";
 import { slideIds, slideLabel } from "@/lib/slides";
 import { trackEvent } from "@/lib/analytics";
 
-export type PractitionerSection = 'brief' | 'demo' | 'stack';
+export type PractitionerSection = 'brief' | 'demo';
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState("s1");
@@ -146,6 +147,7 @@ const Index = () => {
         <BuildBuySlide onImageClick={handleLightbox} />
         <ClosingSlide />
         <ProductionAnchorSlide />
+        <ArchitectureSlide />
       </main>
       <PractitionerOverlay
         isOpen={practitionerOpen}
