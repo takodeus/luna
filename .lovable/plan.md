@@ -1,38 +1,45 @@
-## Slide XIV copy + Sidebar restructuring
+# Make Platform Architecture expandable, not always visible
 
-### 1. Slide XIV body copy (`src/components/slides/ProductionAnchorSlide.tsx`)
+Today, the Platform Architecture sub-item is always visible in the sidebar, and the architecture slide (`s15`) is always rendered in the deck after XIV. We will hide both by default and surface the architecture only when the user explicitly opens it from XIV.
 
-Replace the paragraph at line 135 with:
+## Behavior after change
 
-> "For more than a decade, Cherre has been doing the difficult work beneath the visible layer of real assets technology: resolving identities, governing definitions, preserving lineage, and translating fragmented systems into usable meaning. Already deployed across the world's largest investors, managers, and operators. The reasoning era doesn't need to be built. It needs to be deployed on what's already there."
+- **Sidebar**: Under XIV "The Cherre Platform," the "↳ Platform Architecture" row is hidden by default. A small chevron on XIV expands it to reveal the sub-item. Clicking the sub-item opens the architecture content and scrolls to it.
+- **Deck**: The Architecture slide (`s15`) is no longer rendered inline. Instead, XIV gets a minimalist CTA — "Appendix — View Platform Architecture +" — placed *below* the Quality bar, styled de-emphasized (smaller, neutral grey top border) so it doesn't compete with the Connect/Core/Alpha/Quality tiles above. Uses the same `+`/`−` rotation pattern as Quality so it feels native to the slide.
+- Clicking either the sidebar sub-item or the in-slide CTA toggles the same `architectureOpen` state, mounts `<ArchitectureSlide />` directly below XIV, and smooth-scrolls to it.
+- When collapsed, neither the sidebar sub-item nor the architecture content takes up space.
 
-The "From pilot to production." italic line beneath stays as-is.
+## Files to change
 
-### 2. Sidebar restructuring (`src/components/LunaSidebar.tsx`)
+1. **`src/pages/Index.tsx`**
+   - Add `architectureOpen` state (default `false`).
+   - Replace the always-rendered `<ArchitectureSlide />` with a conditional render placed immediately after `<ProductionAnchorSlide />`. When toggled open, scroll `#s15` into view after mount.
+   - Pass `architectureOpen` + `onArchitectureToggle` to both `ProductionAnchorSlide` and `LunaSidebar`.
+   - Re-run the IntersectionObserver effect when `architectureOpen` changes so `#s15` is observed only while mounted.
 
-- **Restricted accordion trigger**: change visible label from "Access Required" → "Cherre Only".
-- **Restricted sub-items (`caseItems`)**: 
-  - "The Brief" → "Use Cases"
-  - "The Demo" → "Demos"
-  - Remove "The Stack" entry from `caseItems` (so the Restricted accordion contains only Use Cases + Demos).
+2. **`src/components/LunaSidebar.tsx`**
+   - Accept `architectureOpen: boolean` and `onArchitectureToggle: () => void` props.
+   - Add a small chevron affordance to the XIV row (matching `luna-restricted-chevron` styling) that toggles `architectureOpen`. Clicking the XIV label still navigates to `#s14`.
+   - Only render the `slideChildren[s14]` sub-item when `architectureOpen` is true; clicking it ensures open + navigates to `#s15`.
+   - Use the same fade/height transition pattern as the Restricted accordion sub-nav.
 
-### 3. Add "Appendix: Platform Architecture" under XIV
+3. **`src/components/slides/ProductionAnchorSlide.tsx`**
+   - Accept `architectureOpen` + `onArchitectureToggle` props.
+   - Add a CTA button placed *below the Quality bar* (not above the tiles), labeled: small "Appendix" eyebrow + "View Platform Architecture" + a `+`/`−` affordance that flips when open.
+   - Styled de-emphasized: smaller than Quality, neutral grey top border (no brand color), so it reads as a separate "go deeper" affordance rather than a fifth product tile.
+   - Mirror the same on mobile (placed at the bottom of the mobile accordion stack).
+   - Fire `trackEvent("luna_architecture_opened" | "luna_architecture_closed", { source: "slide" })`.
 
-Add a new top-level Contents item directly below "xiv The Cherre Platform" labeled **"Platform Architecture"** with `num: "Appendix"`. Clicking it opens the existing Architecture content (currently `ArchitectureSlide` rendered inside the practitioner overlay's "stack" tab) — but since it should now be public (moved out of Restricted), we render it as a normal slide in the main deck.
+4. **`src/lib/slides.ts`** — no structural change. `slideChildren` and `allSlideIds` stay as-is; visibility becomes a runtime concern.
 
-Two coordinated edits:
+5. **`src/index.css`** — add a `.luna-nav-item__expand` chevron rotation style (re-using the existing pattern from `.luna-restricted-chevron`). No new colors.
 
-**a. `src/lib/slides.ts`** — append:
-```ts
-{ id: "s15", num: "Appendix", label: "Platform Architecture" },
-```
+## Analytics
 
-**b. `src/pages/Index.tsx`** — render `<ArchitectureSlide />` inside `<main className="luna-main">` after `<ProductionAnchorSlide />`. Wrap it in a `<section id="s15">` if `ArchitectureSlide` doesn't already provide one (will verify and adjust the wrapper accordingly so the IntersectionObserver tracks it). Import `ArchitectureSlide` at the top of Index.tsx.
+- New events: `luna_architecture_opened` / `luna_architecture_closed` with `{ source: "sidebar" | "slide" }`.
+- Existing `luna_slide_viewed` for `s15` continues to fire only after the user opens it and dwells — which is the desired "intentional view" measurement.
 
-**c. `src/components/PractitionerOverlay.tsx`** — remove the "The Stack" tab from `TABS` and remove its render block. If `section === 'stack'` arrives (legacy), default to `'brief'`. Update the `PractitionerSection` type in `src/pages/Index.tsx` to `'brief' | 'demo'`.
+## Out of scope
 
-### Notes
-
-- "Appendix" is shown in the sidebar in the same position as the roman numerals (`luna-nav-num` slot). Existing CSS styling will accept the longer string; no style changes needed.
-- All copy uses sentence-case and contains no em dashes, per project writing guidelines.
-- ArchitectureSlide currently lives only inside the password-gated overlay — moving its render to the public deck makes it accessible to all viewers as requested.
+- No copy or visual changes to the Architecture slide content itself.
+- No changes to the Restricted accordion or other slides.
