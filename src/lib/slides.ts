@@ -14,10 +14,19 @@ export const slides = [
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
   { id: "s13", num: "xiii",  label: "The Next Architectural Imperative" },
   { id: "s14", num: "xiv",   label: "The Cherre Platform" },
-  { id: "s15", num: "Appendix", label: "Platform Architecture" },
 ] as const;
 
 export const slideIds = slides.map((s) => s.id);
 
+/** Sub-items rendered indented beneath their parent slide in the sidebar. */
+export const slideChildren: Record<string, { id: string; label: string }[]> = {
+  s14: [{ id: "s15", label: "Platform Architecture" }],
+};
+
+const childIds = Object.values(slideChildren).flat().map((c) => c.id);
+export const allSlideIds = [...slideIds, ...childIds];
+
 export const slideLabel = (id: string): string =>
-  slides.find((s) => s.id === id)?.label ?? id;
+  slides.find((s) => s.id === id)?.label ??
+  Object.values(slideChildren).flat().find((c) => c.id === id)?.label ??
+  id;

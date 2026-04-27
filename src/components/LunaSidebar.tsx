@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { PractitionerSection } from "@/pages/Index";
-import { slides as navItems } from "@/lib/slides";
+import { slides as navItems, slideChildren } from "@/lib/slides";
 
 const caseItems: { id: PractitionerSection; label: string }[] = [
   { id: 'brief', label: 'Use Cases' },
@@ -58,12 +58,28 @@ const LunaSidebar = ({
 
         <span className="luna-nav-label">Contents</span>
         <div className="luna-nav">
-          {navItems.map((item) => (
-            <button key={item.id} className={`luna-nav-item ${activeSlide === item.id ? "active" : ""}`} onClick={() => handleNav(item.id)}>
-              <span className="luna-nav-num">{item.num}</span>
-              <span>{item.label}</span>
-            </button>
-          ))}
+          {navItems.map((item) => {
+            const children = slideChildren[item.id] ?? [];
+            return (
+              <div key={item.id}>
+                <button className={`luna-nav-item ${activeSlide === item.id ? "active" : ""}`} onClick={() => handleNav(item.id)}>
+                  <span className="luna-nav-num">{item.num}</span>
+                  <span>{item.label}</span>
+                </button>
+                {children.map((child) => (
+                  <button
+                    key={child.id}
+                    className={`luna-nav-item luna-subnav-item ${activeSlide === child.id ? "active" : ""}`}
+                    onClick={() => handleNav(child.id)}
+                    style={{ paddingLeft: "2.75rem" }}
+                  >
+                    <span className="luna-nav-num" aria-hidden="true">↳</span>
+                    <span>{child.label}</span>
+                  </button>
+                ))}
+              </div>
+            );
+          })}
         </div>
 
         {/* Restricted — accordion */}
