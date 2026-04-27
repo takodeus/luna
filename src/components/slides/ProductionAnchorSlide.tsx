@@ -90,7 +90,12 @@ const connectProducts = [
   },
 ];
 
-const ProductionAnchorSlide = () => {
+interface ProductionAnchorSlideProps {
+  architectureOpen: boolean;
+  onArchitectureToggle: () => void;
+}
+
+const ProductionAnchorSlide = ({ architectureOpen, onArchitectureToggle }: ProductionAnchorSlideProps) => {
   const [active, setActive] = useState<TileKey>(null);
   const [qualityOpen, setQualityOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
