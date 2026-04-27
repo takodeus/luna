@@ -17,7 +17,7 @@ import ProductionAnchorSlide from "@/components/slides/ProductionAnchorSlide";
 import ArchitectureSlide from "@/components/slides/ArchitectureSlide";
 import PractitionerOverlay from "@/components/PractitionerOverlay";
 import ImageLightbox from "@/components/ImageLightbox";
-import { slideIds, slideLabel } from "@/lib/slides";
+import { allSlideIds, slideLabel } from "@/lib/slides";
 import { trackEvent } from "@/lib/analytics";
 
 export type PractitionerSection = 'brief' | 'demo';
@@ -78,7 +78,7 @@ const Index = () => {
       },
       { threshold: 0.4 }
     );
-    slideIds.forEach((id) => {
+    allSlideIds.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
