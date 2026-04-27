@@ -586,6 +586,47 @@ const ProductionAnchorSlide = ({ architectureOpen, onArchitectureToggle }: Produ
             )}
           </div>
 
+          {/* APPENDIX CTA (mobile) — de-emphasized */}
+          <div style={{ background: "#FAFAFA" }}>
+            <button
+              onClick={onArchitectureToggle}
+              aria-expanded={architectureOpen}
+              style={{
+                appearance: "none",
+                width: "100%",
+                textAlign: "left",
+                cursor: "pointer",
+                background: "#FAFAFA",
+                borderTop: "2px solid #D5D5D5",
+                borderLeft: "none",
+                borderRight: "none",
+                borderBottom: "none",
+                padding: "0.85rem 1.2rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "1rem",
+              }}
+            >
+              <div>
+                <div style={{
+                  fontFamily: "var(--mono)", fontSize: "0.58rem", fontWeight: 700,
+                  letterSpacing: "0.2em", textTransform: "uppercase",
+                  color: "rgba(0,0,0,0.45)", marginBottom: "0.2rem",
+                }}>Appendix</div>
+                <div style={{
+                  fontSize: "0.95rem", fontWeight: 700, color: "#000",
+                  letterSpacing: "-0.005em", lineHeight: 1.2,
+                }}>View Platform Architecture</div>
+              </div>
+              <span style={{
+                fontSize: "1.2rem", color: "rgba(0,0,0,0.45)", lineHeight: 1,
+                transform: architectureOpen ? "rotate(45deg)" : "rotate(0deg)",
+                transition: "transform 0.2s ease",
+              }}>+</span>
+            </button>
+          </div>
+
           {active === null && (
             <div style={{ background: "#fff", padding: "1rem", display: "flex", justifyContent: "center" }}>
               <img src="/luna/stack.png" alt="The Cherre stack" style={{ width: "100%", maxWidth: 320, height: "auto" }} />
