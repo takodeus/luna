@@ -14,6 +14,7 @@ export const slides = [
   { id: "s12", num: "xii",   label: "What Fills the Layer" },
   { id: "s13", num: "xiii",  label: "The Next Architectural Imperative" },
   { id: "s14", num: "xiv",   label: "The Cherre Platform" },
+  { id: "s15", num: "Appendix", label: "Platform Architecture" },
 ] as const;
 
 export const slideIds = slides.map((s) => s.id);

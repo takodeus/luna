@@ -132,7 +132,7 @@ const ProductionAnchorSlide = () => {
       </h2>
 
       <p className="luna-body-text" style={{ maxWidth: 820, marginTop: "1.2rem", fontSize: "1.05rem" }}>
-        Built over a decade of work in real assets. Already governing identity, meaning, and lineage in production environments. The reasoning era doesn't need to be built. It needs to be deployed on what's already there.
+        For more than a decade, Cherre has been doing the difficult work beneath the visible layer of real assets technology: resolving identities, governing definitions, preserving lineage, and translating fragmented systems into usable meaning. Already deployed across the world's largest investors, managers, and operators. The reasoning era doesn't need to be built. It needs to be deployed on what's already there.
       </p>
 
       <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", fontWeight: 600, fontStyle: "italic", color: "#A8185E", lineHeight: 1.55, margin: "-0.4rem 0 0", maxWidth: 820 }}>
