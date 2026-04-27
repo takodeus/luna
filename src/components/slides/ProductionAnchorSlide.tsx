@@ -90,7 +90,12 @@ const connectProducts = [
   },
 ];
 
-const ProductionAnchorSlide = () => {
+interface ProductionAnchorSlideProps {
+  architectureOpen: boolean;
+  onArchitectureToggle: () => void;
+}
+
+const ProductionAnchorSlide = ({ architectureOpen, onArchitectureToggle }: ProductionAnchorSlideProps) => {
   const [active, setActive] = useState<TileKey>(null);
   const [qualityOpen, setQualityOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -378,6 +383,51 @@ const ProductionAnchorSlide = () => {
         </div>
       )}
 
+      {/* APPENDIX CTA (desktop) — de-emphasized link to Platform Architecture */}
+      {!isMobile && (
+        <div style={{ maxWidth: 960, marginTop: "0.6rem" }}>
+          <button
+            onClick={onArchitectureToggle}
+            aria-expanded={architectureOpen}
+            style={{
+              appearance: "none",
+              width: "100%",
+              cursor: "pointer",
+              background: "#FAFAFA",
+              borderTop: "2px solid #D5D5D5",
+              borderLeft: "none",
+              borderRight: "none",
+              borderBottom: "none",
+              padding: "0.7rem 1.4rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "1rem",
+              textAlign: "left",
+              transition: "background 0.2s ease",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "baseline", gap: "0.9rem", flexWrap: "wrap" }}>
+              <span style={{
+                fontFamily: "var(--mono)", fontSize: "0.58rem", fontWeight: 700,
+                letterSpacing: "0.2em", textTransform: "uppercase",
+                color: "rgba(0,0,0,0.45)",
+              }}>Appendix</span>
+              <span style={{
+                fontSize: "0.92rem", fontWeight: 700, letterSpacing: "0.01em", color: "#000",
+              }}>View Platform Architecture</span>
+            </div>
+            <span style={{
+              fontFamily: "var(--mono)", fontSize: "0.55rem", fontWeight: 700,
+              letterSpacing: "0.18em", textTransform: "uppercase",
+              color: "rgba(0,0,0,0.45)",
+              transform: architectureOpen ? "rotate(45deg)" : "rotate(0deg)",
+              transition: "transform 0.2s ease", lineHeight: 1,
+            } as React.CSSProperties}>+</span>
+          </button>
+        </div>
+      )}
+
       {/* MOBILE ACCORDION */}
       {isMobile && (
         <div
@@ -534,6 +584,47 @@ const ProductionAnchorSlide = () => {
                 </p>
               </div>
             )}
+          </div>
+
+          {/* APPENDIX CTA (mobile) — de-emphasized */}
+          <div style={{ background: "#FAFAFA" }}>
+            <button
+              onClick={onArchitectureToggle}
+              aria-expanded={architectureOpen}
+              style={{
+                appearance: "none",
+                width: "100%",
+                textAlign: "left",
+                cursor: "pointer",
+                background: "#FAFAFA",
+                borderTop: "2px solid #D5D5D5",
+                borderLeft: "none",
+                borderRight: "none",
+                borderBottom: "none",
+                padding: "0.85rem 1.2rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "1rem",
+              }}
+            >
+              <div>
+                <div style={{
+                  fontFamily: "var(--mono)", fontSize: "0.58rem", fontWeight: 700,
+                  letterSpacing: "0.2em", textTransform: "uppercase",
+                  color: "rgba(0,0,0,0.45)", marginBottom: "0.2rem",
+                }}>Appendix</div>
+                <div style={{
+                  fontSize: "0.95rem", fontWeight: 700, color: "#000",
+                  letterSpacing: "-0.005em", lineHeight: 1.2,
+                }}>View Platform Architecture</div>
+              </div>
+              <span style={{
+                fontSize: "1.2rem", color: "rgba(0,0,0,0.45)", lineHeight: 1,
+                transform: architectureOpen ? "rotate(45deg)" : "rotate(0deg)",
+                transition: "transform 0.2s ease",
+              }}>+</span>
+            </button>
           </div>
 
           {active === null && (

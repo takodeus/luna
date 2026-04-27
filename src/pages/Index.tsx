@@ -29,6 +29,7 @@ const Index = () => {
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [practitionerOpen, setPractitionerOpen] = useState(false);
   const [practitionerSection, setPractitionerSection] = useState<PractitionerSection>('brief');
+  const [architectureOpen, setArchitectureOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
     const total = document.documentElement.scrollHeight - window.innerHeight;
@@ -86,11 +87,35 @@ const Index = () => {
       observer.disconnect();
       dwellTimers.forEach((t) => clearTimeout(t));
     };
-  }, []);
+  }, [architectureOpen]);
 
   const handleNavigate = (id: string) => {
     trackEvent("luna_nav_clicked", { slide_id: id, slide_label: slideLabel(id) });
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleArchitectureToggle = (source: "sidebar" | "slide") => {
+    setArchitectureOpen((prev) => {
+      const next = !prev;
+      trackEvent(next ? "luna_architecture_opened" : "luna_architecture_closed", { source });
+      if (next) {
+        // Wait for mount, then scroll into view.
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            document.getElementById("s15")?.scrollIntoView({ behavior: "smooth" });
+          }, 30);
+        });
+      }
+      return next;
+    });
+  };
+
+  const handleArchitectureOpenFromSidebar = () => {
+    if (!architectureOpen) {
+      handleArchitectureToggle("sidebar");
+    } else {
+      document.getElementById("s15")?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const scrollToTop = () => {
@@ -131,6 +156,9 @@ const Index = () => {
         onPractitionerOpen={handlePractitionerOpen}
         practitionerOpen={practitionerOpen}
         practitionerSection={practitionerSection}
+        architectureOpen={architectureOpen}
+        onArchitectureToggle={() => handleArchitectureToggle("sidebar")}
+        onArchitectureNavigate={handleArchitectureOpenFromSidebar}
       />
       <main className="luna-main">
         <CoverSlide />
@@ -146,8 +174,11 @@ const Index = () => {
         <StepsThoughtsSlide />
         <BuildBuySlide onImageClick={handleLightbox} />
         <ClosingSlide />
-        <ProductionAnchorSlide />
-        <ArchitectureSlide />
+        <ProductionAnchorSlide
+          architectureOpen={architectureOpen}
+          onArchitectureToggle={() => handleArchitectureToggle("slide")}
+        />
+        {architectureOpen && <ArchitectureSlide />}
       </main>
       <PractitionerOverlay
         isOpen={practitionerOpen}
