@@ -20,7 +20,7 @@ import ImageLightbox from "@/components/ImageLightbox";
 import { allSlideIds, slideLabel } from "@/lib/slides";
 import { trackEvent } from "@/lib/analytics";
 
-export type PractitionerSection = 'brief' | 'demo';
+export type PractitionerSection = 'brief' | 'demo' | 'cbre-brief' | 'cbre-demo';
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState("s1");

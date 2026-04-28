@@ -1,12 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 import PractitionerBriefSlide from '@/components/slides/PractitionerBriefSlide';
 import ICMemoSlide from '@/components/slides/ICMemoSlide';
+import CBREPractitionerBriefSlide from '@/components/cbre/CBREPractitionerBriefSlide';
+import CBREDemoSlide from '@/components/cbre/CBREDemoSlide';
 import { sha256Hex } from '@/lib/hash';
 import type { PractitionerSection } from '@/pages/Index';
 
-// SHA-256 of the access code. Plaintext no longer ships in the bundle.
-const PASSWORD_HASH = '19dec44a826a23bb1363344cb397098775eee677350d1f4e638ca11e9a699a90';
-const SESSION_KEY = 'cherre_demo_unlocked';
+// SHA-256 hashes — plaintext never ships in the bundle.
+const HASH_IC_MEMO = '19dec44a826a23bb1363344cb397098775eee677350d1f4e638ca11e9a699a90';
+const HASH_CBRE    = 'a0d8f544220e27b1fb3d3ee3ee5df1a61bb09a8dc7880f31a89bfcac3a32d99b';
+const SESSION_KEY      = 'cherre_demo_unlocked';
+const SESSION_KEY_CBRE = 'cherre_cbre_unlocked';
+
+type UseCase = 'icmemo' | 'cbre';
 
 interface PractitionerOverlayProps {
   isOpen: boolean;
@@ -15,20 +21,29 @@ interface PractitionerOverlayProps {
   onClose: () => void;
 }
 
-const TABS: { id: PractitionerSection; label: string }[] = [
+const TABS_IC_MEMO: { id: PractitionerSection; label: string }[] = [
   { id: 'brief', label: 'Use Cases' },
   { id: 'demo',  label: 'Demos' },
+];
+const TABS_CBRE: { id: PractitionerSection; label: string }[] = [
+  { id: 'cbre-brief', label: 'Use Cases' },
+  { id: 'cbre-demo',  label: 'Demos' },
 ];
 
 const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: PractitionerOverlayProps) => {
   const [unlocked, setUnlocked] = useState(false);
+  const [useCase, setUseCase] = useState<UseCase>('icmemo');
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    if (sessionStorage.getItem(SESSION_KEY_CBRE) === '1') {
+      setUseCase('cbre');
+      setUnlocked(true);
+    } else if (sessionStorage.getItem(SESSION_KEY) === '1') {
+      setUseCase('icmemo');
       setUnlocked(true);
     }
   }, []);
@@ -52,8 +67,13 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
 
   const handleSubmit = async () => {
     const digest = await sha256Hex(value.trim().toLowerCase());
-    if (digest === PASSWORD_HASH) {
+    if (digest === HASH_IC_MEMO) {
       sessionStorage.setItem(SESSION_KEY, '1');
+      setUseCase('icmemo');
+      setUnlocked(true);
+    } else if (digest === HASH_CBRE) {
+      sessionStorage.setItem(SESSION_KEY_CBRE, '1');
+      setUseCase('cbre');
       setUnlocked(true);
     } else {
       setError(true);
@@ -165,7 +185,7 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
       ) : (
         <div className="practitioner-content">
           <nav className="case-tabs" aria-label="Case study sections">
-            {TABS.map((t) => {
+            {(useCase === 'cbre' ? TABS_CBRE : TABS_IC_MEMO).map((t) => {
               const active = t.id === section;
               return (
                 <button
@@ -180,12 +200,26 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
             })}
           </nav>
 
-          <div style={{ display: section === 'brief' ? 'block' : 'none' }}>
-            <PractitionerBriefSlide />
-          </div>
-          <div style={{ display: section === 'demo' ? 'block' : 'none' }}>
-            <ICMemoSlide />
-          </div>
+          {useCase === 'icmemo' && (
+            <>
+              <div style={{ display: section === 'brief' ? 'block' : 'none' }}>
+                <PractitionerBriefSlide />
+              </div>
+              <div style={{ display: section === 'demo' ? 'block' : 'none' }}>
+                <ICMemoSlide />
+              </div>
+            </>
+          )}
+          {useCase === 'cbre' && (
+            <>
+              <div style={{ display: section === 'cbre-brief' ? 'block' : 'none' }}>
+                <CBREPractitionerBriefSlide />
+              </div>
+              <div style={{ display: section === 'cbre-demo' ? 'block' : 'none' }}>
+                <CBREDemoSlide />
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>
