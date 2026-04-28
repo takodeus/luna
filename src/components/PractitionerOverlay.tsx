@@ -41,6 +41,7 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
   useEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY_CBRE) === '1') {
       setUseCase('cbre');
+      onSectionChange('cbre-brief');
       setUnlocked(true);
     } else if (sessionStorage.getItem(SESSION_KEY) === '1') {
       setUseCase('icmemo');
@@ -74,6 +75,7 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
     } else if (digest === HASH_CBRE) {
       sessionStorage.setItem(SESSION_KEY_CBRE, '1');
       setUseCase('cbre');
+      onSectionChange('cbre-brief');
       setUnlocked(true);
     } else {
       setError(true);

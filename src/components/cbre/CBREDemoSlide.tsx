@@ -233,6 +233,7 @@ const ObligationMatrixStep = ({ onNext }: { onNext: () => void }) => {
   const rightLabel = view === 'owner-manager' ? 'Manager (CBRE)' : 'Tenant';
   const leftSub    = view === 'owner-manager' ? 'Crestline Capital Partners' : 'Enforced by CBRE on behalf of Owner';
   const rightSub   = view === 'owner-manager' ? 'CBRE Southeast Region' : 'Northside Hospitality Group · Suite 1201';
+  const rightColor = view === 'owner-manager' ? GREEN : BLUE;
 
   const leftObligations  = OBLIGATIONS.filter(o => o.party === leftParty);
   const rightObligations = OBLIGATIONS.filter(o => o.party === rightParty);
@@ -301,7 +302,7 @@ const ObligationMatrixStep = ({ onNext }: { onNext: () => void }) => {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
         {[
           { label: leftLabel, sub: leftSub, obligations: leftObligations, color: PLUM },
-          { label: rightLabel, sub: rightSub, obligations: rightObligations, color: BLUE },
+          { label: rightLabel, sub: rightSub, obligations: rightObligations, color: rightColor },
         ].map(col => (
           <div key={col.label}>
             <div style={{ padding: '8px 10px', borderRadius: '4px 4px 0 0', background: col.color, marginBottom: 0 }}>
