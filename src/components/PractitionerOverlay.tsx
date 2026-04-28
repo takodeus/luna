@@ -33,6 +33,8 @@ const TABS_CBRE: { id: PractitionerSection; label: string }[] = [
 const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: PractitionerOverlayProps) => {
   const [unlocked, setUnlocked] = useState(false);
   const [useCase, setUseCase] = useState<UseCase>('icmemo');
+  // activeTab is owned locally — no longer depends on parent prop for rendering
+  const [activeTab, setActiveTab] = useState<PractitionerSection>('brief');
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -41,13 +43,19 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
   useEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY_CBRE) === '1') {
       setUseCase('cbre');
-      onSectionChange('cbre-brief');
+      setActiveTab('cbre-brief');
       setUnlocked(true);
     } else if (sessionStorage.getItem(SESSION_KEY) === '1') {
       setUseCase('icmemo');
+      setActiveTab('brief');
       setUnlocked(true);
     }
   }, []);
+
+  // Sync parent-driven section changes (e.g. sidebar nav deep-links)
+  useEffect(() => {
+    if (section && unlocked) setActiveTab(section);
+  }, [section]);
 
   useEffect(() => {
     if (isOpen) {
@@ -59,29 +67,44 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
     return () => { document.body.style.overflow = ''; };
   }, [isOpen, unlocked]);
 
-  // Reset scroll to top when switching sections or opening the overlay.
   useEffect(() => {
     if (isOpen && unlocked && overlayRef.current) {
       overlayRef.current.scrollTop = 0;
     }
-  }, [isOpen, unlocked, section]);
+  }, [isOpen, unlocked, activeTab]);
+
+  const handleTabChange = (tab: PractitionerSection) => {
+    setActiveTab(tab);
+    onSectionChange(tab); // keep parent in sync for analytics
+  };
 
   const handleSubmit = async () => {
     const digest = await sha256Hex(value.trim().toLowerCase());
     if (digest === HASH_IC_MEMO) {
       sessionStorage.setItem(SESSION_KEY, '1');
       setUseCase('icmemo');
+      setActiveTab('brief');
       setUnlocked(true);
     } else if (digest === HASH_CBRE) {
       sessionStorage.setItem(SESSION_KEY_CBRE, '1');
       setUseCase('cbre');
-      onSectionChange('cbre-brief');
+      setActiveTab('cbre-brief');  // local — no race condition
       setUnlocked(true);
     } else {
       setError(true);
       setValue('');
       setTimeout(() => setError(false), 1800);
     }
+  };
+
+  const handleLock = () => {
+    sessionStorage.removeItem(SESSION_KEY);
+    sessionStorage.removeItem(SESSION_KEY_CBRE);
+    setUnlocked(false);
+    setUseCase('icmemo');
+    setActiveTab('brief');
+    setValue('');
+    onClose();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -188,12 +211,12 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
         <div className="practitioner-content">
           <nav className="case-tabs" aria-label="Case study sections">
             {(useCase === 'cbre' ? TABS_CBRE : TABS_IC_MEMO).map((t) => {
-              const active = t.id === section;
+              const active = t.id === activeTab;
               return (
                 <button
                   key={t.id}
                   className={`case-tab ${active ? 'is-active' : ''}`}
-                  onClick={() => onSectionChange(t.id)}
+                  onClick={() => handleTabChange(t.id)}
                   aria-current={active ? 'page' : undefined}
                 >
                   {t.label}
@@ -201,15 +224,9 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
               );
             })}
 
-            {/* Lock button — lives here so it can reset unlocked state */}
+            {/* Lock button */}
             <button
-              onClick={() => {
-                sessionStorage.removeItem(SESSION_KEY);
-                sessionStorage.removeItem(SESSION_KEY_CBRE);
-                setUnlocked(false);
-                setValue('');
-                onClose();
-              }}
+              onClick={handleLock}
               aria-label="Lock session"
               title="Lock — requires password to re-enter"
               style={{
@@ -250,20 +267,20 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
 
           {useCase === 'icmemo' && (
             <>
-              <div style={{ display: section === 'brief' ? 'block' : 'none' }}>
+              <div style={{ display: activeTab === 'brief' ? 'block' : 'none' }}>
                 <PractitionerBriefSlide />
               </div>
-              <div style={{ display: section === 'demo' ? 'block' : 'none' }}>
+              <div style={{ display: activeTab === 'demo' ? 'block' : 'none' }}>
                 <ICMemoSlide />
               </div>
             </>
           )}
           {useCase === 'cbre' && (
             <>
-              <div style={{ display: section === 'cbre-brief' ? 'block' : 'none' }}>
+              <div style={{ display: activeTab === 'cbre-brief' ? 'block' : 'none' }}>
                 <CBREPractitionerBriefSlide />
               </div>
-              <div style={{ display: section === 'cbre-demo' ? 'block' : 'none' }}>
+              <div style={{ display: activeTab === 'cbre-demo' ? 'block' : 'none' }}>
                 <CBREDemoSlide />
               </div>
             </>
