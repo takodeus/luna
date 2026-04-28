@@ -200,6 +200,52 @@ const PractitionerOverlay = ({ isOpen, section, onSectionChange, onClose }: Prac
                 </button>
               );
             })}
+
+            {/* Lock button — lives here so it can reset unlocked state */}
+            <button
+              onClick={() => {
+                sessionStorage.removeItem(SESSION_KEY);
+                sessionStorage.removeItem(SESSION_KEY_CBRE);
+                setUnlocked(false);
+                setValue('');
+                onClose();
+              }}
+              aria-label="Lock session"
+              title="Lock — requires password to re-enter"
+              style={{
+                marginLeft: 'auto',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                padding: '4px 12px',
+                background: 'none',
+                border: '1px solid #e0e0e0',
+                borderRadius: 20,
+                cursor: 'pointer',
+                color: '#999',
+                fontSize: '0.62rem',
+                fontWeight: 700,
+                fontFamily: 'Montserrat, sans-serif',
+                letterSpacing: '0.04em',
+                transition: 'color 0.15s ease, border-color 0.15s ease',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.color = '#A8185E';
+                e.currentTarget.style.borderColor = '#A8185E';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.color = '#999';
+                e.currentTarget.style.borderColor = '#e0e0e0';
+              }}
+            >
+              {/* Open padlock icon */}
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+                <rect x="1" y="6" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+                <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+                <circle cx="6" cy="9.5" r="1" fill="currentColor" />
+              </svg>
+              Lock
+            </button>
           </nav>
 
           {useCase === 'icmemo' && (

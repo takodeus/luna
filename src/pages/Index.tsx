@@ -187,50 +187,22 @@ const Index = () => {
         onClose={() => setPractitionerOpen(false)}
       />
       {practitionerOpen && (
-        <div style={{
-          position: 'fixed', top: 16, right: 20, zIndex: 10010,
-          display: 'flex', alignItems: 'center', gap: 8,
-        }}>
-          {/* Lock / logout button */}
-          <button
-            onClick={() => {
-              sessionStorage.removeItem('cherre_demo_unlocked');
-              sessionStorage.removeItem('cherre_cbre_unlocked');
-              setPractitionerOpen(false);
-            }}
-            aria-label="Lock and sign out"
-            title="Lock — clears session"
-            style={{
-              width: 40, height: 40, borderRadius: '50%',
-              border: '1px solid #e0e0e0', background: '#fff',
-              color: '#A8185E', cursor: 'pointer',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-            }}
-          >
-            <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
-              <rect x="1" y="8" width="14" height="9" rx="2" stroke="currentColor" strokeWidth="1.4" />
-              <path d="M4 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-              <circle cx="8" cy="12.5" r="1.5" fill="currentColor" />
-            </svg>
-          </button>
-          {/* Close button */}
-          <button
-            onClick={() => setPractitionerOpen(false)}
-            aria-label="Close practitioner overlay"
-            style={{
-              width: 40, height: 40, borderRadius: '50%',
-              border: '1px solid #e0e0e0', background: '#fff',
-              color: '#000', cursor: 'pointer',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-            }}
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          </button>
-        </div>
+        <button
+          onClick={() => setPractitionerOpen(false)}
+          aria-label="Close practitioner overlay"
+          style={{
+            position: 'fixed', top: 16, right: 20, zIndex: 10010,
+            width: 40, height: 40, borderRadius: '50%',
+            border: '1px solid #e0e0e0', background: '#fff',
+            color: '#000', cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        </button>
       )}
       <ImageLightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
     </>
